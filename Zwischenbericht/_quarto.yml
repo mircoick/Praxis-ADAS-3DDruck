@@ -1,0 +1,46 @@
+project:
+  type: manuscript
+
+lang: de
+
+execute:
+  freeze: auto
+
+format:
+  html:
+    toc: true
+    comments:
+      hypothesis: true
+    code-line-numbers: true
+    code-tools: true
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+    code-fold: show
+    echo: true
+
+  docx: default
+  pdf:
+    documentclass: scrartcl
+    classoption: ["titlepage=true", "listof=totoc"]
+    listings: true
+    toc: true
+    lof: true
+    lot: true
+    linkcolor: black
+    keep-tex: true
+    toccolor: black
+    template-partials:
+      - init/before-body.tex
+    include-in-header:
+      text: |
+        \usepackage{listings}
+        \usepackage{booktabs}
+        \usepackage{scrlayer-scrpage}
+        \pagestyle{scrheadings}
+        \clearpairofpagestyles
+        \KOMAoptions{headsepline=0.5pt}
+        \graphicspath{{./}{init/}}
+        \chead{\fontsize{14}{12}\selectfont{Praxissemester Zwischenbericht}}
+        \ihead{\includegraphics[scale=0.3]{Logo_klein.pdf}}
+        \ohead{\includegraphics[scale=0.01]{Airbus.png}}
+        \cfoot{\pagemark}

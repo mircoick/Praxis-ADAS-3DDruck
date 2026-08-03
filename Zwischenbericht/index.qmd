@@ -9,7 +9,7 @@ author:
       - name: "Hochschule Bremen (HSB)"
 abstract: |
 plain-language-summary: |
-date: "2026-09-01"
+date: last-modified
 bibliography: references.bib
 citation:
   container-title: Zwischenbericht
@@ -19,62 +19,13 @@ number-sections: true
 {{< include init/header.html >}}
 \newpage
 
-# Einleitung und Zielsetzung
+# Beschreibung der ADAS
 
-Um die im Bachelorstudiengang Elektrotechnik an der Hochschule Bremen erworbenen theoretischen Kenntnisse durch praktische Erfahrungen zu ergänzen, ist im Curriculum das Praxissemester (Modul PRX) verankert. Dieses umfasst eine Mindestdauer von 13,5 Wochen bei einer Gesamtarbeitszeit von 540 Stunden. Ziel dieser Praxisphase ist es, fundierte Einblicke in industrielle Prozesse, betriebliche Strukturen und den Berufsalltag eines Ingenieurs zu gewinnen sowie eigenständiges, projektorientiertes Arbeiten im industriellen Umfeld zu vertiefen.
+# Vorstellung der Abteilung und des Arbeitsbereichs
+![](pics/)
+# Aufgabenstellung
 
-Für die Absolvierung des Praxissemesters wurde die Airbus DS Airborne Solutions GmbH (ADAS) in Bremen gewählt. Im Fokus der praktischen Tätigkeit steht die Durchführung einer Machbarkeitsstudie zur Implementierung eines industriellen 3D-Druckers im Bereich der Flugsystembetreuung und -instandhaltung. Ziel dieser Studie ist es, technologische und wirtschaftliche Potenziale der additiven Fertigung für den Standort zu analysieren und eine fundierte Entscheidungsvorlage für zukünftige Investitionen zu erarbeiten.
-
-# Die Airbus Group
-Die Airbus-Gruppe ist einer der weltweit größten Luft- und Raumfahrtkonzerne sowie ein führender Anbieter im Bereich der Verteidigung und Sicherheit. Der Konzern unterteilt sich in verschiedene Divisionen, darunter Airbus Commercial Aircraft, Airbus Helicopters und Airbus Defence and Space.
-
-## Airbus DS Airborne Solutions GmbH
-Die am Standort Bremen ansässige Airbus DS Airborne Solutions GmbH (ADAS) ist eine spezialisierte Tochtergesellschaft innerhalb der Division Airbus Defence and Space. Das Hauptgeschäftsfeld der ADAS umfasst Dienstleistungen und Systemlösungen rund um unbemannte Flugsysteme (Unmanned Aerial Systems, UAS) sowie die Zieldarstellung für militärische und zivile Kunden. Zu den Kernkompetenzen gehören der sichere Flugbetrieb, die Systemintegration, die Ausbildung von Bedienpersonal sowie die umfassende logistische und technische Betreuung der Systeme über deren gesamten Lebenszyklus (In-Service Support).
-
-# Vorstellung der Abteilung und des Arbeitsbereichs {#sec-abteilung}
-
-Das Praxissemester wird in der Abteilung **Production and Maintenance** (Produktion und Instandhaltung) absolviert. Diese Abteilung trägt die operative Verantwortung für die kontinuierliche technische Einsatzbereitschaft, Wartung, Reparatur und Überholung (MRO – *Maintenance, Repair, and Overhaul*) der unbemannten Flugsysteme (UAS) sowie der dazugehörigen Bodensegmente wie Bodenkontrollstationen, Transport- und Startvorrichtungen.
-
-Die Hauptaufgaben des Bereichs gliedern sich in folgende Schwerpunkte:
-
-*   **Instandhaltung:** Durchführung periodischer und außerordentlicher Wartungsarbeiten nach strengen luftfahrtrechtlichen und militärischen Vorgaben.
-*   **Obsoleszenzmanagement:** Identifikation und Implementierung von technischen Lösungen beim Ausfall oder der Nichtverfügbarkeit von elektronischen und mechanischen Bauteilen.
-*   **Betriebsmittelkonstruktion:** Entwicklung und Fertigung von spezialisierten Werkzeugen, Halterungen und Prüfvorrichtungen (*Jigs and Fixtures*) für den internen Werkstattbetrieb.
-
-::: {.callout-note}
-## Logistische Herausforderung
-Aufgrund der hohen Qualitätsanforderungen in der Luftfahrt und der Notwendigkeit, schnell auf kundenspezifische Modifikationen zu reagieren, steht die Abteilung regelmäßig vor der Herausforderung, Kleinserien oder Einzelstücke mit langen Lieferzeiten oder hohen Mindestbestellmengen beschaffen zu müssen. Hieraus leitet sich das direkte Interesse ab, moderne Verfahren der additiven Fertigung in die Instandhaltungsabläufe zu integrieren.
-:::
-
-# Aufgabenstellung und Projektplanung {#sec-aufgabenstellung}
-
-## Technische Aufgabenstellung {#sec-tech-aufgabe}
-
-Gegenstand des Projekts ist eine umfassende **Machbarkeitsstudie für den Einsatz eines industriellen 3D-Druckers** in der Abteilung *Production and Maintenance*. Da im Bereich der Luftfahrt und der militärischen Dienstleistungen extreme Anforderungen an Materialeigenschaften, Zuverlässigkeit und Dokumentation gestellt werden, kann kein Standard-Konsumentengerät eingesetzt werden. Die Studie gliedert sich in folgende technische Teilaufgaben:
-
-1.  **Anforderungsanalyse:** Ermittlung der benötigten Bauteilspektren (z. B. Gehäuse, Halterungen, Werkzeuge, Schutzkappen). Definition der mechanischen, thermischen und chemischen Anforderungen (z. B. Flammwidrigkeit nach Luftfahrtnormen, UV-Beständigkeit, Beständigkeit gegen Öle und Kraftstoffe).
-2.  **Markt- und Technologieanalyse:** Evaluierung geeigneter additiver Fertigungsverfahren (z. B. FDM/FFF mit Hochleistungskunstoffen wie PEEK/Ultem, SLS für Polyamide oder metallbasierte Verfahren). Identifikation potenzieller industrieller Druckersysteme und deren Hersteller.
-3.  **Wirtschaftlichkeitsbetrachtung (ROI):** Gegenüberstellung der Anschaffungs-, Material- und Betriebskosten des Drucksystems im Vergleich zu den aktuellen Beschaffungs- und Ausfallzeitenkosten (*Make-or-Buy*-Entscheidung).
-4.  **Risiko- und Prozessanalyse:** Untersuchung der Rahmenbedingungen bezüglich Arbeitsschutz (Emissionen, Gefahrenstoffe), Qualitätssicherung und IT-Sicherheit bei der Datenverarbeitung im Airbus-Netzwerk.
-
-Das Endergebnis des Praxissemesters soll eine fundierte Handlungsempfehlung (Lastenheft und Systemauswahl) für die Abteilungsleitung darstellen.
-
-## Arbeitsprogramm und Zeitplan {#sec-zeitplan}
-
-Um die rechtzeitige Fertigstellung des Projekts und des Abschlussberichts zu gewährleisten, wurde ein strukturierter Zeitplan erarbeitet. Gemäß den methodischen Empfehlungen für Technische Berichte wurden bewusst Pufferzeiten für die finale Review-Phase und Abstimmungen mit der Betreuung eingeplant. Der Ablauf ist in @tbl-zeitplan detailliert dargestellt.
-
-| Projektphase / Aktivität | Geplante Wochen | Beschreibung / Meilenstein |
-|:---|:---|:---|
-| **Phase 1: Einarbeitung & Ist-Analyse** | Woche 1 – 3 | Einweisung in die Werkstattprozesse, Aufnahme des Bauteilspektrums, Verfassen des Zwischenberichts. |
-| **Phase 2: Anforderungskatalog** | Woche 4 – 5 | Definition der Materialparameter, Zertifizierungsanforderungen und geometrischen Mindestanforderungen. |
-| **Phase 3: Technologie- & Marktrecherche** | Woche 6 – 8 | Vergleich von FDM, SLS und SLA; Vorauswahl von 2–3 konkreten Industriesystemen. |
-| **Phase 4: Wirtschaftlichkeitsanalyse** | Woche 9 – 10 | Kosten-Nutzen-Analyse, Berechnung des Return on Investment (ROI) anhand von Fallbeispielen. |
-| **Phase 5: Bewertung & Synthese** | Woche 11 | Zusammenführung der Ergebnisse, Erstellung der finalen Handlungsempfehlung. |
-| **Phase 6: Schlussredaktion & Puffer** | Woche 12 – 14 | Verfassen des Abschlussberichts, interne Durchsicht bei ADAS (Freigabeprozess/Sperrvermerk), Abgabe. |
-
-: Projektzeitplan des Praxissemesters {#tbl-zeitplan}
-
-Die Fortschrittskontrolle erfolgt über wöchentliche Statusmeetings mit dem betrieblichen Betreuer, um Abweichungen vom Zeitplan frühzeitig zu erkennen und im Bedarfsfall gegenzusteuern.
+# Bisherige Ergebnisse
 
 
 # Literaturverzeichnis

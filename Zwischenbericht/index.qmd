@@ -22,7 +22,7 @@ number-sections: true
 # Beschreibung der ADAS
 
 # Vorstellung der Abteilung und des Arbeitsbereichs
-![](pics/)
+
 # Aufgabenstellung
 
 # Bisherige Ergebnisse

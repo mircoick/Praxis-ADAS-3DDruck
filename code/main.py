@@ -10,7 +10,7 @@ cam = MotorDriver(config=meine_config)
 #cam.auto_test()
 #cam.self_test()
 #cam.step_impulse(5,"motor1")
-
+#cam.step_double_impulse("forward","backward",.25)
 
 coords = []
 
@@ -19,6 +19,6 @@ for _ in range(4):
     
 #print(coords)
 cam.bresenham_step(coords[0],coords[1],coords[2],coords[3],.01)
-#cam.bresenham_step(-5,0,6,-4,.25)
+#cam.bresenham_step(-5,0,-6,-4,.01)
 
 cam.stop()

@@ -146,6 +146,22 @@ class MotorDriver():
         sleep(impulse)
         lgpio.tx_pwm(self.h,pins["en"],1000,0)
         
+    def step_double_impulse(self,dir1,dir2,impulse):
+        '''Ein DoppelterStep Impulse der mit der Zeitangabe gesteuert werden kann.'''
+        self.set_direction(dir1,"motor1")
+        self.set_direction(dir2,"motor2")
+        
+        p1 = self.motors["motor1"]
+        p2 = self.motors["motor2"]
+        
+        lgpio.tx_pwm(self.h,p1["en"],1000,100)
+        lgpio.tx_pwm(self.h,p2["en"],1000,100)
+        
+        sleep(impulse)
+        
+        lgpio.tx_pwm(self.h,p1["en"],1000,0)
+        lgpio.tx_pwm(self.h,p2["en"],1000,0)
+        
     def bresenham_step(self,x0:int,y0:int,x1:int,y1:int,sec):
         steps = list(pybresenham.line(x0,y0,x1,y1))
         print(steps)
@@ -155,27 +171,32 @@ class MotorDriver():
         self.start_pos(x0,y0,sec)
         for x,y in steps:
             
-            if x > self.x_old:
-                self.step_impulse("forward",.5,"motor1")
-                self.x_old = x
-                sleep(sec)
-                print("Einzelschritt x Vorwärts",self.x_old,self.y_old)
-            elif x < self.x_old:
-                self.step_impulse("backward",.5,"motor1")
-                self.x_old = x
-                sleep(sec)
-                print("Einzelschritt x Rückwärts",self.x_old,self.y_old)
-            if y > self.y_old:
-                self.step_impulse("forward",.5,"motor2")
-                self.y_old = y
-                sleep(sec)
-                print("Einzelschritt y Vorwärts",self.x_old,self.y_old)
-            elif y < self.y_old:
-                self.step_impulse("backward",.5,"motor2")
-                self.y_old = y
-                sleep(sec)
-                print("Einzelschritt y Rückwärts",self.x_old,self.y_old)
+            dir1 = None
+            dir2 = None
             
+            if x > self.x_old:
+                dir1 = "forward"
+            elif x < self.x_old:
+                dir1 = "backward"
+            if y > self.y_old:
+                dir2 = "forward"
+            elif y < self.y_old:
+                dir2 = "backward"
+                
+            if dir1 and dir2:
+                self.step_double_impulse(dir1,dir2,.5)
+                self.x_old = x
+                self.y_old = y
+                print("Doppelschritt x/y ",dir1,dir2,self.x_old,self.y_old)
+            elif dir1:
+                self.step_impulse(dir1,.5,"motor1")
+                self.x_old = x
+                print("Einzelschritt x ",dir1,self.x_old,self.y_old)
+            elif dir2:
+                self.step_impulse(dir2,.5,"motor2")
+                self.y_old = y
+                print("Einzelschritt y ",dir2,self.x_old,self.y_old)        
+
             print(f"\nNächster Gesamtschritt {x,y}\t{steps[s]}")
             s=s+1
             

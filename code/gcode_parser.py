@@ -1,31 +1,23 @@
 from pygcode import Line
-from time import *
+import pandas as pd
 
-comments, params, gcodes = [],[],[]
+rows = []
 
+with open("data/overhang test.gcode") as f:
+    for text in f:
+        line = Line(text)
 
-with open('data/overhang test.gcode', 'r') as fh:
-    for line_text in fh.readlines():
-        line = Line(line_text)
+        row = {}
 
-        #print(line)  # will print the line (with cosmetic changes)
-        gcodes.extend(line.block.gcodes)  # is your list of gcodes
-        #print(line.block.gcodes)
-        params.extend(line.block.modal_params)  # are all parameters not assigned to a gcode, assumed to be motion modal parameters
-        if line.comment:
-            comments.extend(line.comment.text)  # your comment text
+        if line.block.gcodes:
+            row["cmd"] = str(line.block.gcodes[0])
 
-print(gcodes)
+        for word in line.block.words:
+            row[word.letter] = word.value
 
-gcodes = '\n'.join(str(g) for g in gcodes)
-params = '\n'.join(str(g) for g in params)
-comments = '\n'.join(str(g) for g in comments)
+        rows.append(row)
 
-with open("data/test/gcode.csv","w",encoding="utf-8") as data:
-    data.write(gcodes)
+df = pd.DataFrame(rows)
 
-with open("data/test/comments.csv","w",encoding="utf-8") as data:
-    data.write(comments)
-
-with open("data/test/params.csv","w",encoding="utf-8") as data:
-    data.write(params)
+print(df)
+df.to_csv("data/test/gcode.csv", index=False)

@@ -1,4 +1,4 @@
-from step_motor import step_motor,step_motor_conf
+from step_motor import MotorDriver,step_motor_conf
 
 meine_config = step_motor_conf(
     PIN_ENA=18,
@@ -6,5 +6,6 @@ meine_config = step_motor_conf(
     PIN_IN2=23
     )
 
-cam = step_motor(config=meine_config)
-cam.auto_test()
+cam = MotorDriver(config=meine_config)
+#cam.auto_test()
+cam.self_test()

@@ -5,6 +5,8 @@ from typing import Literal
 from pydantic import Field, BaseModel
 import matplotlib.pyplot as plt
 import pybresenham
+from pygcode import Line
+import pandas as pd
 
 class MotorDriverConf(BaseModel):
     '''
@@ -58,6 +60,24 @@ class MotorDriver():
             lgpio.gpio_write(self.h, pins["in1"],0)
             lgpio.gpio_write(self.h, pins["in2"],0)
 
+    def read_gcode(self, filepath:str):
+        rows = []
+        with open("data/overhang test.gcode") as f:
+            for text in f:
+                line = Line(text)
+
+                row = {}
+
+                if line.block.gcodes:
+                    row["cmd"] = str(line.block.gcodes[0])
+
+                for word in line.block.words:
+                    row[word.letter] = word.value
+
+                rows.append(row)
+
+        self.df = pd.DataFrame(rows)
+
     def set_direction(self, direction: str, motor: str):
         """Setzt die Drehrichtung des wählbaren Motors."""
         if motor not in self.motors:
@@ -77,8 +97,8 @@ class MotorDriver():
             lgpio.gpio_write(self.h, pins["in2"], 0)
 
     def stop(self):
-        self.set_direction("stop","motor1")
-        self.set_direction("stop","motor2")
+        for motor_name in self.motors.items():
+            self.set_direction("stop",motor_name)
         
     def pwm_test(self):
         '''Hier können eigene Werte eingegeben werden. Bei einer Eingabe für die Laufrichtung des Motors wird die Schleife abgebrochen.'''
@@ -94,7 +114,6 @@ class MotorDriver():
         self.set_direction("stop",motor)
 
     def start_pos(self,x0,y0,sec):
-        
         print("\nInitialisierung X (Startposition x=0):")
         if x0 > 0:
             for i in range(0,x0):
@@ -143,7 +162,7 @@ class MotorDriver():
         
         pins = self.motors[motor]
         lgpio.tx_pwm(self.h,pins["en"],1000,100)
-        sleep(impulse)
+        sleep(impulse/1e6)
         lgpio.tx_pwm(self.h,pins["en"],1000,0)
         
     def step_double_impulse(self,dir1,dir2,impulse):
@@ -157,7 +176,7 @@ class MotorDriver():
         lgpio.tx_pwm(self.h,p1["en"],1000,100)
         lgpio.tx_pwm(self.h,p2["en"],1000,100)
         
-        sleep(impulse)
+        sleep(impulse/1e6)
         
         lgpio.tx_pwm(self.h,p1["en"],1000,0)
         lgpio.tx_pwm(self.h,p2["en"],1000,0)

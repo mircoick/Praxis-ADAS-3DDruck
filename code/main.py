@@ -18,7 +18,8 @@ for _ in range(4):
     coords.append(r.randint(-10, 10))
     
 #print(coords)
-cam.bresenham_step(coords[0],coords[1],coords[2],coords[3],.01)
-#cam.bresenham_step(-5,0,-6,-4,.01)
+#cam.bresenham_step(coords[0],coords[1],coords[2],coords[3],1e6)
+#cam.start_pos(12,-4,1e6)
+cam.bresenham_step(-5,0,-6,-4,1e6)
 
 cam.stop()

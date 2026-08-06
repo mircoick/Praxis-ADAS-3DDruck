@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 import pybresenham
 from pygcode import Line
 import pandas as pd
+from itertools import zip_longest
 
 class MotorDriverConf(BaseModel):
     '''
@@ -92,14 +93,16 @@ class MotorDriver():
         elif direction == "backward":
             lgpio.gpio_write(self.h, pins["in1"], 0)
             lgpio.gpio_write(self.h, pins["in2"], 1)
-        elif direction == "stop":
+        elif direction == "stop" or direction is None:
             lgpio.gpio_write(self.h, pins["in1"], 0)
             lgpio.gpio_write(self.h, pins["in2"], 0)
 
     def stop(self):
-        for motor_name in self.motors.items():
+        for motor_name, pins in self.motors.items():
             self.set_direction("stop",motor_name)
-        
+            #print(motor_name)
+        print("Stop")
+            
     def pwm_test(self):
         '''Hier können eigene Werte eingegeben werden. Bei einer Eingabe für die Laufrichtung des Motors wird die Schleife abgebrochen.'''
         direction = input("forward/ backward:	")
@@ -113,45 +116,41 @@ class MotorDriver():
         print("Stop")
         self.set_direction("stop",motor)
 
-    def start_pos(self,x0,y0,sec):
-        print("\nInitialisierung X (Startposition x=0):")
-        if x0 > 0:
-            for i in range(0,x0):
-                self.step_impulse("forward",.5,"motor1")
-                sleep(sec)
-                print(f"i motor1 vorwärts",i+1,x0)
-            self.x_old = x0
+    def start_pos(self,x0,y0,impulse):
+        print(f"\nInitialisierung: x = 0, y = 0 => {x0,y0}")
+        steps = list(pybresenham.line(0,0,x0,y0))
+        x_int = 0
+        y_int = 0
+        for x,y in steps:
             
-        elif x0 < 0:
-            for i in range(0,x0,-1):
-                self.step_impulse("backward",.5,"motor1")
-                sleep(sec)
-                print("i motor1 Rückwärts",i-1,x0)
-            self.x_old = x0
-        
-        else:
-            self.x_old = x0
-        print(f"\nEnde Initialisierung x = {self.x_old,self.y_old}\n")
+            dir1 = None
+            dir2 = None
             
-        print("Initialisierung Y (Startposition y=0):")
-        if y0 > 0:
-            for i in range(0,y0):
-                self.step_impulse("forward",.5,"motor2")
-                sleep(sec)
-                print("i motor2 vorwärts",i+1,y0)
-            self.y_old = y0
-            
-        elif y0 < 0:
-            for i in range(0,y0,-1):
-                self.step_impulse("backward",.5,"motor2")
-                sleep(sec)
-                print("i motor2 Rückwärts",i-1,y0)
-            self.y_old = y0
-        else:
-            self.y_old = y0
-            
-        print(f"\nEnde Initialisierung y = {self.x_old,self.y_old}\n")
-        
+            if x > x_int:
+                dir1 = "forward"
+            elif x < x_int:
+                dir1 = "backward"
+            if y > y_int:
+                dir2 = "forward"
+            elif y < y_int:
+                dir2 = "backward"
+                
+            if dir1 and dir2:
+                self.step_double_impulse(dir1,dir2,impulse)
+                x_int = x
+                y_int = y
+                print(f"Doppellauf:\t- motor1 {dir1}\tx={abs(x_int)} x0={x0}\n\t\t- motor2 {dir2}\ty={abs(y_int)} y0={y0}")
+            elif dir1:
+                self.step_impulse(dir1,impulse,"motor1")
+                x_int = x
+                print(f"Doppellauf:\t- motor1 {dir1}\tx={abs(x_int)} x0={x0}\n\t\t- motor2 aus \ty={y_int} y0={y0}")
+            elif dir2:
+                self.step_impulse(dir2,impulse,"motor2")
+                y_int = y
+                print(f"Doppellauf:\t- motor1 aus\tx={x_int} x0={x0}\n\t\t- motor2 {dir2}\ty={abs(y_int)} y0={y0}")
+                
+        print(f"\nEnde Initialisierung {x_int,y_int}\n")
+
     def step_impulse(self, direction:str,impulse: int,motor:str):
         '''Ein Step Impulse der mit der Zeitangabe gesteuert werden kann.'''
         if motor not in self.motors:
@@ -181,13 +180,13 @@ class MotorDriver():
         lgpio.tx_pwm(self.h,p1["en"],1000,0)
         lgpio.tx_pwm(self.h,p2["en"],1000,0)
         
-    def bresenham_step(self,x0:int,y0:int,x1:int,y1:int,sec):
+    def bresenham_step(self,x0:int,y0:int,x1:int,y1:int,impulse:int):
+        self.start_pos(x0,y0,impulse)
         steps = list(pybresenham.line(x0,y0,x1,y1))
         print(steps)
-        self.x_old = None
-        self.y_old = None
+        self.x_old = x0
+        self.y_old = y0
         s=0
-        self.start_pos(x0,y0,sec)
         for x,y in steps:
             
             dir1 = None
@@ -203,20 +202,20 @@ class MotorDriver():
                 dir2 = "backward"
                 
             if dir1 and dir2:
-                self.step_double_impulse(dir1,dir2,.5)
+                self.step_double_impulse(dir1,dir2,impulse)
                 self.x_old = x
                 self.y_old = y
                 print("Doppelschritt x/y ",dir1,dir2,self.x_old,self.y_old)
             elif dir1:
-                self.step_impulse(dir1,.5,"motor1")
+                self.step_impulse(dir1,impulse,"motor1")
                 self.x_old = x
                 print("Einzelschritt x ",dir1,self.x_old,self.y_old)
             elif dir2:
-                self.step_impulse(dir2,.5,"motor2")
+                self.step_impulse(dir2,impulse,"motor2")
                 self.y_old = y
                 print("Einzelschritt y ",dir2,self.x_old,self.y_old)        
 
-            print(f"\nNächster Gesamtschritt {x,y}\t{steps[s]}")
+            print(f"\nGesamtschritt real: {x,y} | {steps[s]} :Vergleichswert aus Funktion")
             s=s+1
             
         print("\nENDE")

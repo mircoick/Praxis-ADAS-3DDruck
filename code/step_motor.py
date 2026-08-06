@@ -78,8 +78,9 @@ class MotorDriver():
                 rows.append(row)
 
         self.df = pd.DataFrame(rows)
-        self.df.to_csv(filepath[:-5]+"csv")
-
+        #self.df.fillna(method='ffill')
+        #self.df.to_csv(filepath[:-5]+"csv")
+        
     def set_direction(self, direction: str, motor: str):
         """Setzt die Drehrichtung des wählbaren Motors."""
         if motor not in self.motors:
@@ -101,7 +102,6 @@ class MotorDriver():
     def stop(self):
         for motor_name, pins in self.motors.items():
             self.set_direction("stop",motor_name)
-            #print(motor_name)
         print("Stop")
             
     def pwm_test(self):
@@ -140,24 +140,20 @@ class MotorDriver():
                 self.step_double_impulse(dir1,dir2,impulse)
                 x_int = x
                 y_int = y
-                print(f"Doppellauf:\t- motor1 {dir1}\tx={abs(x_int)} x0={x0}\n\t\t- motor2 {dir2}\ty={abs(y_int)} y0={y0}")
+                #print(f"Doppellauf:\t- motor1 {dir1}\tx={abs(x_int)} x0={x0}\n\t\t- motor2 {dir2}\ty={abs(y_int)} y0={y0}")
             elif dir1:
                 self.step_impulse(dir1,impulse,"motor1")
                 x_int = x
-                print(f"Doppellauf:\t- motor1 {dir1}\tx={abs(x_int)} x0={x0}\n\t\t- motor2 aus \ty={y_int} y0={y0}")
+                #print(f"Doppellauf:\t- motor1 {dir1}\tx={abs(x_int)} x0={x0}\n\t\t- motor2 aus \ty={y_int} y0={y0}")
             elif dir2:
                 self.step_impulse(dir2,impulse,"motor2")
                 y_int = y
-                print(f"Doppellauf:\t- motor1 aus\tx={x_int} x0={x0}\n\t\t- motor2 {dir2}\ty={abs(y_int)} y0={y0}")
+                #print(f"Doppellauf:\t- motor1 aus\tx={x_int} x0={x0}\n\t\t- motor2 {dir2}\ty={abs(y_int)} y0={y0}")
                 
         print(f"\nEnde Initialisierung {x_int,y_int}\n")
 
     def stop_pos(self,x0,y0,impulse):
-        #print(f"\nEndbediungung: x = {self.x0_old}, y = {self.y0_old} => (0,0)")
-        #steps = list(pybresenham.line(self.x0_old,self.y0_old,0,0))
-        #x_int = self.x0_old
-        #y_int = self.y0_old
-        print(f"\nEndbediungung: x = {x0}, y = {y0} => (0,0)")
+        #print(f"\nEndbediungung: x = {x0}, y = {y0} => (0,0)")
         steps = list(pybresenham.line(x0,y0,0,0))
         x_int = x0
         y_int = y0
@@ -179,15 +175,15 @@ class MotorDriver():
                 self.step_double_impulse(dir1,dir2,impulse)
                 x_int = x
                 y_int = y
-                print(f"Doppellauf:\t- motor1 {dir1}\tx={abs(x_int)} x0={x0}\n\t\t- motor2 {dir2}\ty={abs(y_int)} y0={y0}")
+                #print(f"Doppellauf:\t- motor1 {dir1}\tx={abs(x_int)} x0={x0}\n\t\t- motor2 {dir2}\ty={abs(y_int)} y0={y0}")
             elif dir1:
                 self.step_impulse(dir1,impulse,"motor1")
                 x_int = x
-                print(f"Doppellauf:\t- motor1 {dir1}\tx={abs(x_int)} x0={x0}\n\t\t- motor2 aus \ty={y_int} y0={y0}")
+                #print(f"Doppellauf:\t- motor1 {dir1}\tx={abs(x_int)} x0={x0}\n\t\t- motor2 aus \ty={y_int} y0={y0}")
             elif dir2:
                 self.step_impulse(dir2,impulse,"motor2")
                 y_int = y
-                print(f"Doppellauf:\t- motor1 aus\tx={x_int} x0={x0}\n\t\t- motor2 {dir2}\ty={abs(y_int)} y0={y0}")
+                #print(f"Doppellauf:\t- motor1 aus\tx={x_int} x0={x0}\n\t\t- motor2 {dir2}\ty={abs(y_int)} y0={y0}")
                 
         print(f"\nEnde Endbediungung {x_int,y_int}\n")
 
@@ -222,7 +218,7 @@ class MotorDriver():
         lgpio.tx_pwm(self.h,p2["en"],1000,0)
         
     def bresenham_step(self,x0:int,y0:int,x1:int,y1:int,impulse:int):
-        self.start_pos(x0,y0,impulse)
+        #self.start_pos(x0,y0,impulse)
         steps = list(pybresenham.line(x0,y0,x1,y1))
         print(steps)
         self.x_old = x0
@@ -246,21 +242,42 @@ class MotorDriver():
                 self.step_double_impulse(dir1,dir2,impulse)
                 self.x_old = x
                 self.y_old = y
-                print("Doppelschritt x/y ",dir1,dir2,self.x_old,self.y_old)
+                #print("Doppelschritt x/y ",dir1,dir2,self.x_old,self.y_old)
             elif dir1:
                 self.step_impulse(dir1,impulse,"motor1")
                 self.x_old = x
-                print("Einzelschritt x ",dir1,self.x_old,self.y_old)
+                #print("Einzelschritt x ",dir1,self.x_old,self.y_old)
             elif dir2:
                 self.step_impulse(dir2,impulse,"motor2")
                 self.y_old = y
-                print("Einzelschritt y ",dir2,self.x_old,self.y_old)        
+                #print("Einzelschritt y ",dir2,self.x_old,self.y_old)        
 
-            print(f"\nGesamtschritt real: {x,y} | {steps[s]} :Vergleichswert aus Funktion")
+            #print(f"\nGesamtschritt real: {x,y} | {steps[s]} :Vergleichswert aus Funktion")
             s=s+1
             
-        print("\nENDE")
+        #print("\nENDE")
         
-    #def gcode_step(self):
-        
+    def gcode_step(self, filepath: str, impulse: int = 1000):
+            """Liest eine G-Code-Datei ein und führt die Bewegungen Schritt für Schritt aus."""
+            self.read_gcode(filepath)
+            
+            coords_df = self.df[["X", "Y"]]*1e3
+            coords_df = coords_df.fillna(value=0,limit=1).ffill()
+            coords_df = coords_df.ffill()
+            print(coords_df)
+
+            if coords_df.empty:
+                print("Keine gültigen X/Y-Koordinaten im G-Code gefunden.")
+                return
+
+            points = [(int(row["X"]), int(row["Y"])) for _, row in coords_df.iterrows()]
+            current_x, current_y = 0, 0
+
+            for next_x, next_y in points:
+                print(f"\n--- Fahre von ({current_x}, {current_y}) nach ({next_x}, {next_y}) ---")
+                self.bresenham_step(current_x, current_y, next_x, next_y, impulse)
+                current_x, current_y = next_x, next_y
+
+            self.stop_pos(current_x, current_y, impulse)
+            
         

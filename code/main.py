@@ -25,4 +25,7 @@ for _ in range(4):
 
 cam.read_gcode("../data/test.gcode")
 
+cam.gcode_step("../data/test.gcode",1)
+#cam.gcode_step("../data/overhang test.gcode",1)
+
 cam.stop()

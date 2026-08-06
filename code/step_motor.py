@@ -63,7 +63,7 @@ class MotorDriver():
 
     def read_gcode(self, filepath:str):
         rows = []
-        with open("data/overhang test.gcode") as f:
+        with open(filepath) as f:
             for text in f:
                 line = Line(text)
 
@@ -78,6 +78,7 @@ class MotorDriver():
                 rows.append(row)
 
         self.df = pd.DataFrame(rows)
+        self.df.to_csv(filepath[:-5]+"csv")
 
     def set_direction(self, direction: str, motor: str):
         """Setzt die Drehrichtung des wählbaren Motors."""
@@ -151,6 +152,46 @@ class MotorDriver():
                 
         print(f"\nEnde Initialisierung {x_int,y_int}\n")
 
+    def stop_pos(self,x0,y0,impulse):
+        #print(f"\nEndbediungung: x = {self.x0_old}, y = {self.y0_old} => (0,0)")
+        #steps = list(pybresenham.line(self.x0_old,self.y0_old,0,0))
+        #x_int = self.x0_old
+        #y_int = self.y0_old
+        print(f"\nEndbediungung: x = {x0}, y = {y0} => (0,0)")
+        steps = list(pybresenham.line(x0,y0,0,0))
+        x_int = x0
+        y_int = y0
+        for x,y in steps:
+            
+            dir1 = None
+            dir2 = None
+            
+            if x > x_int:
+                dir1 = "forward"
+            elif x < x_int:
+                dir1 = "backward"
+            if y > y_int:
+                dir2 = "forward"
+            elif y < y_int:
+                dir2 = "backward"
+                
+            if dir1 and dir2:
+                self.step_double_impulse(dir1,dir2,impulse)
+                x_int = x
+                y_int = y
+                print(f"Doppellauf:\t- motor1 {dir1}\tx={abs(x_int)} x0={x0}\n\t\t- motor2 {dir2}\ty={abs(y_int)} y0={y0}")
+            elif dir1:
+                self.step_impulse(dir1,impulse,"motor1")
+                x_int = x
+                print(f"Doppellauf:\t- motor1 {dir1}\tx={abs(x_int)} x0={x0}\n\t\t- motor2 aus \ty={y_int} y0={y0}")
+            elif dir2:
+                self.step_impulse(dir2,impulse,"motor2")
+                y_int = y
+                print(f"Doppellauf:\t- motor1 aus\tx={x_int} x0={x0}\n\t\t- motor2 {dir2}\ty={abs(y_int)} y0={y0}")
+                
+        print(f"\nEnde Endbediungung {x_int,y_int}\n")
+
+
     def step_impulse(self, direction:str,impulse: int,motor:str):
         '''Ein Step Impulse der mit der Zeitangabe gesteuert werden kann.'''
         if motor not in self.motors:
@@ -219,5 +260,7 @@ class MotorDriver():
             s=s+1
             
         print("\nENDE")
+        
+    #def gcode_step(self):
         
         

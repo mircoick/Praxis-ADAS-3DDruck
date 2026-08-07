@@ -22,7 +22,7 @@ number-sections: true
 # Beschreibung des Unternehmens
 Die Airbus DS Airborne Solutions GmbH (ADAS) ist ein mit Hauptsitz in Bremen ansässiges Tochterunternehmen der Airbus Defence and Space (DS). Obwohl die ADAS zur Airbus Group gehört, agiert sie als eigenständiges Unternehmen. Die historischen Wurzeln reichen bis zur Gründung als Focke-Wulf im Jahr 1924 zurück. Nach mehreren Umstrukturierungen und Firmenwechseln, unter anderem als Teil der Atlas Elektronik GmbH, der Rheinmetall Defence Electronics GmbH und der Cassidian Airborne Solutions GmbH, wurde das Unternehmen im Jahr 2015 final von Airbus übernommen. Neben dem Standort in Bremen gibt es weltweit noch kleinere Unterstandorte unter anderem auf Malta, Kreta, in Israel und auch Jagel in Deutschland. Mit rund 300 Mitarbeitenden (Stand 2025) hat sich die ADAS gut in der Industrie etabliert. Im Gegensatz zur Muttergesellschaft, die am Bremer Flughafen ansässig ist, befindet sich der Standort der ADAS in der Bremer Neustadt.
 
-![ADAS Komplex [1](../doku/Company_Presentation_ADAS.pdf)](pics/site.jpg){#fig-site width="100%"}
+![ADAS Komplex [Presentation](https://github.com/mircoick/Praxis-ADAS-3DDruck/blob/main/doku/Company_Presentation_ADAS.pdf)](pics/site.jpg){#fig-site width="100%"}
 
 Die Kernkompetenzen der ADAS umfassen die Entwicklung, Herstellung und Instandhaltung von unbemannten Drohnensystemen sowie von Frachtladesystemen (Cargo Loading Systems, CLS) für sämtliche zivile und militärische Airbus-Flugzeuge.
 

@@ -33,6 +33,7 @@ format:
       - init/before-body.tex
     include-in-header:
       text: |
+        \usepackage{float}
         \usepackage{listings}
         \usepackage{booktabs}
         \usepackage{scrlayer-scrpage}

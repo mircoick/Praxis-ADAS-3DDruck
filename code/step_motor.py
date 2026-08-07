@@ -254,8 +254,6 @@ class MotorDriver():
 
             #print(f"\nGesamtschritt real: {x,y} | {steps[s]} :Vergleichswert aus Funktion")
             s=s+1
-            
-        #print("\nENDE")
         
     def gcode_step(self, filepath: str, impulse: int = 1000):
             """Liest eine G-Code-Datei ein und führt die Bewegungen Schritt für Schritt aus."""
@@ -279,5 +277,3 @@ class MotorDriver():
                 current_x, current_y = next_x, next_y
 
             self.stop_pos(current_x, current_y, impulse)
-            
-        

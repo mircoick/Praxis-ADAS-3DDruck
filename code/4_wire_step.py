@@ -1,42 +1,52 @@
 import lgpio
-from time import sleep
+from time import *
 
-IN1, IN2, IN3, IN4 = 17, 27, 23, 24
-EN = 4
+def motor(engine,NC, direction="left", steps:int=1):
+    step_sequence = [
+                [1, 1, 0, 0],
+                [0, 1, 1, 0],
+                [0, 0, 1, 1],
+                [1, 0, 0, 1]
+            ]
+    if direction == "right":
+        step_sequence = step_sequence[::-1]
+        if steps > 255:
+            print("To many steps!")
+            return
+    print(f"Driving {direction}")
+    for _ in range(steps):
+        #print(_+1)
+        for step in step_sequence:
+            for pin, state in zip(engine, step):
+                if lgpio.gpio_read(h, NC) == 0 and direction is not "right":
+                    print("Endposition!")
+                    return
+                lgpio.gpio_write(h, pin, state)        
+            sleep(.005)
 
-step_sequence = [
-    [1, 0, 0, 0],  # IN1
-    [0, 0, 1, 0],  # IN3
-    [0, 1, 0, 0],  # IN2
-    [0, 0, 0, 1]   # IN4
-]
 
-# Die 4 Polungskombinationen
-combinations = {
-    "Variante A (Standard)": [17, 27, 23, 24],
-    "Variante B (Spule A gedreht)": [27, 17, 23, 24],
-    "Variante C (Spule B gedreht)": [17, 27, 24, 23],
-    "Variante D (Beide gedreht)": [27, 17, 24, 23]
-}
+
+# GPIO-Pins für die Spulen (A+, B+, A-, B-)
+engine = [4, 27, 17, 22]
+
+# Pins des Endschalters
+NO = 24
+NC = 25
 
 h = lgpio.gpiochip_open(0)
 
-for pin in [17, 27, 23, 24, EN]:
+for pin in engine + [NO]:
     lgpio.gpio_claim_output(h, pin)
-lgpio.gpio_write(h, EN, 1)
 
 try:
-    for name, engine in combinations.items():
-        print(f"\nTeste: {name}")
-        for _ in range(20):
-            for step in step_sequence:
-                for i in range(4):
-                    lgpio.gpio_write(h, engine[i], step[i])
-                sleep(0.03)
-        sleep(0.5)
+    print("Starte Test!\n")
+    start_time = time()
+    lgpio.gpio_write(h, NO, 1)
+    motor(engine,NC,"right",20)
+
 
 finally:
-    for pin in [17, 27, 23, 24, EN]:
+    for pin in engine + [NO]:
         lgpio.gpio_write(h, pin, 0)
     lgpio.gpiochip_close(h)
-    print("\nTest beendet.")
+    print("\nTest ended.")

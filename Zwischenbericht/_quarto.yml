@@ -1,5 +1,5 @@
 project:
-  type: manuscript
+  type: default
 
 lang: de
 
@@ -9,6 +9,7 @@ execute:
 format:
   html:
     toc: true
+    toc-location: left
     comments:
       hypothesis: true
     code-line-numbers: true
@@ -45,3 +46,4 @@ format:
         \ihead{\includegraphics[scale=0.3]{Logo_klein.pdf}}
         \ohead{\includegraphics[scale=0.01]{Airbus.png}}
         \cfoot{\pagemark}
+  gfm: default

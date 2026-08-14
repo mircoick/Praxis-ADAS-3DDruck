@@ -1,5 +1,6 @@
 project:
   type: default
+  output-dir: .output
 
 lang: de
 
@@ -28,7 +29,7 @@ format:
     lof: true
     lot: true
     linkcolor: black
-    keep-tex: true
+    keep-tex: false
     toccolor: black
     template-partials:
       - init/before-body.tex

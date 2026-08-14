@@ -1,0 +1,34 @@
+---
+title: "Praxissemester"
+subtitle: "Zwischenbericht"
+author:
+  - name: "Mirco Ick"
+    email: "mick001@stud.hs-bremen.de"
+    affiliations:
+      - name: "Matrikel-Nr.: 531255"
+      - name: "Hochschule Bremen (HSB)"
+abstract: |
+plain-language-summary: |
+date: last-modified
+bibliography: references.bib
+citation:
+  container-title: Zwischenbericht
+number-sections: true
+---
+
+{{< include init/header.html >}}
+\newpage
+{{< include contents/company-overview.qmd >}}
+\newpage
+{{< include contents/department-and-workspace.qmd >}}
+\newpage
+{{< include contents/objectives.qmd >}}
+\newpage
+{{< include contents/preliminary-results.qmd >}}
+\newpage
+
+# Literaturverzeichnis
+\markboth{Literaturverzeichnis}{Literaturverzeichnis}
+
+::: {#refs}
+:::

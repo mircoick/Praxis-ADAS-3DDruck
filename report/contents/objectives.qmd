@@ -1,0 +1,12 @@
+# Aufgabenstellung
+In dem Praktikum soll eine Machbarkeitsstudie zur Weiterentwicklung eines Industriedruckers erstellt werden. Hierbei handelt es sich um einen Industry F421 der Firma 3DGence. 
+
+::: {#fig-3dgence layout-ncol=2}
+![](pics/3dgence-industry-f421-seitlich2.png){#fig-ansicht1}
+
+![](pics/3dgence-industry-f421-seitlich.png){#fig-ansicht2}
+
+3DGence Industry F421 [@3dgence_f421]
+:::
+
+Der aktuelle Drucker weißt erhebliche softwareseitige Probleme auf, somit entstehen sämtliche Fehlermeldungen beim durchführen eines Drucks. Das Ziel dieses Praktukums ist es diesen Drucker zu analysieren und zu prüfen ob es möglich sei, durch Software- oder sogar Hardware-, Anpassung eine Verbesserung der momentanen Lage zu erreichen. Dazu wird sich als erstes mit allgemeinen 3D-Druck Technologien auseinander gesetzt und im Anschluss erste Software und Hardware seitige Tests durchgeführt. Somit wird mit Hilfe eines Raspberry Pi 5 zuerst versucht einzelne Bauteile eines 3D-Druckers, z.B. die Step-Motoren, anzusteuern. Nach erfolgreichen ansteuern der Refernzbauteile wird auf das original System gewechselt. Somit kann eine fundierte Analyse der Machbarkeit erstellt werden und in Nachfolgeprojekten die einzelnen Komponenten zusammengesetzt und der Drucker fertiggestellt werden.

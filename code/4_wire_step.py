@@ -15,7 +15,6 @@ def motor(engine,NC, direction="left", steps:int=1):
             return
     print(f"Driving {direction}")
     for _ in range(steps):
-        #print(_+1)
         for step in step_sequence:
             for pin, state in zip(engine, step):
                 if lgpio.gpio_read(h, NC) == 0 and direction is not "right":

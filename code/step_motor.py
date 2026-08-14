@@ -51,11 +51,14 @@ class MotorDriver():
             }
         }
 
+        # Einlesen der Outputs
         for motor_name, pins in self.motors.items():
             lgpio.gpio_claim_output(self.h, pins["en"])
             lgpio.gpio_claim_output(self.h, pins["in1"])
             lgpio.gpio_claim_output(self.h, pins["in2"])
-            
+
+
+        # Zurücksetzen der Motorwerte  
         for motor_name, pins in self.motors.items():
             lgpio.gpio_write(self.h, pins["en"],0)
             lgpio.gpio_write(self.h, pins["in1"],0)
@@ -78,8 +81,6 @@ class MotorDriver():
                 rows.append(row)
 
         self.df = pd.DataFrame(rows)
-        #self.df.fillna(method='ffill')
-        #self.df.to_csv(filepath[:-5]+"csv")
         
     def set_direction(self, direction: str, motor: str):
         """Setzt die Drehrichtung des wählbaren Motors."""
@@ -153,7 +154,6 @@ class MotorDriver():
         print(f"\nEnde Initialisierung {x_int,y_int}\n")
 
     def stop_pos(self,x0,y0,impulse):
-        #print(f"\nEndbediungung: x = {x0}, y = {y0} => (0,0)")
         steps = list(pybresenham.line(x0,y0,0,0))
         x_int = x0
         y_int = y0

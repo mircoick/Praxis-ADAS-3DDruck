@@ -1,0 +1,25 @@
+---
+title: "Praxissemester"
+subtitle: "Abschlussbericht"
+author:
+  - name: "Mirco Ick"
+    email: "mick001@stud.hs-bremen.de"
+    affiliations:
+      - name: "Matrikel-Nr.: 531255"
+      - name: "Hochschule Bremen (HSB)"
+abstract: |
+plain-language-summary: |
+date: last-modified
+bibliography: references.bib
+citation:
+  container-title: Abschlussbericht
+number-sections: true
+---
+
+{{< include init/header.html >}}
+\newpage
+# Literaturverzeichnis
+\markboth{Literaturverzeichnis}{Literaturverzeichnis}
+
+::: {#refs}
+:::

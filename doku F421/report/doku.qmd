@@ -1,0 +1,116 @@
+---
+title: "Dokumentation F421"
+author:
+  - name: "Mirco Ick"
+    email: "mick001@stud.hs-bremen.de"
+    affiliations:
+      - name: "Matrikel-Nr.: 531255"
+      - name: "Hochschule Bremen (HSB)"
+date: last-modified
+bibliography: references.bib
+number-sections: true
+---
+
+\newpage 
+
+# Pinbelegungen am Heatend und Netzteil
+
+```{=latex}
+\begin{figure}[htbp]
+\centering
+
+% --- REIHE 1 ---
+% 1. D-SUB 26 Stecker
+\begin{minipage}{0.48\textwidth}
+  \centering
+  \begin{tikzpicture}[scale=0.45, rotate=180, every node/.style={transform shape}]
+    % Gehäuse & Kragen
+    \draw[fill=gray!25, draw=gray!80, thick, rounded corners=8pt] (-6.0, -2.2) rectangle (6.0, 2.2);
+    \foreach \x in {-5.0, 5.0} {
+        \draw[fill=white, draw=gray!80, thick] (\x, 0) circle (0.45);
+        \draw[fill=gray!40, draw=gray!90] (\x, 0) circle (0.25);
+        \draw[fill=white, draw=gray!80] (\x, 0) circle (0.15);
+    }
+    \draw[fill=gray!10, draw=black!80, line width=1.5pt, rounded corners=3pt] (-4.2, 1.5) -- (4.2, 1.5) -- (3.7, -1.5) -- (-3.7, -1.5) -- cycle;
+    \draw[fill=black!85, draw=black, rounded corners=2pt] (-4.0, 1.3) -- (4.0, 1.3) -- (3.5, -1.3) -- (-3.5, -1.3) -- cycle;
+
+    % Pins
+    \foreach \x/\lbl in {-3.2/C9, -2.4/C8, -1.6/C7, -0.8/C6, 0.0/C5, 0.8/C4, 1.6/C3, 2.4/C2, 3.2/C1} {
+        \draw[fill=yellow!70!orange, draw=orange!90!black, thick] (\x, 0.7) circle (0.18);
+        \node[rotate=180, text=white, font=\sffamily\bfseries\tiny] at (\x, 0.7) {\lbl};
+    }
+    \foreach \x/\lbl in {-3.2/B9, -2.4/B8, -1.6/B7, -0.8/B6, 0.0/B5, 0.8/B4, 1.6/B3, 2.4/B2, 3.2/B1} {
+        \draw[fill=yellow!70!orange, draw=orange!90!black, thick] (\x, 0.0) circle (0.18);
+        \node[rotate=180, text=white, font=\sffamily\bfseries\tiny] at (\x, 0.0) {\lbl};
+    }
+    \foreach \x/\lbl in {-2.8/A8, -2.0/A7, -1.2/A6, -0.4/A5, 0.4/A4, 1.2/A3, 2.0/A2, 2.8/A1} {
+        \draw[fill=yellow!70!orange, draw=orange!90!black, thick] (\x, -0.7) circle (0.18);
+        \node[rotate=180, text=white, font=\sffamily\bfseries\tiny] at (\x, -0.7) {\lbl};
+    }
+  \end{tikzpicture}
+  \caption{D-SUB 26 Stecker}
+  \label{fig-dsub26}
+\end{minipage}%
+\hfill
+% 2. ATX 20-Pin Stecker
+\begin{minipage}{0.48\textwidth}
+  \centering
+  \begin{tikzpicture}[scale=0.45, every node/.style={transform shape}]
+    \draw[fill=gray!15, draw=black!80, thick, rounded corners=4pt] (-5.5, -1.3) rectangle (5.5, 1.3);
+    \draw[fill=gray!30, draw=black!80, thick, rounded corners=1pt] (-1.2, 1.3) -- (-1.2, 1.6) -- (1.2, 1.6) -- (1.2, 1.3) -- cycle;
+
+    \foreach \x/\lbl in {-4.5/C9, -3.5/B9, -2.5/B2, -1.5/B3, -0.5/B7, 0.5/B8, 1.5/A1, 2.5/A2, 3.5/A3, 4.5/A4} {
+        \draw[fill=white, draw=gray!70] (\x-0.4, 0.1) rectangle (\x+0.4, 0.9);
+        \draw[fill=yellow!70!orange, draw=orange!90!black, thick] (\x, 0.5) circle (0.18);
+        \node[text=black, font=\sffamily\bfseries\tiny] at (\x, 0.5) {\lbl};
+    }
+    \foreach \x/\lbl in {-4.5/C1, -3.5/B1, -2.5/C2, -1.5/C3, -0.5/C4, 0.5/B4, 1.5/C6, 2.5/B6, 3.5/C7, 4.5/C8} {
+        \draw[fill=white, draw=gray!70] (\x-0.4, -0.9) rectangle (\x+0.4, -0.1);
+        \draw[fill=yellow!70!orange, draw=orange!90!black, thick] (\x, -0.5) circle (0.18);
+        \node[text=black, font=\sffamily\bfseries\tiny] at (\x, -0.5) {\lbl};
+    }
+  \end{tikzpicture}
+  \caption{ATX 20-Pin Stecker}
+  \label{fig-atx20}
+\end{minipage}
+
+\vspace{0.8cm}
+
+% --- REIHE 2 ---
+% 3. 2-Pin Stecker
+\begin{minipage}{0.48\textwidth}
+  \centering
+  \begin{tikzpicture}[scale=0.45, every node/.style={transform shape}]
+    \draw[fill=gray!15, draw=black!80, thick, rounded corners=4pt] (-1.5, 0) rectangle (1.5, 1.3);
+    \draw[fill=gray!30, draw=black!80, thick, rounded corners=1pt] (-0.6, 1.3) -- (-0.6, 1.6) -- (0.6, 1.6) -- (0.6, 1.3) -- cycle;
+
+    % Obere Pin-Reihe (2 Pins)
+    \foreach \x/\lbl in {-0.5/B5, 0.5/C5} {
+        \draw[fill=white, draw=gray!70] (\x-0.4, 0.2) rectangle (\x+0.4, 1);
+        \draw[fill=yellow!70!orange, draw=orange!90!black, thick] (\x, 0.6) circle (0.18);
+        \node[text=black, font=\sffamily\bfseries\tiny] at (\x, 0.6) {\lbl};
+    }
+  \end{tikzpicture}
+  \caption{2-Pin Stecker}
+  \label{fig-2pin}
+\end{minipage}%
+\hfill
+% 4. 4-Pin Stecker (2x2 ATX 12V)
+\begin{minipage}{0.48\textwidth}
+  \centering
+  \begin{tikzpicture}[scale=0.45, every node/.style={transform shape}]
+    \draw[fill=gray!15, draw=black!80, thick, rounded corners=4pt] (-2.5, 0) rectangle (2.5, 1.3);
+    \draw[fill=gray!30, draw=black!80, thick, rounded corners=1pt] (-0.6, 1.3) -- (-0.6, 1.6) -- (0.6, 1.6) -- (0.6, 1.3) -- cycle;
+
+    % Obere Pin-Reihe (2 Pins)
+    \foreach \x/\lbl in {-1.5/P1, -0.5/P2, 0.5/P3,1.5/P4} {
+        \draw[fill=white, draw=gray!70] (\x-0.4, 0.2) rectangle (\x+0.4, 1);
+        \draw[fill=yellow!70!orange, draw=orange!90!black, thick] (\x, 0.6) circle (0.18);
+        \node[text=black, font=\sffamily\bfseries\tiny] at (\x, 0.6) {\lbl};
+    }
+  \end{tikzpicture}
+  \caption{4-Pin Stecker (2x2)}
+  \label{fig-4pin}
+\end{minipage}
+
+\end{figure}

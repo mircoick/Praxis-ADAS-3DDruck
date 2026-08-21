@@ -1,5 +1,6 @@
 # Aufgabenstellung
-In dem Praktikum soll eine Machbarkeitsstudie zur Weiterentwicklung eines Industriedruckers erstellt werden. Hierbei handelt es sich um einen Industry F421 der Firma 3DGence. 
+
+Gegenstand dieses Praktikums ist die Erstellung einer Machbarkeitsstudie zur Weiterentwicklung und Optimierung des Industriedruckers 3DGence Industry F421 (siehe @fig-ansicht1 und @fig-ansicht2).
 
 ::: {#fig-3dgence layout-ncol=2}
 ![](pics/3dgence-industry-f421-seitlich2.png){#fig-ansicht1}
@@ -9,4 +10,12 @@ In dem Praktikum soll eine Machbarkeitsstudie zur Weiterentwicklung eines Indust
 3DGence Industry F421 [@3dgence_f421]
 :::
 
-Der aktuelle Drucker weißt erhebliche softwareseitige Probleme auf, somit entstehen sämtliche Fehlermeldungen beim durchführen eines Drucks. Das Ziel dieses Praktukums ist es diesen Drucker zu analysieren und zu prüfen ob es möglich sei, durch Software- oder sogar Hardware-, Anpassung eine Verbesserung der momentanen Lage zu erreichen. Dazu wird sich als erstes mit allgemeinen 3D-Druck Technologien auseinander gesetzt und im Anschluss erste Software und Hardware seitige Tests durchgeführt. Somit wird mit Hilfe eines Raspberry Pi 5 zuerst versucht einzelne Bauteile eines 3D-Druckers, z.B. die Step-Motoren, anzusteuern. Nach erfolgreichen ansteuern der Refernzbauteile wird auf das original System gewechselt. Somit kann eine fundierte Analyse der Machbarkeit erstellt werden und in Nachfolgeprojekten die einzelnen Komponenten zusammengesetzt und der Drucker fertiggestellt werden.
+Das aktuelle System weist erhebliche softwareseitige Probleme auf, die während des Druckens zu wiederholten Fehlermeldungen führen. Das Ziel des Praktikums ist es, den Drucker genauer zu analysieren und zu prüfen, ob sich die Druckqualität und Zuverlässigkeit durch gezielte Software- oder Hardwareanpassungen verbessern lassen. Diese Machbarkeitsstudie dient als direkte Grundlage und Vorbereitung für eine spätere Bachelorarbeit.
+
+Zu Beginn werden allgemeine Grundlagen des 3D-Drucks erarbeitet und das bestehende System untersucht. Dabei sollen Bauteile identifiziert werden, die sich eventuell austauschen lassen, um die spätere Ansteuerung zu erleichtern. Im nächsten Schritt werden isolierte Versuche an einzelnen Komponenten durchgeführt. So wird beispielsweise versucht, einzelne Bauteile wie die Schrittmotoren oder die Temperaturmesser, z.B. mit einem PT100 Glied, zuerst separat anzusprechen. 
+
+Für die Steuerung stehen verschiedene Hardware-Lösungen zur Auswahl, wie ein Raspberry Pi 5 in Verbindung mit einem oder zwei Hardware Klipperboards oder auch ein FPGA-Board, da dieses meist zwei Prozessorkerne besitzt und somit Raspberry Pi und Klipperboard als eine Lösung bietet. Nach der erfolgreichen Ansteuerung der einzelnen Testbauteile wird versucht, die neue Steuerung an das Originalsystem des Druckers anzuschließen. Eine Darstellung des jetzigen internen Aufbaus ist der @fig-mainboard zu entnehmen.
+
+![3DGence Industry F421 Hardware Platinen](pics/platine_gesamt.jpeg){#fig-mainboard}
+
+Das Praktikum wird dann mit einer zusammenfassenden Machbarkeitsanalyse abgeschlossen. Diese liefert die notwendige Grundlage der Vorgehensweise sowie Verwendung der Bauelemente, um in der anschließenden Bachelorarbeit die einzelnen Komponenten zusammenzusetzen und den Drucker wieder voll funktionsfähig zu machen.

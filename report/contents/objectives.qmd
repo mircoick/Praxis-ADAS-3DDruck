@@ -1,5 +1,5 @@
 # Aufgabenstellung
-Gegenstand dieses Praktikums ist die Erstellung einer Machbarkeitsstudie zur Weiterentwicklung und Optimierung des Industriedruckers 3DGence Industry F421 (siehe @fig-ansicht1 und @fig-ansicht2).
+Gegenstand dieses Praktikums ist die Erstellung einer Machbarkeitsstudie zur Weiterentwicklung und Verbesserung des Industriedruckers 3DGence Industry F421 (siehe @fig-ansicht1 und @fig-ansicht2).
 
 ::: {#fig-3dgence layout-ncol=2}
 ![](pics/3dgence-industry-f421-seitlich2.png){#fig-ansicht1}
@@ -13,7 +13,7 @@ Das aktuelle System weist erhebliche softwareseitige Probleme auf, die während 
 
 Zu Beginn werden allgemeine Grundlagen des 3D-Drucks erarbeitet und das bestehende System untersucht. Dabei sollen Bauteile identifiziert werden, die sich eventuell austauschen lassen, um die spätere Ansteuerung zu erleichtern. Im nächsten Schritt werden isolierte Versuche an einzelnen Komponenten durchgeführt. So wird beispielsweise versucht, einzelne Bauteile wie die Schrittmotoren oder die Temperaturmesser, z.B. ein PT100 Glied, zuerst separat anzusprechen. 
 
-Für die Steuerung stehen verschiedene Hardware-Lösungen zur Auswahl, wie ein Raspberry Pi 5 in Verbindung mit einem oder zwei Hardware Klipperboards oder auch ein FPGA-Board, da dieses meist zwei Prozessorkerne besitzt und somit Raspberry Pi und Klipperboard als eine Lösung bietet. Nach der erfolgreichen Ansteuerung der einzelnen Testbauteile wird versucht, die neue Steuerung an das Originalsystem des Druckers anzuschließen. Eine Darstellung des jetzigen internen Aufbaus ist der @fig-mainboard zu entnehmen.
+Für die Steuerung stehen verschiedene Hardware Lösungen zur Auswahl. Eine Möglichkeit besteht in der Kombination aus einem Einplatinencomputer wie dem Raspberry Pi 5 für die softwareseitige Steuerung und einem Klipper-Board, einem Mikrocontroller Board für die präzise Echtzeitansteuerung von Motoren und Heizlementen. Alternativ bietet ein FPGA Board, mit zwei Prozessorkernen, eine gute Gesamtlösung, somit kann es sowohl die Aufgaben des Raspberry Pi als auch die des Klipper Boards auf einer einzigen Platine verbinden, stellt bei der Umsetzung jedoch erheblichen Mehraufwand dar. Nach der erfolgreichen Ansteuerung der einzelnen Testkomponenten wird die neue Steuerung an das Originalsystem des Druckers angeschlossen. Der aktuelle interne Aufbau ist in Abbildung @fig-mainboard dargestellt.
 
 ![3DGence Industry F421 Hardware Platinen](pics/platine_gesamt.jpeg){#fig-mainboard width="90%"}
 

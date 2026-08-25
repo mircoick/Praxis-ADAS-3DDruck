@@ -12,7 +12,7 @@ plain-language-summary: |
 date: last-modified
 bibliography: references.bib
 citation:
-  container-title: Abschlussbericht
+  container-title: Zwischenbericht
 number-sections: true
 ---
 

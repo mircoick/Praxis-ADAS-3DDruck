@@ -24,6 +24,11 @@ format:
   pdf:
     documentclass: scrartcl
     classoption: ["titlepage=true", "listof=totoc"]
+    geometry:
+      - top=30mm
+      - bottom=30mm
+      - left=25mm
+      - right=25mm
     listings: true
     toc: true
     lof: true

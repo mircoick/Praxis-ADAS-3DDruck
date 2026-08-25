@@ -1,6 +1,6 @@
 ---
 title: "Praxissemester"
-subtitle: "Zwischenbericht"
+subtitle: "Abschlussbericht"
 author:
   - name: "Mirco Ick"
     email: "mick001@stud.hs-bremen.de"
@@ -12,7 +12,7 @@ plain-language-summary: |
 date: last-modified
 bibliography: references.bib
 citation:
-  container-title: Zwischenbericht
+  container-title: Abschlussbericht
 number-sections: true
 ---
 

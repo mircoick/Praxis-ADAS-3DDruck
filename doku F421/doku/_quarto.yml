@@ -28,6 +28,7 @@ format:
     include-in-header:
       text: |
         \usepackage{float}
+        \usepackage{tikz}
         \usepackage{listings}
         \usepackage{booktabs}
         \usepackage{scrlayer-scrpage}
@@ -35,7 +36,7 @@ format:
         \clearpairofpagestyles
         \KOMAoptions{headsepline=0.5pt}
         \graphicspath{{./}{init/}}
-        \chead{\fontsize{14}{12}\selectfont{Praxissemester Zwischenbericht}}
+        \chead{\fontsize{14}{12}\selectfont{Doku F421}}
         \ihead{\includegraphics[scale=0.3]{Logo_klein.pdf}}
         \ohead{\includegraphics[scale=0.01]{Airbus.png}}
         \cfoot{\pagemark}

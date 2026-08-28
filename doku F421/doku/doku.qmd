@@ -113,6 +113,113 @@ number-sections: true
 \end{figure}
 ```
 
+**Servo:**
+
+- SW: A8
+- RT: A6/ B2/ B7
+- GB: A5
+
+**Fan Extruder Rechts:**
+
+- Plus: A6
+- Minus: B2
+
+**Fan Extruder Links:**
+
+- Plus: A6
+- Minus: B7
+
+**Toolhead Rechts:**
+
+1. C2/ C7
+2. A7/ B1/ B6/ C1/ C6
+3. A7/ B1/ B6/ C1/ C6
+4. A7/ B1/ B6/ C1/ C6
+5. C3
+6. B4/ C4
+7. B4/ C4
+8. B4/ C4
+
+**Toolhead Links:**
+
+1. C2/ C7
+2. A7/ B1/ B6/ C1/ C6
+3. A7/ B1/ B6/ C1/ C6
+4. A7/ B1/ B6/ C1/ C6
+5. C8
+6. A8/ B9 /C9
+7. A8/ B9 /C9
+8. A8/ B9 /C9
+
+\newpage
+
+## Bauteile -> Platine
+
+**ATX 20-Pin**
+
+|Pin Mainboard|Pin SUB|Pin SUB|Funktion|
+|-|:-:|:-:|-|
+|  1|  1 | C9| Tool1 (6/7/8)|
+|  2| 10 | B9| Tool1 (6/7/8)|
+|  3| 17 | B2| Servo RT|
+||||Fan-T0-HV (SW)|
+|  4| 16 | B3| |
+|  5| 12 | B7| Servo RT|
+||||Fan-T1-HV (SW)|
+|  6| 11 | B8| |
+|  7| 26 | A1| |
+|  8| 25 | A2| |
+|  9| 24 | A3| |
+| 10| 23 | A4| |
+| 11|  9 | C1| Tool0 (2/3/4)|
+||||Tool1 (2/3/4)|
+| 12| 18 | B1| Tool0 (2/3/4)|
+||||Tool1 (2/3/4)|
+| 13|  8 | C2| Tool0 (1)|
+||||Tool1 (1)|
+| 14|  7 | C3| Tool0 (5)|
+| 15|  6 | C4| Tool0 (6/7/8)|
+| 16| 15 | B4| Tool0 (6/7/8)|
+| 17|  4 | C6| Tool0 (2/3/4)|
+||||Tool1 (2/3/4)|
+| 18| 13 | B6| Tool0 (2/3/4)|
+||||Tool1 (2/3/4)|
+| 19|  3 | C7| Tool0 (1)|
+||||Tool1 (1)|
+| 20|  2 | C8| Tool1 (5)|
+
+
+**ATX 2-Pin**
+
+|Pin Mainboard|Pin SUB|Pin SUB|Funktion|
+|-|:-:|:-:|-|
+|  1| 14 | B5| |
+|  2|  5 | C5| |
+
+**ATX 4-Pin**
+
+|Pin Mainboard|Pin SUB|Funktion|
+|-|:-:|:-:|-|
+|  1| ?| | |
+|  2| ?| | |
+|  3| ?| | |
+|  4| ?| | |
+
+**Fehlend**
+
+|Pin Mainboard|Pin SUB|Funktion|
+|-|-|-|
+| 19| A8| Servo (SW)|
+|||Tool1 (6/7/8)|
+| 20| A7| Tool0 (2/3/4)|
+|||Tool1 (2/3/4)|
+| 21| A6| Servo (RT)|
+|||Fan-T0-HV (RT)|
+|||Fan-T1-HV (RT)|
+| 22| A5| Servo (GB)|
+
+\newpage
+
 # Identifizierte Bauteile
 
 |Name|Funktion|
@@ -153,3 +260,64 @@ number-sections: true
 |Vakuum Pumpe Stannung|FAN | HVO/J4|Power Platine|Stecker|
 |-|-|-|-|-|
 | Not AUS| SK1| |Schütz unter Mainboard|WS: GB: BR: GN:|
+
+
+
+```{=latex}
+\begin{figure}[htbp]
+\centering
+  \begin{tikzpicture}[scale=0.9, every node/.style={transform shape}]
+
+    % Makro für kompakten 8-Pin Stecker
+    % #1: X-Offset, #2: Y-Offset, #3: Rotation, #4: Stecker-Nummer (1, 2, 3, 4)
+    \newcommand{\drawcompactconnector}[4]{
+      \begin{scope}[shift={(#1,#2)}, rotate=#3]
+        % Gehäuse
+        \draw[fill=gray!15, draw=black!80, thick, rounded corners=4pt] (-1.3, -3.2) rectangle (1.3, 3.2);
+        % Rastnase
+        \draw[fill=gray!30, draw=black!80, thick, rounded corners=1pt] (1.3, -0.9) -- (1.6, -0.9) -- (1.6, 0.9) -- (1.3, 0.9) -- cycle;
+
+        % Linke Spalte (Pins 1 bis 4 des jeweiligen Steckers)
+        \foreach \y/\pinnum in {2.25/5, 0.75/6, -0.75/7, -2.25/8} {
+            \draw[fill=white, draw=gray!70] (-0.9, \y-0.35) rectangle (-0.1, \y+0.35);
+            \draw[fill=yellow!70!orange, draw=orange!90!black, thick] (-0.5, \y) circle (0.16);
+            % Text-Node wird um -#3 gegengedreht, damit der Text aufrecht bleibt
+            \node[rotate=-#3, text=black, font=\sffamily\bfseries\tiny] at (-0.5, \y) {#4-\pinnum};
+        }
+
+        % Rechte Spalte (Pins 5 bis 8 des jeweiligen Steckers)
+        \foreach \y/\pinnum in {2.25/1, 0.75/2, -0.75/3, -2.25/4} {
+            \draw[fill=white, draw=gray!70] (0.1, \y-0.35) rectangle (0.9, \y+0.35);
+            \draw[fill=yellow!70!orange, draw=orange!90!black, thick] (0.5, \y) circle (0.16);
+            % Text-Node wird um -#3 gegengedreht, damit der Text aufrecht bleibt
+            \node[rotate=-#3, text=black, font=\sffamily\bfseries\tiny] at (0.5, \y) {#4-\pinnum};
+        }
+      \end{scope}
+    }
+
+    % Stecker 1 (Links oben) -> Pins 1-1 bis 1-8
+    \drawcompactconnector{0}{7.5}{0}{1}
+
+    % Stecker 2 (Links mitte) -> Pins 2-1 bis 2-8
+    \drawcompactconnector{0}{0}{0}{2}
+
+    % Stecker 3 (Links unten) -> Pins 3-1 bis 3-8
+    \drawcompactconnector{0}{-7.5}{0}{3}
+
+    % Stecker 4 (Rechts unten, 180 Grad gedreht) -> Pins 4-1 bis 4-8 (Schrift bleibt richtig herum)
+    \drawcompactconnector{5.5}{-7.5}{180}{4}
+
+  \end{tikzpicture}
+\end{figure}
+```
+
+| Stecker 1 | Stecker 2 | Stecker 3| Stecker 4|
+| :--- | :--- | :--- | :--- |
+| **1-1** | | | |
+| **1-2** | | | |
+| **1-3** | | | |
+| **1-4** | | | |
+| **1-5** | | | |
+| **1-6** | | | |
+| **1-7** | | | |
+| **1-8** | | | |

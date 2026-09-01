@@ -13,210 +13,43 @@ number-sections: true
 
 \newpage 
 
-# Pinbelegungen am Heatend und Netzteil
+# Bauteile -> Platine
 
-```{=latex}
-\begin{figure}[htbp]
-\centering
-
-% --- REIHE 1 ---
-% 1. D-SUB 26 Stecker
-\begin{minipage}{0.48\textwidth}
-  \centering
-  \begin{tikzpicture}[scale=0.45, rotate=180, every node/.style={transform shape}]
-    % Gehäuse & Kragen
-    \draw[fill=gray!25, draw=gray!80, thick, rounded corners=8pt] (-6.0, -2.2) rectangle (6.0, 2.2);
-    \foreach \x in {-5.0, 5.0} {
-        \draw[fill=white, draw=gray!80, thick] (\x, 0) circle (0.45);
-        \draw[fill=gray!40, draw=gray!90] (\x, 0) circle (0.25);
-        \draw[fill=white, draw=gray!80] (\x, 0) circle (0.15);
-    }
-    \draw[fill=gray!10, draw=black!80, line width=1.5pt, rounded corners=3pt] (-4.2, 1.5) -- (4.2, 1.5) -- (3.7, -1.5) -- (-3.7, -1.5) -- cycle;
-    \draw[fill=black!85, draw=black, rounded corners=2pt] (-4.0, 1.3) -- (4.0, 1.3) -- (3.5, -1.3) -- (-3.5, -1.3) -- cycle;
-
-    % Pins
-    \foreach \x/\lbl in {-3.2/C9, -2.4/C8, -1.6/C7, -0.8/C6, 0.0/C5, 0.8/C4, 1.6/C3, 2.4/C2, 3.2/C1} {
-        \draw[fill=yellow!70!orange, draw=orange!90!black, thick] (\x, 0.7) circle (0.18);
-        \node[rotate=180, text=white, font=\sffamily\bfseries\tiny] at (\x, 0.7) {\lbl};
-    }
-    \foreach \x/\lbl in {-3.2/B9, -2.4/B8, -1.6/B7, -0.8/B6, 0.0/B5, 0.8/B4, 1.6/B3, 2.4/B2, 3.2/B1} {
-        \draw[fill=yellow!70!orange, draw=orange!90!black, thick] (\x, 0.0) circle (0.18);
-        \node[rotate=180, text=white, font=\sffamily\bfseries\tiny] at (\x, 0.0) {\lbl};
-    }
-    \foreach \x/\lbl in {-2.8/A8, -2.0/A7, -1.2/A6, -0.4/A5, 0.4/A4, 1.2/A3, 2.0/A2, 2.8/A1} {
-        \draw[fill=yellow!70!orange, draw=orange!90!black, thick] (\x, -0.7) circle (0.18);
-        \node[rotate=180, text=white, font=\sffamily\bfseries\tiny] at (\x, -0.7) {\lbl};
-    }
-  \end{tikzpicture}
-  \caption{D-SUB 26 Stecker}
-  \label{fig-dsub26}
-\end{minipage}%
-\hfill
-% 2. ATX 20-Pin Stecker
-\begin{minipage}{0.48\textwidth}
-  \centering
-  \begin{tikzpicture}[scale=0.45, every node/.style={transform shape}]
-    \draw[fill=gray!15, draw=black!80, thick, rounded corners=4pt] (-5.5, -1.3) rectangle (5.5, 1.3);
-    \draw[fill=gray!30, draw=black!80, thick, rounded corners=1pt] (-1.2, 1.3) -- (-1.2, 1.6) -- (1.2, 1.6) -- (1.2, 1.3) -- cycle;
-
-    \foreach \x/\lbl in {-4.5/C9, -3.5/B9, -2.5/B2, -1.5/B3, -0.5/B7, 0.5/B8, 1.5/A1, 2.5/A2, 3.5/A3, 4.5/A4} {
-        \draw[fill=white, draw=gray!70] (\x-0.4, 0.1) rectangle (\x+0.4, 0.9);
-        \draw[fill=yellow!70!orange, draw=orange!90!black, thick] (\x, 0.5) circle (0.18);
-        \node[text=black, font=\sffamily\bfseries\tiny] at (\x, 0.5) {\lbl};
-    }
-    \foreach \x/\lbl in {-4.5/C1, -3.5/B1, -2.5/C2, -1.5/C3, -0.5/C4, 0.5/B4, 1.5/C6, 2.5/B6, 3.5/C7, 4.5/C8} {
-        \draw[fill=white, draw=gray!70] (\x-0.4, -0.9) rectangle (\x+0.4, -0.1);
-        \draw[fill=yellow!70!orange, draw=orange!90!black, thick] (\x, -0.5) circle (0.18);
-        \node[text=black, font=\sffamily\bfseries\tiny] at (\x, -0.5) {\lbl};
-    }
-  \end{tikzpicture}
-  \caption{ATX 20-Pin Stecker}
-  \label{fig-atx20}
-\end{minipage}
-
-\vspace{0.8cm}
-
-\begin{minipage}{0.48\textwidth}
-  \centering
-  \begin{tikzpicture}[scale=0.45, every node/.style={transform shape}]
-    \draw[fill=gray!15, draw=black!80, thick, rounded corners=4pt] (-1.5, 0) rectangle (1.5, 1.3);
-    \draw[fill=gray!30, draw=black!80, thick, rounded corners=1pt] (-0.6, 1.3) -- (-0.6, 1.6) -- (0.6, 1.6) -- (0.6, 1.3) -- cycle;
-
-    \foreach \x/\lbl in {-0.5/B5, 0.5/C5} {
-        \draw[fill=white, draw=gray!70] (\x-0.4, 0.2) rectangle (\x+0.4, 1);
-        \draw[fill=yellow!70!orange, draw=orange!90!black, thick] (\x, 0.6) circle (0.18);
-        \node[text=black, font=\sffamily\bfseries\tiny] at (\x, 0.6) {\lbl};
-    }
-  \end{tikzpicture}
-  \caption{2-Pin Stecker}
-  \label{fig-2pin}
-\end{minipage}%
-\hfill
-
-
-\begin{minipage}{0.48\textwidth}
-  \centering
-  \begin{tikzpicture}[scale=0.45, every node/.style={transform shape}]
-    \draw[fill=gray!15, draw=black!80, thick, rounded corners=4pt] (-2.5, 0) rectangle (2.5, 1.3);
-    \draw[fill=gray!30, draw=black!80, thick, rounded corners=1pt] (-0.6, 1.3) -- (-0.6, 1.6) -- (0.6, 1.6) -- (0.6, 1.3) -- cycle;
-
-    \foreach \x/\lbl in {-1.5/P1, -0.5/P2, 0.5/P3,1.5/P4} {
-        \draw[fill=white, draw=gray!70] (\x-0.4, 0.2) rectangle (\x+0.4, 1);
-        \draw[fill=yellow!70!orange, draw=orange!90!black, thick] (\x, 0.6) circle (0.18);
-        \node[text=black, font=\sffamily\bfseries\tiny] at (\x, 0.6) {\lbl};
-    }
-  \end{tikzpicture}
-  \caption{4-Pin Stecker}
-  \label{fig-4pin}
-\end{minipage}
-
-\end{figure}
-```
-
-**Servo:**
-
-- SW: A8
-- RT: A6/ B2/ B7
-- GB: A5
-
-**Fan Extruder Rechts:**
-
-- Plus: A6
-- Minus: B2
-
-**Fan Extruder Links:**
-
-- Plus: A6
-- Minus: B7
-
-**Toolhead Rechts:**
-
-1. C2/ C7
-2. A7/ B1/ B6/ C1/ C6
-3. A7/ B1/ B6/ C1/ C6
-4. A7/ B1/ B6/ C1/ C6
-5. C3
-6. B4/ C4
-7. B4/ C4
-8. B4/ C4
-
-**Toolhead Links:**
-
-1. C2/ C7
-2. A7/ B1/ B6/ C1/ C6
-3. A7/ B1/ B6/ C1/ C6
-4. A7/ B1/ B6/ C1/ C6
-5. C8
-6. A8/ B9 /C9
-7. A8/ B9 /C9
-8. A8/ B9 /C9
-
-\newpage
-
-## Bauteile -> Platine
-
-**ATX 20-Pin**
-
-|Pin Mainboard|Pin SUB|Pin SUB|Funktion|
-|-|:-:|:-:|-|
-|  1|  1 | C9| Tool1 (6/7/8)|
-|  2| 10 | B9| Tool1 (6/7/8)|
-|  3| 17 | B2| Servo RT|
-||||Fan-T0-HV (SW)|
-|  4| 16 | B3| |
-|  5| 12 | B7| Servo RT|
-||||Fan-T1-HV (SW)|
-|  6| 11 | B8| |
-|  7| 26 | A1| |
-|  8| 25 | A2| |
-|  9| 24 | A3| |
-| 10| 23 | A4| |
-| 11|  9 | C1| Tool0 (2/3/4)|
-||||Tool1 (2/3/4)|
-| 12| 18 | B1| Tool0 (2/3/4)|
-||||Tool1 (2/3/4)|
-| 13|  8 | C2| Tool0 (1)|
-||||Tool1 (1)|
-| 14|  7 | C3| Tool0 (5)|
-| 15|  6 | C4| Tool0 (6/7/8)|
-| 16| 15 | B4| Tool0 (6/7/8)|
-| 17|  4 | C6| Tool0 (2/3/4)|
-||||Tool1 (2/3/4)|
-| 18| 13 | B6| Tool0 (2/3/4)|
-||||Tool1 (2/3/4)|
-| 19|  3 | C7| Tool0 (1)|
-||||Tool1 (1)|
-| 20|  2 | C8| Tool1 (5)|
-
-
-**ATX 2-Pin**
-
-|Pin Mainboard|Pin SUB|Pin SUB|Funktion|
-|-|:-:|:-:|-|
-|  1| 14 | B5| |
-|  2|  5 | C5| |
-
-**ATX 4-Pin**
-
-|Pin Mainboard|Pin SUB|Funktion|
-|-|:-:|:-:|-|
-|  1| ?| | |
-|  2| ?| | |
-|  3| ?| | |
-|  4| ?| | |
-
-**Fehlend**
-
-|Pin Mainboard|Pin SUB|Funktion|
-|-|-|-|
-| 19| A8| Servo (SW)|
-|||Tool1 (6/7/8)|
-| 20| A7| Tool0 (2/3/4)|
-|||Tool1 (2/3/4)|
-| 21| A6| Servo (RT)|
-|||Fan-T0-HV (RT)|
-|||Fan-T1-HV (RT)|
-| 22| A5| Servo (GB)|
+|Funktion|SUB26|PIN20|PIN2|PIN4|PIN8 (Extruder)|
+|-|-|-|-|-|-|
+|Tool0 (6,7,8)|1|11||||
+|Tool0 (5)|2|13||||
+|Tool1 (1)|3|14||||
+|Tool0 (2,3,4)|4|15||||
+|Tool1 (2,3,4)|-"-|-"-||||
+||5||1 (Braun)|||
+|Tool1 (6,7,8)|6|17||||
+|Tool0 (1)|7|19||||
+|Tool1 (5)|8|20||||
+|Tool0 (2,3,4)|9|1|||||
+|Tool1 (2,3,4)|-"-|-"-||||
+|Tool0 (6,7,8)|10|12||||
+||11|3||||
+|Fan-T0-HV (RT)|12|4||||
+|Tool0 (2,3,4)|13|16||||
+|Tool1 (2,3,4)|-"-|-"-||||
+||14||2 (Weiß)|||
+|Tool1 (6,7,8)|15|18||||
+||16|5||||
+|Fan-T1-HV (SW)|17|6||||
+|Tool0 (2,3,4)|18|2||||
+|Tool1 (2,3,4)|-"-|-"-||||
+|Servo (Schwarz)|19|7||||
+|Tool0 (2,3,4)|20|8||||
+|Tool1 (2,3,4)|-"-|-"-||||
+|Servo (Rot)|21|9||||
+|Fan-T0-HV (SW)|-"-|-"-||||
+|Fan-T1-HV (RT)|-"-|-"-||||
+|Servo (Gelb)|22|10||||
+||23|||?|6 (Braun)|
+||24|||?|3 (Grün)|
+||25|||?|7 (Gelb)|
+||26|||?|2 (Weiß)|
 
 \newpage
 
@@ -230,29 +63,31 @@ number-sections: true
 | Batterie| RoHS Compliment: MPF0005900GP|
 | Batterie Steuerung| FSP Power Station: Knight RM 6KL / PPF48A0400|
 
-
+\newpage
 # Pin-Tabelle
 
 |Funktion|Pin|Leitungsbeschriftung|Ort|Anschluss|
 |:-|-|-|-|-|
 |Status LED|X44|NC/X44|Hardware Platine|Stecker|
-|Deckel Kontakt |X39 |NC/X39|-"-|Stecker|
-|Power ON Panel |X43 |NC/X43 |-"-|Stecker|
-| Tür| X37 / X38| DLCK / NC/X37;38| -"-|Stecker|
-| | Q1 / Q2 --> X16| OZA / NC/X16| -"-|Stecker|
-| Endschalter X| X12| NC/X12| -"-| Stecker|
-| Endschalter Y| X13| NC/X13| -"-| Stecker|
-| Endschalter Z| X15| NC/X15| -"-| Stecker|
-| StepMotorX| X5| NC/X5| -"-/ Linker Driver| Stecker|
-| StepMotorY| X6| NC/X6| -"-/ Mittlerer Driver| Stecker|
-| StepMotorZ| X7| NC/X7| -"-/ Rechter Driver| Stecker|
-| ExtruderStepR| X10| NC/X10| -"-| Stecker|
-| ExtruderStepL| X9| NC/X9| -"-| Stecker|
-| Steuerung Headend| X48| NC/X48| -"-| Stecker|
-| Steuerung Filament| X29| NC/X29| -"-| Stecker|
-| Magnetschiene Y| X31| NC/X31| -"-| Stecker|
-| Magnetschiene X| X30| NC/X30| -"-| Stecker|
-| Vakuum Pumpe| J2 / J3 / J4| Relais? / Raum / Extruder| -"-| Stecker|
+|Deckel Kontakt |X39 |NC/X39|Hardware Platine|Stecker|
+|Power ON Panel |X43 |NC/X43 |Hardware Platine|Stecker|
+| Tür| X37 / X38| DLCK / NC/X37;38| Hardware Platine|Stecker|
+| | Q1 / Q2 --> X16| OZA / NC/X16| Hardware Platine|Stecker|
+| Endschalter X| X12| NC/X12| Hardware Platine| Stecker|
+| Endschalter Y| X13| NC/X13| Hardware Platine| Stecker|
+| Endschalter Z| X15| NC/X15| Hardware Platine| Stecker|
+| StepMotorX| X5| NC/X5| Hardware Platine/ Linker Driver| Stecker|
+| StepMotorY| X6| NC/X6| Hardware Platine/ Mittlerer Driver| Stecker|
+| StepMotorZ| X7| NC/X7| Hardware Platine/ Rechter Driver| Stecker|
+| ExtruderStepR| X10| NC/X10| Hardware Platine| Stecker|
+| ExtruderStepL| X9| NC/X9| Hardware Platine| Stecker|
+| Steuerung Headend| X48| NC/X48| Hardware Platine| Stecker|
+| I²C BUS Extruder| X28.1| NC/X28.1| Hardware Platine| Stecker|
+| **Noch unklare Funktion am Extruder**| X46| NC/X46| Hardware Platine| Stecker|
+| Steuerung Filament| X29| NC/X29| Hardware Platine| Stecker|
+| Magnetschiene Y| X31| NC/X31| Hardware Platine| Stecker|
+| Magnetschiene X| X30| NC/X30| Hardware Platine| Stecker|
+| Vakuum Pumpe| J2 / J3 / J4| Relais? / Raum / Extruder| Hardware Platine| Stecker|
 |-|-|-|-|-|
 |Kamera|Camera Adapter|HMI/X7|Software Platine|Stecker|
 |-|-|-|-|-|
@@ -261,12 +96,55 @@ number-sections: true
 |-|-|-|-|-|
 | Not AUS| SK1| |Schütz unter Mainboard|WS: GB: BR: GN:|
 
+\clearpage
+\pagewidth=420mm
+\pageheight=297mm
+\newgeometry{textwidth=370mm, textheight=237mm, top=30mm, left=25mm}
 
+| Pin | 1-1 | 1-2 | 1-3 | 1-4 | 1-5 | 1-6 | 1-7 | 1-8 | 2-1 | 2-2 | 2-3 | 2-4 | 2-5 | 2-6 | 2-7 | 2-8 | 3-1 | 3-2 | 3-3 | 3-4 | 3-5 | 3-6 | 3-7 | 3-8 | 4-1 | 4-2 | 4-3 | 4-4 | 4-5 | 4-6 | 4-7 | 4-8 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| **1-1** | — | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+| **1-2** | | — | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+| **1-3** | | | — | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+| **1-4** | | | | — | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+| **1-5** | | | | | — | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+| **1-6** | | | | | | — | | | | | | | | | | | | | | | | | | | | | | | | | | |
+| **1-7** | | | | | | | — | | | | | | | | | | | | | | | | | | | | | | | | | |
+| **1-8** | | | | | | | | — | | | | | | | | | | | | | | | | | | | | | | | | |
+| **2-1** | | | | | | | | | — | | | | | | | | | | | | | | | | | | | | | | | |
+| **2-2** | | | | | | | | | | — | | | | | | | | | | | | | | | | | | | | | | |
+| **2-3** | | | | | | | | | | | — | | | | | | | | | | | | | | | | | | | | | |
+| **2-4** | | | | | | | | | | | | — | | | | | | | | | | | | | | | | | | | | |
+| **2-5** | | | | | | | | | | | | | — | | | | | | | | | | | | | | | | | | | |
+| **2-6** | | | | | | | | | | | | | | — | | | | | | | | | | | | | | | | | | |
+| **2-7** | | | | | | | | | | | | | | | — | | | | | | | | | | | | | | | | | |
+| **2-8** | | | | | | | | | | | | | | | | — | | | | | | | | | | | | | | | | |
+| **3-1** | | | | | | | | | | | | | | | | | — | | | | | | | | | | | | | | | |
+| **3-2** | | | | | | | | | | | | | | | | | | — | | | | | | | | | | | | | | |
+| **3-3** | | | | | | | | | | | | | | | | | | | — | | | | | | | | | | | | | |
+| **3-4** | | | | | | | | | | | | | | | | | | | | — | | | | | | | | | | | | |
+| **3-5** | | | | | | | | | | | | | | | | | | | | | — | | | | | | | | | | | |
+| **3-6** | | | | | | | | | | | | | | | | | | | | | | — | | | | | | | | | | |
+| **3-7** | | | | | | | | | | | | | | | | | | | | | | | — | | | | | | | | | |
+| **3-8** | | | | | | | | | | | | | | | | | | | | | | | | — | | | | | | | | |
+| **4-1** | | | | | | | | | | | | | | | | | | | | | | | | | — | | | | | | | |
+| **4-2** | | | | | | | | | | | | | | | | | | | | | | | | | | — | | | | | | |
+| **4-3** | | | | | | | | | | | | | | | | | | | | | | | | | | | — | | | | | |
+| **4-4** | | | | | | | | | | | | | | | | | | | | | | | | | | | | — | | | | |
+| **4-5** | | | | | | | | | | | | | | | | | | | | | | | | | | | | | — | | | |
+| **4-6** | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | — | | |
+| **4-7** | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | — | |
+| **4-8** | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | — |
+
+\clearpage
+\restoregeometry
+\pagewidth=210mm
+\pageheight=297mm
 
 ```{=latex}
-\begin{figure}[htbp]
+\begin{figure}[H]
 \centering
-  \begin{tikzpicture}[scale=0.9, every node/.style={transform shape}]
+  \begin{tikzpicture}[scale=0.8, every node/.style={transform shape}]
 
     % Makro für kompakten 8-Pin Stecker
     % #1: X-Offset, #2: Y-Offset, #3: Rotation, #4: Stecker-Nummer (1, 2, 3, 4)
@@ -311,13 +189,3 @@ number-sections: true
 \end{figure}
 ```
 
-| Stecker 1 | Stecker 2 | Stecker 3| Stecker 4|
-| :--- | :--- | :--- | :--- |
-| **1-1** | | | |
-| **1-2** | | | |
-| **1-3** | | | |
-| **1-4** | | | |
-| **1-5** | | | |
-| **1-6** | | | |
-| **1-7** | | | |
-| **1-8** | | | |

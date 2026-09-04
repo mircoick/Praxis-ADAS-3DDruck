@@ -62,6 +62,7 @@ number-sections: true
 | Step Motor Extruder | 17HS16-2004S1|
 | Batterie| RoHS Compliment: MPF0005900GP|
 | Batterie Steuerung| FSP Power Station: Knight RM 6KL / PPF48A0400|
+| Kamera | OV2640 |
 
 \newpage
 # Pin-Tabelle

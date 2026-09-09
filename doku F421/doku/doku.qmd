@@ -190,3 +190,18 @@ number-sections: true
 \end{figure}
 ```
 
+# Brücke 230V Platine
+
+|Pin|Funktion|
+|-|-|
+|1 |Lüfter Platine 5V VCC|
+|2 |LEDs Innenraum 5V VCC|
+|3 |Lüfter/Bauraum Hinten 3.3V VCC|
+|4 |???|
+|5 |Lüfter Platine GND|
+|-"- |Heizbett GND|
+|6 |???|
+|7 |Lüfter unter Mainboard 3.3V VCC|
+|8 |???|
+|9 |???|
+|10|Heizbett 3.3V VCC|

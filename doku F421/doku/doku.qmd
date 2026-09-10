@@ -10,22 +10,70 @@ date: last-modified
 bibliography: references.bib
 number-sections: true
 ---
+\newpage
 
-\newpage 
+# Identifizierte Bauteile
 
-# Bauteile -> Platine
+|Name|Funktion|
+|:-|-|
+| Stepmotor X/Y| AM23HSA4B0-03|
+| Stepmotor Z| AM24HS5401-10N|
+| Step Motor Extruder | 17HS16-2004S1|
+| Batterie| RoHS Compliment: MPF0005900GP|
+| Batterie Steuerung| FSP Power Station: Knight RM 6KL / PPF48A0400|
+| Kamera | OV2640 |
+
+: Bauteile am F421 {#tbl-parts}
+
+\newpage
+# Pin-Tabelle
+
+|Funktion|Pin|Leitungsbeschriftung|Ort|Anschluss|
+|:-|-|-|-|-|
+|Status LED|X44|NC/X44|Hardware Platine|Stecker|
+|Deckel Kontakt |X39 |NC/X39|Hardware Platine|Stecker|
+|Power ON Panel |X43 |NC/X43 |Hardware Platine|Stecker|
+| Tür| X37 / X38| DLCK / NC/X37;38| Hardware Platine|Stecker|
+| | Q1 / Q2 --> X16| OZA / NC/X16| Hardware Platine|Stecker|
+| Endschalter X| X12| NC/X12| Hardware Platine| Stecker|
+| Endschalter Y| X13| NC/X13| Hardware Platine| Stecker|
+| Endschalter Z| X15| NC/X15| Hardware Platine| Stecker|
+| StepMotorX| X5| NC/X5| Hardware Platine/ Linker Driver| Stecker|
+| StepMotorY| X6| NC/X6| Hardware Platine/ Mittlerer Driver| Stecker|
+| StepMotorZ| X7| NC/X7| Hardware Platine/ Rechter Driver| Stecker|
+| ExtruderStepR| X10| NC/X10| Hardware Platine| Stecker|
+| ExtruderStepL| X9| NC/X9| Hardware Platine| Stecker|
+| Steuerung Headend| X48| NC/X48| Hardware Platine| Stecker|
+| I²C BUS Extruder| X28.1| NC/X28.1| Hardware Platine| Stecker|
+| siehe @tbl-dsub26| X46| NC/X46| Hardware Platine| Stecker|
+| Steuerung Filament| X29| NC/X29| Hardware Platine| Stecker|
+| Magnetschiene Y| X31| NC/X31| Hardware Platine| Stecker|
+| Magnetschiene X| X30| NC/X30| Hardware Platine| Stecker|
+| Vakuum Pumpe| J2 / J3 / J4| Relais? / Raum / Extruder| Hardware Platine| Stecker|
+|-|-|-|-|-|
+|Kamera|Camera Adapter|HMI/X7|Software Platine|Stecker|
+|-|-|-|-|-|
+|Innenraum LED vorne|CHLight | |Power Platine|Stecker|
+|Vakuum Pumpe Stannung|FAN | HVO/J4|Power Platine|Stecker|
+|-|-|-|-|-|
+| Not AUS| SK1| |Schütz unter Mainboard|WS: GB: BR: GN:|
+
+: Pin Anschlüsse an den Mainboards {#tbl-PINS}
+
+\newpage
+## D-SUB26 an X46
 
 |Funktion|SUB26|PIN20|PIN2|PIN4|PIN8 (Extruder)|
 |-|-|-|-|-|-|
 |Tool0 (6,7,8)|1|11||||
-|Tool0 (5)|2|13||||
-|Tool1 (1)|3|14||||
+|Tool0 (5) PT1000|2|13||||
+|Tool1 (1) PT1000|3|14||||
 |Tool0 (2,3,4)|4|15||||
 |Tool1 (2,3,4)|-"-|-"-||||
 ||5||1 (Braun)|||
 |Tool1 (6,7,8)|6|17||||
-|Tool0 (1)|7|19||||
-|Tool1 (5)|8|20||||
+|Tool1 (1) PT1000|7|19||||
+|Tool0 (5) PT1000|8|20||||
 |Tool0 (2,3,4)|9|1|||||
 |Tool1 (2,3,4)|-"-|-"-||||
 |Tool0 (6,7,8)|10|12||||
@@ -51,57 +99,33 @@ number-sections: true
 ||25|||?|7 (Gelb)|
 ||26|||?|2 (Weiß)|
 
-\newpage
-
-# Identifizierte Bauteile
-
-|Name|Funktion|
-|:-|-|
-| Stepmotor X/Y| AM23HSA4B0-03|
-| Stepmotor Z| AM24HS5401-10N|
-| Step Motor Extruder | 17HS16-2004S1|
-| Batterie| RoHS Compliment: MPF0005900GP|
-| Batterie Steuerung| FSP Power Station: Knight RM 6KL / PPF48A0400|
-| Kamera | OV2640 |
+: Pinbelegung X46 am D-SUB26 Stecker {#tbl-dsub26}
 
 \newpage
-# Pin-Tabelle
+## Brücke 230V Platine für Heizbett usw.
 
-|Funktion|Pin|Leitungsbeschriftung|Ort|Anschluss|
-|:-|-|-|-|-|
-|Status LED|X44|NC/X44|Hardware Platine|Stecker|
-|Deckel Kontakt |X39 |NC/X39|Hardware Platine|Stecker|
-|Power ON Panel |X43 |NC/X43 |Hardware Platine|Stecker|
-| Tür| X37 / X38| DLCK / NC/X37;38| Hardware Platine|Stecker|
-| | Q1 / Q2 --> X16| OZA / NC/X16| Hardware Platine|Stecker|
-| Endschalter X| X12| NC/X12| Hardware Platine| Stecker|
-| Endschalter Y| X13| NC/X13| Hardware Platine| Stecker|
-| Endschalter Z| X15| NC/X15| Hardware Platine| Stecker|
-| StepMotorX| X5| NC/X5| Hardware Platine/ Linker Driver| Stecker|
-| StepMotorY| X6| NC/X6| Hardware Platine/ Mittlerer Driver| Stecker|
-| StepMotorZ| X7| NC/X7| Hardware Platine/ Rechter Driver| Stecker|
-| ExtruderStepR| X10| NC/X10| Hardware Platine| Stecker|
-| ExtruderStepL| X9| NC/X9| Hardware Platine| Stecker|
-| Steuerung Headend| X48| NC/X48| Hardware Platine| Stecker|
-| I²C BUS Extruder| X28.1| NC/X28.1| Hardware Platine| Stecker|
-| **Noch unklare Funktion am Extruder**| X46| NC/X46| Hardware Platine| Stecker|
-| Steuerung Filament| X29| NC/X29| Hardware Platine| Stecker|
-| Magnetschiene Y| X31| NC/X31| Hardware Platine| Stecker|
-| Magnetschiene X| X30| NC/X30| Hardware Platine| Stecker|
-| Vakuum Pumpe| J2 / J3 / J4| Relais? / Raum / Extruder| Hardware Platine| Stecker|
-|-|-|-|-|-|
-|Kamera|Camera Adapter|HMI/X7|Software Platine|Stecker|
-|-|-|-|-|-|
-|Innenraum LED vorne|CHLight | |Power Platine|Stecker|
-|Vakuum Pumpe Stannung|FAN | HVO/J4|Power Platine|Stecker|
-|-|-|-|-|-|
-| Not AUS| SK1| |Schütz unter Mainboard|WS: GB: BR: GN:|
+|Pin|Voltage in V|Funktion|
+|-|-|-|
+|1 |5|Lüfter Platine|
+|2 |3.3|LEDs Innenraum|
+|3 |3.3|Lüfter/Bauraum Hinten|
+|4 ||???|
+|5 |GND|Potential|
+|6 ||???|
+|7 |3.3|Luftfilter unter Mainboard|
+|8 ||???|
+|9 ||???|
+|10|3.3|Heizbett|
 
+: Brücken Pins zur Relais-Platine {#tbl-230}
+
+
+\newpage
 \clearpage
 \pagewidth=420mm
 \pageheight=297mm
 \newgeometry{textwidth=370mm, textheight=237mm, top=30mm, left=25mm}
-
+# I2C Splitter Pins
 | Pin | 1-1 | 1-2 | 1-3 | 1-4 | 1-5 | 1-6 | 1-7 | 1-8 | 2-1 | 2-2 | 2-3 | 2-4 | 2-5 | 2-6 | 2-7 | 2-8 | 3-1 | 3-2 | 3-3 | 3-4 | 3-5 | 3-6 | 3-7 | 3-8 | 4-1 | 4-2 | 4-3 | 4-4 | 4-5 | 4-6 | 4-7 | 4-8 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | **1-1** | — | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
@@ -136,6 +160,8 @@ number-sections: true
 | **4-6** | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | — | | |
 | **4-7** | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | — | |
 | **4-8** | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | — |
+
+: I2C Splitter Pins
 
 \clearpage
 \restoregeometry
@@ -189,19 +215,3 @@ number-sections: true
   \end{tikzpicture}
 \end{figure}
 ```
-
-# Brücke 230V Platine
-
-|Pin|Funktion|
-|-|-|
-|1 |Lüfter Platine 5V VCC|
-|2 |LEDs Innenraum 5V VCC|
-|3 |Lüfter/Bauraum Hinten 3.3V VCC|
-|4 |???|
-|5 |Lüfter Platine GND|
-|-"- |Heizbett GND|
-|6 |???|
-|7 |Lüfter unter Mainboard 3.3V VCC|
-|8 |???|
-|9 |???|
-|10|Heizbett 3.3V VCC|

@@ -12,6 +12,27 @@ number-sections: true
 ---
 \newpage
 
+::: {.callout-important}
+## WICHTIG / TODO
+
+- Platine anlegen für Adapter
+- Neue hintere Platte für Klipper und Raspberry Pi
+
+:::
+
+::: {.callout-important}
+## **Bestellen**
+
+- TCST2103 (Optischer Sensor) für X-Achse
+- Leuchten Innenraum (LEDs) Reverenz: 4052899195356
+- Touch Bildschirm 12" (Raspberry Pi) Reverenz
+- Crimp Kontakte für Molex Stecker
+
+:::
+
+
+
+\newpage
 # Identifizierte Bauteile
 
 |Name|Funktion|
@@ -22,6 +43,8 @@ number-sections: true
 | Batterie| RoHS Compliment: MPF0005900GP|
 | Batterie Steuerung| FSP Power Station: Knight RM 6KL / PPF48A0400|
 | Kamera | OV2640 |
+|Endschalter|TCST2103|
+|Innenraum Lampen|Osram i278 Halogen|
 
 : Bauteile am F421 {#tbl-parts}
 
@@ -50,6 +73,9 @@ number-sections: true
 | Magnetschiene Y| X31| NC/X31| Hardware Platine| Stecker|
 | Magnetschiene X| X30| NC/X30| Hardware Platine| Stecker|
 | Vakuum Pumpe| J2 / J3 / J4| Relais? / Raum / Extruder| Hardware Platine| Stecker|
+|Bauraum Temp Fühler| X22| NC/X22| Hardware Platine| Stecker|
+|Heizbet Temp Fühler| X40| NC/X40| Hardware Platine| Stecker|
+|Heizbett |X22| NC/X22| Hardware Platine| Stecker|
 |-|-|-|-|-|
 |Kamera|Camera Adapter|HMI/X7|Software Platine|Stecker|
 |-|-|-|-|-|
@@ -65,24 +91,24 @@ number-sections: true
 
 |Funktion|SUB26|PIN20|PIN2|PIN4|PIN8 (Extruder)|
 |-|-|-|-|-|-|
-|Tool0 (6,7,8)|1|11||||
+|Tool0 (6,7,8) VIN|1|11||||
 |Tool0 (5) PT1000|2|13||||
 |Tool1 (1) PT1000|3|14||||
 |Tool0 (2,3,4)|4|15||||
 |Tool1 (2,3,4)|-"-|-"-||||
 ||5||1 (Braun)|||
-|Tool1 (6,7,8)|6|17||||
+|Tool1 (6,7,8) VIN|6|17||||
 |Tool1 (1) PT1000|7|19||||
 |Tool0 (5) PT1000|8|20||||
 |Tool0 (2,3,4)|9|1|||||
 |Tool1 (2,3,4)|-"-|-"-||||
-|Tool0 (6,7,8)|10|12||||
+|Tool0 (6,7,8) VIN|10|12||||
 ||11|3||||
 |Fan-T0-HV (RT)|12|4||||
 |Tool0 (2,3,4)|13|16||||
 |Tool1 (2,3,4)|-"-|-"-||||
 ||14||2 (Weiß)|||
-|Tool1 (6,7,8)|15|18||||
+|Tool1 (6,7,8) VIN|15|18||||
 ||16|5||||
 |Fan-T1-HV (SW)|17|6||||
 |Tool0 (2,3,4)|18|2||||
@@ -118,6 +144,18 @@ number-sections: true
 |10|3.3|Heizbett|
 
 : Brücken Pins zur Relais-Platine {#tbl-230}
+
+
+## Optische Sensoren Pinbelegung
+
+|Ader|Funktion|Anschluss|
+|-|-|-|
+|Gelb |+|5 V dazwischen 220$\Omega$|
+|Grün |Emitter|GND|
+|Weiß |+|GND|
+|Braun |Drain/ Kollektor|Signal mit Pull-Up im Code|
+
+: Optischer Sensor {#tbl-optical}
 
 
 \newpage

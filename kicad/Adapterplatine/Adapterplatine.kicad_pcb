@@ -5445,7 +5445,7 @@
 	(footprint "Kraken_v1.1:Raspberry Pi 5"
 		(layer "F.Cu")
 		(uuid "63657c23-87d9-4f0a-b096-3a7d0fb21ff0")
-		(at 332.5 72 -90)
+		(at 320.5 74 -90)
 		(property "Reference" "REF**"
 			(at 0 -0.5 270)
 			(unlocked yes)
@@ -11303,7 +11303,7 @@
 	(footprint "Platines:Kraken V1.1"
 		(layer "F.Cu")
 		(uuid "e964e553-f45c-4545-a96c-6776560549c0")
-		(at 168 131)
+		(at 166.5 126.5)
 		(property "Reference" "REF**"
 			(at -30 -30.5 0)
 			(unlocked yes)

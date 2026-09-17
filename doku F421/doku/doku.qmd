@@ -130,7 +130,7 @@ number-sections: true
 \newpage
 ## Brücke 230V Platine für Heizbett usw.
 
-|Pin|Voltage in V|Funktion|
+|Pin|Voltage in U|Funktion|
 |-|-|-|
 |1 |5|Lüfter Platine|
 |2 |3.3|LEDs Innenraum|

@@ -1,0 +1,22 @@
+# Compiled object files
+*.obj
+*.ilk
+*.exp
+*.pdb
+*.tlog
+*.lastbuildstate
+*.iobj
+*.ipdb
+*.dll
+*.lib
+
+# IDE/VS files
+.vs/
+*.user
+*.suo
+
+# Large data/temp
+*.zip
+*.7z
+.DS_Store
+.history

@@ -15,18 +15,42 @@ number-sections: true
 ::: {.callout-important}
 ## WICHTIG / TODO
 
+- **Buzzer Problem mit PA6 lösen**
+- **Endschalter TCST2103 nach Ankunft richtig ausmessen**
 - Platine anlegen für Adapter
+  - Ausmessen der Mounts mit Scan bzw. Platine
 - Neue hintere Platte für Klipper und Raspberry Pi
+- Loadcells versuchen anzusteuern
+- Servo ansteuern (eventuell Spannungsabfall Problem)
+- 
 
 :::
 
 ::: {.callout-important}
 ## **Bestellen**
 
-- TCST2103 (Optischer Sensor) für X-Achse
-- Leuchten Innenraum (LEDs) Reverenz: 4052899195356
-- Touch Bildschirm 12" (Raspberry Pi) Reverenz
-- Crimp Kontakte für Molex Stecker
+:::
+
+::: {.callout-note}
+## **Bereits angesteuert im F421**
+
+- Stepper Motoren:
+  - X/Y/Z
+- Lüfter:
+  - Gehäuse
+  - Hotend
+  - Absaugung Hotend
+- Heizung:
+  - Heatbed
+  - Hotend (Fehler bei PWM)
+- Beleuchtung:
+  - Status LEDs
+  - Bauraum
+- Sensoren:
+  - PT1000 Hotend
+- Kontakte:
+  - Türkontakt
+  - Deckelkontakt
 
 :::
 
@@ -155,7 +179,18 @@ number-sections: true
 |Weiß |+|GND|
 |Braun |Drain/ Kollektor|Signal mit Pull-Up im Code|
 
-: Optischer Sensor {#tbl-optical}
+: Optischer Sensor {#tbl-opticalpin}
+
+## Motoren Pinbelegung
+
+|Ader Motor|Ader Board|Funktion|
+|-|-|-|
+|Schwarz|Braun|A/A+/A1|
+|Grün|Grün |C/A-/A2|
+|Rot|Gelb |B/B+/B1|
+|Blau|Weiß |D/B-/B2|
+
+: Motor Pinbelegung {#tbl-motorpin}
 
 
 \newpage

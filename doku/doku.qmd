@@ -1,5 +1,5 @@
 ---
-title: "Dokumentation F421"
+title: "Dokumentation"
 author:
   - name: "Mirco Ick"
     email: "mick001@stud.hs-bremen.de"
@@ -57,7 +57,8 @@ number-sections: true
 
 
 \newpage
-# Identifizierte Bauteile
+# Doku F421
+## Identifizierte Bauteile
 
 |Name|Funktion|
 |:-|-|
@@ -73,7 +74,7 @@ number-sections: true
 : Bauteile am F421 {#tbl-parts}
 
 \newpage
-# Pin-Tabelle
+## Pin-Tabelle
 
 |Funktion|Pin|Leitungsbeschriftung|Ort|Anschluss|
 |:-|-|-|-|-|
@@ -111,7 +112,7 @@ number-sections: true
 : Pin Anschlüsse an den Mainboards {#tbl-PINS}
 
 \newpage
-## D-SUB26 an X46
+### D-SUB26 an X46
 
 |Funktion|SUB26|PIN20|PIN2|PIN4|PIN8 (Extruder)|
 |-|-|-|-|-|-|
@@ -152,7 +153,7 @@ number-sections: true
 : Pinbelegung X46 am D-SUB26 Stecker {#tbl-dsub26}
 
 \newpage
-## Brücke 230V Platine für Heizbett usw.
+### Brücke 230V Platine für Heizbett usw.
 
 |Pin|Voltage in U|Funktion|
 |-|-|-|
@@ -170,7 +171,7 @@ number-sections: true
 : Brücken Pins zur Relais-Platine {#tbl-230}
 
 
-## Optische Sensoren Pinbelegung
+### Optische Sensoren Pinbelegung
 
 |Ader|Funktion|Anschluss|
 |-|-|-|
@@ -181,7 +182,7 @@ number-sections: true
 
 : Optischer Sensor {#tbl-opticalpin}
 
-## Motoren Pinbelegung
+### Motoren Pinbelegung
 
 |Ader Motor|Ader Board|Funktion|
 |-|-|-|
@@ -192,13 +193,61 @@ number-sections: true
 
 : Motor Pinbelegung {#tbl-motorpin}
 
+\newpage
+## I²C Bus Filament Steuerung
+
+![I²C Bus Filament Steuerung](pics/Filamentaufnahmen.png){#fig-i2c_filament width=50%}
+
+- 0x6a: Hauptplatine
+- 0x6c: unten rechts
+- 0x6d: unten links
+- 0x6e: oben rechts
+- 0x6f: oben links 
+  
+\newpage
+
+### Hauptplatine
+
+|Register|Beschreibbar|Funktion|Änderungen|
+|:-|-|-|-|
+|0x00|Nein|**???**|**???**|
+|0x01|Nein|**???**|**???**|
+|0x02|Nein|**???**|**???**|
+|0x03|Nein|**???**|**???**|
+|0x04|Nein|Temperaturfühler Filament Innenraum|Temperatur in Hex|
+|0x05|Ja|Lüfter- und Heizungs-Steuerung Innenraum Filament|PWM: 0x00-0xff|
+|0x06|Ja|**???**|**???**|
+|0x07|Nein|**???**|**???**|
+|0x08|Ja|**???**|**???**|
+|0x09|Ja|**???**|**???**|
+|0x0a|Nein|**???**|**???**|
+|0x0b|Nein|**???**|**???**|
+|0x0c|Nein|**???**|**???**|
+|0x0d|Nein|**???**|**???**|
+|0x0e|Nein|Temperaturfühler Lüfter/Heizung|Temperatur in Hex|
+|0x0f|Ja|**???**|**???**|
+|0x10|Nein|**???**|**???**|
+
+### Filament Platinen
+
+|Register|Beschreibbar|Funktion|Änderungen|
+|:-|-|-|-|
+|0x00|Nein|**???**|**???**|
+|0x01|Nein|**???**|**???**|
+|0x02|Nein|**???**|**???**|
+|0x03|Nein|Filamenterkennung|0x01: leer, 0x03: Filament erkannt|
+|0x05|Ja|**???**|**???**|
+|0x06|Ja|**???**|**???**|
+|0x07|Ja|**???**|**???**|
+|0x08|Ja|**???**|**???**|
+|0x09|Ja|**???**|**???**|
 
 \newpage
 \clearpage
 \pagewidth=420mm
 \pageheight=297mm
 \newgeometry{textwidth=370mm, textheight=237mm, top=30mm, left=25mm}
-# I2C Splitter Pins
+## I2C Splitter Pins
 | Pin | 1-1 | 1-2 | 1-3 | 1-4 | 1-5 | 1-6 | 1-7 | 1-8 | 2-1 | 2-2 | 2-3 | 2-4 | 2-5 | 2-6 | 2-7 | 2-8 | 3-1 | 3-2 | 3-3 | 3-4 | 3-5 | 3-6 | 3-7 | 3-8 | 4-1 | 4-2 | 4-3 | 4-4 | 4-5 | 4-6 | 4-7 | 4-8 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | **1-1** | — | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
@@ -288,3 +337,52 @@ number-sections: true
   \end{tikzpicture}
 \end{figure}
 ```
+\newpage
+# Kraken Doku
+## Pin Belegung
+
+|Name|Spannung|MCU|Steuer-Pin|
+|-|-|-|-|
+|Motor X|24-60 V|1| Dir: PC13, Step: PC14, EN: PE6, CS: PD6|
+|Motor Y|24-60 V|1| Dir: PE4, Step: PE5, EN: PE3, CS: PD5|
+|Motor Z|24-60 V|1| Dir: PE1, Step: PE2, EN: PE0, CS: PD4|
+|Motor Extruder Links|24-60 V|1| Dir: PG10, Step: PB9, EN: PG13, CS: PD2|
+|Motor Extruder Rechts|24-60 V|1| Dir: PD7, Step: PG11, EN: PG12, CS: PA15|
+|Endschalter X|5 V|1| PC15|
+|Endschalter Y|5 V|1| PF0|
+|Endschalter Z|5 V|1| PF1|
+|Magnetschiene X|5 V|Eventuell RP2040|**???**|
+|Magnetschiene Y|5 V|Eventuell RP2040|**???**|
+|Magnetschiene Z|5 V|Eventuell RP2040|**???**|
+|Türkontakt|5 V|2| PF10|
+|Deckelkontakt|5 V|2| PC0|
+|Servo Hotend|5 V|1| PE7|
+|Motor Power|42 V|1,2| Motor Power|
+|Board Power|24 V|1,2| Board Power|
+|PT1000 Hotend Links|5 V|1| PC9, 31865-1|
+|PT1000 Hotend Rechts|5 V|1| PA8, 31865-2|
+|Hotend Heater Links|12-24 V|1| PF6|
+|Hotend Heater Rechts|12-24 V|1| PF7|
+|Gehäuselüfter|24 V|1| PA0|
+|Hotendlüfter Links|5-24? V|1| PA1|
+|Hotendlüfter Rechts|5-24? V|1| PA2|
+|Status LED Rot|24 V|2| PA0|
+|Status LED Gelb|24 V|2| PA1|
+|Status LED Grün|24 V|2| PA2|
+|Status Buzzer|24 V|2| PA3|
+|Türöffner|24 V|2| PA4|
+|230V Platine|5 V|1| 5V EXP1|
+|Absaugung Hotend|3.3 V|1| PG3|
+|Lüfter Hinten|3.3 V|1| PD13|
+|Heizbett|3.3 V|1| PD15|
+|Bauraum LED|3.3 V|1| PG5|
+|Loadcell Extruder Links|5 V|1| **???** Wenn altes nicht funktioniert ADS1220 und SPI4 Bus und unterschiedliche CS und Ready pins oder 2 Loadcells an einer ADS1220|
+|Loadcell Extruder Rechts|5 V|1| **???** Wenn altes nicht funktioniert ADS1220 und SPI4 Bus und unterschiedliche CS und Ready pins oder 2 Loadcells an einer ADS1220|
+|Filament Steuerung|**???**|1| **Protokoll noch unklar**|
+|Bauraum Temperatur|**???**|1| **Sensor unklar**|
+|Raspberry Pi|5 V|1| PD8, PD9 / USB|
+|Kamera|5 V|1| USB an Raspberry Pi|
+|Display|5 V|1| USB an Raspberry Pi|
+
+
+

@@ -78,10 +78,12 @@ number-sections: true
 
 |Funktion|Pin|Leitungsbeschriftung|Ort|Anschluss|
 |:-|-|-|-|-|
+|48V Eingang|X1||Hardware Platine|Stecker|
+|24V Eingang|X3||Hardware Platine|Stecker|
 |Status LED|X44|NC/X44|Hardware Platine|Stecker|
 |Deckel Kontakt |X39 |NC/X39|Hardware Platine|Stecker|
 |Power ON Panel |X43 |NC/X43 |Hardware Platine|Stecker|
-| Tür| X37 / X38| DLCK / NC/X37;38| Hardware Platine|Stecker|
+| Tür| X37 (Kontakt)/ X38 (Öffner)| DLCK / NC/X37;38| Hardware Platine|Stecker|
 | | Q1 / Q2 --> X16| OZA / NC/X16| Hardware Platine|Stecker|
 | Endschalter X| X12| NC/X12| Hardware Platine| Stecker|
 | Endschalter Y| X13| NC/X13| Hardware Platine| Stecker|
@@ -93,14 +95,22 @@ number-sections: true
 | ExtruderStepL| X9| NC/X9| Hardware Platine| Stecker|
 | Steuerung Headend| X48| NC/X48| Hardware Platine| Stecker|
 | I²C BUS Extruder| X28.1| NC/X28.1| Hardware Platine| Stecker|
-| siehe @tbl-dsub26| X46| NC/X46| Hardware Platine| Stecker|
-| Steuerung Filament| X29| NC/X29| Hardware Platine| Stecker|
+| Steuerung 230V PLatine (siehe @tbl-dsub26)| X46| NC/X46| Hardware Platine| Stecker|
+| Steuerung Filament| X29.1| NC/X29.1| Hardware Platine| Stecker|
 | Magnetschiene Y| X31| NC/X31| Hardware Platine| Stecker|
 | Magnetschiene X| X30| NC/X30| Hardware Platine| Stecker|
 | Vakuum Pumpe| J2 / J3 / J4| Relais? / Raum / Extruder| Hardware Platine| Stecker|
-|Bauraum Temp Fühler| X22| NC/X22| Hardware Platine| Stecker|
-|Heizbet Temp Fühler| X40| NC/X40| Hardware Platine| Stecker|
+|Bauraum Temp Fühler| X20| NC/X20| Hardware Platine| Stecker|
+|Heizbett Temp Fühler| X40| NC/X40| Hardware Platine| Stecker|
 |Heizbett |X22| NC/X22| Hardware Platine| Stecker|
+|**???**|X23| NC/X23|Hardware Platine|Stecker|
+|**???**|X56| NC/X56|Hardware Platine|Stecker|
+|**???**|X16| NC/X16|Hardware Platine|Stecker|
+|**???**|X52| NC/X52|Hardware Platine|Stecker|
+|**???**|X25.1| NC/X25.1|Hardware Platine|Stecker|
+|Batterie Steuerung|X36B| NC/X36B|Hardware Platine|Stecker|
+|Batterie Steuerung|X36A| NC/X36A|Hardware Platine|Stecker|
+|Steuerung Absaugung|X45| NC/X45|Hardware Platine|Stecker|
 |-|-|-|-|-|
 |Kamera|Camera Adapter|HMI/X7|Software Platine|Stecker|
 |-|-|-|-|-|

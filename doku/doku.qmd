@@ -15,42 +15,62 @@ number-sections: true
 ::: {.callout-important}
 ## WICHTIG / TODO
 
-- **Buzzer Problem mit PA6 lösen**
 - **Endschalter TCST2103 nach Ankunft richtig ausmessen**
+- **Tool-Head Heater PWM Problem lösen**
+- **Servo ansteuern (eventuell Spannungsabfall Problem)**
+- **Pythonskript für Filamentsteuerung fertig stellen**
+- Kraken über UART ansteuern anstatt USB
 - Platine anlegen für Adapter
-  - Ausmessen der Mounts mit Scan bzw. Platine
-- Neue hintere Platte für Klipper und Raspberry Pi
 - Loadcells versuchen anzusteuern
-- Servo ansteuern (eventuell Spannungsabfall Problem)
-- 
+- I²C am Tool-Head ansteuern
+- Halter designen für neues Display als 3D-Druck
+- RP2040 für die Magnetleisten einbauen
+- Batteriesteuerung einbinden
+- Vakuumpumpe richtig einbinden
+- Filamentraum NFC einbinden
+- Filamentraum LEDs einbinden
 
 :::
 
 ::: {.callout-important}
 ## **Bestellen**
+- Altes Display neu bestellen: Riverdi RVT101HVLNWC00-B
+- Mehr optische Endschalter: TCST2103
+- MAX31865 für die Platine
+- RP2040 für Magnetleisten
 
 :::
 
 ::: {.callout-note}
 ## **Bereits angesteuert im F421**
 
-- Stepper Motoren:
-  - X/Y/Z
+- Motoren:
+  - Stepper X/Y/Z
+  - Motoren für Filament nachschub
 - Lüfter:
   - Gehäuse
   - Hotend
   - Absaugung Hotend
 - Heizung:
   - Heatbed
-  - Hotend (Fehler bei PWM)
+  - Hotend **(Fehler bei PWM)**
+  - Filamentraum
 - Beleuchtung:
   - Status LEDs
   - Bauraum
 - Sensoren:
   - PT1000 Hotend
+  - NTC Heatbet Heizelement
+  - NTC Heatbet selber
+  - NTC Bauraum bei Vakuumpumpe
+  - Filamentraum
+  - Filamentraum Heizelement
 - Kontakte:
   - Türkontakt
   - Deckelkontakt
+  - Power-On Taster
+  - Not-Aus Kontakt
+  - Optische Endschalter **(war nicht reproduzierbar, warten auf neue Sensoren)**
 
 :::
 
@@ -105,7 +125,7 @@ number-sections: true
 |Bauraum Temp Fühler (PT1000)| X22| NC/X22| Hardware Platine| Stecker|
 |**???**| X40| NC/X40| Hardware Platine| Stecker|
 |Heizbett Temp Fühler Heizelemnt NTC|X20| NC/X20| Hardware Platine| Stecker|
-|Bauraum hinten links Temp Fühler|X23| NC/X23|Hardware Platine|Stecker|
+|Bauraum hinten links Temp Fühler NTC|X23| NC/X23|Hardware Platine|Stecker|
 |Heizbett Temp Fühler Heizbett NTC|X56| NC/X56|Hardware Platine|Stecker|
 |Not-Aus Feedback|X16| NC/X16|Hardware Platine|Stecker|
 |Extruder Steuerung **???**|X52| NC/X52|Hardware Platine|Stecker|

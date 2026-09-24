@@ -9624,6 +9624,301 @@
 		)
 		(embedded_fonts no)
 	)
+	(footprint "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_2-G_1x02_P5.00mm_Horizontal"
+		(layer "F.Cu")
+		(uuid "64c0c16b-e926-4ee1-933e-450fd1469057")
+		(at 118 205.0275 180)
+		(descr "Generic Phoenix Contact connector footprint for: MSTBA_2,5/2-G; number of pins: 02; pin pitch: 5.00mm; Angled || order number: 1757475 12A || order number: 1923759 16A (HC)")
+		(tags "phoenix_contact connector MSTBA_01x02_G_5.00mm")
+		(property "Reference" "X48_Tool1"
+			(at 2.5 -4.2225 0)
+			(layer "F.SilkS")
+			(uuid "868d9b72-91fe-4fcd-97b9-6a5c0aea5776")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "Conn_01x02_Pin"
+			(at 2.5 11.2 0)
+			(layer "F.Fab")
+			(uuid "4c3498a9-5f23-4df5-b5e1-a3f9bf288e8c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cb7cb54b-fc2a-42b7-b55d-960f9af6aba5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f05f9769-5820-46dd-a769-e71b37ef129e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "connector/PhoenixContact"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "792af3b9-6dd9-4c85-89b8-e4f3be017e5f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "Connector*:*_1x??_*")
+		(path "/9078830d-877f-409a-a7e0-4b16ff90fd0a")
+		(sheetname "/")
+		(sheetfile "Adapterplatine.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start 6 10.11)
+			(end 5.75 8.61)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "f81b8252-0b46-4d71-9725-8243f9a86469")
+		)
+		(fp_line
+			(start 5.75 8.61)
+			(end 4.25 8.61)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "98c45a36-ef38-45ef-b690-aa5044bb07c0")
+		)
+		(fp_line
+			(start 4.25 8.61)
+			(end 4 10.11)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "6b290112-081c-4933-9d50-7b5658f152ed")
+		)
+		(fp_line
+			(start 4 10.11)
+			(end 6 10.11)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "4020b405-de87-40dc-af25-298797832a0b")
+		)
+		(fp_line
+			(start 1 10.11)
+			(end 0.75 8.61)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "d570c2bd-1c5b-4dcd-aa90-f4a7b428f8fa")
+		)
+		(fp_line
+			(start 0.75 8.61)
+			(end -0.75 8.61)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "22951377-de66-4812-a5d6-5ab535d62b67")
+		)
+		(fp_line
+			(start 0.3 -2.91)
+			(end 0 -2.31)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "7efd28fa-2596-4794-bfa2-097e915dc64d")
+		)
+		(fp_line
+			(start 0 -2.31)
+			(end -0.3 -2.91)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "707d2ecb-0288-4db0-965d-7e458fd98e71")
+		)
+		(fp_line
+			(start -0.3 -2.91)
+			(end 0.3 -2.91)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "cd7c2b82-1406-4120-a056-f2ed9c0d9b17")
+		)
+		(fp_line
+			(start -0.75 8.61)
+			(end -1 10.11)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "ebfae39c-7018-4696-9380-034485cc7533")
+		)
+		(fp_line
+			(start -1 10.11)
+			(end 1 10.11)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "bb062d31-3e29-4125-b057-16b2d0caf886")
+		)
+		(fp_rect
+			(start -3.61 6.81)
+			(end 8.61 8.61)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "0c91c5ea-5ace-4e4a-8337-7e469c8329d6")
+		)
+		(fp_rect
+			(start -3.61 -2.11)
+			(end 8.61 10.11)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "ca69d18d-6144-4eed-b943-b962bd635d74")
+		)
+		(fp_rect
+			(start -4 -2.5)
+			(end 9 10.5)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "b92fc288-fd2e-424f-befc-8c1cedfe7fd0")
+		)
+		(fp_line
+			(start 0.95 -2)
+			(end 0 -0.5)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "30a83986-f5be-4634-88f0-d716c7009dcc")
+		)
+		(fp_line
+			(start 0 -0.5)
+			(end -0.95 -2)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "fd649017-6249-4da5-ab3a-8d8faa3abdd6")
+		)
+		(fp_rect
+			(start -3.5 -2)
+			(end 8.5 10)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "827d6316-6895-42a7-9848-fdf56c3237b0")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 2.5 -1.3 0)
+			(layer "F.Fab")
+			(uuid "918eea6b-69c3-4a19-945e-4cf709f0a4c0")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" thru_hole roundrect
+			(at 0 0 180)
+			(size 2 3.6)
+			(drill 1.4)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(roundrect_rratio 0.125)
+			(net "/GND TOOL")
+			(pinfunction "Pin_1_1")
+			(pintype "passive")
+			(uuid "273fd710-b431-45a0-a32a-da9aeef63c84")
+		)
+		(pad "2" thru_hole oval
+			(at 5 0 180)
+			(size 2 3.6)
+			(drill 1.4)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "/VIN Tool1")
+			(pinfunction "Pin_2_2")
+			(pintype "passive")
+			(uuid "bb82d692-01b4-46ac-980c-14b2a4853bd4")
+		)
+		(embedded_fonts no)
+		(model "${KICAD10_3DMODEL_DIR}/Connector_Phoenix_MSTB.3dshapes/PhoenixContact_MSTBA_2,5_2-G_1x02_P5.00mm_Horizontal.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
 	(footprint "MountingHole:MountingHole_3.5mm_Pad"
 		(layer "F.Cu")
 		(uuid "69741c19-3c20-4d59-b240-600c6492202c")
@@ -22856,6 +23151,301 @@
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Connector_Dsub.3dshapes/DSUB-9_Socket_Vertical_P2.77x2.84mm_MountingHoles.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_2-G_1x02_P5.00mm_Horizontal"
+		(layer "F.Cu")
+		(uuid "df73f69d-fb26-4dfc-982c-e6f4c27ddaa5")
+		(at 104.5 205.0275 180)
+		(descr "Generic Phoenix Contact connector footprint for: MSTBA_2,5/2-G; number of pins: 02; pin pitch: 5.00mm; Angled || order number: 1757475 12A || order number: 1923759 16A (HC)")
+		(tags "phoenix_contact connector MSTBA_01x02_G_5.00mm")
+		(property "Reference" "X48_Tool0"
+			(at 2.5 -3.9725 0)
+			(layer "F.SilkS")
+			(uuid "6cae590c-bae5-41a2-9ff5-60c212651081")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "Conn_01x02_Pin"
+			(at 2.5 11.2 0)
+			(layer "F.Fab")
+			(uuid "e2a6993e-a9e9-46cc-ac46-5c76a2a44a3f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1638c157-3357-4752-8a40-a2af21967720")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e78af231-1784-42d1-9939-ebf9d8b6c295")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "connector/PhoenixContact"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "4dacc40c-4254-4577-83c2-30afa6610a27")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "Connector*:*_1x??_*")
+		(path "/80b9d43e-0a8e-4f7f-9c86-f6c5b3446880")
+		(sheetname "/")
+		(sheetfile "Adapterplatine.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start 6 10.11)
+			(end 5.75 8.61)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "b815dffe-bd07-4a2b-92e3-10543c623b8a")
+		)
+		(fp_line
+			(start 5.75 8.61)
+			(end 4.25 8.61)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "b88505fd-674b-4caa-963d-d7a4b6de6f7c")
+		)
+		(fp_line
+			(start 4.25 8.61)
+			(end 4 10.11)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "f52f1d3a-0a24-4cae-bb63-64c1bf519da2")
+		)
+		(fp_line
+			(start 4 10.11)
+			(end 6 10.11)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "94474bd2-af57-4ad0-8195-257f7dfd3811")
+		)
+		(fp_line
+			(start 1 10.11)
+			(end 0.75 8.61)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "5301beef-b9e2-4275-a01f-db73e0f4a331")
+		)
+		(fp_line
+			(start 0.75 8.61)
+			(end -0.75 8.61)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "2d22b761-cbf6-4d66-a5d2-65ecb888b654")
+		)
+		(fp_line
+			(start 0.3 -2.91)
+			(end 0 -2.31)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "dcae70ff-5b77-4d0a-abe1-1f3b70fb934e")
+		)
+		(fp_line
+			(start 0 -2.31)
+			(end -0.3 -2.91)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "f966ca9d-a688-4dfe-90b9-a297f53408c2")
+		)
+		(fp_line
+			(start -0.3 -2.91)
+			(end 0.3 -2.91)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "636b7501-2146-4308-9f57-1b7cfce07bdb")
+		)
+		(fp_line
+			(start -0.75 8.61)
+			(end -1 10.11)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "7d32ef37-5e13-4227-97bb-f36344345f91")
+		)
+		(fp_line
+			(start -1 10.11)
+			(end 1 10.11)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "9434744f-49f7-406d-9413-04ad349083e6")
+		)
+		(fp_rect
+			(start -3.61 6.81)
+			(end 8.61 8.61)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "d67ca99c-a4db-4b61-b86b-8d761afc6e54")
+		)
+		(fp_rect
+			(start -3.61 -2.11)
+			(end 8.61 10.11)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "5bc4fea6-937e-4b8e-bb72-42c2fdd10663")
+		)
+		(fp_rect
+			(start -4 -2.5)
+			(end 9 10.5)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "db52e0f6-da4f-4023-8cf5-65105db3025c")
+		)
+		(fp_line
+			(start 0.95 -2)
+			(end 0 -0.5)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "2c90af74-c9a7-48a1-8533-5ff77642ad5a")
+		)
+		(fp_line
+			(start 0 -0.5)
+			(end -0.95 -2)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "71749ff0-941c-4a58-b642-8ec8e002947e")
+		)
+		(fp_rect
+			(start -3.5 -2)
+			(end 8.5 10)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "e4f3bb2d-9008-45f3-9de7-2c8879bf9d93")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 2.5 -1.3 0)
+			(layer "F.Fab")
+			(uuid "77f2fa08-f468-4ba6-9d4f-e6eb8a0397e7")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" thru_hole roundrect
+			(at 0 0 180)
+			(size 2 3.6)
+			(drill 1.4)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(roundrect_rratio 0.125)
+			(net "/GND TOOL")
+			(pinfunction "Pin_1_1")
+			(pintype "passive")
+			(uuid "d9e080a6-b4e1-47d6-99aa-b5ddf436e65d")
+		)
+		(pad "2" thru_hole oval
+			(at 5 0 180)
+			(size 2 3.6)
+			(drill 1.4)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "/VIN Tool0")
+			(pinfunction "Pin_2_2")
+			(pintype "passive")
+			(uuid "75501faa-549f-48bd-9e59-dccad8cf1b87")
+		)
+		(embedded_fonts no)
+		(model "${KICAD10_3DMODEL_DIR}/Connector_Phoenix_MSTB.3dshapes/PhoenixContact_MSTBA_2,5_2-G_1x02_P5.00mm_Horizontal.step"
 			(offset
 				(xyz 0 0 0)
 			)

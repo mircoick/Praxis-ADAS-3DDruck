@@ -3672,6 +3672,12 @@
 		(uuid "808ab9ab-9ca1-4a38-a962-0fd92a1dc632")
 	)
 	(junction
+		(at 123.19 44.45)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "98dcff48-3ee4-4628-a8d9-e79f30d3e1f6")
+	)
+	(junction
 		(at 107.95 71.12)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3688,6 +3694,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e35b099b-0f8b-4088-9c1e-47cbf1771fd1")
+	)
+	(junction
+		(at 127 44.45)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e47d4f5e-46e9-425e-896e-7c18366af36b")
 	)
 	(junction
 		(at 231.14 41.91)
@@ -3907,6 +3919,16 @@
 	)
 	(wire
 		(pts
+			(xy 114.3 34.29) (xy 114.3 22.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "178ba0d6-40cd-4cbe-87e3-f9e01c58bbaf")
+	)
+	(wire
+		(pts
 			(xy 17.78 63.5) (xy 20.32 63.5)
 		)
 		(stroke
@@ -3964,6 +3986,16 @@
 			(type default)
 		)
 		(uuid "21906cf0-4459-473a-b1e9-b2a6dd40650f")
+	)
+	(wire
+		(pts
+			(xy 124.46 31.75) (xy 128.27 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "21ab742b-3bf2-4cf2-847f-80219a2e5971")
 	)
 	(wire
 		(pts
@@ -4487,6 +4519,16 @@
 	)
 	(wire
 		(pts
+			(xy 127 22.86) (xy 127 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "69fc7e90-73cd-4222-ad69-94d72d9bede7")
+	)
+	(wire
+		(pts
 			(xy 146.05 67.31) (xy 146.05 73.66)
 		)
 		(stroke
@@ -4504,6 +4546,16 @@
 			(type default)
 		)
 		(uuid "6b476f6c-24dd-4df1-a7aa-de8f7b9cfbe6")
+	)
+	(wire
+		(pts
+			(xy 124.46 22.86) (xy 124.46 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6c485647-25ca-42eb-9d82-6c6a467cd0ea")
 	)
 	(wire
 		(pts
@@ -4567,16 +4619,6 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 38.1) (xy 128.27 41.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "79f34b93-7854-48db-abbd-9133fd3599ae")
-	)
-	(wire
-		(pts
 			(xy 143.51 45.72) (xy 143.51 43.18)
 		)
 		(stroke
@@ -4587,7 +4629,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 38.1) (xy 125.73 43.18)
+			(xy 125.73 34.29) (xy 125.73 43.18)
 		)
 		(stroke
 			(width 0)
@@ -4757,6 +4799,16 @@
 	)
 	(wire
 		(pts
+			(xy 125.73 34.29) (xy 114.3 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9aa93a37-45c1-48bf-bc75-cb6cc41c3de2")
+	)
+	(wire
+		(pts
 			(xy 228.6 52.07) (xy 228.6 15.24)
 		)
 		(stroke
@@ -4797,7 +4849,7 @@
 	)
 	(wire
 		(pts
-			(xy 123.19 44.45) (xy 138.43 44.45)
+			(xy 123.19 44.45) (xy 127 44.45)
 		)
 		(stroke
 			(width 0)
@@ -4857,6 +4909,16 @@
 	)
 	(wire
 		(pts
+			(xy 127 44.45) (xy 138.43 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aa847bd1-416c-48dd-953d-5f067552583c")
+	)
+	(wire
+		(pts
 			(xy 232.41 35.56) (xy 231.14 35.56)
 		)
 		(stroke
@@ -4874,6 +4936,16 @@
 			(type default)
 		)
 		(uuid "ab71fb0e-268c-41cb-b373-d7e867f365af")
+	)
+	(wire
+		(pts
+			(xy 128.27 31.75) (xy 128.27 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "abbc0b86-ce1b-49f7-a9e6-99b0dea7afce")
 	)
 	(wire
 		(pts
@@ -5517,6 +5589,16 @@
 	)
 	(wire
 		(pts
+			(xy 116.84 44.45) (xy 123.19 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ef399a59-a3ce-4529-9af4-68a058803a1a")
+	)
+	(wire
+		(pts
 			(xy 64.77 168.91) (xy 64.77 179.07)
 		)
 		(stroke
@@ -5554,6 +5636,16 @@
 			(type default)
 		)
 		(uuid "f299b48e-0c5c-4d9d-baa1-1e095f9360c2")
+	)
+	(wire
+		(pts
+			(xy 116.84 22.86) (xy 116.84 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f2e8a321-de4b-45d3-b65e-9963a799bf68")
 	)
 	(wire
 		(pts
@@ -9213,6 +9305,86 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x02_Pin")
+		(at 116.84 17.78 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "80b9d43e-0a8e-4f7f-9c86-f6c5b3446880")
+		(property "Reference" "X48_Tool0"
+			(at 121.92 18.415 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x02_Pin"
+			(at 119.38 18.415 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_2-G_1x02_P5.00mm_Horizontal"
+			(at 116.84 17.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 116.84 17.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated"
+			(at 116.84 17.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e856eaa6-90ec-44d5-9300-39384d97286e")
+		)
+		(pin "2"
+			(uuid "9ad80f46-2ecc-486c-8fda-b9864f5bd10e")
+		)
+		(instances
+			(project "Adapterplatine"
+				(path "/99d5d967-6a35-454f-aac3-01cafa1d30b4"
+					(reference "X48_Tool0")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_01x02_Pin")
 		(at 203.2 76.2 90)
 		(unit 1)
 		(body_style 1)
@@ -9534,6 +9706,86 @@
 			(project "Adapterplatine"
 				(path "/99d5d967-6a35-454f-aac3-01cafa1d30b4"
 					(reference "X44_b1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_01x02_Pin")
+		(at 127 17.78 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9078830d-877f-409a-a7e0-4b16ff90fd0a")
+		(property "Reference" "X48_Tool1"
+			(at 132.08 18.415 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x02_Pin"
+			(at 129.54 18.415 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_2-G_1x02_P5.00mm_Horizontal"
+			(at 127 17.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 127 17.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated"
+			(at 127 17.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a148185e-4c95-4207-8854-cd6feb26d404")
+		)
+		(pin "2"
+			(uuid "1103babb-4109-4440-93b9-2cb0030e1390")
+		)
+		(instances
+			(project "Adapterplatine"
+				(path "/99d5d967-6a35-454f-aac3-01cafa1d30b4"
+					(reference "X48_Tool1")
 					(unit 1)
 				)
 			)

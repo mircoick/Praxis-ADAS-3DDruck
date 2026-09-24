@@ -70,6 +70,8 @@ number-sections: true
 | Kamera | OV2640 |
 |Endschalter|TCST2103|
 |Innenraum Lampen|Osram i278 Halogen|
+|NFC Reader|F380.13.024|
+|Touchscreen| Riverdi: RVT101HVLNWC00-B, Maße Aussparung: 230x152|
 
 : Bauteile am F421 {#tbl-parts}
 
@@ -82,7 +84,7 @@ number-sections: true
 |24V Eingang|X3||Hardware Platine|Stecker|
 |Status LED|X44|NC/X44|Hardware Platine|Stecker|
 |Deckel Kontakt |X39 |NC/X39|Hardware Platine|Stecker|
-|Power ON Panel |X43 |NC/X43 |Hardware Platine|Stecker|
+|Power ON Panel Anschluss direkt an Raspberry Pi J2|X43 |NC/X43 |Hardware Platine|Stecker|
 | Tür| X37 (Kontakt)/ X38 (Öffner)| DLCK / NC/X37;38| Hardware Platine|Stecker|
 | | Q1 / Q2 --> X16| OZA / NC/X16| Hardware Platine|Stecker|
 | Endschalter X| X12| NC/X12| Hardware Platine| Stecker|
@@ -100,14 +102,14 @@ number-sections: true
 | Magnetschiene Y| X31| NC/X31| Hardware Platine| Stecker|
 | Magnetschiene X| X30| NC/X30| Hardware Platine| Stecker|
 | Vakuum Pumpe| J2 / J3 / J4| Relais? / Raum / Extruder| Hardware Platine| Stecker|
-|Bauraum Temp Fühler| X20| NC/X20| Hardware Platine| Stecker|
-|Heizbett Temp Fühler| X40| NC/X40| Hardware Platine| Stecker|
-|Heizbett |X22| NC/X22| Hardware Platine| Stecker|
-|**???**|X23| NC/X23|Hardware Platine|Stecker|
-|**???**|X56| NC/X56|Hardware Platine|Stecker|
-|**???**|X16| NC/X16|Hardware Platine|Stecker|
-|**???**|X52| NC/X52|Hardware Platine|Stecker|
-|**???**|X25.1| NC/X25.1|Hardware Platine|Stecker|
+|Bauraum Temp Fühler (PT1000)| X22| NC/X22| Hardware Platine| Stecker|
+|**???**| X40| NC/X40| Hardware Platine| Stecker|
+|Heizbett Temp Fühler Heizelemnt NTC|X20| NC/X20| Hardware Platine| Stecker|
+|Bauraum hinten links Temp Fühler|X23| NC/X23|Hardware Platine|Stecker|
+|Heizbett Temp Fühler Heizbett NTC|X56| NC/X56|Hardware Platine|Stecker|
+|Not-Aus Feedback|X16| NC/X16|Hardware Platine|Stecker|
+|Extruder Steuerung **???**|X52| NC/X52|Hardware Platine|Stecker|
+|Gehäuselüfter|X25.1| NC/X25.1|Hardware Platine|Stecker|
 |Batterie Steuerung|X36B| NC/X36B|Hardware Platine|Stecker|
 |Batterie Steuerung|X36A| NC/X36A|Hardware Platine|Stecker|
 |Steuerung Absaugung|X45| NC/X45|Hardware Platine|Stecker|
@@ -124,7 +126,7 @@ number-sections: true
 \newpage
 ### D-SUB26 an X46
 
-|Funktion|SUB26|PIN20|PIN2|PIN4|PIN8 (Extruder)|
+|Funktion|SUB26|PIN20 X48|PIN2 X52|PIN4 X28_1|PIN8 (Extruder)|
 |-|-|-|-|-|-|
 |Tool0 (6,7,8) VIN|1|11||||
 |Tool0 (5) PT1000|2|13||||
@@ -213,6 +215,11 @@ number-sections: true
 - 0x6d: unten links
 - 0x6e: oben rechts
 - 0x6f: oben links 
+
+- Braun: VCC
+- Weiß: GND
+- Grün: SDA
+- Gelb: SCL
   
 \newpage
 
@@ -242,15 +249,21 @@ number-sections: true
 
 |Register|Beschreibbar|Funktion|Änderungen|
 |:-|-|-|-|
-|0x00|Nein|**???**|**???**|
-|0x01|Nein|**???**|**???**|
-|0x02|Nein|**???**|**???**|
+|0x00|Nein|**???**|Default: de|
+|0x01|Nein|**???**|Default: 11|
+|0x02|Nein|**???**|Default: 19|
 |0x03|Nein|Filamenterkennung|0x01: leer, 0x03: Filament erkannt|
-|0x05|Ja|**???**|**???**|
-|0x06|Ja|**???**|**???**|
-|0x07|Ja|**???**|**???**|
-|0x08|Ja|**???**|**???**|
-|0x09|Ja|**???**|**???**|
+|0x04|Nein|**???**|**???**|
+|0x05|Ja|Geschwindigkeit Motor Vorwärts|Default:0x64|
+|0x06|Ja|Geschwindigkeit Motor Rückwärts|Default:0x64|
+|0x07|Ja|**???**|Default: 0x28|
+|0x08|Ja|**???**|Default: 0x06|
+|0x09|Ja|**???**|Default: 0x1e|
+|0x0a|Ja|Motorsteuerung|Default: 0x00, 0x01: Durchgehendes fahren vor,0x01: Durchgehendes fahren vor, 0x03: Ein Step|
+|0x0b|Nein|**???**|Default: 0x00|
+|0x0c|Nein|**???**|Default: 0x00|
+|0x0d|Nein|**???**|Default: 0x00|
+|0x0e-0x14|Nein|NFC Erkennung|Default: 0x00|
 
 \newpage
 \clearpage

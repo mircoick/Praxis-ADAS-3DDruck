@@ -648,7 +648,7 @@
         "uuid": "99d5d967-6a35-454f-aac3-01cafa1d30b4"
       }
     ],
-    "used_designators": "X36A1,J1,J5-6,J36,X36B1,X221,X5K1,X2,X4,X8,X11,X14,X41,X47,X5_2-3,X12__2-3,#PWR4-20,X13__2,X15__2,X48__PT1000_2,FAN1-7,X37__2,X_EndStop5-6,I2C1,X28_2,Raspi_2-3",
+    "used_designators": "X36A1,J1,J5-6,J36,X36B1,X2,X4,X8,X11,X14,X41,X47,X221,X5K1,X5_2-3,#PWR4-22,X12__2-3,X13__2,X15__2,X48__PT1000_2,FAN1-7,X37__2,X_EndStop5-6,I2C1,X28_2,Raspi_2-3,X1__2,X48_Tool1",
     "variants": []
   },
   "sheets": [

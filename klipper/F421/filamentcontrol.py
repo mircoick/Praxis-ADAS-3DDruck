@@ -35,7 +35,7 @@ class FilamentControl:
         gcode = self.printer.lookup_object('gcode')
         gcode.register_command("SET_FILAMENT_HEATING_PWM", self.cmd_SET_HEATING_PWM)
         gcode.register_command("SET_FILAMENT_MOTOR", self.cmd_SET_MOTOR)
-        gcode.register_command("I2C_SCAN_FILAMENT", self.cmd_I2C_SCAN_FILAMENT)
+        gcode.register_command("FILAMENT_I2C_SCAN", self.cmd_I2C_SCAN_FILAMENT)
         gcode.register_command("QUERY_FILAMENT_CONTROL", self.cmd_QUERY_FILAMENT_CONTROL)
 
         # Timer-Event registrieren

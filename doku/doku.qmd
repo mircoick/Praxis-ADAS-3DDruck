@@ -440,3 +440,12 @@ number-sections: true
 - Signal von Magnetschiene an 10kOhm -> Abgriff mit RP2040 GPIO -> 20kOhm auf GND
 - Je 2 Signalleitungen pro Magnetschiene
   - Insgesamt 6 Signalleitungen für X/Y/Z Magnetschienen
+
+## Anschluss RP2040 & Kraken
+
+- Uart0:
+  - Kraken PD8 (TX3) $\rightarrow$ Pi GPIO 15 (RX / Header Pin 10)
+  - Kraken PD9 (RX3) $\rightarrow$ Pi GPIO 14 (TX / Header Pin 8)
+- Uart2:
+  - RP2040 GP0 (TX) $\rightarrow$ Pi GPIO 5 (RX2 / Header Pin 29)
+  - RP2040 GP1 (RX) $\rightarrow$ Pi GPIO 4 (TX2 / Header Pin 7)

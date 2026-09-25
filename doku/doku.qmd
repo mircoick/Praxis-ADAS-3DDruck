@@ -214,8 +214,8 @@ number-sections: true
 |-|-|-|
 |Gelb |+|5 V dazwischen 220$\Omega$|
 |Grün |Emitter|GND|
-|Weiß |+|GND|
-|Braun |Drain/ Kollektor|Signal mit Pull-Up im Code|
+|Weiß |+|Signal mit Pull-Up im Code|
+|Braun |Drain/ Kollektor|GND|
 
 : Optischer Sensor {#tbl-opticalpin}
 

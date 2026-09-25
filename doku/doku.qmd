@@ -17,7 +17,8 @@ number-sections: true
 
 - **Endschalter TCST2103 nach Ankunft richtig ausmessen**
 - **Tool-Head Heater PWM Problem lösen**
-- **Servo ansteuern (eventuell Spannungsabfall Problem)**
+  - Problem gelöst Kabel noch verbauen
+- **Servo ansteuern (PWM Signal mit Oszilloskop messen)**
 - **Pythonskript für Filamentsteuerung fertig stellen**
 - Kraken über UART ansteuern anstatt USB
 - Platine anlegen für Adapter
@@ -25,6 +26,7 @@ number-sections: true
 - I²C am Tool-Head ansteuern
 - Halter designen für neues Display als 3D-Druck
 - RP2040 für die Magnetleisten einbauen
+  - Funktionsfähig in Schaltung in KiCad übernehmen
 - Batteriesteuerung einbinden
 - Vakuumpumpe richtig einbinden
 - Filamentraum NFC einbinden
@@ -38,6 +40,9 @@ number-sections: true
 - Mehr optische Endschalter: TCST2103
 - MAX31865 für die Platine
 - RP2040 für Magnetleisten
+- Steckdose Raspberry Pi VCC
+- Kabelbinder schwarz
+- 
 
 :::
 
@@ -428,4 +433,10 @@ number-sections: true
 |Display|5 V|1| USB an Raspberry Pi|
 
 
+## Ansteuerung Magnetschienen
 
+- 5V VCC an RP2040 und Magnetschienen VCC
+- GND an RP2040 und Magnetschienen GND
+- Signal von Magnetschiene an 10kOhm -> Abgriff mit RP2040 GPIO -> 20kOhm auf GND
+- Je 2 Signalleitungen pro Magnetschiene
+  - Insgesamt 6 Signalleitungen für X/Y/Z Magnetschienen

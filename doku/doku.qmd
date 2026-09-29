@@ -32,6 +32,14 @@ number-sections: true
 - Filamentraum NFC einbinden
 - Filamentraum LEDs einbinden
 
+
+- KiCad:
+  - PIN9 Servo und FAN 5V oder 12V
+  - X40/ X28_1 Einbringen
+  - Vakuumpumpe J2-J4 Einbringen
+  - D-SUB9 Stecker Einbringen
+  - X52 Einbringen
+
 :::
 
 ::: {.callout-important}

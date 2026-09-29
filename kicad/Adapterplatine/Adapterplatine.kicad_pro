@@ -39,9 +39,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.8,
-          "height": 1.27,
-          "width": 2.54
+          "drill": 1.0,
+          "height": 1.7,
+          "width": 1.7
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -140,7 +140,7 @@
       },
       "rules": {
         "max_error": 0.005,
-        "min_clearance": 0.0,
+        "min_clearance": 0.2,
         "min_connection": 0.0,
         "min_copper_edge_clearance": 0.5,
         "min_groove_width": 0.0,
@@ -154,8 +154,8 @@
         "min_text_thickness": 0.08,
         "min_through_hole_diameter": 0.3,
         "min_track_width": 0.5,
-        "min_via_annular_width": 0.1,
-        "min_via_diameter": 0.5,
+        "min_via_annular_width": 0.2,
+        "min_via_diameter": 0.6,
         "solder_mask_to_copper_clearance": 0.0,
         "use_height_for_length_calcs": true
       },
@@ -466,7 +466,7 @@
       "no_connect_dangling": "warning",
       "pin_not_connected": "error",
       "pin_not_driven": "error",
-      "pin_to_pin": "warning",
+      "pin_to_pin": "error",
       "power_pin_not_driven": "error",
       "same_local_global_label": "warning",
       "similar_label_and_power": "warning",
@@ -648,13 +648,41 @@
         "uuid": "99d5d967-6a35-454f-aac3-01cafa1d30b4"
       }
     ],
-    "used_designators": "T_Heizbett1,J1,J5,T_HeizE1,T_Bauraum2,#PWR21-29,FAN3,Raspi_3,Temp_Bauraum2,Not_Aus1",
+    "used_designators": "#PWR13,#PWR15,#PWR36",
     "variants": []
   },
   "sheets": [
     [
       "99d5d967-6a35-454f-aac3-01cafa1d30b4",
       "Adapterplatine"
+    ],
+    [
+      "4e8bb0ea-1f12-477f-82c0-1a89d26c4cc3",
+      "Motor Driver"
+    ],
+    [
+      "496d8aa2-eca8-449a-ab8b-4392ba769f46",
+      "Limit Switches"
+    ],
+    [
+      "e6109122-1bee-438f-992b-3b9d51092d11",
+      "Power"
+    ],
+    [
+      "978a6864-b302-4b1a-93ac-77e155af244a",
+      "temperature"
+    ],
+    [
+      "d3c70294-d43c-4ffa-984d-dc715d4de7b5",
+      "Fan"
+    ],
+    [
+      "6e4113d7-0438-4c79-b883-7b55fbeab670",
+      "Raspberry PI"
+    ],
+    [
+      "3f45c5c1-9918-44de-9503-fb3cd98730d1",
+      "platines"
     ]
   ],
   "text_variables": {},

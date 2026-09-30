@@ -4,18 +4,19 @@ from datetime import datetime, timedelta
 """
 VCC = 3.3V
 GND = GND
-CLK = GPIO12
+CLK = GPIO11
 SDI = GPIO10
 SDO = GPIO9
 CS  = GPIO5
 """
 
 spi = board.SPI()
-cs = digitalio.DigitalInOut(board.D5)  # Chip select
-sensor = adafruit_max31865.MAX31865(spi, cs, rtd_nominal=100.0, ref_resistor=428.25, wires=3)
+cs = digitalio.DigitalInOut(board.D6)  # Chip select
+#sensor = adafruit_max31865.MAX31865(spi, cs, rtd_nominal=100.0, ref_resistor=428.25, wires=3)
+sensor = adafruit_max31865.MAX31865(spi, cs, rtd_nominal=1000.0, ref_resistor=4300, wires=2)
 sensor.clear_faults()
 
-filename = "temp_data.csv"
+filename = "/home/mircoick/Desktop/temp_data.csv"
 
 print(f"Datenaufnahme von Temperaturdaten mit PT100\n")
 h = int(input("Stunden: ") or 0)
@@ -38,6 +39,6 @@ with open(filename, mode="w", newline="", encoding="utf-8") as file:
         writer.writerow([timestamp, f"{temp:.3f}", f"{res:.3f}"])
         file.flush()
 
-        time.sleep(1)
+        time.sleep(.1)
 
 print("\nAufnahme beendet!")

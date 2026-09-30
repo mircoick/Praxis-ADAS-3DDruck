@@ -3143,10 +3143,6 @@
 		)
 		(instances
 			(project "Adapterplatine"
-				(path "/99d5d967-6a35-454f-aac3-01cafa1d30b4"
-					(reference "X28_1")
-					(unit 1)
-				)
 				(path "/99d5d967-6a35-454f-aac3-01cafa1d30b4/3f45c5c1-9918-44de-9503-fb3cd98730d1"
 					(reference "X28_1")
 					(unit 1)

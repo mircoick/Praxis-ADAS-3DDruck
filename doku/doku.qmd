@@ -15,18 +15,13 @@ number-sections: true
 ::: {.callout-important}
 ## WICHTIG / TODO
 
-- **Endschalter TCST2103 nach Ankunft richtig ausmessen**
-- **Tool-Head Heater PWM Problem lösen**
-  - Problem gelöst Kabel noch verbauen
-- **Servo ansteuern (PWM Signal mit Oszilloskop messen)**
+- **Endschalter TCST2103 neu löten lassen**
+- **Tool-Head crimpen lassen**
 - **Pythonskript für Filamentsteuerung fertig stellen**
-- Kraken über UART ansteuern anstatt USB
-- Platine anlegen für Adapter
+- **Platine anlegen für Adapter**
 - Loadcells versuchen anzusteuern
 - I²C am Tool-Head ansteuern
 - Halter designen für neues Display als 3D-Druck
-- RP2040 für die Magnetleisten einbauen
-  - Funktionsfähig in Schaltung in KiCad übernehmen
 - Batteriesteuerung einbinden
 - Vakuumpumpe richtig einbinden
 - Filamentraum NFC einbinden
@@ -59,7 +54,8 @@ number-sections: true
 
 - Motoren:
   - Stepper X/Y/Z
-  - Motoren für Filament nachschub
+  - Servo Hotend
+  - Motoren für Filament Nachschub
 - Lüfter:
   - Gehäuse
   - Hotend
@@ -78,6 +74,7 @@ number-sections: true
   - NTC Bauraum bei Vakuumpumpe
   - Filamentraum
   - Filamentraum Heizelement
+  - Endschalter X/Y/Z
 - Kontakte:
   - Türkontakt
   - Deckelkontakt

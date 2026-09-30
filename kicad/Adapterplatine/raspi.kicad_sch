@@ -3977,6 +3977,95 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector_Generic:Conn_01x05")
+		(at 180.34 133.35 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9b4036d0-5f44-428a-b730-3f934d58880a")
+		(property "Reference" "J1"
+			(at 180.34 137.16 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x05"
+			(at 180.34 139.7 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x05_P2.54mm_Vertical"
+			(at 180.34 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 180.34 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 180.34 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7e1f6496-8ac4-480b-9300-691cdfce6137")
+		)
+		(pin "3"
+			(uuid "3fff6a2a-a6e8-42be-8517-1f1c379f4d1f")
+		)
+		(pin "4"
+			(uuid "3431b9f2-3bb8-4728-9b7d-465df88a15d1")
+		)
+		(pin "5"
+			(uuid "8d02bed3-e391-4c79-a628-f9a903591c3b")
+		)
+		(pin "2"
+			(uuid "f171404c-3449-4152-a3d3-5d935f77437f")
+		)
+		(instances
+			(project "Adapterplatine"
+				(path "/99d5d967-6a35-454f-aac3-01cafa1d30b4/6e4113d7-0438-4c79-b883-7b55fbeab670"
+					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:VCC")
 		(at 190.5 78.74 90)
 		(unit 1)

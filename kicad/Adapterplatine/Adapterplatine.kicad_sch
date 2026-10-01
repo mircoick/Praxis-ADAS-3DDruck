@@ -913,6 +913,16 @@
 	)
 	(wire
 		(pts
+			(xy 74.93 52.07) (xy 109.22 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1c00ceb6-2cfb-45b3-93b6-5883ce08c27e")
+	)
+	(wire
+		(pts
 			(xy 74.93 57.15) (xy 109.22 57.15)
 		)
 		(stroke
@@ -1593,6 +1603,16 @@
 				(justify right)
 			)
 		)
+		(pin "+3.3V" input
+			(at 74.93 52.07 0)
+			(uuid "5f193dc8-8bbf-4343-ab05-bdbf2fffa9e5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
 		(instances
 			(project "Adapterplatine"
 				(path "/99d5d967-6a35-454f-aac3-01cafa1d30b4"
@@ -1840,6 +1860,16 @@
 		(pin "X48-PT1000-0 PIN20" input
 			(at 109.22 48.26 180)
 			(uuid "e3f80daf-dce4-4c5c-8719-4864abc5fd1d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "+3.3V" output
+			(at 109.22 52.07 180)
+			(uuid "8a4169ea-be94-4d8b-b440-a65f53dd0ca7")
 			(effects
 				(font
 					(size 1.27 1.27)

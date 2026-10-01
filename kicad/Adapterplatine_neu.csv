@@ -27,3 +27,5 @@ Id;Designator;Footprint;Quantity;Designation;Supplier and ref
 27;X44__g1, X44__r1;Molex_KK-254_AE-6410-04A_1x04_P2.54mm_Vertical;2;Conn_01x04_Pin;https://www.reichelt.de/de/de/shop/produkt/molex_stiftleiste_-_kk_-_1x4-polig_-_stecker-185659
 28;X46, X46__1;IDC-Header_2x05_P2.54mm_Vertical;2;Conn_02x05_Top_Bottom;https://www.amazon.de/sourcingmap%C2%AE-2-54mm-Doppel-Zeilenabstand-Headers/dp/B009P2ERVW
 29;X48;Molex_Mini-Fit_Jr_5566-20A_2x10_P4.20mm_Vertical;1;Conn_02x10_Top_Bottom;https://www.reichelt.de/de/de/shop/produkt/molex_stiftleiste_-_mini-fit_jr_-_2x10-polig_-_stecker-186194
+;;;;;
+;;;91;;

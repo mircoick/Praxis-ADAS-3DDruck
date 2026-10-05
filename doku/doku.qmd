@@ -15,12 +15,10 @@ number-sections: true
 ::: {.callout-important}
 ## WICHTIG / TODO
 
-- **Extruder Motoren ausklingeln**
-
-- **Endschalter TCST2103 neu löten lassen**
-- **Tool-Head crimpen lassen**
+- **Tool-Head Molex crimpen**
 - **Pythonskript für Filamentsteuerung fertig stellen**
 - **Platine anlegen für Adapter**
+- **J3/ J4 mit in KiCAD aufnhemen/ 230V Platinen Stecker Umdrehen**
 - Loadcells versuchen anzusteuern
 - I²C am Tool-Head ansteuern
 - Halter designen für neues Display als 3D-Druck
@@ -133,7 +131,9 @@ number-sections: true
 | Steuerung Filament| X29.1| NC/X29.1| Hardware Platine| Stecker|
 | Magnetschiene Y| X31| NC/X31| Hardware Platine| Stecker|
 | Magnetschiene X| X30| NC/X30| Hardware Platine| Stecker|
-| Vakuum Pumpe| J2 / J3 / J4| Relais? / Raum / Extruder| Hardware Platine| Stecker|
+| Vakuum Pumpe|J2| Relais?| Hardware Platine| Stecker|
+| Chamber Fan| J4| Extruder| Hardware Platine| Stecker|
+| Blower Power| J3|Raum| Hardware Platine| Stecker|
 |Bauraum Temp Fühler (PT1000)| X22| NC/X22| Hardware Platine| Stecker|
 |**???**| X40| NC/X40| Hardware Platine| Stecker|
 |Heizbett Temp Fühler Heizelemnt NTC|X20| NC/X20| Hardware Platine| Stecker|

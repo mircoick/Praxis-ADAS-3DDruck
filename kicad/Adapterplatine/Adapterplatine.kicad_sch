@@ -900,16 +900,36 @@
 		)
 	)
 	(junction
-		(at 92.71 77.47)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "3158a632-a6df-406c-82b1-775ec8b465ef")
-	)
-	(junction
 		(at 92.71 92.71)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "33c00edd-c4bb-4c8c-892c-075155a43fe4")
+	)
+	(junction
+		(at 92.71 80.01)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c80dd5a6-03aa-42e5-a5f2-046d09916178")
+	)
+	(wire
+		(pts
+			(xy 135.89 74.93) (xy 139.7 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "05d12cc1-ada6-4e16-a1f9-5b5ef090d983")
+	)
+	(wire
+		(pts
+			(xy 92.71 80.01) (xy 92.71 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "08e77842-a781-45ac-9eb3-c258b0ec4825")
 	)
 	(wire
 		(pts
@@ -943,7 +963,7 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 77.47) (xy 109.22 77.47)
+			(xy 92.71 80.01) (xy 109.22 80.01)
 		)
 		(stroke
 			(width 0)
@@ -973,16 +993,6 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 80.01) (xy 109.22 80.01)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "51db4bb5-52b4-49b3-acf1-8bdfe4b92232")
-	)
-	(wire
-		(pts
 			(xy 109.22 72.39) (xy 92.71 72.39)
 		)
 		(stroke
@@ -990,6 +1000,16 @@
 			(type default)
 		)
 		(uuid "54a9ae18-3ce6-477e-a27f-abfdcd0d8123")
+	)
+	(wire
+		(pts
+			(xy 135.89 77.47) (xy 139.7 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "642d6c3b-4bcd-459b-9a55-14bb66c4768a")
 	)
 	(wire
 		(pts
@@ -1003,6 +1023,26 @@
 	)
 	(wire
 		(pts
+			(xy 109.22 82.55) (xy 87.63 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "753101cf-f578-4551-8216-7c89498ec2dc")
+	)
+	(wire
+		(pts
+			(xy 87.63 82.55) (xy 87.63 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7b1b5c1b-413f-4bba-9a7c-7b857988337c")
+	)
+	(wire
+		(pts
 			(xy 74.93 95.25) (xy 109.22 95.25)
 		)
 		(stroke
@@ -1010,6 +1050,16 @@
 			(type default)
 		)
 		(uuid "8fb1bf62-435c-45b6-b6aa-e876c00a9c65")
+	)
+	(wire
+		(pts
+			(xy 87.63 80.01) (xy 74.93 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "af10c297-d8c3-44ab-b6b9-a79b2ad57e52")
 	)
 	(wire
 		(pts
@@ -1033,16 +1083,6 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 72.39) (xy 92.71 77.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d7a80d72-7d57-4d7b-bc76-c1599b93681d")
-	)
-	(wire
-		(pts
 			(xy 74.93 69.85) (xy 109.22 69.85)
 		)
 		(stroke
@@ -1053,7 +1093,7 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 77.47) (xy 92.71 92.71)
+			(xy 92.71 72.39) (xy 92.71 80.01)
 		)
 		(stroke
 			(width 0)
@@ -1622,8 +1662,8 @@
 		)
 	)
 	(sheet
-		(at 140.97 90.17)
-		(size 26.67 13.97)
+		(at 139.7 67.31)
+		(size 26.67 16.51)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -1638,7 +1678,7 @@
 		)
 		(uuid "496d8aa2-eca8-449a-ab8b-4392ba769f46")
 		(property "Sheetname" "Limit Switches"
-			(at 140.97 89.4584 0)
+			(at 139.7 66.5984 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1649,7 +1689,7 @@
 			)
 		)
 		(property "Sheetfile" "limitswitches.kicad_sch"
-			(at 140.97 104.7246 0)
+			(at 139.7 84.4046 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1657,6 +1697,26 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(pin "Blower_PG" input
+			(at 139.7 74.93 180)
+			(uuid "f2d6aad3-a540-40bf-8877-b5db7a6059c0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "Blower_PWM" input
+			(at 139.7 77.47 180)
+			(uuid "891b8072-8cba-4193-94f0-a6a3c7db3a8e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(instances
@@ -1944,7 +2004,7 @@
 			)
 		)
 		(pin "X48-FAN1 PIN6" input
-			(at 109.22 80.01 180)
+			(at 109.22 82.55 180)
 			(uuid "db8d1f94-ccee-4dab-9d4f-a17e1470de08")
 			(effects
 				(font
@@ -1954,13 +2014,33 @@
 			)
 		)
 		(pin "X48-FAN1 PIN9" input
-			(at 109.22 77.47 180)
+			(at 109.22 80.01 180)
 			(uuid "ccdb9e66-bdc0-49fe-8ad8-f0c9ee113e37")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
+			)
+		)
+		(pin "Blower_PG" output
+			(at 135.89 74.93 0)
+			(uuid "7e85f683-8993-476f-b052-0313e57e2041")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "Blower_PWM" output
+			(at 135.89 77.47 0)
+			(uuid "0912f7f8-448d-4e5e-9b7f-01b0f14b0f78")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 		(instances

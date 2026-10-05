@@ -524,7 +524,7 @@
     "last_paths": {
       "idf": "",
       "netlist": "",
-      "plot": "",
+      "plot": "Gerber/",
       "specctra_dsn": "",
       "vrml": ""
     },
@@ -648,7 +648,7 @@
         "uuid": "99d5d967-6a35-454f-aac3-01cafa1d30b4"
       }
     ],
-    "used_designators": "",
+    "used_designators": "Lid\\-Sensor2-3,Not\\-Aus2,#PWR13,#PWR19,#PWR22,#PWR25,#PWR33,#PWR36,#PWR44-48",
     "variants": []
   },
   "sheets": [

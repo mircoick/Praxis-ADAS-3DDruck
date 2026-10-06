@@ -7,13 +7,13 @@ GND = GND
 CLK = GPIO11
 SDI = GPIO10
 SDO = GPIO9
-CS  = GPIO5
+CS  = GPIO6
 """
 
 spi = board.SPI()
 cs = digitalio.DigitalInOut(board.D6)  # Chip select
-#sensor = adafruit_max31865.MAX31865(spi, cs, rtd_nominal=100.0, ref_resistor=428.25, wires=3)
-sensor = adafruit_max31865.MAX31865(spi, cs, rtd_nominal=1000.0, ref_resistor=4300, wires=2)
+sensor = adafruit_max31865.MAX31865(spi, cs, rtd_nominal=100.0, ref_resistor=428.25, wires=3)
+#sensor = adafruit_max31865.MAX31865(spi, cs, rtd_nominal=1000.0, ref_resistor=4300, wires=2)
 sensor.clear_faults()
 
 filename = "/home/mircoick/Desktop/temp_data.csv"
@@ -39,6 +39,6 @@ with open(filename, mode="w", newline="", encoding="utf-8") as file:
         writer.writerow([timestamp, f"{temp:.3f}", f"{res:.3f}"])
         file.flush()
 
-        time.sleep(.1)
+        time.sleep(1)
 
 print("\nAufnahme beendet!")

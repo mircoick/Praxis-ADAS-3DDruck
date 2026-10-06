@@ -15,10 +15,8 @@ number-sections: true
 ::: {.callout-important}
 ## WICHTIG / TODO
 
-- **Tool-Head Molex crimpen**
 - **Pythonskript für Filamentsteuerung fertig stellen**
 - **Platine anlegen für Adapter**
-- **J3/ J4 mit in KiCAD aufnhemen/ 230V Platinen Stecker Umdrehen**
 - Loadcells versuchen anzusteuern
 - I²C am Tool-Head ansteuern
 - Halter designen für neues Display als 3D-Druck
@@ -243,10 +241,10 @@ number-sections: true
 ![I²C Bus Filament Steuerung](pics/Filamentaufnahmen.png){#fig-i2c_filament width=50%}
 
 - 0x6a: Hauptplatine
-- 0x6c: unten rechts
-- 0x6d: unten links
-- 0x6e: oben rechts
-- 0x6f: oben links 
+- 0x6c: Support 4
+- 0x6d: Model 2
+- 0x6e: Support 3
+- 0x6f: Model 1 
 
 - Braun: VCC
 - Weiß: GND

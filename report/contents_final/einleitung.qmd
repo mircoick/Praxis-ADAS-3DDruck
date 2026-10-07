@@ -1,0 +1,3 @@
+# Einleitung
+
+Im Rahmen dieses Praktums wurde ein 3D-Drucker auf die Möglichkeit einer Software- sowie Hardwareseitigen generalüberholung überprüft. In diesem Fall wurde der 3D-Gence F421 Industrie Drucker behandelt. Ziel war es eine Machbarkeitsanalyse zu erstellen mit welcher in einer Bachelorarbeit die Umsetzung erfolgen kann. Das Praktikum hat bei der ADAS, Airbus DS Airborne Solutions GmbH, in Bremen stattgefunden und wurde über einen Zeitraum von 13,5 Wochen mit jeweils 40 Stunden pro Woche durchgeführt. 

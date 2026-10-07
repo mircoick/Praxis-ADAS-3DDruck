@@ -1,0 +1,9 @@
+# Zeitplanung des Praktiums
+
+- generlles Prinzip eines druckers
+- verstehen der einzelnene Komponenten und deren prinzipien
+- ansteuerung einzelner Komponenten am refenzsystem
+- gesamtsteuerung des refenzsystems
+- vergleich mit dem F421
+- ansteuerung einzelner komponenten des F421
+- Zusammenfassung in eine Machbarkeitsstudie für nachfolgende Bearbeitungen

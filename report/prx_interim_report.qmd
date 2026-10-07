@@ -18,13 +18,13 @@ number-sections: true
 
 {{< include init/header.html >}}
 \newpage
-{{< include contents/company-overview.qmd >}}
+{{< include contents_interim/company-overview.qmd >}}
 
-{{< include contents/department-and-workspace.qmd >}}
+{{< include contents_interim/department-and-workspace.qmd >}}
 \newpage
-{{< include contents/objectives.qmd >}}
+{{< include contents_interim/objectives.qmd >}}
 \newpage
-{{< include contents/preliminary-results.qmd >}}
+{{< include contents_interim/preliminary-results.qmd >}}
 \newpage
 
 # Literaturverzeichnis

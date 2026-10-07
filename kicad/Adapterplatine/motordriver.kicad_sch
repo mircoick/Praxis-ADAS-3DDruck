@@ -3,7 +3,7 @@
 	(generator "eeschema")
 	(generator_version "10.0")
 	(uuid "1175592a-e176-43d4-afac-5606095019d7")
-	(paper "A5")
+	(paper "A4")
 	(lib_symbols
 		(symbol "Connector_Generic:Conn_01x03"
 			(pin_names
@@ -411,7 +411,7 @@
 	)
 	(wire
 		(pts
-			(xy 151.13 60.96) (xy 151.13 68.58)
+			(xy 190.5 105.41) (xy 190.5 113.03)
 		)
 		(stroke
 			(width 0)
@@ -421,7 +421,7 @@
 	)
 	(wire
 		(pts
-			(xy 72.39 66.04) (xy 77.47 66.04)
+			(xy 111.76 110.49) (xy 116.84 110.49)
 		)
 		(stroke
 			(width 0)
@@ -431,7 +431,7 @@
 	)
 	(wire
 		(pts
-			(xy 91.44 68.58) (xy 96.52 68.58)
+			(xy 130.81 113.03) (xy 135.89 113.03)
 		)
 		(stroke
 			(width 0)
@@ -441,7 +441,7 @@
 	)
 	(wire
 		(pts
-			(xy 91.44 60.96) (xy 91.44 68.58)
+			(xy 130.81 105.41) (xy 130.81 113.03)
 		)
 		(stroke
 			(width 0)
@@ -451,7 +451,7 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 60.96) (xy 173.99 78.74)
+			(xy 213.36 105.41) (xy 213.36 123.19)
 		)
 		(stroke
 			(width 0)
@@ -461,7 +461,7 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 60.96) (xy 93.98 73.66)
+			(xy 133.35 105.41) (xy 133.35 118.11)
 		)
 		(stroke
 			(width 0)
@@ -471,7 +471,7 @@
 	)
 	(wire
 		(pts
-			(xy 72.39 60.96) (xy 72.39 66.04)
+			(xy 111.76 105.41) (xy 111.76 110.49)
 		)
 		(stroke
 			(width 0)
@@ -481,7 +481,7 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 60.96) (xy 74.93 73.66)
+			(xy 114.3 105.41) (xy 114.3 118.11)
 		)
 		(stroke
 			(width 0)
@@ -491,7 +491,7 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 60.96) (xy 132.08 73.66)
+			(xy 171.45 105.41) (xy 171.45 118.11)
 		)
 		(stroke
 			(width 0)
@@ -501,7 +501,7 @@
 	)
 	(wire
 		(pts
-			(xy 129.54 68.58) (xy 134.62 68.58)
+			(xy 168.91 113.03) (xy 173.99 113.03)
 		)
 		(stroke
 			(width 0)
@@ -511,7 +511,7 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 68.58) (xy 43.18 60.96)
+			(xy 82.55 113.03) (xy 82.55 105.41)
 		)
 		(stroke
 			(width 0)
@@ -521,7 +521,7 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 60.96) (xy 158.75 73.66)
+			(xy 198.12 105.41) (xy 198.12 118.11)
 		)
 		(stroke
 			(width 0)
@@ -531,7 +531,7 @@
 	)
 	(wire
 		(pts
-			(xy 151.13 68.58) (xy 156.21 68.58)
+			(xy 190.5 113.03) (xy 195.58 113.03)
 		)
 		(stroke
 			(width 0)
@@ -541,7 +541,7 @@
 	)
 	(wire
 		(pts
-			(xy 77.47 66.04) (xy 77.47 73.66)
+			(xy 116.84 110.49) (xy 116.84 118.11)
 		)
 		(stroke
 			(width 0)
@@ -551,7 +551,7 @@
 	)
 	(wire
 		(pts
-			(xy 72.39 68.58) (xy 72.39 73.66)
+			(xy 111.76 113.03) (xy 111.76 118.11)
 		)
 		(stroke
 			(width 0)
@@ -561,7 +561,7 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 60.96) (xy 156.21 66.04)
+			(xy 195.58 105.41) (xy 195.58 110.49)
 		)
 		(stroke
 			(width 0)
@@ -571,7 +571,7 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 60.96) (xy 67.31 68.58)
+			(xy 106.68 105.41) (xy 106.68 113.03)
 		)
 		(stroke
 			(width 0)
@@ -581,7 +581,7 @@
 	)
 	(wire
 		(pts
-			(xy 139.7 66.04) (xy 139.7 73.66)
+			(xy 179.07 110.49) (xy 179.07 118.11)
 		)
 		(stroke
 			(width 0)
@@ -591,7 +591,7 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 66.04) (xy 101.6 73.66)
+			(xy 140.97 110.49) (xy 140.97 118.11)
 		)
 		(stroke
 			(width 0)
@@ -601,7 +601,7 @@
 	)
 	(wire
 		(pts
-			(xy 134.62 66.04) (xy 139.7 66.04)
+			(xy 173.99 110.49) (xy 179.07 110.49)
 		)
 		(stroke
 			(width 0)
@@ -611,7 +611,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 68.58) (xy 96.52 73.66)
+			(xy 135.89 113.03) (xy 135.89 118.11)
 		)
 		(stroke
 			(width 0)
@@ -621,7 +621,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 60.96) (xy 137.16 73.66)
+			(xy 176.53 105.41) (xy 176.53 118.11)
 		)
 		(stroke
 			(width 0)
@@ -631,7 +631,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 60.96) (xy 96.52 66.04)
+			(xy 135.89 105.41) (xy 135.89 110.49)
 		)
 		(stroke
 			(width 0)
@@ -641,7 +641,7 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 66.04) (xy 161.29 66.04)
+			(xy 195.58 110.49) (xy 200.66 110.49)
 		)
 		(stroke
 			(width 0)
@@ -651,7 +651,7 @@
 	)
 	(wire
 		(pts
-			(xy 129.54 60.96) (xy 129.54 68.58)
+			(xy 168.91 105.41) (xy 168.91 113.03)
 		)
 		(stroke
 			(width 0)
@@ -661,7 +661,7 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 66.04) (xy 161.29 73.66)
+			(xy 200.66 110.49) (xy 200.66 118.11)
 		)
 		(stroke
 			(width 0)
@@ -671,7 +671,7 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 60.96) (xy 50.8 73.66)
+			(xy 90.17 105.41) (xy 90.17 118.11)
 		)
 		(stroke
 			(width 0)
@@ -681,7 +681,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 66.04) (xy 101.6 66.04)
+			(xy 135.89 110.49) (xy 140.97 110.49)
 		)
 		(stroke
 			(width 0)
@@ -691,7 +691,7 @@
 	)
 	(wire
 		(pts
-			(xy 176.53 60.96) (xy 176.53 78.74)
+			(xy 215.9 105.41) (xy 215.9 123.19)
 		)
 		(stroke
 			(width 0)
@@ -701,7 +701,7 @@
 	)
 	(wire
 		(pts
-			(xy 153.67 60.96) (xy 153.67 73.66)
+			(xy 193.04 105.41) (xy 193.04 118.11)
 		)
 		(stroke
 			(width 0)
@@ -711,7 +711,7 @@
 	)
 	(wire
 		(pts
-			(xy 69.85 60.96) (xy 69.85 73.66)
+			(xy 109.22 105.41) (xy 109.22 118.11)
 		)
 		(stroke
 			(width 0)
@@ -721,7 +721,7 @@
 	)
 	(wire
 		(pts
-			(xy 48.26 68.58) (xy 43.18 68.58)
+			(xy 87.63 113.03) (xy 82.55 113.03)
 		)
 		(stroke
 			(width 0)
@@ -731,7 +731,7 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 68.58) (xy 72.39 68.58)
+			(xy 106.68 113.03) (xy 111.76 113.03)
 		)
 		(stroke
 			(width 0)
@@ -741,7 +741,7 @@
 	)
 	(wire
 		(pts
-			(xy 134.62 68.58) (xy 134.62 73.66)
+			(xy 173.99 113.03) (xy 173.99 118.11)
 		)
 		(stroke
 			(width 0)
@@ -751,7 +751,7 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 66.04) (xy 53.34 73.66)
+			(xy 92.71 110.49) (xy 92.71 118.11)
 		)
 		(stroke
 			(width 0)
@@ -761,7 +761,7 @@
 	)
 	(wire
 		(pts
-			(xy 171.45 60.96) (xy 171.45 78.74)
+			(xy 210.82 105.41) (xy 210.82 123.19)
 		)
 		(stroke
 			(width 0)
@@ -771,7 +771,7 @@
 	)
 	(wire
 		(pts
-			(xy 48.26 66.04) (xy 53.34 66.04)
+			(xy 87.63 110.49) (xy 92.71 110.49)
 		)
 		(stroke
 			(width 0)
@@ -781,7 +781,7 @@
 	)
 	(wire
 		(pts
-			(xy 45.72 60.96) (xy 45.72 73.66)
+			(xy 85.09 105.41) (xy 85.09 118.11)
 		)
 		(stroke
 			(width 0)
@@ -791,7 +791,7 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 60.96) (xy 99.06 73.66)
+			(xy 138.43 105.41) (xy 138.43 118.11)
 		)
 		(stroke
 			(width 0)
@@ -801,7 +801,7 @@
 	)
 	(wire
 		(pts
-			(xy 48.26 60.96) (xy 48.26 66.04)
+			(xy 87.63 105.41) (xy 87.63 110.49)
 		)
 		(stroke
 			(width 0)
@@ -811,7 +811,7 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 68.58) (xy 156.21 73.66)
+			(xy 195.58 113.03) (xy 195.58 118.11)
 		)
 		(stroke
 			(width 0)
@@ -821,7 +821,7 @@
 	)
 	(wire
 		(pts
-			(xy 134.62 60.96) (xy 134.62 66.04)
+			(xy 173.99 105.41) (xy 173.99 110.49)
 		)
 		(stroke
 			(width 0)
@@ -831,7 +831,7 @@
 	)
 	(wire
 		(pts
-			(xy 48.26 73.66) (xy 48.26 68.58)
+			(xy 87.63 118.11) (xy 87.63 113.03)
 		)
 		(stroke
 			(width 0)
@@ -841,7 +841,7 @@
 	)
 	(hierarchical_label "X48-Servo-PIN10"
 		(shape input)
-		(at 176.53 78.74 270)
+		(at 215.9 123.19 270)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -852,7 +852,7 @@
 	)
 	(hierarchical_label "X48-Servo-PIN7"
 		(shape input)
-		(at 173.99 78.74 270)
+		(at 213.36 123.19 270)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -863,7 +863,7 @@
 	)
 	(hierarchical_label "X48-Servo-PIN9"
 		(shape input)
-		(at 171.45 78.74 270)
+		(at 210.82 123.19 270)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -874,7 +874,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x04")
-		(at 134.62 78.74 90)
+		(at 173.99 123.19 90)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -886,7 +886,7 @@
 		(fields_autoplaced yes)
 		(uuid "095dcee4-8cfc-4616-ab63-a76161e0da3d")
 		(property "Reference" "X10"
-			(at 135.89 85.09 90)
+			(at 175.26 129.54 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -896,7 +896,7 @@
 			)
 		)
 		(property "Value" "Conn_01x04_Pin"
-			(at 135.89 82.55 90)
+			(at 175.26 127 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -906,7 +906,7 @@
 			)
 		)
 		(property "Footprint" "Connector_Phoenix_MSTB:PhoenixContact_MSTBVA_2,5_4-G-5,08_1x04_P5.08mm_Vertical"
-			(at 134.62 78.74 0)
+			(at 173.99 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -917,7 +917,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 134.62 78.74 0)
+			(at 173.99 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -928,7 +928,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 134.62 78.74 0)
+			(at 173.99 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -939,7 +939,7 @@
 			)
 		)
 		(property "Hersteller" ""
-			(at 134.62 78.74 0)
+			(at 173.99 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -950,7 +950,7 @@
 			)
 		)
 		(property "Herstellerbezeichnung" ""
-			(at 134.62 78.74 0)
+			(at 173.99 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -961,7 +961,7 @@
 			)
 		)
 		(property "Alternative" ""
-			(at 134.62 78.74 0)
+			(at 173.99 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -994,7 +994,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x04")
-		(at 48.26 78.74 90)
+		(at 87.63 123.19 90)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -1006,7 +1006,7 @@
 		(fields_autoplaced yes)
 		(uuid "48391823-90fc-446b-b703-5c78d3555d83")
 		(property "Reference" "X5"
-			(at 49.53 85.09 90)
+			(at 88.9 129.54 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1016,7 +1016,7 @@
 			)
 		)
 		(property "Value" "Conn_01x04_Pin"
-			(at 49.53 82.55 90)
+			(at 88.9 127 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1026,7 +1026,7 @@
 			)
 		)
 		(property "Footprint" "Connector_Phoenix_MSTB:PhoenixContact_MSTBVA_2,5_4-G-5,08_1x04_P5.08mm_Vertical"
-			(at 48.26 78.74 0)
+			(at 87.63 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1037,7 +1037,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 48.26 78.74 0)
+			(at 87.63 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1048,7 +1048,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 48.26 78.74 0)
+			(at 87.63 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1059,7 +1059,7 @@
 			)
 		)
 		(property "Hersteller" ""
-			(at 48.26 78.74 0)
+			(at 87.63 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1070,7 +1070,7 @@
 			)
 		)
 		(property "Herstellerbezeichnung" ""
-			(at 48.26 78.74 0)
+			(at 87.63 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1081,7 +1081,7 @@
 			)
 		)
 		(property "Alternative" ""
-			(at 48.26 78.74 0)
+			(at 87.63 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1114,7 +1114,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x04")
-		(at 72.39 78.74 90)
+		(at 111.76 123.19 90)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -1126,7 +1126,7 @@
 		(fields_autoplaced yes)
 		(uuid "6b01ac71-0b32-485f-b148-f8091f0c596c")
 		(property "Reference" "X6"
-			(at 73.66 85.09 90)
+			(at 113.03 129.54 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1136,7 +1136,7 @@
 			)
 		)
 		(property "Value" "Conn_01x04_Pin"
-			(at 73.66 82.55 90)
+			(at 113.03 127 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1146,7 +1146,7 @@
 			)
 		)
 		(property "Footprint" "Connector_Phoenix_MSTB:PhoenixContact_MSTBVA_2,5_4-G-5,08_1x04_P5.08mm_Vertical"
-			(at 72.39 78.74 0)
+			(at 111.76 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1157,7 +1157,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 72.39 78.74 0)
+			(at 111.76 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1168,7 +1168,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 72.39 78.74 0)
+			(at 111.76 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1179,7 +1179,7 @@
 			)
 		)
 		(property "Hersteller" ""
-			(at 72.39 78.74 0)
+			(at 111.76 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1190,7 +1190,7 @@
 			)
 		)
 		(property "Herstellerbezeichnung" ""
-			(at 72.39 78.74 0)
+			(at 111.76 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1201,7 +1201,7 @@
 			)
 		)
 		(property "Alternative" ""
-			(at 72.39 78.74 0)
+			(at 111.76 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1234,7 +1234,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x04")
-		(at 69.85 55.88 90)
+		(at 109.22 100.33 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1245,7 +1245,7 @@
 		(fields_autoplaced yes)
 		(uuid "7b0ff44e-af57-4fbb-85bc-c90ce483c4a6")
 		(property "Reference" "MotorY2"
-			(at 71.12 49.53 90)
+			(at 110.49 93.98 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1255,7 +1255,7 @@
 			)
 		)
 		(property "Value" "Conn_01x04_Pin"
-			(at 71.12 52.07 90)
+			(at 110.49 96.52 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1265,7 +1265,7 @@
 			)
 		)
 		(property "Footprint" "Connector_JST:JST_VH_B4P-VH_1x04_P3.96mm_Vertical"
-			(at 69.85 55.88 0)
+			(at 109.22 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1276,7 +1276,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 69.85 55.88 0)
+			(at 109.22 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1287,7 +1287,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 69.85 55.88 0)
+			(at 109.22 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1320,7 +1320,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x04")
-		(at 132.08 55.88 90)
+		(at 171.45 100.33 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1331,7 +1331,7 @@
 		(fields_autoplaced yes)
 		(uuid "817a3aa9-52a1-40e7-9f5f-46eefd838e4c")
 		(property "Reference" "MotorExtruder6"
-			(at 133.35 49.53 90)
+			(at 172.72 93.98 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1341,7 +1341,7 @@
 			)
 		)
 		(property "Value" "Conn_01x04_Pin"
-			(at 133.35 52.07 90)
+			(at 172.72 96.52 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1351,7 +1351,7 @@
 			)
 		)
 		(property "Footprint" "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical"
-			(at 132.08 55.88 0)
+			(at 171.45 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1362,7 +1362,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 132.08 55.88 0)
+			(at 171.45 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1373,7 +1373,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 132.08 55.88 0)
+			(at 171.45 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1384,7 +1384,7 @@
 			)
 		)
 		(property "Hersteller" ""
-			(at 132.08 55.88 0)
+			(at 171.45 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1395,7 +1395,7 @@
 			)
 		)
 		(property "Herstellerbezeichnung" ""
-			(at 132.08 55.88 0)
+			(at 171.45 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1406,7 +1406,7 @@
 			)
 		)
 		(property "Alternative" ""
-			(at 132.08 55.88 0)
+			(at 171.45 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1439,7 +1439,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x04")
-		(at 156.21 78.74 90)
+		(at 195.58 123.19 90)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -1451,7 +1451,7 @@
 		(fields_autoplaced yes)
 		(uuid "a11104da-3bc0-404a-be06-d53a2b6edb46")
 		(property "Reference" "X9"
-			(at 157.48 82.55 90)
+			(at 196.85 127 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1461,7 +1461,7 @@
 			)
 		)
 		(property "Value" "Conn_01x04_Pin"
-			(at 157.48 85.09 90)
+			(at 196.85 129.54 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1471,7 +1471,7 @@
 			)
 		)
 		(property "Footprint" "Connector_Phoenix_MSTB:PhoenixContact_MSTBVA_2,5_4-G-5,08_1x04_P5.08mm_Vertical"
-			(at 156.21 78.74 0)
+			(at 195.58 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1482,7 +1482,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 156.21 78.74 0)
+			(at 195.58 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1493,7 +1493,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 156.21 78.74 0)
+			(at 195.58 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1504,7 +1504,7 @@
 			)
 		)
 		(property "Hersteller" ""
-			(at 156.21 78.74 0)
+			(at 195.58 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1515,7 +1515,7 @@
 			)
 		)
 		(property "Herstellerbezeichnung" ""
-			(at 156.21 78.74 0)
+			(at 195.58 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1526,7 +1526,7 @@
 			)
 		)
 		(property "Alternative" ""
-			(at 156.21 78.74 0)
+			(at 195.58 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1559,7 +1559,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x04")
-		(at 93.98 55.88 90)
+		(at 133.35 100.33 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1570,7 +1570,7 @@
 		(fields_autoplaced yes)
 		(uuid "b9e7b715-48fb-4e93-a175-81d05940a4c6")
 		(property "Reference" "MotorZ3"
-			(at 95.25 49.53 90)
+			(at 134.62 93.98 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1580,7 +1580,7 @@
 			)
 		)
 		(property "Value" "Conn_01x04_Pin"
-			(at 95.25 52.07 90)
+			(at 134.62 96.52 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1590,7 +1590,7 @@
 			)
 		)
 		(property "Footprint" "Connector_JST:JST_VH_B4P-VH_1x04_P3.96mm_Vertical"
-			(at 93.98 55.88 0)
+			(at 133.35 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1601,7 +1601,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 93.98 55.88 0)
+			(at 133.35 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1612,7 +1612,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 93.98 55.88 0)
+			(at 133.35 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1645,7 +1645,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x04")
-		(at 153.67 55.88 90)
+		(at 193.04 100.33 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1656,7 +1656,7 @@
 		(fields_autoplaced yes)
 		(uuid "bd2e797a-b80f-41c1-9fd3-8d6327a80fb1")
 		(property "Reference" "MotorExtruder5"
-			(at 154.94 49.53 90)
+			(at 194.31 93.98 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1666,7 +1666,7 @@
 			)
 		)
 		(property "Value" "Conn_01x04_Pin"
-			(at 154.94 52.07 90)
+			(at 194.31 96.52 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1676,7 +1676,7 @@
 			)
 		)
 		(property "Footprint" "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical"
-			(at 153.67 55.88 0)
+			(at 193.04 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1687,7 +1687,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 153.67 55.88 0)
+			(at 193.04 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1698,7 +1698,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 153.67 55.88 0)
+			(at 193.04 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1709,7 +1709,7 @@
 			)
 		)
 		(property "Hersteller" ""
-			(at 153.67 55.88 0)
+			(at 193.04 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1720,7 +1720,7 @@
 			)
 		)
 		(property "Herstellerbezeichnung" ""
-			(at 153.67 55.88 0)
+			(at 193.04 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1731,7 +1731,7 @@
 			)
 		)
 		(property "Alternative" ""
-			(at 153.67 55.88 0)
+			(at 193.04 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1764,7 +1764,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x03")
-		(at 173.99 55.88 90)
+		(at 213.36 100.33 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1774,7 +1774,7 @@
 		(dnp no)
 		(uuid "ced65ae8-3bde-4238-9965-230244e2c69a")
 		(property "Reference" "Servo1"
-			(at 177.292 49.784 90)
+			(at 216.662 94.234 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1785,7 +1785,7 @@
 			)
 		)
 		(property "Value" "Conn_01x03_Pin"
-			(at 180.594 52.07 90)
+			(at 219.964 96.52 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1796,7 +1796,7 @@
 			)
 		)
 		(property "Footprint" "Connector_JST:JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical"
-			(at 173.99 55.88 0)
+			(at 213.36 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1807,7 +1807,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 173.99 55.88 0)
+			(at 213.36 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1818,7 +1818,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 173.99 55.88 0)
+			(at 213.36 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1829,7 +1829,7 @@
 			)
 		)
 		(property "Hersteller" ""
-			(at 173.99 55.88 0)
+			(at 213.36 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1840,7 +1840,7 @@
 			)
 		)
 		(property "Herstellerbezeichnung" ""
-			(at 173.99 55.88 0)
+			(at 213.36 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1851,7 +1851,7 @@
 			)
 		)
 		(property "Alternative" ""
-			(at 173.99 55.88 0)
+			(at 213.36 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1881,7 +1881,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x04")
-		(at 45.72 55.88 90)
+		(at 85.09 100.33 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1891,7 +1891,7 @@
 		(dnp no)
 		(uuid "cfdcaec5-913b-47fd-aa7f-84223500dd81")
 		(property "Reference" "MotorX1"
-			(at 46.99 49.53 90)
+			(at 86.36 93.98 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1901,7 +1901,7 @@
 			)
 		)
 		(property "Value" "Conn_01x04_Pin"
-			(at 46.228 52.578 90)
+			(at 85.598 97.028 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1911,7 +1911,7 @@
 			)
 		)
 		(property "Footprint" "Connector_JST:JST_VH_B4P-VH_1x04_P3.96mm_Vertical"
-			(at 45.72 55.88 0)
+			(at 85.09 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1922,7 +1922,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 45.72 55.88 0)
+			(at 85.09 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1933,7 +1933,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 45.72 55.88 0)
+			(at 85.09 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1944,7 +1944,7 @@
 			)
 		)
 		(property "Hersteller" ""
-			(at 45.72 55.88 0)
+			(at 85.09 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1955,7 +1955,7 @@
 			)
 		)
 		(property "Herstellerbezeichnung" ""
-			(at 45.72 55.88 0)
+			(at 85.09 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1966,7 +1966,7 @@
 			)
 		)
 		(property "Alternative" ""
-			(at 45.72 55.88 0)
+			(at 85.09 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1999,7 +1999,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x04")
-		(at 96.52 78.74 90)
+		(at 135.89 123.19 90)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -2011,7 +2011,7 @@
 		(fields_autoplaced yes)
 		(uuid "d17be95c-a793-4d1b-afa7-0c4cf7192ac7")
 		(property "Reference" "X7"
-			(at 97.79 85.09 90)
+			(at 137.16 129.54 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2021,7 +2021,7 @@
 			)
 		)
 		(property "Value" "Conn_01x04_Pin"
-			(at 97.79 82.55 90)
+			(at 137.16 127 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2031,7 +2031,7 @@
 			)
 		)
 		(property "Footprint" "Connector_Phoenix_MSTB:PhoenixContact_MSTBVA_2,5_4-G-5,08_1x04_P5.08mm_Vertical"
-			(at 96.52 78.74 0)
+			(at 135.89 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2042,7 +2042,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 96.52 78.74 0)
+			(at 135.89 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2053,7 +2053,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 96.52 78.74 0)
+			(at 135.89 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2064,7 +2064,7 @@
 			)
 		)
 		(property "Hersteller" ""
-			(at 96.52 78.74 0)
+			(at 135.89 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2075,7 +2075,7 @@
 			)
 		)
 		(property "Herstellerbezeichnung" ""
-			(at 96.52 78.74 0)
+			(at 135.89 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2086,7 +2086,7 @@
 			)
 		)
 		(property "Alternative" ""
-			(at 96.52 78.74 0)
+			(at 135.89 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

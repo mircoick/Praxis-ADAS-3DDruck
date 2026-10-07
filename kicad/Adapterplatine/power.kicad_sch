@@ -3,7 +3,7 @@
 	(generator "eeschema")
 	(generator_version "10.0")
 	(uuid "6bcb467d-7f4d-4baf-baa5-c969855291f0")
-	(paper "A5")
+	(paper "A4")
 	(lib_symbols
 		(symbol "Connector_Generic:Conn_01x02"
 			(pin_names
@@ -279,9 +279,21 @@
 			(embedded_fonts no)
 		)
 	)
+	(junction
+		(at 142.24 106.68)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "19e4d77d-f174-4bc4-a962-ba6a96aa270a")
+	)
+	(junction
+		(at 142.24 92.71)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6834da8d-764f-4a84-8ab4-7ddccdf0f39f")
+	)
 	(wire
 		(pts
-			(xy 85.09 64.77) (xy 124.46 64.77)
+			(xy 123.19 90.17) (xy 162.56 90.17)
 		)
 		(stroke
 			(width 0)
@@ -291,7 +303,37 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 78.74) (xy 124.46 78.74)
+			(xy 123.19 92.71) (xy 142.24 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "25cf990b-113a-4f0a-a6a9-e21f350585b6")
+	)
+	(wire
+		(pts
+			(xy 142.24 106.68) (xy 123.19 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "41a0b6d7-f1f0-41b8-96e9-3acf2498258f")
+	)
+	(wire
+		(pts
+			(xy 142.24 93.98) (xy 142.24 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4a85eec8-91f9-4775-a76c-01d990e2618e")
+	)
+	(wire
+		(pts
+			(xy 123.19 104.14) (xy 162.56 104.14)
 		)
 		(stroke
 			(width 0)
@@ -299,9 +341,39 @@
 		)
 		(uuid "701ceab5-d39d-4c36-aa7a-71d80d02ef82")
 	)
+	(wire
+		(pts
+			(xy 142.24 92.71) (xy 162.56 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b3608af6-4f6d-45fd-a4a7-3dbf4c68c9bb")
+	)
+	(wire
+		(pts
+			(xy 142.24 106.68) (xy 162.56 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f455062e-ce83-4539-9a2a-6ffa406bf137")
+	)
+	(wire
+		(pts
+			(xy 142.24 107.95) (xy 142.24 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f674873d-23df-458c-942a-1be170f4b8b5")
+	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
-		(at 80.01 78.74 0)
+		(at 118.11 104.14 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -313,7 +385,7 @@
 		(fields_autoplaced yes)
 		(uuid "4d5dc469-1d5c-421e-92c8-126a701b2977")
 		(property "Reference" "X3"
-			(at 77.47 78.7399 0)
+			(at 115.57 104.1399 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -324,7 +396,7 @@
 			)
 		)
 		(property "Value" "Conn_01x02_Pin"
-			(at 77.47 81.2799 0)
+			(at 115.57 106.6799 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -335,7 +407,7 @@
 			)
 		)
 		(property "Footprint" "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_2-G_1x02_P5.00mm_Horizontal"
-			(at 80.01 78.74 0)
+			(at 118.11 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -346,7 +418,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 80.01 78.74 0)
+			(at 118.11 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -357,7 +429,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 80.01 78.74 0)
+			(at 118.11 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -368,7 +440,7 @@
 			)
 		)
 		(property "Hersteller" ""
-			(at 80.01 78.74 0)
+			(at 118.11 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -379,7 +451,7 @@
 			)
 		)
 		(property "Herstellerbezeichnung" ""
-			(at 80.01 78.74 0)
+			(at 118.11 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -390,7 +462,7 @@
 			)
 		)
 		(property "Alternative" ""
-			(at 80.01 78.74 0)
+			(at 118.11 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -417,7 +489,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 124.46 67.31 0)
+		(at 142.24 93.98 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -428,7 +500,7 @@
 		(fields_autoplaced yes)
 		(uuid "5101a22f-61b8-4b37-86f8-6a7fa59c0dc2")
 		(property "Reference" "#PWR017"
-			(at 124.46 73.66 0)
+			(at 142.24 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -439,7 +511,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 124.46 72.39 0)
+			(at 142.24 99.06 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -449,7 +521,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 124.46 67.31 0)
+			(at 142.24 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -460,7 +532,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 124.46 67.31 0)
+			(at 142.24 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -471,7 +543,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 124.46 67.31 0)
+			(at 142.24 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -495,7 +567,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 85.09 81.28 0)
+		(at 142.24 107.95 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -506,7 +578,7 @@
 		(fields_autoplaced yes)
 		(uuid "696e5baf-8a59-40ab-8a42-67fe8ad96175")
 		(property "Reference" "#PWR03"
-			(at 85.09 87.63 0)
+			(at 142.24 114.3 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -517,7 +589,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 85.09 86.36 0)
+			(at 142.24 113.03 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -527,7 +599,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 85.09 81.28 0)
+			(at 142.24 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -538,7 +610,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 85.09 81.28 0)
+			(at 142.24 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -549,7 +621,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 85.09 81.28 0)
+			(at 142.24 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -572,164 +644,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 124.46 81.28 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "6f717054-30ae-4e90-9c1c-6624aeb231e4")
-		(property "Reference" "#PWR018"
-			(at 124.46 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 124.46 86.36 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 124.46 81.28 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 124.46 81.28 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 124.46 81.28 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "86ee24f2-7556-43e6-afbf-e0746314750b")
-		)
-		(instances
-			(project "Adapterplatine"
-				(path "/99d5d967-6a35-454f-aac3-01cafa1d30b4/e6109122-1bee-438f-992b-3b9d51092d11"
-					(reference "#PWR018")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 85.09 67.31 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "77b944b4-8dcb-40ae-bf02-5e4f0a2a1900")
-		(property "Reference" "#PWR02"
-			(at 85.09 73.66 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 85.09 72.39 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 85.09 67.31 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 85.09 67.31 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 85.09 67.31 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "5f286701-98ae-4ca7-870e-39da4b54cc6a")
-		)
-		(instances
-			(project "Adapterplatine"
-				(path "/99d5d967-6a35-454f-aac3-01cafa1d30b4/e6109122-1bee-438f-992b-3b9d51092d11"
-					(reference "#PWR02")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
-		(at 129.54 64.77 0)
+		(at 167.64 90.17 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -740,7 +656,7 @@
 		(fields_autoplaced yes)
 		(uuid "d80167a8-ba04-4874-9ad5-ca3c2f0c00f0")
 		(property "Reference" "HV-IN1"
-			(at 132.08 64.7699 0)
+			(at 170.18 90.1699 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -751,7 +667,7 @@
 			)
 		)
 		(property "Value" "Conn_01x02_Pin"
-			(at 132.08 67.3099 0)
+			(at 170.18 92.7099 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -762,7 +678,7 @@
 			)
 		)
 		(property "Footprint" "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_2-G_1x02_P5.00mm_Horizontal"
-			(at 129.54 64.77 0)
+			(at 167.64 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -773,7 +689,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 129.54 64.77 0)
+			(at 167.64 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -784,7 +700,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 129.54 64.77 0)
+			(at 167.64 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -811,7 +727,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
-		(at 80.01 64.77 0)
+		(at 118.11 90.17 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -823,7 +739,7 @@
 		(fields_autoplaced yes)
 		(uuid "d8a6e73a-f916-4fa2-84c1-3774d12c8e02")
 		(property "Reference" "X1"
-			(at 77.47 64.7699 0)
+			(at 115.57 90.1699 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -834,7 +750,7 @@
 			)
 		)
 		(property "Value" "Conn_01x02_Pin"
-			(at 77.47 67.3099 0)
+			(at 115.57 92.7099 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -845,7 +761,7 @@
 			)
 		)
 		(property "Footprint" "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_2-G_1x02_P5.00mm_Horizontal"
-			(at 80.01 64.77 0)
+			(at 118.11 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -856,7 +772,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 80.01 64.77 0)
+			(at 118.11 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -867,7 +783,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 80.01 64.77 0)
+			(at 118.11 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -878,7 +794,7 @@
 			)
 		)
 		(property "Hersteller" ""
-			(at 80.01 64.77 0)
+			(at 118.11 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -889,7 +805,7 @@
 			)
 		)
 		(property "Herstellerbezeichnung" ""
-			(at 80.01 64.77 0)
+			(at 118.11 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -900,7 +816,7 @@
 			)
 		)
 		(property "Alternative" ""
-			(at 80.01 64.77 0)
+			(at 118.11 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -927,7 +843,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
-		(at 129.54 78.74 0)
+		(at 167.64 104.14 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -938,7 +854,7 @@
 		(fields_autoplaced yes)
 		(uuid "eb6bed24-0947-4ea7-b166-7686725da857")
 		(property "Reference" "VIN1"
-			(at 132.08 78.7399 0)
+			(at 170.18 104.1399 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -949,7 +865,7 @@
 			)
 		)
 		(property "Value" "Conn_01x02_Pin"
-			(at 132.08 81.2799 0)
+			(at 170.18 106.6799 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -960,7 +876,7 @@
 			)
 		)
 		(property "Footprint" "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_2-G_1x02_P5.00mm_Horizontal"
-			(at 129.54 78.74 0)
+			(at 167.64 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -971,7 +887,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 129.54 78.74 0)
+			(at 167.64 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -982,7 +898,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 129.54 78.74 0)
+			(at 167.64 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

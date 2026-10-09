@@ -1,5 +1,3 @@
-# i2c_bus_manager.py
-
 BUS_OWNER = None
 
 

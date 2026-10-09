@@ -6,7 +6,8 @@
 	(property "Reference" "G***"
 		(at 0 0 0)
 		(layer "F.SilkS")
-		(uuid "72571b5b-afac-4980-8a74-9b6bb560b83e")
+		(hide yes)
+		(uuid "243650d2-b2c8-479f-96f2-54000f95ff4b")
 		(effects
 			(font
 				(size 1.5 1.5)
@@ -18,7 +19,7 @@
 		(at 0.75 0 0)
 		(layer "F.SilkS")
 		(hide yes)
-		(uuid "a3f46ebf-1c37-4764-8437-b6f0805e1a2d")
+		(uuid "6431087e-363b-40ec-b3a9-a00c6489afae")
 		(effects
 			(font
 				(size 1.5 1.5)
@@ -30,7 +31,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "96d0ac43-ef3d-4a1d-984e-3f6a20c74a20")
+		(uuid "901c379c-ed56-4475-9e40-7bff0d9a40a5")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -41,7 +42,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "6aa09f69-ab70-46f3-8903-563c78100429")
+		(uuid "721db4f4-b831-4646-828e-b0f4ad1977bd")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -60,8 +61,8 @@
 			(type solid)
 		)
 		(fill yes)
-		(layer "F.Cu")
-		(uuid "5888ac60-bc5b-4928-b579-028cdf961cfb")
+		(layer "F.SilkS")
+		(uuid "e5309ff3-bc53-4225-ae9d-a9faf4d76e91")
 	)
 	(fp_poly
 		(pts
@@ -106,8 +107,8 @@
 			(type solid)
 		)
 		(fill yes)
-		(layer "F.Cu")
-		(uuid "06ff2473-2c9e-46c3-9a51-f98ff94f307c")
+		(layer "F.SilkS")
+		(uuid "3ea35c0e-3aff-4826-a226-32338bbf4b72")
 	)
 	(fp_poly
 		(pts
@@ -156,8 +157,8 @@
 			(type solid)
 		)
 		(fill yes)
-		(layer "F.Cu")
-		(uuid "018d976f-4382-42d6-a607-73517f5d5d69")
+		(layer "F.SilkS")
+		(uuid "0432461a-4f72-42a5-90be-c90996db5a3e")
 	)
 	(fp_poly
 		(pts
@@ -216,8 +217,8 @@
 			(type solid)
 		)
 		(fill yes)
-		(layer "F.Cu")
-		(uuid "bbd3023c-29b1-463d-9148-d25398fde7e5")
+		(layer "F.SilkS")
+		(uuid "c5da4a9f-81f2-42fc-befb-e659f581bf1e")
 	)
 	(fp_poly
 		(pts
@@ -277,8 +278,8 @@
 			(type solid)
 		)
 		(fill yes)
-		(layer "F.Cu")
-		(uuid "707a564d-6ec1-4871-b796-e16f68db391d")
+		(layer "F.SilkS")
+		(uuid "2e856906-bc11-49d5-94d0-beb64f4fd8b6")
 	)
 	(fp_poly
 		(pts
@@ -354,8 +355,8 @@
 			(type solid)
 		)
 		(fill yes)
-		(layer "F.Cu")
-		(uuid "5f398b58-7042-43ac-92b9-f9693701e55f")
+		(layer "F.SilkS")
+		(uuid "f0c52e71-d614-4441-ae7b-c149a5f14619")
 	)
 	(embedded_fonts no)
 )

@@ -1,0 +1,4 @@
+(fp_lib_table
+	(version 7)
+	(lib (name "Airbus") (type "KiCad") (uri "${KIPRJMOD}/Airbus.pretty") (options "") (descr ""))
+)

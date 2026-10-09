@@ -2377,7 +2377,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_3.5mm_Pad_Via"
+		(property "Footprint" "Platines:MountingHole_3.5mm_Pad_Via_10mm_Aufbau"
 			(at 40.64 186.69 0)
 			(hide yes)
 			(show_name no)
@@ -3937,7 +3937,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_3.5mm_Pad_Via"
+		(property "Footprint" "Platines:MountingHole_3.5mm_Pad_Via_10mm_Aufbau"
 			(at 63.5 186.69 0)
 			(hide yes)
 			(show_name no)
@@ -4049,7 +4049,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_3.5mm_Pad_Via"
+		(property "Footprint" "Platines:MountingHole_3.5mm_Pad_Via_10mm_Aufbau"
 			(at 86.36 170.18 0)
 			(hide yes)
 			(show_name no)
@@ -4161,7 +4161,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_3.5mm_Pad_Via"
+		(property "Footprint" "Platines:MountingHole_3.5mm_Pad_Via_10mm_Aufbau"
 			(at 17.78 170.18 0)
 			(hide yes)
 			(show_name no)
@@ -4273,7 +4273,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_3.5mm_Pad_Via"
+		(property "Footprint" "Platines:MountingHole_3.5mm_Pad_Via_10mm_Aufbau"
 			(at 17.78 186.69 0)
 			(hide yes)
 			(show_name no)
@@ -4775,7 +4775,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_3.5mm_Pad_Via"
+		(property "Footprint" "Platines:MountingHole_3.5mm_Pad_Via_10mm_Aufbau"
 			(at 40.64 170.18 0)
 			(hide yes)
 			(show_name no)
@@ -5753,7 +5753,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_3.5mm_Pad_Via"
+		(property "Footprint" "Platines:MountingHole_3.5mm_Pad_Via_10mm_Aufbau"
 			(at 86.36 186.69 0)
 			(hide yes)
 			(show_name no)
@@ -6055,7 +6055,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_3.5mm_Pad_Via"
+		(property "Footprint" "Platines:MountingHole_3.5mm_Pad_Via_10mm_Aufbau"
 			(at 63.5 170.18 0)
 			(hide yes)
 			(show_name no)

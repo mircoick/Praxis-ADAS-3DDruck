@@ -2797,7 +2797,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5accb4d0-0e33-4416-aa98-0af3fcb4ec61")
-		(property "Reference" "X44__Gelb1"
+		(property "Reference" "X44_Y1"
 			(at 240.03 107.9499 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2894,7 +2894,7 @@
 		(instances
 			(project "Adapterplatine"
 				(path "/99d5d967-6a35-454f-aac3-01cafa1d30b4/d3c70294-d43c-4ffa-984d-dc715d4de7b5"
-					(reference "X44__Gelb1")
+					(reference "X44_Y1")
 					(unit 1)
 				)
 			)
@@ -2994,7 +2994,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "907876f3-622a-4fde-a68f-345aeb559142")
-		(property "Reference" "X44_Buzzer1"
+		(property "Reference" "X44_B1"
 			(at 240.03 100.3299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3091,7 +3091,7 @@
 		(instances
 			(project "Adapterplatine"
 				(path "/99d5d967-6a35-454f-aac3-01cafa1d30b4/d3c70294-d43c-4ffa-984d-dc715d4de7b5"
-					(reference "X44_Buzzer1")
+					(reference "X44_B1")
 					(unit 1)
 				)
 			)
@@ -3606,7 +3606,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d2f87d71-378a-4874-a28e-8dbcbbc3c152")
-		(property "Reference" "X44__Rot1"
+		(property "Reference" "X44_R1"
 			(at 240.03 130.8099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3676,7 +3676,7 @@
 		(instances
 			(project "Adapterplatine"
 				(path "/99d5d967-6a35-454f-aac3-01cafa1d30b4/d3c70294-d43c-4ffa-984d-dc715d4de7b5"
-					(reference "X44__Rot1")
+					(reference "X44_R1")
 					(unit 1)
 				)
 			)
@@ -3807,7 +3807,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e985548a-6be0-4ecb-982d-990044c92619")
-		(property "Reference" "X44__Grün1"
+		(property "Reference" "X44_G1"
 			(at 240.03 118.1099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3910,7 +3910,7 @@
 		(instances
 			(project "Adapterplatine"
 				(path "/99d5d967-6a35-454f-aac3-01cafa1d30b4/d3c70294-d43c-4ffa-984d-dc715d4de7b5"
-					(reference "X44__Grün1")
+					(reference "X44_G1")
 					(unit 1)
 				)
 			)

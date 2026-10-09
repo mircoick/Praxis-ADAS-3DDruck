@@ -3628,7 +3628,8 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_02x10_Top_Bottom")
-		(at 196.85 95.25 0)
+		(at 199.39 95.25 0)
+		(mirror y)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3638,7 +3639,7 @@
 		(dnp no)
 		(uuid "c3ac12a5-3bb8-46fc-ac4a-906fca8b7fcd")
 		(property "Reference" "X48"
-			(at 196.088 82.042 0)
+			(at 200.152 82.042 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3649,7 +3650,7 @@
 			)
 		)
 		(property "Value" "Conn_02x10_Top_Bottom"
-			(at 186.69 79.502 0)
+			(at 209.55 79.502 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3660,7 +3661,7 @@
 			)
 		)
 		(property "Footprint" "Connector_Molex:Molex_Mini-Fit_Jr_5566-20A_2x10_P4.20mm_Vertical"
-			(at 196.85 95.25 0)
+			(at 199.39 95.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3671,7 +3672,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 196.85 95.25 0)
+			(at 199.39 95.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3682,7 +3683,7 @@
 			)
 		)
 		(property "Description" "Generic connector, double row, 02x10, top/bottom pin numbering scheme (row 1: 1...pins_per_row, row2: pins_per_row+1 ... num_pins), script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 196.85 95.25 0)
+			(at 199.39 95.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3693,7 +3694,7 @@
 			)
 		)
 		(property "Hersteller" ""
-			(at 196.85 95.25 0)
+			(at 199.39 95.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3704,7 +3705,7 @@
 			)
 		)
 		(property "Herstellerbezeichnung" ""
-			(at 196.85 95.25 0)
+			(at 199.39 95.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3715,7 +3716,7 @@
 			)
 		)
 		(property "Alternative" ""
-			(at 196.85 95.25 0)
+			(at 199.39 95.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

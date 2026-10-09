@@ -2525,6 +2525,10 @@
 		(uuid "18b1a6c8-f33f-4fb9-a176-c711b5e576da")
 	)
 	(no_connect
+		(at 184.15 129.54)
+		(uuid "21a31685-d372-491a-abbb-73b91d385759")
+	)
+	(no_connect
 		(at 125.73 93.98)
 		(uuid "22f8f2b7-05f3-4890-b8aa-5acd6e66356d")
 	)
@@ -2539,6 +2543,10 @@
 	(no_connect
 		(at 125.73 114.3)
 		(uuid "42d0dea4-b9ae-4789-825f-aadcac40b45d")
+	)
+	(no_connect
+		(at 181.61 129.54)
+		(uuid "4fb715d5-8f23-4ec1-9399-dc480a0d24cd")
 	)
 	(no_connect
 		(at 113.03 124.46)
@@ -2573,6 +2581,10 @@
 		(uuid "72eb2a75-042e-4453-ab95-ce35e782aadb")
 	)
 	(no_connect
+		(at 179.07 129.54)
+		(uuid "783f2330-2291-43d0-bb4c-5eb1b3bfe951")
+	)
+	(no_connect
 		(at 171.45 110.49)
 		(uuid "7902f6cb-afce-42ab-b6be-b0c2789b1df7")
 	)
@@ -2583,6 +2595,10 @@
 	(no_connect
 		(at 125.73 99.06)
 		(uuid "88cf5545-c7d5-4c54-8aa7-0d2dd6431f04")
+	)
+	(no_connect
+		(at 176.53 129.54)
+		(uuid "9731d2ef-7c3c-4501-8d26-08663afcb057")
 	)
 	(no_connect
 		(at 113.03 111.76)
@@ -2615,6 +2631,10 @@
 	(no_connect
 		(at 113.03 83.82)
 		(uuid "c7987076-3a19-4bf3-b35e-b4ff3aad1898")
+	)
+	(no_connect
+		(at 186.69 129.54)
+		(uuid "d06043c9-9955-4fe4-9f54-94ac149d303d")
 	)
 	(no_connect
 		(at 190.5 120.65)
@@ -2806,13 +2826,23 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 99.06) (xy 135.89 91.44)
+			(xy 135.89 91.44) (xy 135.89 99.06)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "2eb780b9-a8ec-435e-a2e5-534ab8011db5")
+	)
+	(wire
+		(pts
+			(xy 135.89 100.33) (xy 135.89 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "31728999-b84c-4d4f-9c18-cddab4527565")
 	)
 	(wire
 		(pts
@@ -3086,16 +3116,6 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 100.33) (xy 135.89 119.38)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8800dc87-6b2f-4c08-8cea-20124cd126f4")
-	)
-	(wire
-		(pts
 			(xy 189.23 66.04) (xy 187.96 66.04)
 		)
 		(stroke
@@ -3183,6 +3203,16 @@
 			(type default)
 		)
 		(uuid "a1ded3cf-f42a-4c35-bc6b-9be0e93e0b94")
+	)
+	(wire
+		(pts
+			(xy 113.03 91.44) (xy 110.49 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a62e039f-7d7a-4241-8eba-d8ac9e87c063")
 	)
 	(wire
 		(pts
@@ -3424,16 +3454,6 @@
 		)
 		(uuid "f7e81ea8-13d8-4eea-b810-71fed054b7e3")
 	)
-	(wire
-		(pts
-			(xy 113.03 91.44) (xy 110.49 91.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fb77e016-5370-4ac3-b4d0-c7b903264364")
-	)
 	(label "+5 VCC"
 		(at 137.16 128.27 0)
 		(effects
@@ -3604,8 +3624,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_02x20_Odd_Even")
-		(at 118.11 104.14 0)
-		(mirror x)
+		(at 120.65 104.14 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3615,7 +3634,7 @@
 		(dnp no)
 		(uuid "2eef5721-d0a7-4ee9-99cb-7c23f3a79fe0")
 		(property "Reference" "Rasp1"
-			(at 119.634 74.93 0)
+			(at 119.126 74.93 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3625,7 +3644,7 @@
 			)
 		)
 		(property "Value" "Conn_02x20_Pin"
-			(at 117.348 72.39 0)
+			(at 121.412 72.39 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3634,8 +3653,8 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x20_P2.54mm_Vertical"
-			(at 118.11 104.14 0)
+		(property "Footprint" "Connector_IDC:IDC-Header_2x20_P2.54mm_Vertical"
+			(at 120.65 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3646,7 +3665,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 118.11 104.14 0)
+			(at 120.65 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3657,7 +3676,7 @@
 			)
 		)
 		(property "Description" "Generic connector, double row, 02x20, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 118.11 104.14 0)
+			(at 120.65 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3668,7 +3687,7 @@
 			)
 		)
 		(property "Hersteller" ""
-			(at 118.11 104.14 0)
+			(at 120.65 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3679,7 +3698,7 @@
 			)
 		)
 		(property "Herstellerbezeichnung" ""
-			(at 118.11 104.14 0)
+			(at 120.65 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3690,7 +3709,7 @@
 			)
 		)
 		(property "Alternative" ""
-			(at 118.11 104.14 0)
+			(at 120.65 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5701,6 +5720,128 @@
 			(project "Adapterplatine"
 				(path "/99d5d967-6a35-454f-aac3-01cafa1d30b4/6e4113d7-0438-4c79-b883-7b55fbeab670"
 					(reference "#PWR051")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x05")
+		(at 181.61 134.62 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b9d924de-1f5b-40cb-ae0b-37fac697826f")
+		(property "Reference" "RP2040-PIN9-13"
+			(at 181.61 138.43 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x05"
+			(at 181.61 140.97 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x05_P2.54mm_Vertical"
+			(at 181.61 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 181.61 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 181.61 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Hersteller" ""
+			(at 181.61 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Herstellerbezeichnung" ""
+			(at 181.61 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Alternative" ""
+			(at 181.61 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "5"
+			(uuid "9fd5d6bf-aa78-4008-882d-26fde3785a54")
+		)
+		(pin "4"
+			(uuid "f12f66fc-7cdb-4c49-90ef-0a66ee3a5249")
+		)
+		(pin "1"
+			(uuid "c5840823-7b76-4ca2-9e90-9a95981ecac0")
+		)
+		(pin "3"
+			(uuid "dd8bd78d-2c1d-413b-a9f3-f4ebbc3c028f")
+		)
+		(pin "2"
+			(uuid "7e577f9d-22a8-4ae1-b1c8-e0bec67cb269")
+		)
+		(instances
+			(project "Adapterplatine"
+				(path "/99d5d967-6a35-454f-aac3-01cafa1d30b4/6e4113d7-0438-4c79-b883-7b55fbeab670"
+					(reference "RP2040-PIN9-13")
 					(unit 1)
 				)
 			)

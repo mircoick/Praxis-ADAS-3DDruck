@@ -28,3 +28,5 @@ Id;Designator;Footprint;Quantity;Designation;Supplier and ref;
 27;X36B1;DSUB-9_Socket_Vertical_P2.77x2.84mm_MountingHoles;1;DE9_Socket;https://www.reichelt.de/de/de/shop/produkt/d-sub-stecker_9-polig_loetkelch-6985;
 28;X44_G1, X44_R1;Molex_KK-254_AE-6410-04A_1x04_P2.54mm_Vertical;2;Conn_01x04_Pin;https://www.reichelt.de/de/de/shop/produkt/molex_stiftleiste_-_kk_-_1x4-polig_-_stecker-185659;
 29;X48;Molex_Mini-Fit_Jr_5566-20A_2x10_P4.20mm_Vertical;1;Conn_02x10_Top_Bottom;https://www.reichelt.de/de/de/shop/produkt/molex_stiftleiste_-_mini-fit_jr_-_2x10-polig_-_stecker-186194;
+;;;;;;
+;;;;;https://www.reichelt.de/de/de/shop/produkt/raspberry_pi_-_gpio_kabel_40-pin_15cm_grau-293571;

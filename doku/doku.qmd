@@ -15,6 +15,8 @@ number-sections: true
 ::: {.callout-important}
 ## WICHTIG / TODO
 
+- **PT1000 Gieder richtig einstellen**
+
 - **Pythonskript für Filamentsteuerung fertig stellen**
 - **Platine anlegen für Adapter**
 - Loadcells versuchen anzusteuern
@@ -160,13 +162,15 @@ number-sections: true
 |-|-|-|-|-|-|-|
 |Tool0 (6,7,8) VIN|1|11|1||||
 |Tool0 (5) PT1000|2|13|3||||
-|Tool1 (1) PT1000|3|14|4||||
+|Tool0 (1) PT1000|3|14|4||||
+|Tool1 (1) PT1000|-"-|-"-|-"-||||
 |Tool0 (2,3,4)|4|15|5||||
 |Tool1 (2,3,4)|-"-|-"-||||
 ||5||1 (Braun)|||
 |Tool1 (6,7,8) VIN|6|17|7||||
-|Tool1 (1) PT1000|7|19|9||||
-|Tool0 (5) PT1000|8|20|10||||
+|Tool1 (5) PT1000|7|19|9||||
+|Tool0 (1) PT1000|8|20|10||||
+|Tool1 (1) PT1000|-"-|-"-|-"-||||
 |Tool0 (2,3,4)|9|1|11|||||
 |Tool1 (2,3,4)|-"-|-"-||||
 |Tool0 (6,7,8) VIN|10|12|2||||
@@ -193,6 +197,28 @@ number-sections: true
 ||26|||?|2 (Weiß)|
 
 : Pinbelegung X46 am D-SUB26 Stecker {#tbl-dsub26}
+
+\newpage
+### Load-Cell Ansteuerung 
+
+**TENSO0:**
+
+|Ader|Funktion|PIN|
+|-|-|-|
+|Rot||| 
+|Schwarz|GND|18|
+|Weiß|||
+|Grün|||
+
+
+**TENSO1:**
+
+|Ader|Funktion|PIN|
+|-|-|-|
+|Rot||| 
+|Schwarz|GND|18|
+|Weiß|||
+|Grün|||
 
 \newpage
 ### Brücke 230V Platine für Heizbett usw.

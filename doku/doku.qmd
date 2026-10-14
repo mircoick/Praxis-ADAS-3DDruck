@@ -15,23 +15,18 @@ number-sections: true
 ::: {.callout-important}
 ## WICHTIG / TODO
 
-- **PT1000 Gieder richtig einstellen**
 
-- **Pythonskript für Filamentsteuerung fertig stellen**
-- **Platine anlegen für Adapter**
-- Loadcells versuchen anzusteuern
-- I²C am Tool-Head ansteuern
+- **Platine löten für Adapter**
+- **I²C am Tool-Head ansteuern**
+  - **Loadcells Code schreiben**
 - Halter designen für neues Display als 3D-Druck
 - Batteriesteuerung einbinden
 - Vakuumpumpe richtig einbinden
 - Filamentraum NFC einbinden
-- Filamentraum LEDs einbinden
 
 
 - KiCad:
-  - PIN9 Servo und FAN 5V oder 12V
-  - X40/ X28_1 Einbringen
-  - Vakuumpumpe J2-J4 Einbringen
+  - X40 Einbringen
   - D-SUB9 Stecker Einbringen
   - X52 Einbringen
 
@@ -40,50 +35,9 @@ number-sections: true
 ::: {.callout-important}
 ## **Bestellen**
 - Altes Display neu bestellen: Riverdi RVT101HVLNWC00-B
-- Mehr optische Endschalter: TCST2103
-- MAX31865 für die Platine
-- RP2040 für Magnetleisten
-- Steckdose Raspberry Pi VCC
-- Kabelbinder schwarz
 - 
 
 :::
-
-::: {.callout-note}
-## **Bereits angesteuert im F421**
-
-- Motoren:
-  - Stepper X/Y/Z
-  - Servo Hotend
-  - Motoren für Filament Nachschub
-- Lüfter:
-  - Gehäuse
-  - Hotend
-  - Absaugung Hotend
-- Heizung:
-  - Heatbed
-  - Hotend **(Fehler bei PWM)**
-  - Filamentraum
-- Beleuchtung:
-  - Status LEDs
-  - Bauraum
-- Sensoren:
-  - PT1000 Hotend
-  - NTC Heatbet Heizelement
-  - NTC Heatbet selber
-  - NTC Bauraum bei Vakuumpumpe
-  - Filamentraum
-  - Filamentraum Heizelement
-  - Endschalter X/Y/Z
-- Kontakte:
-  - Türkontakt
-  - Deckelkontakt
-  - Power-On Taster
-  - Not-Aus Kontakt
-  - Optische Endschalter **(war nicht reproduzierbar, warten auf neue Sensoren)**
-
-:::
-
 
 
 \newpage
@@ -166,7 +120,7 @@ number-sections: true
 |Tool1 (1) PT1000|-"-|-"-|-"-||||
 |Tool0 (2,3,4)|4|15|5||||
 |Tool1 (2,3,4)|-"-|-"-||||
-||5||1 (Braun)|||
+||5||1 (Braun)||||
 |Tool1 (6,7,8) VIN|6|17|7||||
 |Tool1 (5) PT1000|7|19|9||||
 |Tool0 (1) PT1000|8|20|10||||
@@ -174,13 +128,13 @@ number-sections: true
 |Tool0 (2,3,4)|9|1|11|||||
 |Tool1 (2,3,4)|-"-|-"-||||
 |Tool0 (6,7,8) VIN|10|12|2||||
-||11|3|13||||
+|VCC 3.3V I²C Heatend|11|3|13||||
 |Fan-T0-HV (RT)|12|4|14||||
 |Tool0 (2,3,4)|13|16|6||||
 |Tool1 (2,3,4)|-"-|-"-||||
-||14||2 (Weiß)|||
+||14||2 (Weiß)||||
 |Tool1 (6,7,8) VIN|15|18|8||||
-||16|5|15||||
+|VCC 3.3V I²C Heatend|16|5|15||||
 |Fan-T1-HV (SW)|17|6|16||||
 |Tool0 (2,3,4)|18|2|12||||
 |Tool1 (2,3,4)|-"-|-"-||||
@@ -191,10 +145,10 @@ number-sections: true
 |Fan-T0-HV (SW)|-"-|-"-||||
 |Fan-T1-HV (RT)|-"-|-"-||||
 |Servo (Gelb)|22|10|20||||
-||23|||?|6 (Braun)|
-||24|||?|3 (Grün)|
-||25|||?|7 (Gelb)|
-||26|||?|2 (Weiß)|
+|SCL Heatend|23||||?|6 (Braun)|
+|SDA Heatend|24||||?|3 (Grün)|
+|SCL Heatend|25||||?|7 (Gelb)|
+|SDA Heatend|26||||?|2 (Weiß)|
 
 : Pinbelegung X46 am D-SUB26 Stecker {#tbl-dsub26}
 
@@ -262,7 +216,20 @@ number-sections: true
 : Motor Pinbelegung {#tbl-motorpin}
 
 \newpage
-## I²C Bus Filament Steuerung
+## I²C
+### I²C Heatend
+
+- 0x49 Loadcell 0
+- 0x4a Loadcell 1
+- 0x54 **???**
+
+#### Bauteile 
+
+- Texas Instuments: 1C I333
+- ATMLH732
+- MCP**96L01**
+
+### I²C Bus Filament Steuerung
 
 ![I²C Bus Filament Steuerung](pics/Filamentaufnahmen.png){#fig-i2c_filament width=50%}
 

@@ -15,7 +15,7 @@
 *.user
 *.suo
 
-# Large data/temp
+# Large files
 *.zip
 *.7z
 .DS_Store

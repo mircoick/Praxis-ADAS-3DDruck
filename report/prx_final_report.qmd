@@ -13,7 +13,7 @@ date: last-modified
 bibliography: references.bib
 citation:
   container-title: Abschlussbericht
-number-sections: true
+number-sections: false
 ---
 
 {{< include init/header.html >}}
@@ -22,7 +22,11 @@ number-sections: true
 \newpage
 {{< include contents_final/planner.qmd >}}
 \newpage
-{{< include contents_final/objectives.qmd >}}
+{{< include contents_final/basics_3dprinter.qmd >}}
+\newpage
+{{< include contents_final/first_steps.qmd >}}
+\newpage
+{{< include contents_final/F421.qmd >}}
 \newpage
 
 # Literaturverzeichnis

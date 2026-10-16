@@ -1,0 +1,51 @@
+# Erste Ansteuerungen
+Nachdem nun die Grundlagen des 3D-Drucks recherchiert und verstanden wurden konnte sich an die Bauteilanalyse sowie Ansteuerung (z. B. Python) erster entscheidener Komponenten gemacht werden. Im Ersten Schritt wurde sich um die Grundkomponenten eines 3D-Druckers beschäftigt. Die nachfolgenden Unterkapitel werden näher auf die daraus entstehenden Erkenntnisse eingehen. Alle erwähnten Codes sind dem [Github](https://github.com/mircoick/Praxis-ADAS-3DDruck) zu entnehmen.
+
+## Grundkomponenten eines 3D-Druckers
+Um einen 3D-Drucker Funktionsfähig zu machen braucht es prinzipiell drei verschiedene Baugruppen. Diese drei existenziellen Baugruppen sind:
+
+- Step-Motoren: Steuern die X-/Y-/Z-Achse sowie den Extruder.
+- Endschalter: Kommunizieren mit den Step-Motoren wann das Maximum des Druckbetts erreicht wurde.
+- Heizkomponenten: Erwärmung des Filaments im Hotend sowie bei Bedarf Heatbeds.
+
+Somit wurde sich zuerst dran gemacht diese Baugruppen zu verstehen und sie anschließend mit Hilfe von Python anzusteuern.
+
+#### Step-Motoren 
+Sogut wie alle in modernen 3D-Drucker verbauten Step-Motoren funktionieren identisch. Es gibt vier Adern, welche in den Motor geführt werden. Wird nun eine Spannung an einen oder mehreren dieser Kontakte angelegt stellt dieses eine bestimmte Position bzw. einen Winkel des Motor dar. Somit lässt sich der Motor sehr präzise und gezielt kontrolieren. Sind die Positionen bzw. Winkel in korrelation mit den Kontakten bekannt, kann mit dem Motor eine Rotationsbewegung durchgeführt werden. Die Nachfolgende @fig-step_motor zeigt den internen Aufbau dieser Step-Motoren in Verbindung mit den Steuerkontakten, oft als A+/A-/B+/B-, A1/A2/B1/B2 oder A/B/C/D bezeichnet. Außerdem ist in der Abbildung die Reihenfolge der Ansteuerung dargestellt. 
+
+::: {#fig-step_motor layout-ncol=2}
+![](pics/step.png){#fig-step_wiring width="50%"}
+
+![](pics/sequence.png){#fig-step_sequence}
+
+Step-Motor Aufbau [@step_motor]
+:::
+
+Nun wurde anhand dieser Erkenntnisse versucht diese Motoren anzusteuern. Da jedoch ein Raspberry Pi nicht direkt den Strom bei der anzuliegenden Spannung bereitstellen kann muss ein Motortreiber dazwischen geschaltet werden. Für diesen Versuch wurde ein [*L298N Dual H-Bridge Motor Driver*](https://github.com/mircoick/Praxis-ADAS-3DDruck/blob/main/info/Geeetech%20i3%20Demonstrator/L298N%20Motor%20Driver.pdf) verwendet, da er bereits verfügbar war. Da der Treiber passend zu den vier Kontakten des Motors ebenfalls vier Anschlüsse hat konnte sich eine Funktion geschrieben werden womit die oben gezeigte Abfolge durchgeführt wurde. Hierbei lässt sich die Drehrichtung über Invertierung der Reihenfolge der Kontakte umsetzen. Wenn man jetzt eine Anzahl an *Steps* festlegen möchte ist dieses ebenfalls möglich indem man die einen Counter mitlaufen lässt, welcher die verschiednen Kontakt ansteuerungen zählt.
+
+#### Endschalter
+Ein Endschalter ist nichts weiteres als ein Handelsüblicher Taster, welcher bei Kontakt einen *Normally Closed* (NC) zu einem *Normally Opend* (NO), oder anders herum, verändert. Es gibt bei physischen Endschaltern meist drei Adern, welche einen gemeinsamen Spannungs- bzw. ein gemeinsames Ground-Kontakt, ein NO-Kontakt und einen NC-Kontakt beinhalten. Wird nun der Schalter gedrückt wird die angeschlossene Spannung bzw. der angeschlossene Ground weitergegeben oder unterbrochen, was eine Zustandsänderung für das anliegende Signal bedeutet. Diese Zustandsänderung lässt sich nun in bezug auf z.B. die Motoren setzen.
+
+Auch hier wurde nun ein kleines einzelnes Skript in Python geschrieben, welches die Funktion des Endschalters testet und validiert. Außerdem wurde in die Funktion den Step-Motors ein Endschalter mit eingebaut, womit der Motor bei bedarf gestoppt werden konnte. 
+
+
+#### Heizkomponenten
+Die Heizelemnte an sich sind wohl die am einfachsten anzusteuerden Bauteile in dieser Liste, da sie bei einer anliegenden Spannung wärme erzeugen. Hier ist eine Spule in ein Material eingearbietet, z.B. in das Hotend oder Heatbed des Druckers, welche sich bei Strom durchfluss erwärmt. Neben den Heizemelten bedarf es jedoch noch mindestens noch ein Temperatursensor welcher die Temperatur überwacht und, ähnlich wie der Endschater, als Heizstopp fungiert. Diese Temperatursensoren können als NTC (Negative Temperature Coefficient, Heißleiter) oder PTC (Positive Temperature Coefficient, Kaltleiter) umgesetzt werden. Am beliebtesten ist hier jedoch der PTC in Verbindung mit Platin, da diese PT100 bzw. PT1000 Glieder einen sehr linearen Kurvenverlauf aufweisen. Außerdem sind sie so optimiert, dass sie bei einer Temperatur von $T=0°C$ genau einen Widerstand von $R_{PT100}=100\,\Omega$ bzw $R_{PT1000}=1000\,\Omega$ ausgeben. Sie sind somit sehr gut und genau auszulesen was für die Filamenterwärmung benötigt wird.
+
+![Kennlinie PT100/ PT1000 [@pt100_pt1000]](pics/Kennlinie_Pt100Pt1000_2.png){#fig-pt100_pt1000  width="50%"}
+
+Neben den Temperatursensoren sind außerdem noch Lüfter von Vorteil um das Bautel wieder abzukühlen bzw. die benötigte Temperatur zu halten und nicht zu überschrieten. Standatisierte Lüfter beim 3D-Druck können mit bis zu 24V über ein PWM (Pulse Width Modulation) betrieben werden. So wird über die Pulsbreite der Signale die Spannung festgelegt. Beispielsweise gibt ein Raspberry Pi eine Signalspannung von $V_{sig}=3,3\,\text{V}$ aus, diese 3,3V bei 100% Signal können nun über die Pulsbreite veringert werden (50% Pulsbreite = 1,65V = 50% Lüftergeschwindigkeit).
+
+
+## Geeetech i3 Referenzdruckers
+Nach Ansteuerung der einzelnen Basiskomponenten wurde nun probiert mittels eines Referenzdruckers die Bautele anzusteuern. Dazu wurde ein ausgesonderter *Geeetech i3* 3D-Drucker verwendet, welcher hardwareseitig über einen Arduino Mega 2560 betrieben wird. Die @fig-i3 zeigt das Referenzsystem. 
+
+![Geeetech i3 Referenzsystem](pics/IMG_2011.jpg){#fig-i3 width="50%"}
+
+### Software Festlegung
+
+Da bereits der Arduino sowie der Raspberry Pi 5 zur Verfügung standen wurde sich nun auf die Lösung der Ansteuerung mittels zwei Boards und gegen die FPGA Lösung entschieden. Somit sollte der Arduino als Hardwaresteuerung und der Raspberry Pi 5 für die komplexere Softwaresteuerung verantwortlich sein. Für diese Art von Ansteuerung gibt es bereits sämtliche Open-Source Lösungen, unter anderem Klipper, Marlin, RRF (RepRapFirmware) oder auch Kalico. Die am weitesten verbreitete und zugängliste Variante ist hier Klipper. Kipper bietet mit der in Python Programmierten Funktionsklassen leichte Anpassungs- sowie Erweiterungsmöglichkeiten und für sehr viele Lösungen bereits vorgefertigte Module. Außerdem kann mit Hilfe von Mainsail und Moonraker leicht eine IP-Adressen basierte Benutzeroberfläche für Klipper geschaffen werden, mit welcher sich alle Komponenten steuern und änderungen im Code vorgenommen werden können. Neben dieser Weboberfläche kann zusätzlich mit Crowsnest eine Webkam eingebunden und mit Kipper-Screen diese Oberfläche auch auf am Raspberry Pi angeschlossenen Displays angezeigt werden. Somit bietet Klipper alles für die erfolgreiche Umsetzung des Projektes. 
+
+### Ansteuerung des Geeetech i3
+
+Die Ansteuerung des Referenzsystems gestaltete sich mithilfe von Klipper recht einfach. Bereits vordefinierte Pinouts in Klipper des Arduino konnten eingelsen und angesteuert werden. 

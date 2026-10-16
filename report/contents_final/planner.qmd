@@ -1,9 +1,8 @@
 # Zeitplanung des Praktiums
 
-- generlles Prinzip eines druckers
-- verstehen der einzelnene Komponenten und deren prinzipien
-- ansteuerung einzelner Komponenten am refenzsystem
-- gesamtsteuerung des refenzsystems
-- vergleich mit dem F421
-- ansteuerung einzelner komponenten des F421
-- Zusammenfassung in eine Machbarkeitsstudie für nachfolgende Bearbeitungen
+Zu Beginnn des Praktikums wurde sich mithilfe des Programmes *MS Project* ein Zeitplan erstellt, um die verschiedenen Aufgabenbereiche abdecken zu können. Hierbei wurden die 13,5 Wochen Praktikum in vier größere Arbeitspakete aufgeteilt. 
+
+1. Grundlagen des 3D-Druckers
+2. Einzellnes Ansteuern verschienener Bauteile über Python
+3. Umsetzung an einem Referenzsystem
+4.  Vergleich mit dem Refenzsystem mit dem 3DGence Industry F421

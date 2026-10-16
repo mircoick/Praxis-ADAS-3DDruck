@@ -1,3 +1,17 @@
 # Einleitung
 
-Im Rahmen dieses Praktums wurde ein 3D-Drucker auf die Möglichkeit einer Software- sowie Hardwareseitigen generalüberholung überprüft. In diesem Fall wurde der 3D-Gence F421 Industrie Drucker behandelt. Ziel war es eine Machbarkeitsanalyse zu erstellen mit welcher in einer Bachelorarbeit die Umsetzung erfolgen kann. Das Praktikum hat bei der ADAS, Airbus DS Airborne Solutions GmbH, in Bremen stattgefunden und wurde über einen Zeitraum von 13,5 Wochen mit jeweils 40 Stunden pro Woche durchgeführt. 
+Der industrielle 3D-Druck gewinnt in modernen Fertigungs- und Instandhaltungsprozessen zunehmend an Bedeutung, da er eine flexible Herstellung von Prototypen sowie Sonderlösungen ermöglicht. Bei der Airbus DS Airborne Solutions GmbH (ADAS) in Bremen, einem eigenständigen Tochterunternehmen der Airbus Defence and Space, dessen Wurzeln auf die Gründung von Focke-Wulf im Jahr 1924 zurückgehen, nimmt dieses Fertigungsverfahren eine zentrale Rolle als Support Prozess ein. Im Fachbereich Produktion und Instandhaltung (Production and Maintenance, P&M) wird der 3D-Druck eingesetzt, um spezielle Bauteile und Prototypen für zivile sowie militärische Anwendungen zeitnah zu realisieren.
+
+![ADAS Komplex [@Github]](pics/site.jpg){#fig-site}
+
+Neben auch im häuslichen gebrauch zu findenden 3D-Druckern sind in diesem Bereich auch die industriellen Drucker zu finden. Diese sollen schneller, präzieser sowie vielseitgere 3D-Drucke fertigen können als die Drucker für den Privatgebrauch. Somit wurde ein Drucker der Marke 3DGence, eine Firma die sich speziell auf diese industrie Drucker spezielaisiert hat, beschafft um die speziellen Anwendungen des Prototypenbaus zu geährleisten. Das beschaffte Modell *Industry F421* wieß allerdings kurz nach der Beschaffung erhebliche softwareseitige Probleme auf, die während des Druckbetriebs zu wiederholten Fehlermeldungen führten und einen verlässlichen Einsatz erschwerten. 
+
+::: {#fig-3dgence layout-ncol=2}
+![](pics/3dgence-industry-f421-seitlich2.png){#fig-ansicht1 width="75%"}
+
+![](pics/3dgence-industry-f421-seitlich.png){#fig-ansicht2 width="75%"}
+
+3DGence Industry F421 [@3dgence_f421]
+:::
+
+Ziel der vorliegenden Arbeit ist daher die Erstellung einer Machbarkeitsstudie zur Weiterentwicklung und Optimierung des *3DGence Industry F421*. Im Rahmen dieser Untersuchung wird analysiert, ob und wie sich die Druckqualität sowie die Systemzuverlässigkeit durch gezielte Anpassungen der Software- und Hardwarearchitektur nachhaltig verbessern lassen. Hierzu werden zunächst die systemischen Grundlagen sowie der bestehende Hardwareaufbau analysiert, um vorhandene Komponenten anzusteuern oder sogar neue Komponenten zu identifizieren. Anschließend werden isolierte Versuche zur Ansteuerung einzelner Baugruppen durchgeführt und verschiedene Steuerungskonzepte getestet. Neben einer Kombination aus Einplatinencomputer (Raspberry Pi 5) und dediziertem Klipper-Board wird dabei auch der Einsatz einer FPGA-basierten Steuerung betrachtet. Die Ergebnisse dieser Machbarkeitsanalyse dienen als fundierte Grundlage für die spätere vollständige Systemintegration im Rahmen einer anschließenden Bachelorarbeit.

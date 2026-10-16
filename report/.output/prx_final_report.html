@@ -99,6 +99,35 @@ div.csl-indent {
   });
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -110,10 +139,26 @@ div.csl-indent {
     <h2 id="toc-title">Inhaltsverzeichnis</h2>
    
   <ul>
-  <li><a href="#einleitung" id="toc-einleitung" class="nav-link active" data-scroll-target="#einleitung"><span class="header-section-number">1</span> Einleitung</a></li>
-  <li><a href="#einleitung-1" id="toc-einleitung-1" class="nav-link" data-scroll-target="#einleitung-1"><span class="header-section-number">2</span> Einleitung</a></li>
-  <li><a href="#einleitung-2" id="toc-einleitung-2" class="nav-link" data-scroll-target="#einleitung-2"><span class="header-section-number">3</span> Einleitung</a></li>
-  <li><a href="#literaturverzeichnis" id="toc-literaturverzeichnis" class="nav-link" data-scroll-target="#literaturverzeichnis"><span class="header-section-number">4</span> Literaturverzeichnis</a></li>
+  <li><a href="#einleitung" id="toc-einleitung" class="nav-link active" data-scroll-target="#einleitung">Einleitung</a></li>
+  <li><a href="#zeitplanung-des-praktiums" id="toc-zeitplanung-des-praktiums" class="nav-link" data-scroll-target="#zeitplanung-des-praktiums">Zeitplanung des Praktiums</a></li>
+  <li><a href="#grundlagen-des-3d-druck" id="toc-grundlagen-des-3d-druck" class="nav-link" data-scroll-target="#grundlagen-des-3d-druck">Grundlagen des 3D-Druck</a>
+  <ul class="collapse">
+  <li><a href="#das-grundprinzip-der-schichtbauweise" id="toc-das-grundprinzip-der-schichtbauweise" class="nav-link" data-scroll-target="#das-grundprinzip-der-schichtbauweise">Das Grundprinzip der Schichtbauweise</a></li>
+  <li><a href="#übersicht-gängiger-fertigungsverfahren" id="toc-übersicht-gängiger-fertigungsverfahren" class="nav-link" data-scroll-target="#übersicht-gängiger-fertigungsverfahren">Übersicht gängiger Fertigungsverfahren</a></li>
+  <li><a href="#material-extrusion" id="toc-material-extrusion" class="nav-link" data-scroll-target="#material-extrusion">Material Extrusion</a></li>
+  <li><a href="#einordnung-für-die-industrielle-anwendung" id="toc-einordnung-für-die-industrielle-anwendung" class="nav-link" data-scroll-target="#einordnung-für-die-industrielle-anwendung">Einordnung für die industrielle Anwendung</a></li>
+  </ul></li>
+  <li><a href="#erste-ansteuerungen" id="toc-erste-ansteuerungen" class="nav-link" data-scroll-target="#erste-ansteuerungen">Erste Ansteuerungen</a>
+  <ul class="collapse">
+  <li><a href="#grundkomponenten-eines-3d-druckers" id="toc-grundkomponenten-eines-3d-druckers" class="nav-link" data-scroll-target="#grundkomponenten-eines-3d-druckers">Grundkomponenten eines 3D-Druckers</a></li>
+  <li><a href="#geeetech-i3-referenzdruckers" id="toc-geeetech-i3-referenzdruckers" class="nav-link" data-scroll-target="#geeetech-i3-referenzdruckers">Geeetech i3 Referenzdruckers</a>
+  <ul class="collapse">
+  <li><a href="#software-festlegung" id="toc-software-festlegung" class="nav-link" data-scroll-target="#software-festlegung">Software Festlegung</a></li>
+  <li><a href="#ansteuerung-des-geeetech-i3" id="toc-ansteuerung-des-geeetech-i3" class="nav-link" data-scroll-target="#ansteuerung-des-geeetech-i3">Ansteuerung des Geeetech i3</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#dgence-industry-f421" id="toc-dgence-industry-f421" class="nav-link" data-scroll-target="#dgence-industry-f421">3DGence Industry F421</a></li>
+  <li><a href="#literaturverzeichnis" id="toc-literaturverzeichnis" class="nav-link" data-scroll-target="#literaturverzeichnis">Literaturverzeichnis</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Andere Formate</h2><ul><li><a href="prx_final_report.docx"><i class="bi bi-file-word"></i>MS Word</a></li><li><a href="prx_final_report.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="prx_final_report.md"><i class="bi bi-file-code"></i>Github (GFM)</a></li></ul></div></nav>
 </div>
@@ -151,7 +196,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Veröffentlichungsdatum</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">7. Oktober 2026</p>
+      <p class="date">16. Oktober 2026</p>
     </div>
   </div>
   
@@ -237,22 +282,252 @@ Airbus DS Airborne Solutions GmbH<br> Richard Dunkel Straße 121, 28199 Bremen
 </tr>
 </tbody></table>
 </div>
-<section id="einleitung" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Einleitung</h1>
-<p>Im Rahmen dieses Praktums wurde ein 3D-Drucker auf die Möglichkeit einer Software- sowie Hardwareseitigen generalüberholung überprüft. In diesem Fall wurde der 3D-Gence F421 Industrie Drucker behandelt. Ziel war es eine Machbarkeitsanalyse zu erstellen mit welcher in einer Bachelorarbeit die Umsetzung erfolgen kann. Das Praktikum hat bei der ADAS, Airbus DS Airborne Solutions GmbH, in Bremen stattgefunden und wurde über einen Zeitraum von 13,5 Wochen mit jeweils 40 Stunden pro Woche durchgeführt.</p>
+<section id="einleitung" class="level1">
+<h1>Einleitung</h1>
+<p>Der industrielle 3D-Druck gewinnt in modernen Fertigungs- und Instandhaltungsprozessen zunehmend an Bedeutung, da er eine flexible Herstellung von Prototypen sowie Sonderlösungen ermöglicht. Bei der Airbus DS Airborne Solutions GmbH (ADAS) in Bremen, einem eigenständigen Tochterunternehmen der Airbus Defence and Space, dessen Wurzeln auf die Gründung von Focke-Wulf im Jahr 1924 zurückgehen, nimmt dieses Fertigungsverfahren eine zentrale Rolle als Support Prozess ein. Im Fachbereich Produktion und Instandhaltung (Production and Maintenance, P&amp;M) wird der 3D-Druck eingesetzt, um spezielle Bauteile und Prototypen für zivile sowie militärische Anwendungen zeitnah zu realisieren.</p>
+<div id="fig-site" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-site-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="pics/site.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-site-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;1: ADAS Komplex <span class="citation" data-cites="Github">(<a href="#ref-Github" role="doc-biblioref">Ick 2026</a>)</span>
+</figcaption>
+</figure>
+</div>
+<p>Neben auch im häuslichen gebrauch zu findenden 3D-Druckern sind in diesem Bereich auch die industriellen Drucker zu finden. Diese sollen schneller, präzieser sowie vielseitgere 3D-Drucke fertigen können als die Drucker für den Privatgebrauch. Somit wurde ein Drucker der Marke 3DGence, eine Firma die sich speziell auf diese industrie Drucker spezielaisiert hat, beschafft um die speziellen Anwendungen des Prototypenbaus zu geährleisten. Das beschaffte Modell <em>Industry F421</em> wieß allerdings kurz nach der Beschaffung erhebliche softwareseitige Probleme auf, die während des Druckbetriebs zu wiederholten Fehlermeldungen führten und einen verlässlichen Einsatz erschwerten.</p>
+<div id="fig-3dgence" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-3dgence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-3dgence" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-ansicht1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-ansicht1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="pics/3dgence-industry-f421-seitlich2.png" id="fig-ansicht1" class="img-fluid figure-img" style="width:75.0%" data-ref-parent="fig-3dgence">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-ansicht1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a)
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-3dgence" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-ansicht2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-ansicht2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="pics/3dgence-industry-f421-seitlich.png" id="fig-ansicht2" class="img-fluid figure-img" style="width:75.0%" data-ref-parent="fig-3dgence">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-ansicht2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-3dgence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;2: 3DGence Industry F421 <span class="citation" data-cites="3dgence_f421">(<a href="#ref-3dgence_f421" role="doc-biblioref">3DGence 2026</a>)</span>
+</figcaption>
+</figure>
+</div>
+<p>Ziel der vorliegenden Arbeit ist daher die Erstellung einer Machbarkeitsstudie zur Weiterentwicklung und Optimierung des <em>3DGence Industry F421</em>. Im Rahmen dieser Untersuchung wird analysiert, ob und wie sich die Druckqualität sowie die Systemzuverlässigkeit durch gezielte Anpassungen der Software- und Hardwarearchitektur nachhaltig verbessern lassen. Hierzu werden zunächst die systemischen Grundlagen sowie der bestehende Hardwareaufbau analysiert, um vorhandene Komponenten anzusteuern oder sogar neue Komponenten zu identifizieren. Anschließend werden isolierte Versuche zur Ansteuerung einzelner Baugruppen durchgeführt und verschiedene Steuerungskonzepte getestet. Neben einer Kombination aus Einplatinencomputer (Raspberry Pi 5) und dediziertem Klipper-Board wird dabei auch der Einsatz einer FPGA-basierten Steuerung betrachtet. Die Ergebnisse dieser Machbarkeitsanalyse dienen als fundierte Grundlage für die spätere vollständige Systemintegration im Rahmen einer anschließenden Bachelorarbeit.</p>
 </section>
-<section id="einleitung-1" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Einleitung</h1>
-<p>Im Rahmen dieses Praktums wurde ein 3D-Drucker auf die Möglichkeit einer Software- sowie Hardwareseitigen generalüberholung überprüft. In diesem Fall wurde der 3D-Gence F421 Industrie Drucker behandelt. Ziel war es eine Machbarkeitsanalyse zu erstellen mit welcher in einer Bachelorarbeit die Umsetzung erfolgen kann. Das Praktikum hat bei der ADAS, Airbus DS Airborne Solutions GmbH, in Bremen stattgefunden und wurde über einen Zeitraum von 13,5 Wochen mit jeweils 40 Stunden pro Woche durchgeführt.</p>
+<section id="zeitplanung-des-praktiums" class="level1">
+<h1>Zeitplanung des Praktiums</h1>
+<p>Zu Beginnn des Praktikums wurde sich mithilfe des Programmes <em>MS Project</em> ein Zeitplan erstellt, um die verschiedenen Aufgabenbereiche abdecken zu können. Hierbei wurden die 13,5 Wochen Praktikum in vier größere Arbeitspakete aufgeteilt.</p>
+<ol type="1">
+<li>Grundlagen des 3D-Druckers</li>
+<li>Einzellnes Ansteuern verschienener Bauteile über Python</li>
+<li>Umsetzung an einem Referenzsystem</li>
+<li>Vergleich mit dem Refenzsystem mit dem 3DGence Industry F421</li>
+</ol>
 </section>
-<section id="einleitung-2" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Einleitung</h1>
-<p>Im Rahmen dieses Praktums wurde ein 3D-Drucker auf die Möglichkeit einer Software- sowie Hardwareseitigen generalüberholung überprüft. In diesem Fall wurde der 3D-Gence F421 Industrie Drucker behandelt. Ziel war es eine Machbarkeitsanalyse zu erstellen mit welcher in einer Bachelorarbeit die Umsetzung erfolgen kann. Das Praktikum hat bei der ADAS, Airbus DS Airborne Solutions GmbH, in Bremen stattgefunden und wurde über einen Zeitraum von 13,5 Wochen mit jeweils 40 Stunden pro Woche durchgeführt.</p>
+<section id="grundlagen-des-3d-druck" class="level1">
+<h1>Grundlagen des 3D-Druck</h1>
+<p>Der 3D-Druck umfasst ein Spektrum von Fertigungsverfahren, bei denen dreidimensionale Werkstücke durch das fortlaufende, schichtweise Auftragen von Material aufgebaut werden. Im Gegensatz zu den klassisch Fertigungsverfahren (wie Fräsen, Drehen oder Bohren), bei denen Material von einem Rohling abgetragen wird erlaubt das additive Prinzip die werkzeuglose und hochflexible Realisierung komplexer Geometrien. <span class="citation" data-cites="3D-Druck_Leitfaden">(<a href="#ref-3D-Druck_Leitfaden" role="doc-biblioref">Chan 2026</a>)</span></p>
+<section id="das-grundprinzip-der-schichtbauweise" class="level2">
+<h2 class="anchored" data-anchor-id="das-grundprinzip-der-schichtbauweise">Das Grundprinzip der Schichtbauweise</h2>
+<p>Unabhängig von der spezifischen Ansteuerungstechnologie und dem verarbeiteten Werkstoff folgt der Ablauf beim 3D-Druck stets einem einheitlichen Prozesspfad:</p>
+<ol type="1">
+<li>CAD-Konstruktion: Erstellung eines dreidimensionalen Computermodells in einem CAD-System (<em>Computer-Aided Design</em>).</li>
+<li>Slicing (Schnittgenerierung): Das CAD-Modell wird in ein übertragbares Dateiformat (z. B. STL, STEP oder 3MF) exportiert und von einer Slicing-Software verarbeitet. Dabei wird das Objekt rechnerisch in hunderte bis tausende horizontale Schichten zerlegt und der entsprechende Steuerungs-Code (G-Code) erzeugt.</li>
+<li>Fertigung (Schichtaufbau): Die Druckmechanik, meist Step-Motoren, setzt den Steuerungs-Code um und baut das Bauteil Schicht für Schicht auf einer Bauplattform auf.</li>
+<li>Nachbearbeitung (Post-Processing): Je nach Verfahren und Anforderungen folgen mechanische, thermische oder chemische Nachbehandlungsschritte (z. B. Entfernen von Stützstrukturen, Wärmebehandlung zur Unterdrückung von Eigenspannungen oder Oberflächenglättung).</li>
+</ol>
 </section>
-<section id="literaturverzeichnis" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Literaturverzeichnis</h1>
-<div id="refs" role="list">
+<section id="übersicht-gängiger-fertigungsverfahren" class="level2">
+<h2 class="anchored" data-anchor-id="übersicht-gängiger-fertigungsverfahren">Übersicht gängiger Fertigungsverfahren</h2>
+<p>Die Normung nach DIN EN ISO/ASTM 52900 kategorisiert die additiven Fertigungsverfahren nach ihren grundlegenden Wirkprinzipien. Für Kunststoffe und Metalle unterscheiden sich die Ansätze maßgeblich:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Verfahrensgruppe</th>
+<th style="text-align: left;">Typischer Handelsname / Kürzel</th>
+<th style="text-align: left;">Verarbeiteter Werkstoff</th>
+<th style="text-align: left;">Funktionsprinzip</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Material Extrusion</strong></td>
+<td style="text-align: left;"><strong>FFF</strong> (<em>Fused Filament Fabrication</em>) / <strong>FDM</strong> (<em>Fused Deposition Modeling</em>)</td>
+<td style="text-align: left;">Thermoplaste (PLA, ABS, PETG, PEEK, ULTEM)</td>
+<td style="text-align: left;">Ein thermoplastischer Draht (Filament) wird in einem Schmelzkopf verflüssigt und durch eine Düse selektiv aufgetragen.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Vat Photopolymerization</strong></td>
+<td style="text-align: left;"><strong>SLA</strong> (<em>Stereolithografie</em>) / <strong>DLP</strong> (<em>Digital Light Processing</em>)</td>
+<td style="text-align: left;">Photopolymer-Harze (Resin)</td>
+<td style="text-align: left;">Flüssiges Kunstharz wird mittels Laserstrahl oder Projektor schichtweise durch UV-Licht selektiv ausgehärtet.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Powder Bed Fusion</strong></td>
+<td style="text-align: left;"><strong>SLS</strong> (<em>Selective Laser Sintering</em>) / <strong>SLM</strong> (<em>Selective Laser Melting</em>)</td>
+<td style="text-align: left;">Kunststoffe (PA12) oder Metallpulver (Edelstahl, Titan)</td>
+<td style="text-align: left;">Ein feines Pulver wird in einem Pulverbett verteilt und per Laser lokal aufgeschmolzen bzw. versintert.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="material-extrusion" class="level2">
+<h2 class="anchored" data-anchor-id="material-extrusion">Material Extrusion</h2>
+<p>Der zu analysierende Drucker basiert auf dem FFF bzw. FDM Verfahren. Bei diesem Verfahren spielen primär thermoplastische Kunststoffe eine Rolle. Die Auswahl des Materials bestimmt maßgeblich die thermischen und mechanischen Eigenschaften des Zielbauteils:</p>
+<ul>
+<li>Standard-Kunststoffe: Unkompliziert zu verarbeiten (z. B. PLA, PETG). Geringe Temperaturbeständigkeit, vorrangig für funktionale Prototypen und einfache Gehäuse.</li>
+<li>Technische Kunststoffe: Erhöhte Festigkeit und Temperaturbeständigkeit (z. B. ABS, ASA, Polyamid/Nylon, PC). Benötigen meist geschlossene, beheizte Bauräume zur Vermeidung von Verzug (<em>Warping</em>).</li>
+<li>Hochleistungskunststoffe: Werkstoffe wie PEEK, PEKK oder ULTEM bieten extreme thermische Beständigkeit, Chemikalienresistenz und mechanische Belastbarkeit. Diese Polymere erfordern spezialisierte Industriedrucker mit Düsenerwärmungen bis zu 500 °C sowie aktiv beheizten Bauräumen (&gt; 100 °C).</li>
+</ul>
+</section>
+<section id="einordnung-für-die-industrielle-anwendung" class="level2">
+<h2 class="anchored" data-anchor-id="einordnung-für-die-industrielle-anwendung">Einordnung für die industrielle Anwendung</h2>
+<p>Während Konsumer-Systeme vorwiegend zur schnellen Musterfertigung mit niedrigen Anforderungen an Maßhaltigkeit eingesetzt werden, zeichnen sich Industrie-3D-Drucker durch eine kontinuierliche Prozessüberwachung, hochpräzise Closed-Loop-Steuerungen sowie die Fähigkeit zur Verarbeitung technischer Hochleistungskunststoffe aus. Sie dienen der Fertigung von Funktionsprototypen, Betriebsmitteln, Fertigungshilfen sowie Kleinserien-Bauteilen für anspruchsvolle Branchen wie der Luft- und Raumfahrt.</p>
+</section>
+</section>
+<section id="erste-ansteuerungen" class="level1">
+<h1>Erste Ansteuerungen</h1>
+<p>Nachdem nun die Grundlagen des 3D-Drucks recherchiert und verstanden wurden konnte sich an die Bauteilanalyse sowie Ansteuerung (z. B. Python) erster entscheidener Komponenten gemacht werden. Im Ersten Schritt wurde sich um die Grundkomponenten eines 3D-Druckers beschäftigt. Die nachfolgenden Unterkapitel werden näher auf die daraus entstehenden Erkenntnisse eingehen. Alle erwähnten Codes sind dem <a href="https://github.com/mircoick/Praxis-ADAS-3DDruck">Github</a> zu entnehmen.</p>
+<section id="grundkomponenten-eines-3d-druckers" class="level2">
+<h2 class="anchored" data-anchor-id="grundkomponenten-eines-3d-druckers">Grundkomponenten eines 3D-Druckers</h2>
+<p>Um einen 3D-Drucker Funktionsfähig zu machen braucht es prinzipiell drei verschiedene Baugruppen. Diese drei existenziellen Baugruppen sind:</p>
+<ul>
+<li>Step-Motoren: Steuern die X-/Y-/Z-Achse sowie den Extruder.</li>
+<li>Endschalter: Kommunizieren mit den Step-Motoren wann das Maximum des Druckbetts erreicht wurde.</li>
+<li>Heizkomponenten: Erwärmung des Filaments im Hotend sowie bei Bedarf Heatbeds.</li>
+</ul>
+<p>Somit wurde sich zuerst dran gemacht diese Baugruppen zu verstehen und sie anschließend mit Hilfe von Python anzusteuern.</p>
+<section id="step-motoren" class="level4">
+<h4 class="anchored" data-anchor-id="step-motoren">Step-Motoren</h4>
+<p>Sogut wie alle in modernen 3D-Drucker verbauten Step-Motoren funktionieren identisch. Es gibt vier Adern, welche in den Motor geführt werden. Wird nun eine Spannung an einen oder mehreren dieser Kontakte angelegt stellt dieses eine bestimmte Position bzw. einen Winkel des Motor dar. Somit lässt sich der Motor sehr präzise und gezielt kontrolieren. Sind die Positionen bzw. Winkel in korrelation mit den Kontakten bekannt, kann mit dem Motor eine Rotationsbewegung durchgeführt werden. Die Nachfolgende <a href="#fig-step_motor" class="quarto-xref">Abbildung&nbsp;3</a> zeigt den internen Aufbau dieser Step-Motoren in Verbindung mit den Steuerkontakten, oft als A+/A-/B+/B-, A1/A2/B1/B2 oder A/B/C/D bezeichnet. Außerdem ist in der Abbildung die Reihenfolge der Ansteuerung dargestellt.</p>
+<div id="fig-step_motor" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-step_motor-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-step_motor" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-step_wiring" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-step_wiring-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="pics/step.png" id="fig-step_wiring" class="img-fluid figure-img" style="width:50.0%" data-ref-parent="fig-step_motor">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-step_wiring-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a)
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-step_motor" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-step_sequence" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-step_sequence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="pics/sequence.png" id="fig-step_sequence" class="img-fluid figure-img" data-ref-parent="fig-step_motor">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-step_sequence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-step_motor-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;3: Step-Motor Aufbau <span class="citation" data-cites="step_motor">(<a href="#ref-step_motor" role="doc-biblioref">MOONS’ Industries 2026</a>)</span>
+</figcaption>
+</figure>
+</div>
+<p>Nun wurde anhand dieser Erkenntnisse versucht diese Motoren anzusteuern. Da jedoch ein Raspberry Pi nicht direkt den Strom bei der anzuliegenden Spannung bereitstellen kann muss ein Motortreiber dazwischen geschaltet werden. Für diesen Versuch wurde ein <a href="https://github.com/mircoick/Praxis-ADAS-3DDruck/blob/main/info/Geeetech%20i3%20Demonstrator/L298N%20Motor%20Driver.pdf"><em>L298N Dual H-Bridge Motor Driver</em></a> verwendet, da er bereits verfügbar war. Da der Treiber passend zu den vier Kontakten des Motors ebenfalls vier Anschlüsse hat konnte sich eine Funktion geschrieben werden womit die oben gezeigte Abfolge durchgeführt wurde. Hierbei lässt sich die Drehrichtung über Invertierung der Reihenfolge der Kontakte umsetzen. Wenn man jetzt eine Anzahl an <em>Steps</em> festlegen möchte ist dieses ebenfalls möglich indem man die einen Counter mitlaufen lässt, welcher die verschiednen Kontakt ansteuerungen zählt.</p>
+</section>
+<section id="endschalter" class="level4">
+<h4 class="anchored" data-anchor-id="endschalter">Endschalter</h4>
+<p>Ein Endschalter ist nichts weiteres als ein Handelsüblicher Taster, welcher bei Kontakt einen <em>Normally Closed</em> (NC) zu einem <em>Normally Opend</em> (NO), oder anders herum, verändert. Es gibt bei physischen Endschaltern meist drei Adern, welche einen gemeinsamen Spannungs- bzw. ein gemeinsames Ground-Kontakt, ein NO-Kontakt und einen NC-Kontakt beinhalten. Wird nun der Schalter gedrückt wird die angeschlossene Spannung bzw. der angeschlossene Ground weitergegeben oder unterbrochen, was eine Zustandsänderung für das anliegende Signal bedeutet. Diese Zustandsänderung lässt sich nun in bezug auf z.B. die Motoren setzen.</p>
+<p>Auch hier wurde nun ein kleines einzelnes Skript in Python geschrieben, welches die Funktion des Endschalters testet und validiert. Außerdem wurde in die Funktion den Step-Motors ein Endschalter mit eingebaut, womit der Motor bei bedarf gestoppt werden konnte.</p>
+</section>
+<section id="heizkomponenten" class="level4">
+<h4 class="anchored" data-anchor-id="heizkomponenten">Heizkomponenten</h4>
+<p>Die Heizelemnte an sich sind wohl die am einfachsten anzusteuerden Bauteile in dieser Liste, da sie bei einer anliegenden Spannung wärme erzeugen. Hier ist eine Spule in ein Material eingearbietet, z.B. in das Hotend oder Heatbed des Druckers, welche sich bei Strom durchfluss erwärmt. Neben den Heizemelten bedarf es jedoch noch mindestens noch ein Temperatursensor welcher die Temperatur überwacht und, ähnlich wie der Endschater, als Heizstopp fungiert. Diese Temperatursensoren können als NTC (Negative Temperature Coefficient, Heißleiter) oder PTC (Positive Temperature Coefficient, Kaltleiter) umgesetzt werden. Am beliebtesten ist hier jedoch der PTC in Verbindung mit Platin, da diese PT100 bzw. PT1000 Glieder einen sehr linearen Kurvenverlauf aufweisen. Außerdem sind sie so optimiert, dass sie bei einer Temperatur von <span class="math inline">\(T=0°C\)</span> genau einen Widerstand von <span class="math inline">\(R_{PT100}=100\,\Omega\)</span> bzw <span class="math inline">\(R_{PT1000}=1000\,\Omega\)</span> ausgeben. Sie sind somit sehr gut und genau auszulesen was für die Filamenterwärmung benötigt wird.</p>
+<div id="fig-pt100_pt1000" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pt100_pt1000-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="pics/Kennlinie_Pt100Pt1000_2.png" class="img-fluid figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pt100_pt1000-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;4: Kennlinie PT100/ PT1000 <span class="citation" data-cites="pt100_pt1000">(<a href="#ref-pt100_pt1000" role="doc-biblioref">Gibietz 2026</a>)</span>
+</figcaption>
+</figure>
+</div>
+<p>Neben den Temperatursensoren sind außerdem noch Lüfter von Vorteil um das Bautel wieder abzukühlen bzw. die benötigte Temperatur zu halten und nicht zu überschrieten. Standatisierte Lüfter beim 3D-Druck können mit bis zu 24V über ein PWM (Pulse Width Modulation) betrieben werden. So wird über die Pulsbreite der Signale die Spannung festgelegt. Beispielsweise gibt ein Raspberry Pi eine Signalspannung von <span class="math inline">\(V_{sig}=3,3\,\text{V}\)</span> aus, diese 3,3V bei 100% Signal können nun über die Pulsbreite veringert werden (50% Pulsbreite = 1,65V = 50% Lüftergeschwindigkeit).</p>
+</section>
+</section>
+<section id="geeetech-i3-referenzdruckers" class="level2">
+<h2 class="anchored" data-anchor-id="geeetech-i3-referenzdruckers">Geeetech i3 Referenzdruckers</h2>
+<p>Nach Ansteuerung der einzelnen Basiskomponenten wurde nun probiert mittels eines Referenzdruckers die Bautele anzusteuern. Dazu wurde ein ausgesonderter <em>Geeetech i3</em> 3D-Drucker verwendet, welcher hardwareseitig über einen Arduino Mega 2560 betrieben wird. Die <a href="#fig-i3" class="quarto-xref">Abbildung&nbsp;5</a> zeigt das Referenzsystem.</p>
+<div id="fig-i3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-i3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="pics/IMG_2011.jpg" class="img-fluid figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-i3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;5: Geeetech i3 Referenzsystem
+</figcaption>
+</figure>
+</div>
+<section id="software-festlegung" class="level3">
+<h3 class="anchored" data-anchor-id="software-festlegung">Software Festlegung</h3>
+<p>Da bereits der Arduino sowie der Raspberry Pi 5 zur Verfügung standen wurde sich nun auf die Lösung der Ansteuerung mittels zwei Boards und gegen die FPGA Lösung entschieden. Somit sollte der Arduino als Hardwaresteuerung und der Raspberry Pi 5 für die komplexere Softwaresteuerung verantwortlich sein. Für diese Art von Ansteuerung gibt es bereits sämtliche Open-Source Lösungen, unter anderem Klipper, Marlin, RRF (RepRapFirmware) oder auch Kalico. Die am weitesten verbreitete und zugängliste Variante ist hier Klipper. Kipper bietet mit der in Python Programmierten Funktionsklassen leichte Anpassungs- sowie Erweiterungsmöglichkeiten und für sehr viele Lösungen bereits vorgefertigte Module. Außerdem kann mit Hilfe von Mainsail und Moonraker leicht eine IP-Adressen basierte Benutzeroberfläche für Klipper geschaffen werden, mit welcher sich alle Komponenten steuern und änderungen im Code vorgenommen werden können. Neben dieser Weboberfläche kann zusätzlich mit Crowsnest eine Webkam eingebunden und mit Kipper-Screen diese Oberfläche auch auf am Raspberry Pi angeschlossenen Displays angezeigt werden. Somit bietet Klipper alles für die erfolgreiche Umsetzung des Projektes.</p>
+</section>
+<section id="ansteuerung-des-geeetech-i3" class="level3">
+<h3 class="anchored" data-anchor-id="ansteuerung-des-geeetech-i3">Ansteuerung des Geeetech i3</h3>
+<p>Die Ansteuerung des Referenzsystems gestaltete sich mithilfe von Klipper recht einfach. Bereits vordefinierte Pinouts in Klipper des Arduino konnten eingelsen und angesteuert werden.</p>
+</section>
+</section>
+</section>
+<section id="dgence-industry-f421" class="level1">
+<h1>3DGence Industry F421</h1>
 
+</section>
+<section id="literaturverzeichnis" class="level1">
+<h1>Literaturverzeichnis</h1>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-3dgence_f421" class="csl-entry" role="listitem">
+3DGence. 2026. <span>„Industry F421 – High-Performance 3D-Drucker“</span>. <a href="https://3dgence.com/de/3d-drucker/industry-f421/">https://3dgence.com/de/3d-drucker/industry-f421/</a>.
+</div>
+<div id="ref-3D-Druck_Leitfaden" class="csl-entry" role="listitem">
+Chan, Violet. 2026. <span>„Der vollständige Leitfaden zum FDM-3D-Druck: Vom Design zum Bauteil“</span>. <a href="https://www.rapiddirect.com/de/blog/fdm-3d-printing-complete-guide/">https://www.rapiddirect.com/de/blog/fdm-3d-printing-complete-guide/</a>.
+</div>
+<div id="ref-pt100_pt1000" class="csl-entry" role="listitem">
+Gibietz, Oliver. 2026. <span>„Pt100 oder Pt1000? Was bedeutet der Unterschied in der Praxis?“</span> <a href="https://temperatur-profis.de/temperaturfuehler/pt100-oder-pt1000/">https://temperatur-profis.de/temperaturfuehler/pt100-oder-pt1000/</a>.
+</div>
+<div id="ref-Github" class="csl-entry" role="listitem">
+Ick, Mirco. 2026. <span>„Github Praxis-ADAS-3DDruck“</span>. <a href="https://github.com/mircoick/Praxis-ADAS-3DDruck/blob/main/doku/Company_Presentation_ADAS.pdf">https://github.com/mircoick/Praxis-ADAS-3DDruck/blob/main/doku/Company_Presentation_ADAS.pdf</a>.
+</div>
+<div id="ref-step_motor" class="csl-entry" role="listitem">
+MOONS’ Industries. 2026. <em>AM23HSA4B0-03: NEMA 23 Standard Hybrid Stepper Motor Datasheet</em>. <a href="https://www.moonsindustries.com/p/am-series-standard-hybrid-stepper-motors/am23hsa4b0-03-000004611110013316">https://www.moonsindustries.com/p/am-series-standard-hybrid-stepper-motors/am23hsa4b0-03-000004611110013316</a>.
+</div>
 </div>
 <!-- -->
 
@@ -261,12 +536,12 @@ Airbus DS Airborne Solutions GmbH<br> Richard Dunkel Straße 121, 28199 Bremen
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Zitat</h2><div><div class="quarto-appendix-secondary-label">Mit BibTeX zitieren:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{ick2026,
   author = {Ick, Mirco},
   title = {Praxissemester},
-  date = {2026-10-07},
+  date = {2026-10-16},
   langid = {de}
 }
 </code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">Bitte zitieren Sie diese Arbeit als:</div><div id="ref-ick2026" class="csl-entry quarto-appendix-citeas" role="listitem">
 Ick, Mirco. 2026. <span>“Praxissemester.”</span> Abschlussbericht,
-October 7.
+October 16.
 </div></div></section></div></main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -735,7 +1010,7 @@ October 7.
 <span id="cb1-13"><a href="#cb1-13"></a><span class="an">bibliography:</span><span class="co"> references.bib</span></span>
 <span id="cb1-14"><a href="#cb1-14"></a><span class="an">citation:</span></span>
 <span id="cb1-15"><a href="#cb1-15"></a><span class="co">  container-title: Abschlussbericht</span></span>
-<span id="cb1-16"><a href="#cb1-16"></a><span class="an">number-sections:</span><span class="co"> true</span></span>
+<span id="cb1-16"><a href="#cb1-16"></a><span class="an">number-sections:</span><span class="co"> false</span></span>
 <span id="cb1-17"><a href="#cb1-17"></a><span class="co">---</span></span>
 <span id="cb1-18"><a href="#cb1-18"></a></span>
 <span id="cb1-19"><a href="#cb1-19"></a>{{&lt; include init/header.html &gt;}}</span>
@@ -744,14 +1019,18 @@ October 7.
 <span id="cb1-22"><a href="#cb1-22"></a>\newpage</span>
 <span id="cb1-23"><a href="#cb1-23"></a>{{&lt; include contents_final/planner.qmd &gt;}}</span>
 <span id="cb1-24"><a href="#cb1-24"></a>\newpage</span>
-<span id="cb1-25"><a href="#cb1-25"></a>{{&lt; include contents_final/objectives.qmd &gt;}}</span>
+<span id="cb1-25"><a href="#cb1-25"></a>{{&lt; include contents_final/basics_3dprinter.qmd &gt;}}</span>
 <span id="cb1-26"><a href="#cb1-26"></a>\newpage</span>
-<span id="cb1-27"><a href="#cb1-27"></a></span>
-<span id="cb1-28"><a href="#cb1-28"></a><span class="fu"># Literaturverzeichnis</span></span>
-<span id="cb1-29"><a href="#cb1-29"></a>\markboth{Literaturverzeichnis}{Literaturverzeichnis}</span>
-<span id="cb1-30"><a href="#cb1-30"></a></span>
-<span id="cb1-31"><a href="#cb1-31"></a>::: {#refs}</span>
-<span id="cb1-32"><a href="#cb1-32"></a>:::</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-27"><a href="#cb1-27"></a>{{&lt; include contents_final/first_steps.qmd &gt;}}</span>
+<span id="cb1-28"><a href="#cb1-28"></a>\newpage</span>
+<span id="cb1-29"><a href="#cb1-29"></a>{{&lt; include contents_final/F421.qmd &gt;}}</span>
+<span id="cb1-30"><a href="#cb1-30"></a>\newpage</span>
+<span id="cb1-31"><a href="#cb1-31"></a></span>
+<span id="cb1-32"><a href="#cb1-32"></a><span class="fu"># Literaturverzeichnis</span></span>
+<span id="cb1-33"><a href="#cb1-33"></a>\markboth{Literaturverzeichnis}{Literaturverzeichnis}</span>
+<span id="cb1-34"><a href="#cb1-34"></a></span>
+<span id="cb1-35"><a href="#cb1-35"></a>::: {#refs}</span>
+<span id="cb1-36"><a href="#cb1-36"></a>:::</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

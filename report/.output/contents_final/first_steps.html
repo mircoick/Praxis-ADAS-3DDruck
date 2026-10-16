@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>first_steps</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="first_steps_files/libs/clipboard/clipboard.min.js"></script>
+<script src="first_steps_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="first_steps_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="first_steps_files/libs/quarto-html/popper.min.js"></script>
+<script src="first_steps_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="first_steps_files/libs/quarto-html/anchor.min.js"></script>
+<link href="first_steps_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="first_steps_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="first_steps_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="first_steps_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="first_steps_files/libs/bootstrap/bootstrap-ede99668022d729815adb579755f67dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhaltsverzeichnis</h2>
+   
+  <ul>
+  <li><a href="#erste-ansteuerungen" id="toc-erste-ansteuerungen" class="nav-link active" data-scroll-target="#erste-ansteuerungen">Erste Ansteuerungen</a>
+  <ul class="collapse">
+  <li><a href="#grundkomponenten-eines-3d-druckers" id="toc-grundkomponenten-eines-3d-druckers" class="nav-link" data-scroll-target="#grundkomponenten-eines-3d-druckers">Grundkomponenten eines 3D-Druckers</a></li>
+  <li><a href="#geeetech-i3-referenzdruckers" id="toc-geeetech-i3-referenzdruckers" class="nav-link" data-scroll-target="#geeetech-i3-referenzdruckers">Geeetech i3 Referenzdruckers</a>
+  <ul class="collapse">
+  <li><a href="#software-festlegung" id="toc-software-festlegung" class="nav-link" data-scroll-target="#software-festlegung">Software Festlegung</a></li>
+  <li><a href="#ansteuerung-des-geeetech-i3" id="toc-ansteuerung-des-geeetech-i3" class="nav-link" data-scroll-target="#ansteuerung-des-geeetech-i3">Ansteuerung des Geeetech i3</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Andere Formate</h2><ul><li><a href="first_steps.docx"><i class="bi bi-file-word"></i>MS Word</a></li><li><a href="first_steps.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="first_steps.md"><i class="bi bi-file-code"></i>Github (GFM)</a></li></ul></div></nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+</div>
+<main class="content" id="quarto-document-content"><div class="quarto-title-block"><div class="quarto-title-tools-only"><h1></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+
+
+
+
+<section id="erste-ansteuerungen" class="level1">
+<h1>Erste Ansteuerungen</h1>
+<p>Nachdem nun die Grundlagen des 3D-Drucks recherchiert und verstanden wurden konnte sich an die Bauteilanalyse sowie Ansteuerung (z. B. Python) erster entscheidener Komponenten gemacht werden. Im Ersten Schritt wurde sich um die Grundkomponenten eines 3D-Druckers beschäftigt. Die nachfolgenden Unterkapitel werden näher auf die daraus entstehenden Erkenntnisse eingehen. Alle erwähnten Codes sind dem <a href="https://github.com/mircoick/Praxis-ADAS-3DDruck">Github</a> zu entnehmen.</p>
+<section id="grundkomponenten-eines-3d-druckers" class="level2">
+<h2 class="anchored" data-anchor-id="grundkomponenten-eines-3d-druckers">Grundkomponenten eines 3D-Druckers</h2>
+<p>Um einen 3D-Drucker Funktionsfähig zu machen braucht es prinzipiell drei verschiedene Baugruppen. Diese drei existenziellen Baugruppen sind:</p>
+<ul>
+<li>Step-Motoren: Steuern die X-/Y-/Z-Achse sowie den Extruder.</li>
+<li>Endschalter: Kommunizieren mit den Step-Motoren wann das Maximum des Druckbetts erreicht wurde.</li>
+<li>Heizkomponenten: Erwärmung des Filaments im Hotend sowie bei Bedarf Heatbeds.</li>
+</ul>
+<p>Somit wurde sich zuerst dran gemacht diese Baugruppen zu verstehen und sie anschließend mit Hilfe von Python anzusteuern.</p>
+<section id="step-motoren" class="level4">
+<h4 class="anchored" data-anchor-id="step-motoren">Step-Motoren</h4>
+<p>Sogut wie alle in modernen 3D-Drucker verbauten Step-Motoren funktionieren identisch. Es gibt vier Adern, welche in den Motor geführt werden. Wird nun eine Spannung an einen oder mehreren dieser Kontakte angelegt stellt dieses eine bestimmte Position bzw. einen Winkel des Motor dar. Somit lässt sich der Motor sehr präzise und gezielt kontrolieren. Sind die Positionen bzw. Winkel in korrelation mit den Kontakten bekannt, kann mit dem Motor eine Rotationsbewegung durchgeführt werden. Die Nachfolgende <a href="#fig-step_motor" class="quarto-xref">Abbildung&nbsp;1</a> zeigt den internen Aufbau dieser Step-Motoren in Verbindung mit den Steuerkontakten, oft als A+/A-/B+/B-, A1/A2/B1/B2 oder A/B/C/D bezeichnet. Außerdem ist in der Abbildung die Reihenfolge der Ansteuerung dargestellt.</p>
+<div id="fig-step_motor" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-step_motor-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-step_motor" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-step_wiring" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-step_wiring-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="pics/step.png" id="fig-step_wiring" class="img-fluid figure-img" style="width:50.0%" data-ref-parent="fig-step_motor">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-step_wiring-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a)
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-step_motor" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-step_sequence" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-step_sequence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="pics/sequence.png" id="fig-step_sequence" class="img-fluid figure-img" data-ref-parent="fig-step_motor">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-step_sequence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-step_motor-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;1: Step-Motor Aufbau <span class="citation" data-cites="step_motor">[@step_motor]</span>
+</figcaption>
+</figure>
+</div>
+<p>Nun wurde anhand dieser Erkenntnisse versucht diese Motoren anzusteuern. Da jedoch ein Raspberry Pi nicht direkt den Strom bei der anzuliegenden Spannung bereitstellen kann muss ein Motortreiber dazwischen geschaltet werden. Für diesen Versuch wurde ein <a href="https://github.com/mircoick/Praxis-ADAS-3DDruck/blob/main/info/Geeetech%20i3%20Demonstrator/L298N%20Motor%20Driver.pdf"><em>L298N Dual H-Bridge Motor Driver</em></a> verwendet, da er bereits verfügbar war. Da der Treiber passend zu den vier Kontakten des Motors ebenfalls vier Anschlüsse hat konnte sich eine Funktion geschrieben werden womit die oben gezeigte Abfolge durchgeführt wurde. Hierbei lässt sich die Drehrichtung über Invertierung der Reihenfolge der Kontakte umsetzen. Wenn man jetzt eine Anzahl an <em>Steps</em> festlegen möchte ist dieses ebenfalls möglich indem man die einen Counter mitlaufen lässt, welcher die verschiednen Kontakt ansteuerungen zählt.</p>
+</section>
+<section id="endschalter" class="level4">
+<h4 class="anchored" data-anchor-id="endschalter">Endschalter</h4>
+<p>Ein Endschalter ist nichts weiteres als ein Handelsüblicher Taster, welcher bei Kontakt einen <em>Normally Closed</em> (NC) zu einem <em>Normally Opend</em> (NO), oder anders herum, verändert. Es gibt bei physischen Endschaltern meist drei Adern, welche einen gemeinsamen Spannungs- bzw. ein gemeinsames Ground-Kontakt, ein NO-Kontakt und einen NC-Kontakt beinhalten. Wird nun der Schalter gedrückt wird die angeschlossene Spannung bzw. der angeschlossene Ground weitergegeben oder unterbrochen, was eine Zustandsänderung für das anliegende Signal bedeutet. Diese Zustandsänderung lässt sich nun in bezug auf z.B. die Motoren setzen.</p>
+<p>Auch hier wurde nun ein kleines einzelnes Skript in Python geschrieben, welches die Funktion des Endschalters testet und validiert. Außerdem wurde in die Funktion den Step-Motors ein Endschalter mit eingebaut, womit der Motor bei bedarf gestoppt werden konnte.</p>
+</section>
+<section id="heizkomponenten" class="level4">
+<h4 class="anchored" data-anchor-id="heizkomponenten">Heizkomponenten</h4>
+<p>Die Heizelemnte an sich sind wohl die am einfachsten anzusteuerden Bauteile in dieser Liste, da sie bei einer anliegenden Spannung wärme erzeugen. Hier ist eine Spule in ein Material eingearbietet, z.B. in das Hotend oder Heatbed des Druckers, welche sich bei Strom durchfluss erwärmt. Neben den Heizemelten bedarf es jedoch noch mindestens noch ein Temperatursensor welcher die Temperatur überwacht und, ähnlich wie der Endschater, als Heizstopp fungiert. Diese Temperatursensoren können als NTC (Negative Temperature Coefficient, Heißleiter) oder PTC (Positive Temperature Coefficient, Kaltleiter) umgesetzt werden. Am beliebtesten ist hier jedoch der PTC in Verbindung mit Platin, da diese PT100 bzw. PT1000 Glieder einen sehr linearen Kurvenverlauf aufweisen. Außerdem sind sie so optimiert, dass sie bei einer Temperatur von <span class="math inline">\(T=0°C\)</span> genau einen Widerstand von <span class="math inline">\(R_{PT100}=100\,\Omega\)</span> bzw <span class="math inline">\(R_{PT1000}=1000\,\Omega\)</span> ausgeben. Sie sind somit sehr gut und genau auszulesen was für die Filamenterwärmung benötigt wird.</p>
+<div id="fig-pt100_pt1000" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pt100_pt1000-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="pics/Kennlinie_Pt100Pt1000_2.png" class="img-fluid figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pt100_pt1000-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;2: Kennlinie PT100/ PT1000 <span class="citation" data-cites="pt100_pt1000">[@pt100_pt1000]</span>
+</figcaption>
+</figure>
+</div>
+<p>Neben den Temperatursensoren sind außerdem noch Lüfter von Vorteil um das Bautel wieder abzukühlen bzw. die benötigte Temperatur zu halten und nicht zu überschrieten. Standatisierte Lüfter beim 3D-Druck können mit bis zu 24V über ein PWM (Pulse Width Modulation) betrieben werden. So wird über die Pulsbreite der Signale die Spannung festgelegt. Beispielsweise gibt ein Raspberry Pi eine Signalspannung von <span class="math inline">\(V_{sig}=3,3\,\text{V}\)</span> aus, diese 3,3V bei 100% Signal können nun über die Pulsbreite veringert werden (50% Pulsbreite = 1,65V = 50% Lüftergeschwindigkeit).</p>
+</section>
+</section>
+<section id="geeetech-i3-referenzdruckers" class="level2">
+<h2 class="anchored" data-anchor-id="geeetech-i3-referenzdruckers">Geeetech i3 Referenzdruckers</h2>
+<p>Nach Ansteuerung der einzelnen Basiskomponenten wurde nun probiert mittels eines Referenzdruckers die Bautele anzusteuern. Dazu wurde ein ausgesonderter <em>Geeetech i3</em> 3D-Drucker verwendet, welcher hardwareseitig über einen Arduino Mega 2560 betrieben wird. Die <a href="#fig-i3" class="quarto-xref">Abbildung&nbsp;3</a> zeigt das Referenzsystem.</p>
+<div id="fig-i3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-i3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="pics/IMG_2011.jpg" class="img-fluid figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-i3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;3: Geeetech i3 Referenzsystem
+</figcaption>
+</figure>
+</div>
+<section id="software-festlegung" class="level3">
+<h3 class="anchored" data-anchor-id="software-festlegung">Software Festlegung</h3>
+<p>Da bereits der Arduino sowie der Raspberry Pi 5 zur Verfügung standen wurde sich nun auf die Lösung der Ansteuerung mittels zwei Boards und gegen die FPGA Lösung entschieden. Somit sollte der Arduino als Hardwaresteuerung und der Raspberry Pi 5 für die komplexere Softwaresteuerung verantwortlich sein. Für diese Art von Ansteuerung gibt es bereits sämtliche Open-Source Lösungen, unter anderem Klipper, Marlin, RRF (RepRapFirmware) oder auch Kalico. Die am weitesten verbreitete und zugängliste Variante ist hier Klipper. Kipper bietet mit der in Python Programmierten Funktionsklassen leichte Anpassungs- sowie Erweiterungsmöglichkeiten und für sehr viele Lösungen bereits vorgefertigte Module. Außerdem kann mit Hilfe von Mainsail und Moonraker leicht eine IP-Adressen basierte Benutzeroberfläche für Klipper geschaffen werden, mit welcher sich alle Komponenten steuern und änderungen im Code vorgenommen werden können. Neben dieser Weboberfläche kann zusätzlich mit Crowsnest eine Webkam eingebunden und mit Kipper-Screen diese Oberfläche auch auf am Raspberry Pi angeschlossenen Displays angezeigt werden. Somit bietet Klipper alles für die erfolgreiche Umsetzung des Projektes.</p>
+</section>
+<section id="ansteuerung-des-geeetech-i3" class="level3">
+<h3 class="anchored" data-anchor-id="ansteuerung-des-geeetech-i3">Ansteuerung des Geeetech i3</h3>
+<p>Die Ansteuerung des Referenzsystems gestaltete sich mithilfe von Klipper recht einfach. Bereits vordefinierte Pinouts in Klipper des Arduino konnten eingelsen und angesteuert werden.</p>
+<!-- -->
+
+</section>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Kopiert");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Kopiert");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Quellcode</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu"># Erste Ansteuerungen</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>Nachdem nun die Grundlagen des 3D-Drucks recherchiert und verstanden wurden konnte sich an die Bauteilanalyse sowie Ansteuerung (z. B. Python) erster entscheidener Komponenten gemacht werden. Im Ersten Schritt wurde sich um die Grundkomponenten eines 3D-Druckers beschäftigt. Die nachfolgenden Unterkapitel werden näher auf die daraus entstehenden Erkenntnisse eingehen. Alle erwähnten Codes sind dem <span class="co">[</span><span class="ot">Github</span><span class="co">](https://github.com/mircoick/Praxis-ADAS-3DDruck)</span> zu entnehmen.</span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">## Grundkomponenten eines 3D-Druckers</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a>Um einen 3D-Drucker Funktionsfähig zu machen braucht es prinzipiell drei verschiedene Baugruppen. Diese drei existenziellen Baugruppen sind:</span>
+<span id="cb1-6"><a href="#cb1-6"></a></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="ss">- </span>Step-Motoren: Steuern die X-/Y-/Z-Achse sowie den Extruder.</span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="ss">- </span>Endschalter: Kommunizieren mit den Step-Motoren wann das Maximum des Druckbetts erreicht wurde.</span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="ss">- </span>Heizkomponenten: Erwärmung des Filaments im Hotend sowie bei Bedarf Heatbeds.</span>
+<span id="cb1-10"><a href="#cb1-10"></a></span>
+<span id="cb1-11"><a href="#cb1-11"></a>Somit wurde sich zuerst dran gemacht diese Baugruppen zu verstehen und sie anschließend mit Hilfe von Python anzusteuern.</span>
+<span id="cb1-12"><a href="#cb1-12"></a></span>
+<span id="cb1-13"><a href="#cb1-13"></a><span class="fu">#### Step-Motoren </span></span>
+<span id="cb1-14"><a href="#cb1-14"></a>Sogut wie alle in modernen 3D-Drucker verbauten Step-Motoren funktionieren identisch. Es gibt vier Adern, welche in den Motor geführt werden. Wird nun eine Spannung an einen oder mehreren dieser Kontakte angelegt stellt dieses eine bestimmte Position bzw. einen Winkel des Motor dar. Somit lässt sich der Motor sehr präzise und gezielt kontrolieren. Sind die Positionen bzw. Winkel in korrelation mit den Kontakten bekannt, kann mit dem Motor eine Rotationsbewegung durchgeführt werden. Die Nachfolgende @fig-step_motor zeigt den internen Aufbau dieser Step-Motoren in Verbindung mit den Steuerkontakten, oft als A+/A-/B+/B-, A1/A2/B1/B2 oder A/B/C/D bezeichnet. Außerdem ist in der Abbildung die Reihenfolge der Ansteuerung dargestellt. </span>
+<span id="cb1-15"><a href="#cb1-15"></a></span>
+<span id="cb1-16"><a href="#cb1-16"></a>::: {#fig-step_motor layout-ncol=2}</span>
+<span id="cb1-17"><a href="#cb1-17"></a><span class="al">![](pics/step.png)</span>{#fig-step_wiring width="50%"}</span>
+<span id="cb1-18"><a href="#cb1-18"></a></span>
+<span id="cb1-19"><a href="#cb1-19"></a><span class="al">![](pics/sequence.png)</span>{#fig-step_sequence}</span>
+<span id="cb1-20"><a href="#cb1-20"></a></span>
+<span id="cb1-21"><a href="#cb1-21"></a>Step-Motor Aufbau <span class="co">[</span><span class="ot">@step_motor</span><span class="co">]</span></span>
+<span id="cb1-22"><a href="#cb1-22"></a>:::</span>
+<span id="cb1-23"><a href="#cb1-23"></a></span>
+<span id="cb1-24"><a href="#cb1-24"></a>Nun wurde anhand dieser Erkenntnisse versucht diese Motoren anzusteuern. Da jedoch ein Raspberry Pi nicht direkt den Strom bei der anzuliegenden Spannung bereitstellen kann muss ein Motortreiber dazwischen geschaltet werden. Für diesen Versuch wurde ein <span class="co">[</span><span class="ot">*L298N Dual H-Bridge Motor Driver*</span><span class="co">](https://github.com/mircoick/Praxis-ADAS-3DDruck/blob/main/info/Geeetech%20i3%20Demonstrator/L298N%20Motor%20Driver.pdf)</span> verwendet, da er bereits verfügbar war. Da der Treiber passend zu den vier Kontakten des Motors ebenfalls vier Anschlüsse hat konnte sich eine Funktion geschrieben werden womit die oben gezeigte Abfolge durchgeführt wurde. Hierbei lässt sich die Drehrichtung über Invertierung der Reihenfolge der Kontakte umsetzen. Wenn man jetzt eine Anzahl an *Steps* festlegen möchte ist dieses ebenfalls möglich indem man die einen Counter mitlaufen lässt, welcher die verschiednen Kontakt ansteuerungen zählt.</span>
+<span id="cb1-25"><a href="#cb1-25"></a></span>
+<span id="cb1-26"><a href="#cb1-26"></a><span class="fu">#### Endschalter</span></span>
+<span id="cb1-27"><a href="#cb1-27"></a>Ein Endschalter ist nichts weiteres als ein Handelsüblicher Taster, welcher bei Kontakt einen *Normally Closed* (NC) zu einem *Normally Opend* (NO), oder anders herum, verändert. Es gibt bei physischen Endschaltern meist drei Adern, welche einen gemeinsamen Spannungs- bzw. ein gemeinsames Ground-Kontakt, ein NO-Kontakt und einen NC-Kontakt beinhalten. Wird nun der Schalter gedrückt wird die angeschlossene Spannung bzw. der angeschlossene Ground weitergegeben oder unterbrochen, was eine Zustandsänderung für das anliegende Signal bedeutet. Diese Zustandsänderung lässt sich nun in bezug auf z.B. die Motoren setzen.</span>
+<span id="cb1-28"><a href="#cb1-28"></a></span>
+<span id="cb1-29"><a href="#cb1-29"></a>Auch hier wurde nun ein kleines einzelnes Skript in Python geschrieben, welches die Funktion des Endschalters testet und validiert. Außerdem wurde in die Funktion den Step-Motors ein Endschalter mit eingebaut, womit der Motor bei bedarf gestoppt werden konnte. </span>
+<span id="cb1-30"><a href="#cb1-30"></a></span>
+<span id="cb1-31"><a href="#cb1-31"></a></span>
+<span id="cb1-32"><a href="#cb1-32"></a><span class="fu">#### Heizkomponenten</span></span>
+<span id="cb1-33"><a href="#cb1-33"></a>Die Heizelemnte an sich sind wohl die am einfachsten anzusteuerden Bauteile in dieser Liste, da sie bei einer anliegenden Spannung wärme erzeugen. Hier ist eine Spule in ein Material eingearbietet, z.B. in das Hotend oder Heatbed des Druckers, welche sich bei Strom durchfluss erwärmt. Neben den Heizemelten bedarf es jedoch noch mindestens noch ein Temperatursensor welcher die Temperatur überwacht und, ähnlich wie der Endschater, als Heizstopp fungiert. Diese Temperatursensoren können als NTC (Negative Temperature Coefficient, Heißleiter) oder PTC (Positive Temperature Coefficient, Kaltleiter) umgesetzt werden. Am beliebtesten ist hier jedoch der PTC in Verbindung mit Platin, da diese PT100 bzw. PT1000 Glieder einen sehr linearen Kurvenverlauf aufweisen. Außerdem sind sie so optimiert, dass sie bei einer Temperatur von $T=0°C$ genau einen Widerstand von $R_{PT100}=100\,\Omega$ bzw $R_{PT1000}=1000\,\Omega$ ausgeben. Sie sind somit sehr gut und genau auszulesen was für die Filamenterwärmung benötigt wird.</span>
+<span id="cb1-34"><a href="#cb1-34"></a></span>
+<span id="cb1-35"><a href="#cb1-35"></a>!<span class="co">[</span><span class="ot">Kennlinie PT100/ PT1000 [@pt100_pt1000]</span><span class="co">](pics/Kennlinie_Pt100Pt1000_2.png)</span>{#fig-pt100_pt1000  width="50%"}</span>
+<span id="cb1-36"><a href="#cb1-36"></a></span>
+<span id="cb1-37"><a href="#cb1-37"></a>Neben den Temperatursensoren sind außerdem noch Lüfter von Vorteil um das Bautel wieder abzukühlen bzw. die benötigte Temperatur zu halten und nicht zu überschrieten. Standatisierte Lüfter beim 3D-Druck können mit bis zu 24V über ein PWM (Pulse Width Modulation) betrieben werden. So wird über die Pulsbreite der Signale die Spannung festgelegt. Beispielsweise gibt ein Raspberry Pi eine Signalspannung von $V_{sig}=3,3\,\text{V}$ aus, diese 3,3V bei 100% Signal können nun über die Pulsbreite veringert werden (50% Pulsbreite = 1,65V = 50% Lüftergeschwindigkeit).</span>
+<span id="cb1-38"><a href="#cb1-38"></a></span>
+<span id="cb1-39"><a href="#cb1-39"></a>\newpage</span>
+<span id="cb1-40"><a href="#cb1-40"></a></span>
+<span id="cb1-41"><a href="#cb1-41"></a><span class="fu">## Geeetech i3 Referenzdruckers</span></span>
+<span id="cb1-42"><a href="#cb1-42"></a>Nach Ansteuerung der einzelnen Basiskomponenten wurde nun probiert mittels eines Referenzdruckers die Bautele anzusteuern. Dazu wurde ein ausgesonderter *Geeetech i3* 3D-Drucker verwendet, welcher hardwareseitig über einen Arduino Mega 2560 betrieben wird. Die @fig-i3 zeigt das Referenzsystem. </span>
+<span id="cb1-43"><a href="#cb1-43"></a></span>
+<span id="cb1-44"><a href="#cb1-44"></a><span class="al">![Geeetech i3 Referenzsystem](pics/IMG_2011.jpg)</span>{#fig-i3 width="50%"}</span>
+<span id="cb1-45"><a href="#cb1-45"></a></span>
+<span id="cb1-46"><a href="#cb1-46"></a><span class="fu">### Software Festlegung</span></span>
+<span id="cb1-47"><a href="#cb1-47"></a></span>
+<span id="cb1-48"><a href="#cb1-48"></a>Da bereits der Arduino sowie der Raspberry Pi 5 zur Verfügung standen wurde sich nun auf die Lösung der Ansteuerung mittels zwei Boards und gegen die FPGA Lösung entschieden. Somit sollte der Arduino als Hardwaresteuerung und der Raspberry Pi 5 für die komplexere Softwaresteuerung verantwortlich sein. Für diese Art von Ansteuerung gibt es bereits sämtliche Open-Source Lösungen, unter anderem Klipper, Marlin, RRF (RepRapFirmware) oder auch Kalico. Die am weitesten verbreitete und zugängliste Variante ist hier Klipper. Kipper bietet mit der in Python Programmierten Funktionsklassen leichte Anpassungs- sowie Erweiterungsmöglichkeiten und für sehr viele Lösungen bereits vorgefertigte Module. Außerdem kann mit Hilfe von Mainsail und Moonraker leicht eine IP-Adressen basierte Benutzeroberfläche für Klipper geschaffen werden, mit welcher sich alle Komponenten steuern und änderungen im Code vorgenommen werden können. Neben dieser Weboberfläche kann zusätzlich mit Crowsnest eine Webkam eingebunden und mit Kipper-Screen diese Oberfläche auch auf am Raspberry Pi angeschlossenen Displays angezeigt werden. Somit bietet Klipper alles für die erfolgreiche Umsetzung des Projektes. </span>
+<span id="cb1-49"><a href="#cb1-49"></a></span>
+<span id="cb1-50"><a href="#cb1-50"></a><span class="fu">### Ansteuerung des Geeetech i3</span></span>
+<span id="cb1-51"><a href="#cb1-51"></a></span>
+<span id="cb1-52"><a href="#cb1-52"></a>Die Ansteuerung des Referenzsystems gestaltete sich mithilfe von Klipper recht einfach. Bereits vordefinierte Pinouts in Klipper des Arduino konnten eingelsen und angesteuert werden. </span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

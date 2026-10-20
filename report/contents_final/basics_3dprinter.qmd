@@ -1,34 +1,32 @@
 # Grundlagen des 3D-Druck
 
-Der 3D-Druck umfasst ein Spektrum von Fertigungsverfahren, bei denen dreidimensionale Werkstücke durch das fortlaufende, schichtweise Auftragen von Material aufgebaut werden. Im Gegensatz zu den klassisch Fertigungsverfahren (wie Fräsen, Drehen oder Bohren), bei denen Material von einem Rohling abgetragen wird erlaubt das additive Prinzip die werkzeuglose und hochflexible Realisierung komplexer Geometrien. [@3D-Druck_Leitfaden]
+Der 3D-Druck umfasst eine Anzahl von Fertigungsverfahren, bei denen dreidimensionale Werkstücke durch das fortlaufende, schichtweise Auftragen von Material aufgebaut werden. Im Gegensatz zu den klassisch Fertigungsverfahren (wie Fräsen, Drehen oder Bohren), bei denen Material von einem Rohling abgetragen wird erlaubt das additive Prinzip die werkzeuglose und hochflexible Realisierung komplexer Geometrien. [@3D-Druck_Leitfaden]
 
 ## Das Grundprinzip der Schichtbauweise
 
-Unabhängig von der spezifischen Ansteuerungstechnologie und dem verarbeiteten Werkstoff folgt der Ablauf beim 3D-Druck stets einem einheitlichen Prozesspfad:
+Unabhängig von der spezifischen Ansteuerungstechnologie und dem verarbeiteten Werkstoff folgt der Ablauf beim 3D-Druck immer einem einheitlichen Ablauf.
 
 1. CAD-Konstruktion: Erstellung eines dreidimensionalen Computermodells in einem CAD-System (*Computer-Aided Design*).
-2. Slicing (Schnittgenerierung): Das CAD-Modell wird in ein übertragbares Dateiformat (z. B. STL, STEP oder 3MF) exportiert und von einer Slicing-Software verarbeitet. Dabei wird das Objekt rechnerisch in hunderte bis tausende horizontale Schichten zerlegt und der entsprechende Steuerungs-Code (G-Code) erzeugt.
-3. Fertigung (Schichtaufbau): Die Druckmechanik, meist Step-Motoren, setzt den Steuerungs-Code um und baut das Bauteil Schicht für Schicht auf einer Bauplattform auf.
-4. Nachbearbeitung (Post-Processing): Je nach Verfahren und Anforderungen folgen mechanische, thermische oder chemische Nachbehandlungsschritte (z. B. Entfernen von Stützstrukturen, Wärmebehandlung zur Unterdrückung von Eigenspannungen oder Oberflächenglättung).
+2. Slicing (Schnittgenerierung): Das CAD-Modell wird in ein übertragbares Dateiformat (z. B. STL, STEP oder 3MF) exportiert und von einer Slicing-Software verarbeitet. Dabei wird das Objekt rechnerisch in hunderte bis tausende horizontale Schichten zerlegt und der benötigte Steuerungs-Code (G-Code) erzeugt.
+3. Fertigung (Schichtaufbau): Die Druckmechanik setzt den Steuerungs-Code um und baut das Bauteil Schicht für Schicht auf einer Bauplattform auf.
+4. Nachbearbeitung (Post-Processing): Je nach Verfahren und Anforderungen folgen mechanische, thermische oder chemische Nachbehandlungsschritte (z. B. Entfernen von Stützstrukturen).
 
 ## Übersicht gängiger Fertigungsverfahren
 
-Die Normung nach DIN EN ISO/ASTM 52900 kategorisiert die additiven Fertigungsverfahren nach ihren grundlegenden Wirkprinzipien. Für Kunststoffe und Metalle unterscheiden sich die Ansätze maßgeblich:
+Die DIN EN ISO/ASTM 52900 gliedert die additiven Fertigungsverfahren nach ihren unterschiedlichen Prinzipien. Bei diesen Verfahren werden die Werkstücke entweder durch selektives Aufschmelzen, Sintern oder Aushärten von Material aufgebaut. Die nachfolgende Tabelle gibt einen Überblick über die gängigen Verfahren, deren typischen Handelsnamen sowie die verarbeiteten Werkstoffe und Funktionsprinzipien.
 
-| Verfahrensgruppe | Typischer Handelsname / Kürzel | Verarbeiteter Werkstoff | Funktionsprinzip |
+| Verfahrensgruppe | Kürzel | Verarbeiteter Werkstoff | Funktionsprinzip |
 | :--- | :--- | :--- | :--- |
-| **Material Extrusion** | **FFF** (*Fused Filament Fabrication*) / **FDM** (*Fused Deposition Modeling*) | Thermoplaste (PLA, ABS, PETG, PEEK, ULTEM) | Ein thermoplastischer Draht (Filament) wird in einem Schmelzkopf verflüssigt und durch eine Düse selektiv aufgetragen. |
-| **Vat Photopolymerization** | **SLA** (*Stereolithografie*) / **DLP** (*Digital Light Processing*) | Photopolymer-Harze (Resin) | Flüssiges Kunstharz wird mittels Laserstrahl oder Projektor schichtweise durch UV-Licht selektiv ausgehärtet. |
-| **Powder Bed Fusion** | **SLS** (*Selective Laser Sintering*) / **SLM** (*Selective Laser Melting*) | Kunststoffe (PA12) oder Metallpulver (Edelstahl, Titan) | Ein feines Pulver wird in einem Pulverbett verteilt und per Laser lokal aufgeschmolzen bzw. versintert. |
+| **Material Extrusion** | FFF / FDM | Thermoplaste (PLA, ABS, PETG, PEEK, ULTEM) | Ein thermoplastischer Draht (Filament) wird in einem Schmelzkopf verflüssigt und durch eine Düse selektiv aufgetragen. |
+| **Vat Photopolymerization** | SLA / DLP | Photopolymer-Harze (Resin) | Flüssiges Kunstharz wird mittels Laserstrahl oder Projektor schichtweise durch UV-Licht punktuell ausgehärtet. |
+| **Powder Bed Fusion** | SLS / SLM | Kunststoffe (PA12) oder Metallpulver (Edelstahl, Titan) | Ein feines Pulver wird in einem Pulverbett verteilt und per Laser lokal aufgeschmolzen bzw. versintert. |
+
+: Verfahrensübersciht 3D-Druck [@3D-Druck_Leitfaden]
 
 ## Material Extrusion
 
-Der zu analysierende Drucker basiert auf dem FFF bzw. FDM Verfahren. Bei diesem Verfahren spielen primär thermoplastische Kunststoffe eine Rolle. Die Auswahl des Materials bestimmt maßgeblich die thermischen und mechanischen Eigenschaften des Zielbauteils:
+Der zu analysierende Drucker basiert auf dem FFF bzw. FDM Verfahren, weswegen sich mit diesen Verfahren näher beschäftigt wurde. Hier spielen primär thermoplastische Kunststoffe eine Rolle. Die Auswahl des Materials bestimmt maßgeblich die thermischen und mechanischen Eigenschaften des Zielbauteils:
 
 - Standard-Kunststoffe: Unkompliziert zu verarbeiten (z. B. PLA, PETG). Geringe Temperaturbeständigkeit, vorrangig für funktionale Prototypen und einfache Gehäuse.
 - Technische Kunststoffe: Erhöhte Festigkeit und Temperaturbeständigkeit (z. B. ABS, ASA, Polyamid/Nylon, PC). Benötigen meist geschlossene, beheizte Bauräume zur Vermeidung von Verzug (*Warping*).
 - Hochleistungskunststoffe: Werkstoffe wie PEEK, PEKK oder ULTEM bieten extreme thermische Beständigkeit, Chemikalienresistenz und mechanische Belastbarkeit. Diese Polymere erfordern spezialisierte Industriedrucker mit Düsenerwärmungen bis zu 500 °C sowie aktiv beheizten Bauräumen (> 100 °C).
-
-## Einordnung für die industrielle Anwendung
-
-Während Konsumer-Systeme vorwiegend zur schnellen Musterfertigung mit niedrigen Anforderungen an Maßhaltigkeit eingesetzt werden, zeichnen sich Industrie-3D-Drucker durch eine kontinuierliche Prozessüberwachung, hochpräzise Closed-Loop-Steuerungen sowie die Fähigkeit zur Verarbeitung technischer Hochleistungskunststoffe aus. Sie dienen der Fertigung von Funktionsprototypen, Betriebsmitteln, Fertigungshilfen sowie Kleinserien-Bauteilen für anspruchsvolle Branchen wie der Luft- und Raumfahrt.

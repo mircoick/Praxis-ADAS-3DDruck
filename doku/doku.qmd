@@ -17,8 +17,6 @@ number-sections: true
 
 
 - **Platine löten für Adapter**
-- **I²C am Tool-Head ansteuern**
-  - **Loadcells Code schreiben**
 - Halter designen für neues Display als 3D-Druck
 - Batteriesteuerung einbinden
 - Vakuumpumpe richtig einbinden
@@ -346,6 +344,8 @@ grün -> gelb
 gelb -> weiß
 weiß -> schwarz
 braun -> rot
+
+I²C Adresse 0x40
 
 \newpage
 \clearpage

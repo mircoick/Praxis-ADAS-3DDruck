@@ -20,3 +20,4 @@
 *.7z
 .DS_Store
 .history
+/.luarc.json

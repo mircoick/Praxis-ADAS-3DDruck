@@ -1,1 +1,42 @@
 # 3DGence Industry F421
+
+Nach erfolgreicher Ansteuerung des Refernezsystems konnte sich an den 3DGence Industry F421 herangetastet werden. Der 3DGence Industry F421 ist ein industrieller 3D-Drucker, der auf dem FFF bzw. FDM Verfahren basiert. Der Drucker verfügt über eine Vielzahl von Komponenten, die für den Druckprozess notwendig sind. 
+Dazu gehören unter anderem:
+
+- Step-Motoren für X-/Y- und Z-Achse sowie zwei Step-Motoren für die Extruder mit Filamenterkennung
+- PWM-Motoren für den Filamentnachschub
+- Endschlater in Kombination mit Magnetsensoren für die genaue Positionserkennung des Druckkopfes
+- Einen Beheizten Bauraum sowie ein beheiztes Druckbett
+- Verschiedene Filament-Extruder-Köpfe für verschiedene Temperaturen mit:
+  - Heizpatronen
+  - Wägezellen
+  - Lüftern
+  - Servo zum Extruderwechsel
+- Einem Display zur Anzeige von Informationen und zur Steuerung des Druckers
+- Eine Kamera zur Überwachung des Druckprozesses
+- Sämtliche Temerpatursensoren zur Überwachung der Heizpatronen, des Druckbetts und des Bauraums
+- Einem Battery-Backup-System, um den Druckprozess bei einem Stromausfall fortzusetzen
+- Diverse Lüfter für den Bauraum und die Mainboards sowie einer Vakuumpumpe für den Bauraum
+
+Im ersten Schritt wurden zunächst die einzelnen Komponenten des Druckers identifiziert und mit dem Refenzsystem verglichen. Anschließend wurde sich Gedanken darüber gemacht wie sich die einzelnen Komponenten von den bereits angesteuerten unterscheiden und wie sie angesteuert werden können. Auch hier wird nun in den nachfolgenden Unterkapiteln auf die einzelnen Komponenten eingegangen. Dazu wurden die Unterkapitel in zwei Bereiche unterteilt, um bei der Vielzahl an Komponenten den Überblick zu behalten. Es wurde aufgeteilt in Grundkomponenten die für das grundlegende Drucken nötig sind, zusätzliche Komponenten und Sensoren die den Druck verbessern aber nicht zwingend nötig sind.
+
+## Grundkomponenten des F421
+### Step-Motor Achsenbewegung: AM23HSA4B0-03
+### Step-Motor Extruder:
+### PWM-Motoren bei Filamenteinschub
+### Optische-Endschalter: TCST2103
+### Hotend Steuerung
+### Heizbett
+### Not-Aus Steuerung
+
+## Zusätzliche Komponenten und Sensoren des F421
+### Positionserkennung über Magnetleiste 
+### Wägezelle für Kalibrierung des Druckbetts
+### Lüfter für Bauraum und Mainboards
+### Kamera zur Überwachung des Druckprozesses
+### Vakuumpumpe für den Bauraum
+### NFC-Sensoren und LED-Steuerung für Filamenterkennung
+### Batterie-Steuerung bei Stromausfall
+### Flowsensor am Hotend
+### Display 
+### 

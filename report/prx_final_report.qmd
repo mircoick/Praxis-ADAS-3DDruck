@@ -66,7 +66,30 @@ acronyms:
       longname: Polyamide 12
     - shortname: PEKK
       longname: Polyetherketonketon
-      
+    - shortname: CEE
+      longname: Commission Internationale de Réglementation en Vue de l'Approbation de l'Équipement Électrique
+    - shortname: NEMA
+      longname: National Electrical Manufacturers Association
+    - shortname: LED
+      longname: Light Emitting Diode
+    - shortname: D-SUB
+      longname: D-Subminiature
+    - shortname: IC
+      longname: Integrated Circuit
+    - shortname: SDA
+      longname: Serial Data
+    - shortname: SCL
+      longname: Serial Clock
+    - shortname: I²C
+      longname: Inter-Integrated Circuit
+    - shortname: NFC
+      longname: Near Field Communication
+    - shortname: RGB
+      longname: Red Green Blue
+    - shortname: USV
+      longname: Unterbrechungsfreie Stromversorgung
+    - shortname: HMI
+      longname: Human-Machine Interface      
 author:
   - name: "Mirco Ick"
     email: "mick001@stud.hs-bremen.de"
@@ -86,16 +109,28 @@ number-sections: true
 ---
 
 {{< include init/header.html >}}
+
 \newpage
+
 {{< include contents_final/einleitung.qmd >}}
-\newpage
+
 {{< include contents_final/planner.qmd >}}
+
 \newpage
+
 {{< include contents_final/basics_3dprinter.qmd >}}
+
 \newpage
+
 {{< include contents_final/first_steps.qmd >}}
+
 \newpage
+
 {{< include contents_final/F421.qmd >}}
+
+\newpage
+
+{{< include contents_final/conclusion.qmd >}}
 \newpage
 
 # Literaturverzeichnis

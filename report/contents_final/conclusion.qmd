@@ -1,0 +1,74 @@
+# Festlegung der Hardwareboards
+
+## Klipper MCU
+Nach ausführlicher Analyse der einzelnen Komponenten des 3DGence Industry F421 muss nun ein geeignetes Mainboard ausgewählt werden, welches die hardwareseitige Steuerung übernimmt. Die Recherche ergab, dass die Auswahl an geeigneten Steuerplatinen stark eingeschränkt ist, da die reine Vielzahl an anzusteuernden Komponenten (u. a. hohe Treiberanzahl, diverse Heiz- und Lüfterkanäle) die Kapazitäten herkömmlicher Klipper-Boards deutlich übersteigt. 
+
+Der einzige Kandidat, der den hohen Anforderungen in vollem Umfang gerecht wird, ist das *BIGTREETECH Kraken* in den Revisionen V1.0 bzw. V1.1. Die Entscheidung fiel letztlich auf das neuere *BIGTREETECH Kraken V1.1* (@fig-kraken).
+
+![BIGTREETECH Kraken V1.1 Mainboard](pics/krakenv1.1.png){#fig-kraken width="75%"}
+
+Das BTT Kraken V1.1 bietet im Vergleich zu Standard-Mainboards eine Reihe wesentlicher Vorteile und Leistungsmerkmale:
+
+Das BTT Kraken V1.1 bietet im Vergleich zu Standard-Mainboards eine herausragende Ausstattung und Leistungsvielfalt, die speziell auf die Anforderungen industrieller Multi-Achsen- und Hochtemperatur-3D-Drucker ausgelegt ist:
+
+* Integrierte Treiberstufen: Acht hochleistungsfähige Motoren-Steckplätze mit integrierten TMC5160-Treibern (ausgelegt für hohe Spannungen bis zu $60\,\text{V}$), die das erforderliche hohe Drehmoment für die leistungsstarken NEMA 23-Achsmotoren bereitstellen.
+* Leistungsstarke Mikrocontroller-Architektur: Ein 32-Bit-ARM-Cortex-M7-Prozessor (STM32H723ZGT6) mit $550\,\text{MHz}$ Taktfrequenz sorgt für ausreichend Rechenkapazität zur Verarbeitung komplexer Bewegungs- und Sensorikdaten.
+* Präzise Temperaturerfassung: Zwei integrierte MAX31865-Module zur hochpräzisen Auswertung von PT1000-Widerstandsthermometern sowie fünf zusätzliche NTC-Widerstandsmesseingänge.
+* Leistungsfähige Aktor- und Servo-Anschlüsse:
+  * Eine dedizierte Servo-Steuerung mit bis zu $5\,\text{V}$ und $1\,\text{A}$ Stromstärke.
+  * Vier separate Heizelement-Anschlüsse mit jeweils bis zu $8\,\text{A}$ Schaltleistung.
+  * Sechs einfache Lüfteranschlüsse mit individuell einstellbaren Ausgangsspannungen von $5\,\text{V}$ bis $24\,\text{V}$.
+  * Zwei 4-adrige Lüfteranschlüsse (PWM/Tacho) mit ebenfalls einstellbarer Ausgangsspannung ($5\,\text{V}$ bis $24\,\text{V}$).
+  * Fünf zusätzliche, dauerhaft aktive $24\,\text{V}$-I/O-Ausgänge speziell für die Gehäuse- und Bauraumbelüftung.
+* Flexible Sensorik und Endschalter: Acht einzelne Endschalter-Steckplätze, die flexibel auch zur Erkennung und Abfrage weiterer Systemmodule genutzt werden können.
+* Getrennte Eingangsspannungen: Getrennte Einspeisungen für die Systemspannung ($\text{VIN}$), Motorenspannung ($\text{HV-VIN}$) und das Heizbett ($\text{Bed-VIN}$).
+* Diverse Schnittstellen:
+  * I²C-, SPI- und CAN-Bus-Schnittstellen zur nahtlosen Anbindung der externen Sensoren (z. B. AS5048B-Flowsensoren, NFC-Reader).
+  * UART-Schnittstelle über USB zur zuverlässigen und kabellosen Kommunikation mit dem übergeordneten Steuerungs-Raspberry-Pi.
+  * EXP1- und EXP2-Anschlüsse für kompatible Displays oder alternative $3{,}3\,\text{V}$-Logikausgänge.
+  * Zwei RGB-Anschlüsse zur LED-Statusbeleuchtung, ein USB-C-Eingang, ein USB-A-Ausgang sowie ein integrierter MicroSD-Karten-Slot.
+
+![BIGTREETECH Kraken V1.1 Mainboard PINOUT](pics/kraken_pins.png){width="75%"}
+
+## Ergänzende Hardwareboards
+
+Da das BIGTREETECH Kraken V1.1 bereits den Großteil aller im 3DGence Industry F421 verbauten Komponenten abdecken kann, sind nur für wenige Spezialaufgaben zusätzliche Hilfsboards erforderlich. Die verbleibenden Komponenten, die nicht direkt auf dem Hauptboard verschaltet werden konnten, betreffen die Positionierungssensoren der Magnetleisten sowie ein zusätzliches PT1000-Messelement.
+
+### RP2040 Zero
+Zur Auswertung der schnellen Positionierungssignale der X- und Y-Achsen-Magnetleisten wird ein *RP2040 Zero* (alternativ ein beliebiger Raspberry Pi Pico) eingesetzt. Seine primäre Aufgabe besteht darin, die hochfrequenten Rechtecksignale der Magnetsensoren zu erfassen, zu zählen und bei Bedarf an den Host (Raspberry Pi 5) zu übermitteln. Da die Signale der Magnetleisten mit $5\,\text{V}$ arbeiten, muss zum Schutz der $3{,}3\,\text{V}$-Logik des RP2040 ein entsprechender Spannungsteiler vorgeschaltet werden. Anschließend wird der Mikrocontroller als sekundäre MCU für Klipper geflasht und über eine weitere serielle UART-Schnittstelle in das Gesamtsystem integriert.
+
+![RP2040 Zero Mikrocontroller [@rp2040]](pics/rp2040.png){#fig-rp2040 width="30%"}
+
+### MAX31865
+
+Da die beiden integrierten PT1000-Steckplätze des Kraken V1.1 bereits vollständig durch die Sensoren des Druckkopfes belegt sind, wird für das verbleibende Temperaturmesselement des Bauraums ein separates *MAX31865*-Modul per SPI-Schnittstelle am Host angeschlossen. Das Breakout-Board wird mit $3{,}3\,\text{V}$ versorgt und benötigt die SPI-Leitungen CLK, SDI (MOSI), SDO (MISO) sowie einen dedizierten Chip-Select-Pin (CS) am Kraken. In der Klipper-Firmware stehen hierfür standardisierte Module zur Verfügung, bei denen nach Definition der Pins und Hinterlegung des Referenzwiderstands eine präzise Temperaturerfassung gewährleistet ist.
+
+![MAX31865 RTD-Verstärkermodul [@max31865]](pics/max31865.jpg){#fig-max31865 width="30%"}
+
+### Adapter-Platine
+
+Da die Anschlussbelegungen und Steckverbindungen des BIGTREETECH Kraken V1.1 nicht direkt mit dem originalen Kabelbaum des F421 übereinstimmen, ist die Entwicklung einer Adapter-Platine von großem Vorteil. Diese ermöglicht das direkte Einstecken der bestehenden Systemstecker ohne aufwendiges Konfektionieren oder Umcrimpen. Die Verbindung zwischen der Adapter-Platine und dem Hauptboard bzw. dem Steuerungs-Raspberry Pi erfolgt dabei über kompakte Kabelbrücken. So könnte ein eventueller Rückbau ebenfalls gewärleistet werden.
+
+Zusätzlich bietet die Adapter-Platine Steckplätze zur direkten Aufnahme der Ergänzungskomponenten, wie dem RP2040 Zero zur Auswertung der Magnetleisten-Positionssensoren und dem externen MAX31865-Modul. Dies verhindert unnötigen Verdrahtungsaufwand, reduziert Störeinflüsse auf den Signalleitungen und sorgt für einen übersichtlichen, wartungsfreundlichen Schaltschrankaufbau.
+
+\newpage
+# Fazit und Ausblick
+
+Im Rahmen der vorliegenden Machbarkeitsstudie wurde die Steuerungshardware und -software des industriellen 3D-Druckers *3DGence Industry F421* im Detail analysiert, um Wege zur Behebung der herstellerseitigen Softwareprobleme und zur Steigerung der Systemzuverlässigkeit aufzuzeigen.
+
+## Zusammenfassung der Erkenntnisse
+
+Durch die schrittweise Vorgehensweise, beginnend bei den physikalischen Grundlagen der Material Extrusion über isolierte Ansteuertests mittels Python bis hin zur Validierung an einem Arduino-basierten Referenzsystem (*Geeetech i3*) mit Klipper, konnten sämtliche Teilsysteme des F421 erfolgreich identifiziert und deren Funktionsweise aufgeschlüsselt werden:
+
+1. Systemarchitektur & Baugruppen: Der F421 vereint eine Vielzahl komplexer industrieller Teilsysteme, darunter ein $230\,\text{V}$-Not-Aus- und Relais-System, Hochleistungs-NEMA-23-Schrittmotoren, ein Wechseldruckkopf-System mit Wägezellen und Servo-Umschaltung, eine aktiven Bauraumkonditionierung sowie Vakuum- und NFC-Filamentmanagementsysteme.
+2. Machbarkeit der Klipper-Migration: Es konnte nachgewiesen werden, dass eine Migration auf die Open-Source-Firmware Klipper technisch machbar und hochgradig zielführend ist. Klipper bietet durch seine modulare Python-Architektur die notwendige Flexibilität, um auch etablierte Kommunikationsprotokolle, wie die I²C-Ansteuerung der Filamenteinschübe oder die Auswertung der AS5048B-Flowsensoren, sauber abzubilden.
+3. Hardwareplattform: Das *BIGTREETECH Kraken V1.1* stellte sich als das einzig geeignete Hauptsteuerboard heraus, da es mit seinen acht integrierten TMC5160-Treibern (bis $60\,\text{V}$ HV-Betrieb) und einer Vielzahl konfigurierbarer I/O-Schnittstellen nahezu die gesamte Aktorik und Sensorik des F421 ansteuern kann.
+4. Ergänzungsmodule: Zur vollständigen Abdeckung aller Sonderfunktionen genügen zwei kompakte Zusatzkomponenten: Ein *RP2040 Zero* übernimmt als sekundäre Klipper-MCU die hochfrequente Impulsauswertung der magnetischen Positionssensoren an den Achsen, während ein externes *MAX31865*-Modul den verbleibenden PT1000-Sensor im Bauraum einbindet.
+
+## Ausblick und nächste Schritte
+
+Die Ergebnisse dieser Arbeit bilden die fundierte Grundlage für das anschließende Hauptprojekt im Rahmen der Bachelorarbeit. Die Umsetzung gliedert sich dabei in die primär notwendigen Kernaufgaben sowie weiterführende Erweiterungen bei verbleibendem Zeitbudget:
+
+In einem ersten Schritt werden die für den grundlegenden Druckbetrieb essenziellen Komponenten umgesetzt. Dazu gehört die Anfertigung der Adapterplatine zur Anbindung des BIGTREETECH Kraken V1.1 an die bestehende Kabelinfrastruktur des F421 sowie die Erstellung der zentralen `printer.cfg` in Klipper zur Grundansteuerung der Achsen, Heizungen, Endschalter und Extruder. Anschließend folgt die Integration des HDMI-Touchdisplays mit KlipperScreen sowie der USB-Kamera über Crowsnest, um erste Testdrucke zur Verifizierung der grundlegenden Prozessstabilität durchzuführen.
+
+Sollte im weiteren Verlauf des Projekts noch ausreichend Zeit zur Verfügung stehen, werden die zusätzlichen und erweiterten Teilsysteme schrittweise integriert. Hierzu zählen die Einbindung des RP2040 Zero zur Auswertung der magnetischen Positionssensoren, die Ansteuerung des MAX31865-Moduls für die zusätzliche Bauraum-Temperaturerfassung sowie die Implementierung der spezifischen Python-Erweiterungen für die I²C-Ansteuerung der Filamenteinschübe, der Flowsensoren und auch der Vakuumpumpe.

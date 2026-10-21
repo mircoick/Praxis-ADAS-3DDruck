@@ -2,7 +2,7 @@
 
 Der industrielle 3D-Druck gewinnt in modernen Fertigungs- und Instandhaltungsprozessen zunehmend an Bedeutung, da er eine flexible Herstellung von Prototypen sowie Sonderlösungen ermöglicht. Bei der Airbus DS Airborne Solutions GmbH in Bremen, einem eigenständigen Tochterunternehmen der Airbus Defence and Space, dessen Wurzeln auf die Gründung von Focke-Wulf im Jahr 1924 zurückgehen, nimmt dieses Fertigungsverfahren eine zentrale Rolle als Support Prozess ein. Im Fachbereich Produktion und Instandhaltung (Production and Maintenance, P&M) wird der 3D-Druck eingesetzt, um spezielle Bauteile und Prototypen für zivile sowie militärische Anwendungen zeitnah zu realisieren.
 
-![ADAS Komplex [@Github]](pics/site.jpg){#fig-site}
+![ADAS Komplex [@Github]](pics/site.jpg){#fig-site width="75%"}
 
 Neben auch im häuslichen gebrauch zu findenden 3D-Druckern sind in diesem Bereich auch die industriellen Drucker zu finden. Diese sollen schneller, präzieser sowie vielseitgere 3D-Drucke fertigen können als die Drucker für den Privatgebrauch. Somit wurde ein Drucker der Marke 3DGence, eine Firma die sich speziell auf diese industrie Drucker spezialisiert hat, beschafft um die speziellen Anwendungen des Prototypenbaus zu geährleisten. Das beschaffte Modell *Industry F421* wieß allerdings kurz nach der Beschaffung erhebliche softwareseitige Probleme auf, die während des Druckbetriebs zu wiederholten Fehlermeldungen führten und einen verlässlichen Einsatz erschwerten. 
 

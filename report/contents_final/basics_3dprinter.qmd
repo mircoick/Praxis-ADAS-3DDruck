@@ -1,19 +1,21 @@
-# Grundlagen des 3D-Druck
+# Grundlagen des 3D-Drucks
 
-Der 3D-Druck umfasst eine Anzahl von Fertigungsverfahren, bei denen dreidimensionale Werkstücke durch das fortlaufende, schichtweise Auftragen von Material aufgebaut werden. Im Gegensatz zu den klassisch Fertigungsverfahren (wie Fräsen, Drehen oder Bohren), bei denen Material von einem Rohling abgetragen wird erlaubt das additive Prinzip die werkzeuglose und hochflexible Realisierung komplexer Geometrien. [@3D-Druck_Leitfaden]
+Der 3D-Druck umfasst eine Anzahl von Fertigungsverfahren, bei denen dreidimensionale Werkstücke durch das fortlaufende, schichtweise Auftragen von Material aufgebaut werden. Im Gegensatz zu den klassischen Fertigungsverfahren (wie Fräsen, Drehen oder Bohren), bei denen Material von einem Rohling abgetragen wird erlaubt das additive Prinzip die werkzeuglose und flexible Realisierung komplexer Geometrien. [@3D-Druck_Leitfaden]
 
 ## Das Grundprinzip der Schichtbauweise
 
 Unabhängig von der spezifischen Ansteuerungstechnologie und dem verarbeiteten Werkstoff folgt der Ablauf beim 3D-Druck immer einem einheitlichen Ablauf.
 
-1. CAD-Konstruktion: Erstellung eines dreidimensionalen Computermodells in einem CAD-System (*Computer-Aided Design*).
-2. Slicing (Schnittgenerierung): Das CAD-Modell wird in ein übertragbares Dateiformat (z. B. STL, STEP oder 3MF) exportiert und von einer Slicing-Software verarbeitet. Dabei wird das Objekt rechnerisch in hunderte bis tausende horizontale Schichten zerlegt und der benötigte Steuerungs-Code (G-Code) erzeugt.
+1. CAD-Konstruktion: Erstellung eines dreidimensionalen Computermodells in einem CAD-System.
+2. Schnittgenerierung (Slicing): Das CAD-Modell wird in ein übertragbares Dateiformat (z. B. STL, STEP oder 3MF) exportiert und von einer Slicing-Software verarbeitet. Dabei wird das Objekt rechnerisch in hunderte bis tausende horizontale Schichten zerlegt und der benötigte Steuerungs-Code (G-Code) erzeugt.
 3. Fertigung (Schichtaufbau): Die Druckmechanik setzt den Steuerungs-Code um und baut das Bauteil Schicht für Schicht auf einer Bauplattform auf.
 4. Nachbearbeitung (Post-Processing): Je nach Verfahren und Anforderungen folgen mechanische, thermische oder chemische Nachbehandlungsschritte (z. B. Entfernen von Stützstrukturen).
 
 ## Übersicht gängiger Fertigungsverfahren
 
-Die DIN EN ISO/ASTM 52900 gliedert die additiven Fertigungsverfahren nach ihren unterschiedlichen Prinzipien. Bei diesen Verfahren werden die Werkstücke entweder durch selektives Aufschmelzen, Sintern oder Aushärten von Material aufgebaut. Die nachfolgende Tabelle gibt einen Überblick über die gängigen Verfahren, deren typischen Handelsnamen sowie die verarbeiteten Werkstoffe und Funktionsprinzipien.
+Die DIN EN ISO/ASTM 52900 gliedert die additiven Fertigungsverfahren nach ihren unterschiedlichen Prinzipien. Bei diesen Verfahren werden die Werkstücke entweder durch selektives Aufschmelzen, Sintern oder Aushärten von Material aufgebaut. Die nachfolgende Tabelle gibt einen Überblick über die gängigen Verfahren, deren typischen Bezeichnungen sowie die verarbeiteten Werkstoffe und Funktionsprinzipien.
+
+\newpage
 
 | Verfahrensgruppe | Kürzel | Verarbeiteter Werkstoff | Funktionsprinzip |
 | :--- | :--- | :--- | :--- |
@@ -21,7 +23,7 @@ Die DIN EN ISO/ASTM 52900 gliedert die additiven Fertigungsverfahren nach ihren 
 | **Vat Photopolymerization** | SLA / DLP | Photopolymer-Harze (Resin) | Flüssiges Kunstharz wird mittels Laserstrahl oder Projektor schichtweise durch UV-Licht punktuell ausgehärtet. |
 | **Powder Bed Fusion** | SLS / SLM | Kunststoffe (PA12) oder Metallpulver (Edelstahl, Titan) | Ein feines Pulver wird in einem Pulverbett verteilt und per Laser lokal aufgeschmolzen bzw. versintert. |
 
-: Verfahrensübersciht 3D-Druck [@3D-Druck_Leitfaden]
+: Verfahrensübersicht 3D-Druck [@3D-Druck_Leitfaden]
 
 ## Material Extrusion
 
@@ -29,4 +31,4 @@ Der zu analysierende Drucker basiert auf dem FFF bzw. FDM Verfahren, weswegen si
 
 - Standard-Kunststoffe: Unkompliziert zu verarbeiten (z. B. PLA, PETG). Geringe Temperaturbeständigkeit, vorrangig für funktionale Prototypen und einfache Gehäuse.
 - Technische Kunststoffe: Erhöhte Festigkeit und Temperaturbeständigkeit (z. B. ABS, ASA, Polyamid/Nylon, PC). Benötigen meist geschlossene, beheizte Bauräume zur Vermeidung von Verzug (*Warping*).
-- Hochleistungskunststoffe: Werkstoffe wie PEEK, PEKK oder ULTEM bieten extreme thermische Beständigkeit, Chemikalienresistenz und mechanische Belastbarkeit. Diese Polymere erfordern spezialisierte Industriedrucker mit Düsenerwärmungen bis zu 500 °C sowie aktiv beheizten Bauräumen (> 100 °C).
+- Hochleistungskunststoffe: Werkstoffe wie PEEK, PEKK oder ULTEM bieten extreme thermische Beständigkeit, Chemikalienresistenz und mechanische Belastbarkeit. Diese Polymere erfordern spezialisierte Industriedrucker mit Düsenerwärmungen bis zu $500\,°C$ sowie aktiv beheizten Bauräumen ($> 100\,°C$).

@@ -1,7 +1,6 @@
 ---
 title: "Abschlussbericht Praxissemester"
 subtitle: "Machbarkeitsstudie eines Industrie 3D-Druckers"
-format: pdf
 filters:
   - acronyms
   - _extensions/rename.lua
@@ -87,9 +86,23 @@ acronyms:
     - shortname: RGB
       longname: Red Green Blue
     - shortname: USV
-      longname: Unterbrechungsfreie Stromversorgung
-    - shortname: HMI
-      longname: Human-Machine Interface      
+      longname: Unterbrechungsfreie Stromversorgung  
+    - shortname: G-Code
+      longname: Geometric Code    
+    - shortname: DIN
+      longname: Deutsches Institut für Normung e. V.
+    - shortname: EN
+      longname: Europäische Norm
+    - shortname: ISO
+      longname: International Organization for Standardization
+    - shortname: ASTM
+      longname: American Society for Testing and Materials
+    - shortname: CSI
+      longname: Camera Serial Interface
+    - shortname: SPI
+      longname: Serial Peripheral Interface
+    - shortname: UART
+      longname: Universal Asynchronous Receiver-Transmitter
 author:
   - name: "Mirco Ick"
     email: "mick001@stud.hs-bremen.de"

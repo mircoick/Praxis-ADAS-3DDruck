@@ -1,47 +1,62 @@
-# 3DGence Industry F421
+# 3DGence Industry F421 **BILDER OFFENER DRUCKER**
 
-Nach erfolgreicher Ansteuerung des Refernezsystems konnte sich an den 3DGence Industry F421 herangetastet werden. Der 3DGence Industry F421 ist ein industrieller 3D-Drucker, der auf dem FFF bzw. FDM Verfahren basiert. Der Drucker wird über eine $32$ Ampere CEE-Steckdose betrieben und verfügt über eine Vielzahl von Komponenten, die für den Druckprozess notwendig sind. 
-Dazu gehören unter anderem:
+Nach erfolgreicher Ansteuerung des Referenzsystems konnte sich an den 3DGence Industry F421 herangetastet werden. Der 3DGence Industry F421 ist ein industrieller 3D-Drucker, der auf dem FFF bzw. FDM Verfahren basiert. Der Drucker wird über eine $32$-Ampere CEE-Steckdose betrieben und verfügt über eine Vielzahl von Komponenten. 
+Zu diesen Komponenten gehören unter anderem:
 
-- Step-Motoren für X-/Y- und Z-Achse sowie zwei Step-Motoren für die Extruder mit Filamenterkennung
-- PWM-Motoren für den Filamentnachschub
-- Endschlater in Kombination mit Magnetsensoren für die genaue Positionserkennung des Druckkopfes
-- Einen Beheizten Bauraum sowie ein beheiztes Druckbett
-- Verschiedene Filament-Extruder-Köpfe für verschiedene Temperaturen mit:
+- Step-Motoren für X-/Y- und Z-Achse sowie zwei Step-Motoren für die Extruder
+- PWM-Motoren für den Filamentnachschub in Kombination mit Flow-Sensoren am Extruder
+- Endschalter in Kombination mit Magnetsensoren für die genaue Positionserkennung des Druckkopfes
+- Einen beheizten Bauraum sowie ein beheiztes Druckbett
+- Verschiedene schnellwechsel Filament-Extruder-Köpfe für verschiedene Temperaturen mit:
   - Heizpatronen
   - Wägezellen (Loadcells)
   - Lüftern
-  - Servo zum Extruderwechsel
+  - Einem Servo zum Extruderwechsel
 - Einem Display zur Anzeige von Informationen und zur Steuerung des Druckers
 - Eine Kamera zur Überwachung des Druckprozesses
-- Sämtliche Temerpatursensoren zur Überwachung der Heizpatronen, des Druckbetts und des Bauraums
+- Sämtliche Temperatursensoren zur Überwachung der Heizpatronen, des Druckbetts und des Bauraums
 - Einem Battery-Backup-System, um den Druckprozess bei einem Stromausfall fortzusetzen
-- Diverse Lüfter für den Bauraum und die Mainboards sowie einer Vakuumpumpe für den Bauraum
+- Diverse Lüfter für den Bauraum und die Mainboards 
+- Eine Vakuumpumpe für den Bauraum
 
-Die Bauteile werden über zwei Mainboards software- sowie hardwareseitig gesteuert. Der Aufbau passt also zu dem in der Klipper Einleitung erklärten Funktionsprinzip von 3D-Druckern. Eine Abbildung der Hardware zur Steuerung des Industry F421 ist der @fig-mainboards zu ennehmen. 
+Die Bauteile werden über zwei Mainboards software- sowie hardwareseitig gesteuert. Der Aufbau passt also zu der Klipper typischen Ansteuerung. Eine Abbildung der Hardware zur Steuerung des Industry F421 ist der @fig-mainboards zu ennehmen. 
 
 ![Steuerung des Industry F421](pics/platine_gesamt.jpeg){#fig-mainboards width="50%"}
 
-Nach der Einspeisung durch den 32 Ampere-Stecker auf der Rückseite des Druckers, kommt es neben einer weiterleitung eines $230\,\text{V}$ Wechselspannungssignals auch zu einer Trasformation der Spannung auf $24\,\text{V}$ und $48\,\text{V}$ Gleichspannung. Diese transformierten Spannungen werden nun zu diversen Platinen weitergeführt. Diese Verteilung kann links mittig den zu sehenden Reihenklemmen entnommen werden. Von dort aus werden Leitungen mit $24\,\text{V}$ und $48\,\text{V}$ auf das Hardwareboard, mittlere große grüne Platine, geleitet. Das Hardwareboard verteilt nun die Versogungsspannung an das Softwareboard, rechts neben dem Hardwareboard. Zusätzlich wird noch eine $230\,\text{V}$ Wechselspannung zu der roten oben links zu sehenden Platine geführt. Diese Platine dient als Relais für Bauteile welche eben diese $230\,\text{V}$ Wechselspannung benötigen. Unter den Platinen sind außerdem drei Motortreiber mit $48\,\text{V}$ Versorgungsgleichspannung zu erkennen.
+\newpage
+
+Nach der Einspeisung durch den $32$-Ampere Stecker auf der Rückseite des Druckers, kommt es neben einer Weiterleitung eines $230\,\text{V}$ Wechselspannungssignals auch zu einer Transformation der Spannung auf $24\,\text{V}$ und $48\,\text{V}$ Gleichspannung. Diese transformierten Spannungen werden nun zu diversen Platinen weitergeführt. Die Verteilung der Spannungen kann links mittig aus den zu erkennenden Reihenklemmen der @fig-mainboards entnommen werden. Von dort aus werden Leitungen mit $24\,\text{V}$ und $48\,\text{V}$ auf das Hardwareboard, mittlere große grüne Platine, geleitet. Das Hardwareboard verteilt nun die Versorgungsspannung an das Softwareboard, schmale Platine rechts neben dem Hardwareboard. Zusätzlich wird noch eine $230\,\text{V}$ Wechselspannung zu der roten, oben links zu sehenden, Platine geführt. Diese Platine beinhaltet verschiedene Relais für Bauteile, welche eine $230\,\text{V}$ Wechselspannungsversorgung benötigen. Unter den Platinen sind außerdem drei Motortreiber mit $48\,\text{V}$ Versorgungsgleichspannung zu erkennen.
 
 
-Nun wurden im ersten Schritt die einzelnen Komponenten des Druckers identifiziert und mit dem Refenzsystem verglichen. Anschließend wurde sich Gedanken darüber gemacht, wie sich die einzelnen Komponenten von den bereits angesteuerten unterscheiden und wie sie angesteuert werden können. Auch hier wird nun in den nachfolgenden Unterkapiteln auf die einzelnen Komponenten eingegangen. Dazu wurden die Unterkapitel in zwei Bereiche unterteilt, um bei der Vielzahl an Komponenten den Überblick zu behalten. Es wurde aufgeteilt in Grundkomponenten die für das grundlegende Drucken nötig sind, zusätzliche Komponenten und Sensoren die den Druck verbessern aber nicht zwingend nötig sind.
+Nun wurden im nächsten Schritt die einzelnen Komponenten des Druckers identifiziert, die Leitungen zu den Platinen verfolgt und anschließend mit dem Referenzsystem verglichen. Alle vier Seiten des aufgeschraubten Druckers sind der @fig-f421_offen zu entnehmen. Darauf wurde sich Gedanken darüber gemacht, wie sich die einzelnen Komponenten von den bereits angesteuerten unterscheiden und wie sie bei Abweichung angesteuert werden können. Auch hier wird nun in den nachfolgenden Unterkapiteln auf die einzelnen Komponenten eingegangen. Dazu wurden die Unterkapitel in zwei Bereiche unterteilt, um bei der Vielzahl an Komponenten den Überblick zu behalten. Es wurde aufgeteilt in Grundkomponenten die für das grundlegende einfache Drucken nötig sind und in zusätzliche Komponenten und Sensoren die den Druck verbessern aber nicht zwingend für simples Drucken benötigt werden.
+
+::: {#fig-f421_offen layout-ncol=2}
+
+<!---
+![](pics/F421_front.png){#fig-f421_offen_front width="50%"}
+
+![](pics/F421_back.png){#fig-f421_offen_back width="50%"}
+
+![](pics/F421_right.png){#fig-f421_offen_right width="50%"}
+
+![](pics/F421_left.png){#fig-f421_offen_left width="50%"}
+-->
+
+Ansicht geöffneten des F421
+:::
 
 \newpage
 ## Grundkomponenten des F421
 
-### Motoren
+### Motoren **PWM-MOTOR-BEZEICHUNG+DATENBLATT**
 **Step-Motor**
 
-Der 3DGence Industry F421 besitzt zwei unterschiedliche Step-Motoren. Einmal die *AM23HSA4B0-03* für die Achsenbewegung und einmal die *17HS16-2004S1* für die Filament-Extrusion am Druckkopf. Die beiden NEMA-Schrittmotoren funktionieren dabei identisch zu dem wie es in @sec-step beschrieben wurde.
+Der 3DGence Industry F421 besitzt insgesamt fünf einzelne Step-Motoren. Darunter fallen dreimal die *AM23HSA4B0-03* für die Achsenbewegung und zweimal die *17HS16-2004S1* für die Filament-Extrusion am Druckkopf. Die beiden NEMA-Schrittmotoren funktionieren dabei identisch zu dem wie es in @sec-step beschrieben wurde.
 
-Der 17HS16-2004S1 (@fig-step_17HS16-2004S1) ist dabei ein Schrittmotor der NEMA 17-Baugröße (Gehäuseabmessungen ca. 42 × 42 mm) und bildet einen kompakten Standard für den Extruderantrieb. Im Vergleich dazu handelt es sich bei dem AM23HSA4B0-03 (@fig-step_AM23HSA4B0-03) um einen leistungsstärkeren NEMA 23-Motor (ca. 56 × 56 mm), der aufgrund seines höheren Drehmoments speziell für den dynamischen Positionierbetrieb der Achsen eingesetzt wird. 
+Der 17HS16-2004S1 (@fig-step_17HS16-2004S1) ist dabei ein Schrittmotor der NEMA 17-Baugröße (Gehäuseabmessungen $\approx 42 \times 40\,\text{mm}$) und bildet einen kompakten Standard für den Extruderantrieb. Dieser Motor wird dabei mit einem Nennstrom von $2{,}0\,\text{A}$ pro Phase betrieben (bei einem Phasenwiderstand von ca. $1{,}3\,\Omega$), was eine Nennspannung von etwa $2{,}6\,\text{V}$ ergibt. Im Vergleich dazu handelt es sich bei dem AM23HSA4B0-03 (@fig-step_AM23HSA4B0-03) um einen leistungsstärkeren NEMA 23-Motor ($\approx 56 \times 77\,\text{mm}$), der Aufgrund seines höheren Drehmoments speziell für den Betrieb der Achsen eingesetzt wird. Dieser wesentlich kräftigere Motor für die Achsen erfordert einen Phasenstrom von $3{,}7\,\text{A}$ bei einer Nennspannung von $2{,}78\,\text{V}$ (entspricht einem Phasenwiderstand von ca. $0{,}75\,\Omega$). Es ist zu beachten, dass diese Nennspannungen lediglich rein rechnerische Werte aus dem ohmschen Widerstand darstellen ($U = R \cdot I$). In der Praxis werden beide Motortypen von modernen Schrittmotortreibern mit einer deutlich höheren Betriebsspannung ($24\,\text{V}-48\,\text{V}$) versorgt, um auch bei höheren Drehzahlbereichen ein ausreichend hohes Drehmoment zu gewährleisten.
 
-Der 17HS16-2004S1 wird dabei mit einem Nennstrom von $2{,}0\text{ A}$ pro Phase betrieben (bei einem Phasenwiderstand von ca. $1{,}3\ \Omega$), was eine Nennspannung von etwa $2{,}6\text{ V}$ ergibt. Der wesentlich kräftigere AM23HSA4B0-03 für die Achsen erfordert hingegen einen Phasenstrom von $3{,}7\text{ A}$ bei einer Nennspannung von $2{,}78\text{ V}$ (entspricht einem Phasenwiderstand von ca. $0{,}75\ \Omega$). 
 
-Es ist zu beachten, dass diese Nennspannungen lediglich rein rechnerische Werte aus dem ohmschen Widerstand darstellen ($U = R \cdot I$). In der Praxis werden beide Motortypen von modernen Schrittmotortreibern mit einer deutlich höheren Betriebsspannung (wie beispielsweise $24\text{ V}$ oder $48\text{ V}$) versorgt, um auch bei höheren Drehzahlbereichen ein ausreichend hohes Drehmoment zu gewährleisten.
-
-Aus eben diesem Hintergund und dieser enormen Last der AM23HSA4B0-03 Schrittmotoren, wurden in dem vorherigen Aufbau die in @fig-mainboards zu sehenden Motortreiber verwendet. Diese *SR4-Plus* Motor-Treiber verfügen über ihre eigene Spannungsversorgung und können so die benötigte Leitung der Motoren erbringen. Außerdem werden die angesprochenen Stepper Signale mit ihren vier Kontakten zu einem *Step*, *Dir* und *Enable* transformiert. So konnten über den *Step*-Kontakt die Anzahl der Schritte, über den *Dir*-Kontakt die Richtung und über den *Enable*-Kontakt das aktivieren des Motor durchgeführt werden.
+Aus eben diesem Hintergrund und dieser enormen Last der AM23HSA4B0-03 Schrittmotoren, wurden in dem originalen Aufbau die in @fig-mainboards zu sehenden Motortreiber verwendet. Diese *SR4-Plus* Motor-Treiber verfügen über ihre eigene Spannungsversorgung und können so die benötigte Leitung der Motoren erbringen. Außerdem werden die angesprochenen Schritt-Signale mit ihren vier Kontakten zu einem *Step*, *Dir* und *Enable* transformiert. So konnten über den *Step*-Kontakt die Anzahl der Schritte, über den *Dir*-Kontakt die Richtung und über den *Enable*-Kontakt die Aktivierung des Motor durchgeführt werden.
 
 ::: {#fig-step_motor layout-ncol=2}
 ![17HS16-2004S1 [@17HS16-2004S1]](pics/17HS16-2004S1.jpg){#fig-step_17HS16-2004S1 width="50%"}
@@ -65,17 +80,17 @@ Filamenteinschub
 :::
 
 Bei den dortigen Antrieben handelt es sich um zweipolige Gleichstrom-PWM-Motoren 
-(\textcolor{red}{MODELNAME}). Im Gegensatz zu den Schrittmotoren erfolgt ihre Ansteuerung nicht über diskrete Phasenimpulse, sondern über eine variable Pulsweitenmodulation (siehe @sec-pwm) der Versorgungsspannung. Die über das PWM-Signal festgelegte effektive Mittelspannung und daraus resultierende Drehzahl des Motors sorgt für den anfänglichen Materialtransport zum Druckkopf. Jedoch wurden hier noch ein I²C-Konverter zwischengeschaltet was eine komplette Steuerung des Motors über eben dieses Protokoll ermöglicht. So lassen sich über die vier Geräteadressen (0x6c, 0x6d, 0x6e und 0x6f) und den Registeradressen, 0x05 für Vorwärtsschub und 0x06 für Rückwärtsschub, die Geschwindigkeiten zwischen den Datenwerten 0x00 für Stillstand und 0xff für maximale Geschwindkeit festlegen. Um den Motor zu starten muss die Registeradresse 0x0a von Datenwert 0x00 auf 0x01 für vorwärts und 0x02 für rückwärts geändertw werden. 
+(\textcolor{red}{MODELNAME}). Im Gegensatz zu den Schrittmotoren erfolgt ihre Ansteuerung nicht über diskrete Phasenimpulse, sondern über eine variable Pulsweitenmodulation (siehe @sec-pwm) der Versorgungsspannung. Die über das PWM-Signal festgelegte effektive Mittelspannung und daraus resultierende Drehzahl des Motors sorgt für den anfänglichen Materialtransport zum Druckkopf. Aufbauend darauf wurden hier noch I²C-Konverter zwischengeschaltet was eine komplette Steuerung des Motors über eben dieses Protokoll ermöglicht. So lassen sich über die vier Geräteadressen (0x6c, 0x6d, 0x6e und 0x6f) und den Registeradressen (0x05 für die Vorwärtsrotation und 0x06 für Rückwärtsrotation) die Geschwindigkeiten zwischen den Datenwerten 0x00 für Stillstand und 0xff für maximale Geschwindkeit festlegen. Nach dieser Konfiguration kann der Motor unter der Registeradresse 0x0a mit dem Datenwert 0x01 für Vorwärts- und 0x02 für Rückwärtsfahrt geändert werden (Datenwert 0x00 bedeutet Stillstand). 
 
 ### Endschalter
-Im Gegensatz zu den Enschalter aus @sec-limit_switch besitzt der Industry F421 optische Endschalter. Diese optischen Endschalter vom Model TCST2103 Funktionieren nicht wie ein Taster sonder im Prinzip wie eine herkömmliche Lichtschranke. Sie bestehen aus einem Infrarot-Emitter (einer LED) und einem Fototransistor als Empfänger, die durch einen schmalen Spalt voneinander getrennt sind. Solange der Spalt frei ist, trifft das Infrarotlicht ungehindert auf den Fototransistor, wodurch dieser leitet. Sobald eine Achse ihre Referenzposition erreicht, schiebt sich eine am Achsenschlitten befestigte Fahne in diesen Spalt und unterbricht den Lichtstrahl. Dies führt zu einer unmittelbaren Spannungsänderung am Signalpin, die von der Steuerung als Erreichen der Endposition registriert wird. Der entscheidende Vorteil dieser optischen Endschalter gegenüber mechanischen Mikroschaltern liegt in der berührungslosen und somit verschleißfreien Abtastung, was eine präzise und reproduzierbare Referenzfahrten (Homing) ermöglicht.
+Im Gegensatz zu den Endschalter aus @sec-limit_switch besitzt der Industry F421 optische Endschalter. Diese optischen Endschalter vom Model *TCST2103* funktionieren vom Prinzip wie eine herkömmliche Lichtschranke. Sie bestehen aus einem Infrarot-Emitter (einer LED) und einem Fototransistor als Empfänger, die durch einen schmalen Spalt voneinander getrennt sind. Solange der Spalt frei ist, trifft das Infrarotlicht ungehindert auf den Fototransistor, wodurch dieser leitet. Sobald eine Achse ihre Referenzposition erreicht, schiebt sich eine am Achsenschlitten befestigte Fahne in diesen Spalt und unterbricht den Lichtstrahl. Dies führt zu einer unmittelbaren Spannungsänderung am Signalpin, die von der Steuerung als Erreichen der Endposition registriert wird. Der entscheidende Vorteil dieser optischen Endschalter gegenüber mechanischen Mikroschaltern liegt in der berührungslosen und somit verschleißfreien Abtastung, was eine präzise und reproduzierbare Referenzfahrten (Homing) ermöglicht.
 
 ![Endschalter TCST2103 [@TCST2103]](pics/TCST2103.png){#fig-TCST2103 width="30%"}
 
-Zur Ansteuerung des TCST2103 werden lediglich drei Anschlüsse benötigt: Versorgungsspannung ($V_{\text{CC}}$), Masse ($\text{GND}$) und eine Signalleitung ($\text{OUT}$). Die integrierte Infrarot-LED wird über einen Vorwiderstand ($R_{\text{LED}} = 220\ \Omega$ bis $330\ \Omega$) an $V_{\text{CC}}$ betrieben, während der Kollektor des Fototransistors über einen Pull-up-Widerstand mit der Signalleitung verbunden ist. Solange der Lichtstrahl ungestört auf den Fototransistor trifft, schaltet dieser durch und zieht das Signal auf $\text{GND}$ (Low). Wird der Lichtstrahl durch die Unterbrecherfahne blockiert, sperrt der Transistor, sodass die Signalleitung über den Pull-up-Widerstand auf $V_{\text{CC}}$ (High) gezogen wird. Dieses High-Signal zeigt der Steuerung das Erreichen der Endposition an.
+Zur Ansteuerung des TCST2103 werden lediglich drei Anschlüsse benötigt: Versorgungsspannung ($V_{\text{CC}}$), Masse ($\text{GND}$) und eine Signalleitung ($V_\text{OUT}$). Die integrierte Infrarot-LED wird über einen Vorwiderstand ($R_{\text{LED}} = 220\ \Omega-330\ \Omega$) an $V_{\text{CC}}=5\,\text{V}$ betrieben, während der Kollektor des Fototransistors über einen Pull-up-Widerstand mit der Signalleitung verbunden ist. Solange der Lichtstrahl ungestört auf den Fototransistor trifft, schaltet dieser durch und zieht das Signal auf $\text{GND}$ (Low). Wird der Lichtstrahl durch die Unterbrecherfahne blockiert, sperrt der Transistor, sodass die Signalleitung über den Pull-up-Widerstand auf $V_{\text{CC}}$ (High) gezogen wird. Dieses High-Signal zeigt der Steuerung das Erreichen der Endposition an.
 
-### Druckkopf Steuerung
-Da nun die Achsenbewegung vollständig ist kann sich nun an den Druckkopf gemacht werden. Durch die enorme Größe des Druckers und die Vielzahl der Sensoren fällt der Druckkopf deutlich größer aus als bei herkömmlichen Geräten. So beinhaltet der Druckkopf neben den Heizelemten und Lüftern auch Wägezellen zur Kalibrierung. Eine Abbilung des Druckkopfes ist der @fig-hotend zu entnehmen.
+### Druckkopf Steuerung **MODELNAME SERVO/ LOADCELL ICs**
+Da nun die Achsenbewegung vollständig ist kann sich nun an den Druckkopf gemacht werden. Durch die enorme Größe des Druckers und die Vielzahl der Sensoren fällt der Druckkopf deutlich größer aus als bei herkömmlichen Geräten. So beinhaltet der Druckkopf neben den Heizelementen und Lüftern auch Wägezellen zur Kalibrierung sowie einen Servo zur Extruder Änderung. Eine Abbildung des Druckkopfes ist der @fig-hotend zu entnehmen.
 
 ::: {#fig-hotend layout-ncol=2}
 
@@ -88,80 +103,86 @@ Da nun die Achsenbewegung vollständig ist kann sich nun an den Druckkopf gemach
 Druckkopf des F421
 :::
 
-Das Prinzip dieses Druckkopfes ist in @fig-hotend_rück zu erkennen. Der hier zu sehende D-SUB28 Stecker dient als Möglichkeit die verschiedenen Druckköpfe schnell und einfach bei Bedarf auszutauschen. Aufgabe war es nun die auf dem Druckkopf verbaute Platine in Verbindung mit dem D-SUB Stecker zu bringen, um im Anschluss eine Ansteuerung möglich zu machen. Dazu wurde der Druckkopf im ersten Schritt auseinander gebaut und mit einem Multimeter durchgemessen.
+Das Prinzip dieses Druckkopfes ist in @fig-hotend_rück zu erkennen. Der hier zu sehende *D-SUB28* Stecker ermöglicht die verschiedenen Druckköpfe schnell und einfach bei Bedarf auszutauschen. Aufgabe war es nun die auf dem Druckkopf verbaute Platine in Verbindung mit dem D-SUB Stecker zu bringen, um den Anschluss einer neuen Ansteuerung möglich zu machen. Dazu wurde der Druckkopf im ersten Schritt auseinander gebaut und die verbaute Platine mit einem Multimeter durchgemessen.
 
 ::: {#fig-hotend_platine layout-ncol=2}
-![Druckkopf Frontansicht](pics/IMG_2077_1_.png){#fig-hotend_platine_front width="75%"}
+![Druckkopf Frontansicht](pics/IMG_2077_1_.png){#fig-hotend_platine_front width="66%"}
 
 ![Druckkopf Rückansicht](pics/IMG_2073.png){#fig-hotend_platine_rück width="75%"}
 
 Platine des Druckkopf vom F421
 :::
 
-Nach Durchmessen sind bereits mehrere Komponenten identifiziert und mit den passenden PINs in Verbindung gebracht worden. So konnten die Beiden Heizpatronen sowie die Lüfter, die zwei PT1000 Glieder und der Servo im Kopf angesteuert werden. Die Heizpratronen, die Lüfter sowie die PT1000 Glieder sind hierbei identisch zu herkömmlichen Modellen und lassen sich gleich zum Refenzsystem ansteuern. Der verbaute Servo ist ein \textcolor{red}{MODELLNAME} und funktioniert über ein klassisches PWM-Signal mit einer Frequenz von $50\,\text{Hz}$, bei dem die jeweilige Impulsbreite im Bereich von $1\,\text{ms}$ bis $2\,\text{ms}$ die exakte Position definiert. Im Druckkopf des Industry F421 übernimmt dieser Servo mechanische Umschalten zwischen den Extrudern, weshalb für eine zuverlässige Funktion neben der Spannungsversorgung ein präzises, störungsarmes Steuersignal erforderlich ist. Nach Recherchen zum Servo konnte auch dieser mittels Python Angesteuert werden.
+Nach dem Durchmessen sind bereits mehrere Komponenten identifiziert und mit den passenden PINs des D-SUBs in Verbindung gebracht worden. So konnten die beiden Heizpatronen mit den Lüftern und den zwei PT1000 Glieder sowie der Servo angesteuert werden. Die Heizpatronen, die Lüfter sowie die PT1000 Glieder sind hierbei identisch zu herkömmlichen Modellen und lassen sich gleich zum Referenzsystem ansteuern. Der verbaute Servo ist ein **\textcolor{red}{MODELLNAME}** und funktioniert über ein klassisches PWM-Signal mit einer Frequenz von $50\,\text{Hz}$, bei dem die jeweilige Impulsbreite im Bereich von $1\,\text{ms}$ bis $2\,\text{ms}$ die exakte Position definiert. Im Druckkopf des Industry F421 übernimmt dieser Servo das mechanische Umschalten zwischen den Extrudern, weshalb für eine zuverlässige Funktion neben der Spannungsversorgung ein präzises, störungsarmes Steuersignal erforderlich ist.
 
-Somit blieben einzig und allein die Wägezellen, welche über Torsionsmodule eine analoge Spannung ausgeben, aus der sich das Gewicht herleiten lässt um es für Kalibrierungen zu nutzen. Nach weiterer Analyse der Platine wurde deutlich, dass auch diese Wägezellen über einen I²C-Bus mit dem Mainboard kommunizieren. Die auf der Platinenrückseite verbauten Schaltungen bzw. ICs (@fig-hotend_platine_rück) zeigten einen bis zum vorletzten Bauteil parallelen Aufbau. Als erstes Bauteil war hierbei ein Verstärker-IC mit anschließender I²C-Konvertierung verbaut. Diese SDA- und SCL-Leitungen wurden anschließend auf einen gemeinsamen Speicher geführt, um im letzten Schritt an die Ausgangspins übergeben zu werden. 
+Somit blieben einzig und allein die Wägezellen. Diese Loadcells geben über Torsionsmodule eine zur Eingangsspannung und Krafteinwirkung proportionale Ausgangsspannung aus. Nach Verstärkung lässt sich über dieses Spannungssignal die anliegende Kraft bzw. Masse präzise bestimmen und für automatische Kalibrierprozesse genutzt werden kann. Nach weiterer Analyse der Platine wurde deutlich, dass auch diese Wägezellen über einen I²C-Bus mit dem Mainboard kommunizieren. Die auf der Platinenrückseite verbauten Schaltungen bzw. ICs (@fig-hotend_platine_rück) zeigten einen bis zum vorletzten Bauteil parallelen Aufbau. Als erstes Bauteil war hierbei ein Verstärker-IC mit anschließender I²C-Konvertierung verbaut. Diese SDA- und SCL-Leitungen wurden anschließend auf einen gemeinsamen Speicher geführt, um im letzten Schritt an die Ausgangspins übergeben zu werden. **Bauteile LOADCELLS auf Paltine**
 
 ### Heizbett
 
-Auch beim Heizbett wird die Dimensionierung des industriellen Druckers deutlich, da hier ein leistungsstarkes $230\text{ V}$-Wechselspannungs-Heizbett verbaut ist. Die Ansteuerung erfolgt nicht direkt über das Steuerungsboard, sondern über die zuvor angespochene Relais-Platine. Das Mainboard liefert hierbei lediglich ein $3,3\,\text{V}$-Schaltsignal, um die Wechselspannung über dem Relais durchzuschalten. Zur Temperaturüberwachung sind im Heizbett zwei NTC-Temperatursensor integriert, welcher als Messwertgeber für die Steuerung dient.
+Auch beim Heizbett wird die Dimensionierung des industriellen Druckers deutlich, da hier ein leistungsstarkes $230\,\text{V}$-Wechselspannungs-Heizbett verbaut ist. Die Ansteuerung erfolgt nicht direkt über das Steuerungsboard, sondern über die zuvor angespochene Relais-Platine. Das Mainboard liefert hierbei lediglich ein $3,3\,\text{V}$-Schaltsignal, um die Wechselspannung über dem Relais durchzuschalten. Zur Temperaturüberwachung sind im Heizbett zwei NTC-Temperatursensor integriert, welche als Messwertgeber für die Steuerung dienen.
 
-::: {#fig-tcst fig-pos="H"}
-![Heizbett des F421](pics/heizbett.png){#fig-heatbed width="50%"}
-:::
+
+![Heizbett des F421](pics/heizbett.png){#fig-heatbed width="60%"}
+
+\newpage 
 
 ### Not-Aus-System
 
-Aufgrund der hohen Motorleistungen sowie der anliegenden Ströme und Spannungen verfügt der 3DGence Industry F421 über ein zentrales Not-Aus-System zur Betriebssicherheit. Dieses schaltet im Notfall über ein Sicherheitsrelais sowie zwei vorgeschaltete Schütze sämtliche $230\,\text{V}$- und $48\,\text{V}$-Leitungen ab. Die für die Software-Steuerungsplatinen und das Display benötigte $24\,\text{V}$-Spannungsversorgung bleibt hingegen erhalten, sodass die Steuerung aktiv bleibt, während alle gefährlichen Lasten und Motoren sicher spannungsfrei geschaltet sind. Der Aufbau des internen Not-Aus ist in @fig-notaus dargestellt. Zur Statusüberprüfung wurde hier eine Leitung mit zwei Adern von den NO-Kontakten der Schütze zum Hardwareboard zurückgeleitet.
+Aufgrund der hohen Motorleistungen sowie der anliegenden Ströme und Spannungen verfügt der 3DGence Industry F421 über ein zentrales Not-Aus-System. Dieses schaltet im Notfall über ein Sicherheitsrelais sowie zwei vorgeschaltete Schütze sämtliche $230\,\text{V}$- und $48\,\text{V}$-Leitungen ab. Die für die Software-Steuerungsplatinen und das Display benötigte $24\,\text{V}$-Spannungsversorgung bleibt hingegen erhalten, sodass die Software aktiv bleibt, während alle gefährlichen Lasten und Motoren sicher spannungsfrei geschaltet sind. Der Aufbau des Not-Aus ist in @fig-notaus dargestellt. Zur Statusüberprüfung wurde hier eine Leitung mit zwei Adern von den NO-Kontakten der Schütze zum Hardwareboard zurückgeleitet.
 
 ![Not-Aus Steuerung des F421](pics/notaus.png){#fig-notaus width="50%"}
 
+\newpage
 ## Zusätzliche Komponenten und Sensoren des F421
-Neben den zum Drucken erforderlichen Bauteilen gibt es nun noch diverse weitere Komponenten, welche den Druck verbessern, erweitern und das ganze System anwender freundlicher machen. Auf diese Komponenten wird nun jedoch nicht mehr in einer solchen fülle eingegangen.
+Neben den zum Drucken erforderlichen Bauteilen gibt es nun noch diverse weitere Komponenten, welche den Druck verbessern, erweitern und das ganze System anwenderfreundlicher machen. Auf diese Komponenten wird nun jedoch nicht mehr in einer solchen Fülle eingegangen.
 
-### Positionserkennung über Magnetleiste
+### Komponenten zur Verbesserung der Druckqualität
 
-Um die Präzision bei der Positionierung des Druckkopfes zu erhöhen, sind an der X- und Y-Achse neben den optischen Endschaltern zusätzlich Magnetleisten mit entsprechenden Magnetsensoren verbaut. Die Aufgabe dieser Sensoren besteht darin, die nach dem Homing durch die Endschalter eingenommene Position kontinuierlich und hochpräzise zu erfassen. 
+#### Positionserkennung über Magnetleiste {.unlisted .unnumbered}
+
+Da es bei Schrittmotoren im Betrieb gelegentlich zu Schrittverlusten kommen kann, sind zur Erhöhung der Positioniergenauigkeit an der X- und Y-Achse zusätzlich zu den optischen Endschaltern Magnetleisten mit entsprechenden Magnetsensoren verbaut. Die Aufgabe dieser Sensoren besteht darin, die nach dem Homing durch die Endschalter eingenommene Position kontinuierlich und hochpräzise zu erfassen. 
 
 Dies geschieht über die Generierung eines Rechtecksignals, während sich der Sensor über den magnetischen Maßstab bewegt. Bei einer Erhöhung der Bewegungsgeschwindigkeit des Schlittens steigt proportional die Frequenz dieses Rechtecksignals an. Durch das Zählen der Impulse und Auswerten der Flanken lässt sich so zu jedem Zeitpunkt die exakte Position des Druckkopfes auf der Achse bestimmen.
 
 ![Sensor mit Magnetstreifen des F421](pics/positionierung.png){#fig-positionierung width="50%"}
 
-### Flowsensor am Extruder
+#### Flowsensor am Extruder {.unlisted .unnumbered}
 
-Für eine reibungslose und staufreie Filamentförderung sind direkt an den Extrudern Flowsensoren bzw. Drehgeber integriert. Diese basieren auf dem AS5048B-IC und dienen dazu, zu erkennen, ob Filament anliegt und sich ordnungsgemäß durch das System bewegt oder ob ein Stau vorliegt. Dabei erfasst der Magnetsensor über ein Magnetfeld die Rotation eines mit dem Vorschub gekoppelten rotierenden Elements und leitet diese Information per I²C-Bus an das Mainboard weiter. Intern werden diese Datenwerte zu geeigneten Winkeln umgewandelt um dem System Inforationen zu liefern. 
+Für eine reibungslose und staufreie Filamentförderung sind direkt an den Extrudern verbaute Flowsensoren bzw. Drehgeber integriert. Diese basieren auf dem *AS5048B*-IC und dienen dazu, zu erkennen, ob Filament anliegt und sich ordnungsgemäß durch das System bewegt und sich kein Stau gebildet hat. Dabei erfasst der Magnetsensor über ein Magnetfeld die Rotation eines mit dem Vorschub gekoppelten rotierenden Elements und leitet diese Information per I²C-Bus an das Mainboard weiter. Intern werden diese Datenwerte zu geeigneten Winkeln umgewandelt um dem System Informationen zu liefern. 
 
 ![Flowsensor des F421](pics/flow.png){#fig-flow width="50%"}
 
 ### Diverse Temperaturregulierungskomponenten
-Neben den im Druckkopf verbauten Heiz-, Lüftungs- sowie Temperturmessungskomponenten gibt es etliche weitere Bauteile zur Temperatursteuerung an unterschieldichen Orten im Durcker. Die folgende Tabelle gibt eine übersichtliche Struktur über die verbauten Komponenten zur Temperaturregulierung und deren funktionale Aufteilung im 3DGence Industry F421:
+Neben den im Druckkopf verbauten Heiz-, Lüftungs- sowie Temperaturmessungskomponenten gibt es etliche weitere Bauteile zur Temperatursteuerung an unterschiedlichen Orten im Drucker. Die folgende Tabelle gibt eine übersichtliche Struktur über die verbauten Komponenten zur Temperaturregulierung und deren funktionale Aufteilung im 3DGence Industry F421:
 
 | Ort / Bereich | Heizelement | Lüfterelement | Temperaturelement |
 | :--- | :--- | :--- | :--- |
-| Bauraum (Druckkammer) | Bauraumheizung ($230\,\text{V}$, geschaltet über Relais-Platine) | Umwälzlüfter ($230\,\text{V}$, geschaltet über Relais-Platine) | $1\times$ PT1000 & $1\times$ NTC |
-| Filament-Einschub | Heizelement (gekoppelt mit dem PWM-Lüfter) | PWM-Lüfter ($24\,\text{V}$) | $2\times$ PT1000-Sensoren |
-| Gehäuse | – | Gehäuselüfter ($24\,\text{V}$) | – |
+| Bauraum  | Bauraumheizung ($230\,\text{V}$, geschaltet über Relais-Platine) | Umwälzlüfter ($230\,\text{V}$, geschaltet über Relais-Platine) | $1\times$ PT1000 & $1\times$ NTC |
+| Filament-Einschub | Heizelement (gekoppelt mit dem PWM-Lüfter) | PWM-Lüfter ($24\,\text{V}$, steuerung über I²C-Bus) | $2\times$ PT1000-Sensoren, Datenwerte kommen als HEX-Zahl in Celsius |
+| Gehäuse | – | PWM-Gehäuselüfter ($24\,\text{V}$) | – |
 | Elektronikbereich | – | Gehäuse- & Mainboardlüfter ($5\,\text{V}$) | – |
 
 : Sonstige Temperatursteuerungskomponenten des F421
 
 ### Vakuumpumpe für den Bauraum
-Bei der Verarbeitung sehr hochwertiger und hochtemperaturbeständiger Kunststoffe (wie beispielsweise PEEK oder PEKK) entstehen chemische sowie potenziell gesundheitsschädliche Dämpfe und Entgasungen. Um diese kontrolliert abzusaugen und ein Abscheiden im Druckraum zu verhindern, ist im F421 unterhalb des Heizbetts eine spezielle Vakuumpumpe verbaut, die für einen gezielten Unterdruck und die geordnete Abführung der Prozessabgase sorgt. Als Kernkomponenten fungieren hierbei ein bürstenloser Radialgebläsemotor vom Typ *Wonsmart WS9290B-48-240-X200* zur Erzeugung des Luftstroms sowie eine Vakuum- und Ventileinheit vom Typ *SMC ZK2-ZSVB-A* zur Regelung und Überwachung des Unterdrucks. Der Motor wird hierbei ebenfalls über die $230\,\text{V}$ Relais-Platine und die Ventileinheit über die $24\text{ V}$-Versorgung des Hardwareboards angesteuert. Das Steuersignal der Ventileinheit erlaubt es der Steuerung, das Vakuum je nach Prozessphase gezielt zuzuschalten oder abzulassen. Das integrierte Druckmessglied der SMC-Einheit gibt wiederum Rückmeldung an das System, um das Erreichen des erforderlichen Unterdrucks kontinuierlich zu überwachen und bei einem Vakuumabfall eine Schutzabschaltung auszulösen.
+Bei der Verarbeitung sehr hochwertiger und hochtemperaturbeständiger Kunststoffe (wie beispielsweise PEEK oder PEKK) entstehen chemische sowie potenziell gesundheitsschädliche Dämpfe und Entgasungen. Um diese kontrolliert abzusaugen und ein Abscheiden im Druckraum zu verhindern, ist im F421 unterhalb des Heizbetts eine spezielle Vakuumpumpe verbaut, die für einen gezielten Unterdruck und die geordnete Abführung der Prozessabgase sorgt. Als Kernkomponenten fungieren hierbei ein bürstenloser Radialgebläsemotor vom Typ *Wonsmart WS9290B-48-240-X200* zur Erzeugung des Luftstroms sowie eine Vakuum- und Ventileinheit vom Typ *SMC ZK2-ZSVB-A* zur Regelung und Überwachung des Unterdrucks. Der Motor wird hierbei ebenfalls über die $230\,\text{V}$ Relais-Platine und die Ventileinheit über die $24\,\text{V}$-Versorgung des Hardwareboards angesteuert. Das Steuersignal der Ventileinheit erlaubt es der Steuerung, das Vakuum je nach Prozessphase gezielt zuzuschalten oder abzulassen. Das integrierte Druckmessglied der SMC-Einheit gibt wiederum Rückmeldung an das System, um das Erreichen des erforderlichen Unterdrucks kontinuierlich zu überwachen und bei einem Vakuumabfall eine Schutzabschaltung auszulösen.
 
 ### NFC-Sensoren und LED-Steuerung für Filamenterkennung
 
 Neben den bereits angesprochenen PWM-Motoren im Filamenteinschub befinden sich an jedem der vier Filamentplätze ein NFC-Lesegerät sowie eine zugehörige LED-Statusanzeige. Beide Komponenten sind auf gemeinsamen Platinen verbaut und werden ebenfalls direkt über den I²C-Bus angesteuert und konfiguriert. 
 
-Um Materialverwechslungen auszuschließen und spulenbezogene Parameter automatisiert zu laden, lesen die NFC-Lesegeräte die auf den Herstellerspulen integrierten NFC-Chips (z. B. Materialtyp und Farbe) aus und übermitteln die Daten an die Steuerung. Die gekoppelte RGB-LED-Statusanzeige an den jeweiligen Einschüben signalisiert dem Bediener visuell den Zustand des jeweiligen Filamentschachts. Diese nun komplett erleuterten Platinen sind der @fig-filament_hinten zu entnehmen.
+Um Materialverwechslungen auszuschließen und spulenbezogene Parameter automatisiert zu laden, lesen die NFC-Lesegeräte die auf den Herstellerspulen integrierten NFC-Chips (z. B. Materialtyp und Farbe) aus und übermitteln die Daten an die Steuerung. Die gekoppelte RGB-LED-Statusanzeige an den jeweiligen Einschüben signalisiert visuell den Zustand des jeweiligen Filamentschachts. Diese nun komplett erläuterten Platinen sind der @fig-filament_hinten zu entnehmen.
 
-### \textcolor{red}{Batterie-Steuerung bei Stromausfall} NACHGUCKEN!!!
+### Batterie-Steuerung bei Stromausfall **NACHGUCKEN!!!**
 Für die Ausfallsicherheit bei Unterbrechungen der Netzspannung verfügt der Drucker über ein integrierte USV. Bei einem Stromausfall übernimmt die Batteriestreuung unmittelbar die Versorgung der internen $24\,\text{V}$-, $48\,\text{V}$- und $230\,\text{V}$-Steuerung. Dies ermöglicht es der Software, den aktuellen Systemzustand und die genauen Druckkoordinaten sicher auf dem Speicher abzulegen, bevor das System geordnet herunterfährt, sodass der Druckprozess nach Wiederkehr der Spannungsversorgung nahtlos fortgesetzt werden kann.
 
-### Kamera zur Überwachung des Druckprozesses **BILD ALTE KAMERA**
+### Bauteile zur Bedienfreunderlichkeit **BILD ALTE KAMERA**
+
+#### Kamera zur Überwachung des Druckprozesses {.unlisted .unnumbered}
 
 Zur Fernüberwachung und Prozessdokumentation ist im Bauraum eine Kamera integriert. Das original verbaute Kameramodul basiert auf einem *OV2640*-Sensor (@fig-OV2640). Aufgrund der spezifischen Ansteuerung und Schnittstelle lässt sich dieses Modul jedoch nicht direkt mit dem Raspberry Pi verbinden, weshalb ein Austausch erforderlich ist. 
 
-Durch den langen Leitungsweg von etwa $2\,\text{m}$ vom Steuerungsbereich bis in den Bauraum scheiden parallele oder CSI-Kameraschnittstellen aus, sodass zwingend auf eine USB-Verbindung zurückgegriffen werden muss. Eine geeignete und Raspberry-Pi-kompatible Alternative stellt hierbei beispielsweise die USB-Kamera *U20CAM-1080p-wdr* (@fig-U20CAM) dar, welche bei moderaten Anschaffungskosten alle geforderten Eigenschaften für eine zuverlässige Prozessüberwachung erfüllt.
+Durch den langen Leitungsweg von etwa $2\,\text{m}$ vom Steuerungsbereich bis in den Bauraum scheiden parallele oder CSI-Kameraschnittstellen aus, sodass zwingend auf eine USB-Verbindung zurückgegriffen werden muss. Eine geeignete und Raspberry Pi kompatible Alternative stellt hierbei beispielsweise die USB-Kamera *U20CAM-1080P-WDR* (@fig-U20CAM) dar, welche bei moderaten Kosten alle geforderten Eigenschaften für eine zuverlässige Prozessüberwachung erfüllt.
 
 ::: {#fig-kameras layout-ncol=2}
 ![OV2640 Kameramodul](pics/OV2640.png){#fig-OV2640 width="50%"}
@@ -171,12 +192,11 @@ Durch den langen Leitungsweg von etwa $2\,\text{m}$ vom Steuerungsbereich bis in
 Originales und alternatives Kameramodul für den F421
 :::
 
-### Display
+\newpage 
+#### Display mit Touchscreen {.unlisted .unnumbered}
 
-Als Display zur einfachen Bedienung dient ein an der Front verbautes Touchscreen-Display. Ursprünglich ist im F421 ein industrielles Display vom Typ *Riverdi RVT101HVLNWC00-B* verbaut. Da dieses Display jedoch proprietary angesteuert wird und nicht direkt mit dem Raspberry Pi kompatibel ist, muss es im Zuge des Umrüstens ausgetauscht werden. 
+Als Display zur einfachen Bedienung dient ein an der Front verbautes Touchscreen-Display. Ursprünglich ist im F421 ein industrielles Display vom Typ *Riverdi RVT101HVLNWC00-B* verbaut. Da dieses Display jedoch über eigene Firmware angesteuert wird und nicht direkt mit dem Raspberry Pi kompatibel ist, muss es im Zuge des Umrüstens ausgetauscht werden. 
 
 Als funktionale und vollständig Raspberry-Pi-kompatible Alternative kommt ein hochauflösendes 10,1-Zoll-Touchscreen-Display zum Einsatz. Dieses wird direkt über HDMI für das Bildsignal und USB für die Touch-Eingaben an dem Raspberry Pi angebunden. Es ermöglicht somit die direkte lokale Bedienung des Druckers über KlipperScreen, von der Dateiauswahl über die Ausführung von Kalibrierungs und Homing-Prozeduren bis hin zur Echtzeitüberwachung aller Temperatur- und Achsenparameter.
 
-![Alternatives Diplay für den F421 [@display]](pics/display.jpg){#fig-display width="50%"}
-
-\newpage
+![Alternatives Display für den F421 [@display]](pics/display.jpg){#fig-display width="50%"}

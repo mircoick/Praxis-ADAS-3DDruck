@@ -10,7 +10,7 @@ Der einzige Kandidat, der den hohen Anforderungen gerecht wird, ist das *BIGTREE
 Das BTT Kraken V1.1 bietet im Vergleich zu Standard-Mainboards eine Reihe wesentlicher Vorteile und Leistungsmerkmale:
 
 * Integrierte Treiberstufen: Acht hochleistungsfähige Motoren-Steckplätze mit integrierten TMC5160-Treibern (ausgelegt für hohe Spannungen bis zu $60\,\text{V}$), die das erforderliche hohe Drehmoment für die leistungsstarken NEMA 23-Achsmotoren ohne zusätzliche Treiber bereitstellen.
-* Leistungsstarke Mikrocontroller-Architektur: Ein 32-Bit-ARM-Cortex-M7-Prozessor (STM32H723ZGT6) mit $550\,\text{MHz}$ Taktfrequenz sorgt für ausreichend Rechenkapazität zur Verarbeitung komplexer Bewegungs- und Sensorikdaten.
+* Leistungsstarke Mikrocontroller-Architektur: Ein $32$-Bit-ARM-Cortex-M7-Prozessor (STM32H723ZGT6) mit $550\,\text{MHz}$ Taktfrequenz sorgt für ausreichend Rechenkapazität zur Verarbeitung komplexer Bewegungs- und Sensorikdaten.
 * Präzise Temperaturerfassung: Zwei integrierte MAX31865-Module zur hochpräzisen Auswertung von PT1000-Widerstandsthermometern sowie fünf zusätzliche NTC-Widerstandsmesseingänge.
 
 \newpage
@@ -18,7 +18,7 @@ Das BTT Kraken V1.1 bietet im Vergleich zu Standard-Mainboards eine Reihe wesent
 * Leistungsfähige Aktor- und Servo-Anschlüsse:
   * Eine Servo-Steuerung mit bis zu $5\,\text{V}$ und $1\,\text{A}$ Stromstärke.
   * Vier separate Heizelement Anschlüsse mit jeweils bis zu $8\,\text{A}$ Schaltleistung.
-  * Sechs 2-adrige Lüfteranschlüsse mit individuell einstellbaren Ausgangsspannungen von $5\,\text{V}$ bis $24\,\text{V}$.
+  * Sechs 2-adrige Lüfteranschlüsse (PWM) mit individuell einstellbaren Ausgangsspannungen von $5\,\text{V}$ bis $24\,\text{V}$.
   * Zwei 4-adrige Lüfteranschlüsse (PWM/Tacho) mit ebenfalls einstellbarer Ausgangsspannung ($5\,\text{V}$ bis $24\,\text{V}$).
   * Fünf zusätzliche, dauerhaft aktive $24\,\text{V}$-I/O-Ausgänge speziell für die Gehäuse- und Bauraumbelüftung.
 * Flexible Sensorik und Endschalter: Acht einzelne Endschalter-Steckplätze, die flexibel auch zur Erkennung und Abfrage weiterer Systemmodule genutzt werden können.

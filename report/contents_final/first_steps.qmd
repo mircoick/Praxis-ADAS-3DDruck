@@ -1,5 +1,5 @@
 # Erste Ansteuerungen
-Nachdem nun die Grundlagen des 3D-Drucks recherchiert und verstanden wurden, konnte sich an die Bauteilanalyse sowie Ansteuerung erster entscheidender Komponenten mittels Python gemacht werden. Im ersten Schritt wurde sich hierbei um die Grundkomponenten eines 3D-Druckers beschäftigt. Die nachfolgenden Unterkapitel werden näher auf die Vorgehensweise und die daraus entstehenden Erkenntnisse eingehen. Alle erwähnten Skripte sowie Datenblätter und ergänzende Dokumentationen sind dem [Github](https://github.com/mircoick/Praxis-ADAS-3DDruck) zu entnehmen.
+Nachdem nun die Grundlagen des 3D-Drucks recherchiert und verstanden wurden, konnte sich an die Bauteilanalyse sowie Ansteuerung erster entscheidender Komponenten mittels Python gemacht werden. Im ersten Schritt wurde sich hierbei um die Grundkomponenten eines 3D-Druckers beschäftigt. Die nachfolgenden Unterkapitel werden näher auf die Vorgehensweise und die daraus entstehenden Erkenntnisse eingehen. Alle erwähnten Skripte sowie Datenblätter und ergänzende Dokumentationen sind dem Github-Repository [@Github] zu entnehmen.
 
 ## Grundkomponenten eines 3D-Druckers
 Um einen 3D-Drucker betreiben zu können braucht es prinzipiell drei verschiedene Baugruppen. Diese drei existenziellen Baugruppen sind:

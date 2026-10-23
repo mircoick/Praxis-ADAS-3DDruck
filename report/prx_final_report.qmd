@@ -144,10 +144,13 @@ number-sections: true
 \newpage
 
 {{< include contents_final/conclusion.qmd >}}
+
 \newpage
 
 # Literaturverzeichnis
 \markboth{Literaturverzeichnis}{Literaturverzeichnis}
+
+*Zur sprachlichen Überarbeitung und Optimierung des Satzbaus sowie als Denkanstoß bei der Erstellung der Testcodes der I²C-Klipper Ansteuerungen wurden die Sprachmodelle ChatGPT @chatgpt und Gemini @gemini eingesetzt. Die inhaltliche Kontrolle und Validierung aller generierten Inhalte erfolgte eigenständig durch den Verfasser.*
 
 ::: {#refs}
 :::

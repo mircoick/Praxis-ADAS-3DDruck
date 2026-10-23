@@ -21,7 +21,7 @@ Zu diesen Komponenten gehören unter anderem:
 
 Die Bauteile werden über zwei Mainboards software- sowie hardwareseitig gesteuert. Der Aufbau passt also zu der Klipper typischen Ansteuerung. Eine Abbildung der Hardware zur Steuerung des Industry F421 ist der @fig-mainboards zu ennehmen. 
 
-![Steuerung des Industry F421](pics/platine_gesamt.jpeg){#fig-mainboards width="50%"}
+![Steuerung des Industry F421](pics/platine_gesamt.jpeg){#fig-mainboards width="63%"}
 
 \newpage
 
@@ -59,9 +59,9 @@ Aus eben diesem Hintergrund und dieser enormen Last der AM23HSA4B0-03 Schrittmot
 ::: {#fig-step_motor layout-ncol=3}
 ![17HS16-2004S1 [@17HS16-2004S1]](pics/17HS16-2004S1.jpg){#fig-step_17HS16-2004S1 width="60%"}
 
-![AM23HSA4B0-03 [@AM23HSA4B0-03]](pics/AM23HSA4B0-03.png){#fig-step_AM23HSA4B0-03 width="60%"}
+![AM23HSA4B0-03 [@AM23HSA4B0-03]](pics/AM23HSA4B0-03.png){#fig-step_AM23HSA4B0-03 width="65%"}
 
-![AM24HS5401-10N [@AM24HS5401-10N]](pics/AM24HS5401-10N.jpg){#fig-step_AM24HS5401-10N width="60%"}
+![AM24HS5401-10N [@AM24HS5401-10N]](pics/AM24HS5401-10N.jpg){#fig-step_AM24HS5401-10N width="55%"}
 
 Step-Motoren des F421
 :::
@@ -84,7 +84,7 @@ Bei den dortigen Antrieben handelt es sich um zweipolige Gleichstrom-PWM-Motoren
 ### Endschalter
 Im Gegensatz zu den Endschalter aus @sec-limit_switch besitzt der Industry F421 optische Endschalter. Diese optischen Endschalter vom Model *TCST2103* funktionieren vom Prinzip wie eine herkömmliche Lichtschranke. Sie bestehen aus einem Infrarot-Emitter (einer LED) und einem Fototransistor als Empfänger, die durch einen schmalen Spalt voneinander getrennt sind. Solange der Spalt frei ist, trifft das Infrarotlicht ungehindert auf den Fototransistor, wodurch dieser leitet. Sobald eine Achse ihre Referenzposition erreicht, schiebt sich eine am Achsenschlitten befestigte Fahne in diesen Spalt und unterbricht den Lichtstrahl. Dies führt zu einer unmittelbaren Spannungsänderung am Signalpin, die von der Steuerung als Erreichen der Endposition registriert wird. Der entscheidende Vorteil dieser optischen Endschalter gegenüber mechanischen Mikroschaltern liegt in der berührungslosen und somit verschleißfreien Abtastung, was eine präzise und reproduzierbare Referenzfahrten (Homing) ermöglicht.
 
-![Endschalter TCST2103 [@TCST2103]](pics/TCST2103.png){#fig-TCST2103 width="30%"}
+![Endschalter TCST2103 [@TCST2103]](pics/TCST2103.png){#fig-TCST2103 width="20%"}
 
 Zur Ansteuerung des TCST2103 werden lediglich drei Anschlüsse benötigt: Versorgungsspannung ($V_{\text{CC}}$), Masse ($\text{GND}$) und eine Signalleitung ($V_\text{OUT}$). Die integrierte Infrarot-LED wird über einen Vorwiderstand ($R_{\text{LED}} = 220\ \Omega-330\ \Omega$) an $V_{\text{CC}}=5\,\text{V}$ betrieben, während der Kollektor des Fototransistors über einen Pull-up-Widerstand mit der Signalleitung verbunden ist. Solange der Lichtstrahl ungestört auf den Fototransistor trifft, schaltet dieser durch und zieht das Signal auf $\text{GND}$ (Low). Wird der Lichtstrahl durch die Unterbrecherfahne blockiert, sperrt der Transistor, sodass die Signalleitung über den Pull-up-Widerstand auf $V_{\text{CC}}$ (High) gezogen wird. Dieses High-Signal zeigt der Steuerung das Erreichen der Endposition an.
 
@@ -93,9 +93,9 @@ Da nun die Achsenbewegung vollständig ist kann sich nun an den Druckkopf gemach
 
 ::: {#fig-hotend layout-ncol=2}
 
-![Frontansicht](pics/druckkopf_front.jpeg){#fig-hotend_front width="55%"}
+![Frontansicht](pics/druckkopf_front.jpeg){#fig-hotend_front width="65%"}
 
-![Rückansicht](pics/druckkopf_rück.jpeg){#fig-hotend_rück width="60%"} 
+![Rückansicht](pics/druckkopf_rück.jpeg){#fig-hotend_rück width="70%"} 
 
 Druckkopf des F421
 :::

@@ -123,27 +123,26 @@ plt.show()
 
 Nach Ansteuerung der einzelnen Basiskomponenten wurde nun probiert mittels eines Referenzdruckers die Bauteile anzusteuern. Dazu wurde ein ausgesonderter *Geeetech i3* 3D-Drucker verwendet, welcher hardwareseitig über einen *Arduino Mega 2560* betrieben wird. Die @fig-i3 zeigt das verwendete Referenzsystem. 
 
-![Geeetech i3 Referenzsystem](pics/IMG_2011.jpg){#fig-i3 width="40%"}
+::: {layout-ncol=2}
+
+![Geeetech i3 Referenzsystem](pics/IMG_2011.jpg){#fig-i3 width="65%"}
+
+![Finaler Aufbau des Referenzsystems](pics/i3_aufbau.jpeg){#fig-final_i3 width="100%"}
+
+:::
+
 
 ### Festlegung der Software
 
 Da bereits der Arduino sowie der Raspberry Pi 5 zur Verfügung standen, wurde sich nun auf die Lösung der Ansteuerung mittels zwei Boards entschieden. Somit sollte der Arduino als Hardwaresteuerung und der Raspberry Pi 5 für die komplexere Softwaresteuerung verantwortlich sein. Für diese Art von Ansteuerung gibt es bereits sämtliche Open-Source Lösungen. Unter anderem Klipper, Marlin, RRF oder auch Kalico. Hierbei ist die wohl meist verbreitete und zugänglichste Variante *Klipper*. Klipper bietet mit der in Python programmierten Funktionsklassen leichte Anpassungs- sowie Erweiterungsmöglichkeiten und für sehr viele Lösungen bereits vorgefertigte bauteilspezifische Module. Außerdem kann mit Hilfe von *Mainsail* und *Moonraker* leicht eine IP adressenbasierte Benutzeroberfläche für Klipper geschaffen werden, mit welcher sich alle Komponenten steuern und Änderungen im Code vorgenommen werden können. Neben dieser Weboberfläche kann zusätzlich mit *Crowsnest* eine Kamera eingebunden und mit *Klipper-Screen* diese Weboberfläche auch auf dem am Raspberry Pi angeschlossenen Display angezeigt werden. Zusätzlich können über G-Code direkt in der Weboberfläche Makros erstellt werden, welche die Ansteuerung der einzelnen Komponenten vereinfachen oder z.B. eine Startsequenz für den Drucker erstellt. Alle benötigten Softwares sind einfach über deren eigenen Github-Repositories, direkt aus der Konsole des Raspberry Pis, zu installieren und zu konfigurieren. Somit bietet Klipper alles für die erfolgreiche Umsetzung des Projektes. 
 
-### Ansteuerung des Referenzsystems **BILDER**
+\newpage
+### Ansteuerung des Referenzsystems
 
 Die Ansteuerung des Referenzsystems gestaltete sich mithilfe von Klipper und den bereits vorhandenen Modulen sowie der vorherigen Recherche der einzelnen Komponenten recht leicht. Als MCU für das Referenzsystem wurde ein *Arduino Mega 2560* mit einem *RAMPS 1.4* Board verwendet, welches bereits die benötigten Anschlüsse für die Step-Motoren, Endschalter und Heizkomponenten bereitstellt. Um nun eine Verbindung zwischen dem Raspberry Pi 5 und dem Arduino herzustellen musste der Arduino zuerst mit der Klipper-Firmware geflasht werden. Dies geschieht über die Konsole des Raspberry Pis und dem Befehl `makeconfig` in dem geladenen Klipper-Ordner. Hierbei wird die Konfiguration des Arduinos erstellt und anschließend mit dem Befehl `make flash` auf den Arduino über ein USB-Kabel übertragen. Die anschließende Verbindung zwischen dem Raspberry Pi 5 und dem Arduino wird ebenfalls über die USB-Schnittstelle hergestellt. 
 
 
-Beim Betreten des Webinterfaces von Mainsail kann der Drucker über die IP-Adresse des Raspberry Pis aufgerufen und dort auch die einzelnen Komponenten angesteuert werden. Bevor jedoch die Komponenten angesteuert werden konnten musste zuerst die Konfiguration des Druckers in der Klipper-Konfigurationsdatei `printer.cfg` hinterlegt werden. Hierbei wurden die einzelnen Anschlüsse der Step-Motoren, Endschalter und Heizkomponenten hinterlegt. Diese Pinbelegungen konnten aus den Datenblättern des Arduinos sowie des RAMPS 1.4 Boards entnommen werden. Außerdem wurden die einzelnen Parameter der Step-Motoren, Endschalter und Heizkomponenten in der Konfigurationsdatei hinterlegt. Nach erfolgreicher Konfiguration konnte der Drucker über das Webinterface von Mainsail angesteuert werden. Für weiter Tests wurde mittels *Crowsnest* eine Kamera an den Raspberry Pi 5 angeschlossen, um die Ansteuerung der einzelnen Komponenten zu überwachen. Außerdem wurde ein kleines Display an den Raspberry Pi 5 angeschlossen, um die Weboberfläche von Mainsail auch auf dem Display anzeigen zu können. Somit konnte der Drucker auch ohne einen Computer angesteuert werden. Die dafür benötigten Dateien konnten direkt in der Weboberfläche von Mainsail erstellt, bearbeitet und auf dem Raspberry Pi 5 gespeichert werden. Die @fig-mainsail_i3 zeigt die Weboberfläche von Mainsail und @fig-final_i3 zeigt den finalen Aufbau des Referenzsystems.
+Beim Betreten des Webinterfaces von Mainsail kann der Drucker über die IP-Adresse des Raspberry Pis aufgerufen und dort auch die einzelnen Komponenten angesteuert werden. Bevor jedoch die Komponenten angesteuert werden konnten musste zuerst die Konfiguration des Druckers in der Klipper-Konfigurationsdatei `printer.cfg` hinterlegt werden. Hierbei wurden die einzelnen Anschlüsse der Step-Motoren, Endschalter und Heizkomponenten hinterlegt. Diese Pinbelegungen konnten aus den Datenblättern des Arduinos sowie des RAMPS 1.4 Boards entnommen werden. Außerdem wurden die einzelnen Parameter der Step-Motoren, Endschalter und Heizkomponenten in der Konfigurationsdatei hinterlegt. Nach erfolgreicher Konfiguration konnte der Drucker über das Webinterface von Mainsail angesteuert werden. Für weiter Tests wurde mittels *Crowsnest* eine Kamera an den Raspberry Pi 5 angeschlossen, um die Ansteuerung der einzelnen Komponenten zu überwachen. Außerdem wurde ein kleines Display an den Raspberry Pi 5 angeschlossen, um die Weboberfläche von Mainsail auch auf dem Display anzeigen zu können. Somit konnte der Drucker auch ohne einen Computer angesteuert werden. Die dafür benötigten Dateien konnten direkt in der Weboberfläche von Mainsail erstellt, bearbeitet und auf dem Raspberry Pi 5 gespeichert werden. Die @fig-final_i3 zeigt den finalen Aufbau des Referenzsystems und die @fig-mainsail_i3 die dazugehörige Weboberfläche über Mainsail.
 
 
-::: {#fig-i3_final layout-ncol=2}
-
-<!---
-![Weboberfläche Mainsail](pics/i3_klipper.jpg){#fig-mainsail_i3 width="75%"}
-
-![Finaler Aufbau Referenzsystem](pics/i3_aufbau.jpg){#fig-final_i3 width="75%"}
--->
-
-Finaler Aufbau des Referenzsystems
-:::
+![Geeetech i3 Klipper Weboberfläche mit Mainsail](pics/i3_klipper.jpg){#fig-mainsail_i3 width="87%"}

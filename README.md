@@ -16,13 +16,44 @@ Die offiziellen Berichte und Ausarbeitungen stehen im PDF-Format zur Verfügung:
 
 Das Repository gliedert sich in folgende Hauptkomponenten:
 
-- **[`doku/`](doku/)** - Ergänzende Projektdokumentationen.
-- **[`info/`](info/)**    -    Datenblätter und Firmeninfos.
-- **[`kicad/`](kicad/)**  -    Idee einer Adapterplatine mit Schaltplänen.
-- **[`klipper/`](klipper/)**  -  Konfigurationsdateien, Makros und Firmware-Anpassungen für Klipper.
-- **[`print_data/`](print_data/)**  -  Testdrucke, Slicer-Profile und druckspezifische Daten.
-- **[`python/`](python/)**  -  Skripte zur isolierten Sensor- und Hardware-Ansteuerung.
-- **[`report/`](report/)**  -  Quarto-Quellcode (`.qmd`) und Build-Artefakte der Berichte.
+<table>
+  <thead>
+    <tr>
+      <th>Verzeichnis</th>
+      <th>Beschreibung</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="doku/"><code>doku/</code></a></td>
+      <td>Ergänzende Projektdokumentationen.</td>
+    </tr>
+    <tr>
+      <td><a href="info/"><code>info/</code></a></td>
+      <td>Datenblätter und Firmeninfos.</td>
+    </tr>
+    <tr>
+      <td><a href="kicad/"><code>kicad/</code></a></td>
+      <td>Idee einer Adapterplatine mit Schaltplänen.</td>
+    </tr>
+    <tr>
+      <td><a href="klipper/"><code>klipper/</code></a></td>
+      <td>Konfigurationsdateien, Makros und Firmware-Anpassungen für Klipper.</td>
+    </tr>
+    <tr>
+      <td><a href="print_data/"><code>print_data/</code></a></td>
+      <td>Testdrucke, Slicer-Profile und druckspezifische Daten.</td>
+    </tr>
+    <tr>
+      <td><a href="python/"><code>python/</code></a></td>
+      <td>Skripte zur isolierten Sensor- und Hardware-Ansteuerung.</td>
+    </tr>
+    <tr>
+      <td><a href="report/"><code>report/</code></a></td>
+      <td>Quarto-Quellcode (<code>.qmd</code>) und Build-Artefakte der Berichte.</td>
+    </tr>
+  </tbody>
+</table>
 
 ---
 

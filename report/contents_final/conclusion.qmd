@@ -41,12 +41,12 @@ Zur Auswertung der schnellen Positionierungssignale der X- und Y-Achsen-Magnetle
 
 #### MAX31865 {.unlisted .unnumbered}
 
-Da die beiden integrierten PT1000-Steckplätze des Kraken V1.1 bereits vollständig durch die Sensoren des Druckkopfes belegt sind, wird für das verbleibende Temperaturmesselement des Bauraums ein separates *MAX31865*-Modul per SPI-Schnittstelle am Host angeschlossen. Das Breakout-Board wird mit $3{,}3\,\text{V}$ versorgt und benötigt die SPI-Leitungen CLK, SDI (MOSI), SDO (MISO) sowie einen dedizierten Chip-Select-Pin (CS) am Kraken. In der Klipper-Firmware stehen hierfür standardisierte Module zur Verfügung, bei denen nach Definition der Pins und Hinterlegung des Referenzwiderstands eine präzise Temperaturerfassung gewährleistet ist.
+Da die beiden integrierten PT1000-Steckplätze des Kraken V1.1 bereits vollständig durch die Sensoren des Druckkopfes belegt sind, wird für das verbleibende Temperaturmesselement des Bauraums ein separates *MAX31865*-Modul per SPI-Schnittstelle am Host angeschlossen. Das Breakout-Board wird mit $3{,}3\,\text{V}$ versorgt und benötigt die SPI-Leitungen CLK, SDI (MOSI), SDO (MISO) sowie einen Chip-Select-Pin am Kraken. In der Klipper-Firmware stehen hierfür standardisierte Module zur Verfügung, bei denen nach Definition der Pins und Hinterlegung des Referenzwiderstands eine präzise Temperaturerfassung gewährleistet ist.
 
 ::: {layout-ncol=2}
 ![RP2040 Zero Mikrocontroller [@rp2040]](pics/rp2040.png){#fig-rp2040 width="70%"}
 
-![MAX31865 RTD-Verstärkermodul [@max31865]](pics/max31865.jpg){#fig-max31865 width="50%"}
+![MAX31865 Breakoutboard [@max31865]](pics/max31865.jpg){#fig-max31865 width="50%"}
 
 :::
 
@@ -55,7 +55,7 @@ Da die beiden integrierten PT1000-Steckplätze des Kraken V1.1 bereits vollstän
 
 Da die Anschlussbelegungen und Steckverbindungen des BIGTREETECH Kraken V1.1 nicht direkt mit dem originalen Kabelbaum des F421 übereinstimmen, ist die Entwicklung einer Adapter-Platine von großem Vorteil. Diese ermöglicht das direkte Einstecken der bestehenden Systemstecker ohne aufwendiges Konfektionieren oder Umcrimpen. Die Verbindung zwischen der Adapter-Platine und dem Hauptboard bzw. dem Steuerungs-Raspberry Pi erfolgt dabei über kompakte Kabelbrücken. So könnte ein eventueller Rückbau ebenfalls gewährleistet werden.
 
-Zusätzlich bietet die Adapter-Platine Steckplätze zur direkten Aufnahme der Ergänzungskomponenten, wie dem RP2040 Zero zur Auswertung der Magnetleisten-Positionssensoren und dem externen MAX31865-Modul. Dies verhindert unnötigen Verdrahtungsaufwand, reduziert Störeinflüsse auf den Signalleitungen und sorgt für einen übersichtlichen, wartungsfreundlichen Schaltschrankaufbau. Ein Entwurf einer solchen Adapterplatine kann den @fig-Adapterplatine_oben und @fig-Adapterplatine entnommen werden.
+Zusätzlich bietet die Adapter-Platine Steckplätze zur direkten Aufnahme der Ergänzungskomponenten, wie dem RP2040 Zero zur Auswertung der Magnetleisten-Positionssensoren und dem externen MAX31865-Modul. Dies verhindert unnötigen Verdrahtungsaufwand, reduziert Störeinflüsse auf den Signalleitungen und sorgt für einen übersichtlichen, wartungsfreundlichen Schaltschrankaufbau. Ein Entwurf einer solchen Adapterplatine kann der @fig-Adapterplatine_oben und der @fig-Adapterplatine entnommen werden.
 
 ![Adapterplatinen Entwurf Ansicht 1](pics/Adapterplatine_oben.png){#fig-Adapterplatine_oben width="65%"}
 

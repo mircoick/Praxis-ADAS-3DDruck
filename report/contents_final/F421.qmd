@@ -155,7 +155,7 @@ Neben den im Druckkopf verbauten Heiz-, Lüftungs- sowie Temperaturmessungskompo
 | Bauraum  | Bauraumheizung ($230\,\text{V}$, geschaltet über Relais-Platine) | Umwälzlüfter ($230\,\text{V}$, geschaltet über Relais-Platine) | $1\times$ PT1000 & $1\times$ NTC |
 | Filament-Einschub | Heizelement (gekoppelt mit dem PWM-Lüfter) | PWM-Lüfter ($24\,\text{V}$, steuerung über I²C-Bus) | $2\times$ PT1000-Sensoren, Datenwerte kommen als HEX-Zahl in Celsius |
 | Gehäuse | – | PWM-Gehäuselüfter ($24\,\text{V}$) | – |
-| Elektronikbereich | – | Gehäuse- & Mainboardlüfter ($5\,\text{V}$) | – |
+| $230\,\text{V}$-Platine | – | Relais-Lüfter ($5\,\text{V}$) | – |
 
 : Sonstige Temperatursteuerungskomponenten des F421
 

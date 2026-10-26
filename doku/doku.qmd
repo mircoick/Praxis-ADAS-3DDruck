@@ -502,3 +502,7 @@ number-sections: true
 |Platinen Breite|56|
 |Platinen Tiefe|1.6|
 |Gesamthöhe mit Platine|12|
+
+**Maße Aussparung**
+
+15,1mmx23,1mmx4mm

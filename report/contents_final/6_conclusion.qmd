@@ -5,7 +5,7 @@ Nach ausführlicher Analyse der einzelnen Komponenten des 3DGence Industry F421 
 
 Der einzige Kandidat, der den hohen Anforderungen gerecht wird, ist das *BIGTREETECH Kraken* in den Revisionen V1.0 bzw. V1.1. Die Entscheidung fiel letztlich auf das neuere *BIGTREETECH Kraken V1.1* (@fig-kraken).
 
-![BIGTREETECH Kraken V1.1](pics/krakenv1.1.png){#fig-kraken width="75%"}
+![BIGTREETECH Kraken V1.1 [@Github_Kraken]](pics/krakenv1.1.png){#fig-kraken width="75%"}
 
 Das BTT Kraken V1.1 bietet im Vergleich zu Standard-Mainboards eine Reihe wesentlicher Vorteile und Leistungsmerkmale:
 
@@ -29,7 +29,7 @@ Das BTT Kraken V1.1 bietet im Vergleich zu Standard-Mainboards eine Reihe wesent
   * EXP1- und EXP2-Anschlüsse für kompatible Displays oder alternative $3{,}3\,\text{V}$-Logikausgänge.
   * Zwei RGB-Anschlüsse zur LED-Statusbeleuchtung, ein USB-C-Eingang, ein USB-A-Ausgang sowie ein integrierter MicroSD-Karten-Slot.
 
-![BIGTREETECH Kraken V1.1 PINOUT](pics/kraken_pins.png){width="90%"}
+![BIGTREETECH Kraken V1.1 PINOUT [@Github_Kraken]](pics/kraken_pins.png){width="90%"}
 
 \newpage
 ## Ergänzende Hardwareboards
@@ -44,9 +44,9 @@ Zur Auswertung der schnellen Positionierungssignale der X- und Y-Achsen-Magnetle
 Da die beiden integrierten PT1000-Steckplätze des Kraken V1.1 bereits vollständig durch die Sensoren des Druckkopfes belegt sind, wird für das verbleibende Temperaturmesselement des Bauraums ein separates *MAX31865*-Modul per SPI-Schnittstelle am Host angeschlossen. Das Breakout-Board wird mit $3{,}3\,\text{V}$ versorgt und benötigt die SPI-Leitungen CLK, SDI (MOSI), SDO (MISO) sowie einen Chip-Select-Pin am Kraken. In der Klipper-Firmware stehen hierfür standardisierte Module zur Verfügung, bei denen nach Definition der Pins und Hinterlegung des Referenzwiderstands eine präzise Temperaturerfassung gewährleistet ist.
 
 ::: {layout-ncol=2}
-![RP2040 Zero Mikrocontroller [@rp2040]](pics/rp2040.png){#fig-rp2040 width="70%"}
+![RP2040 Zero [@rp2040]](pics/rp2040.png){#fig-rp2040 width="65%"}
 
-![MAX31865 Breakoutboard [@max31865]](pics/max31865.jpg){#fig-max31865 width="50%"}
+![MAX31865 Breakoutboard [@max31865]](pics/max31865.jpg){#fig-max31865 width="67.5%"}
 
 :::
 
@@ -68,7 +68,7 @@ Im Rahmen der vorliegenden Machbarkeitsstudie wurde die Steuerungshardware und -
 
 ## Zusammenfassung der Erkenntnisse
 
-Durch die schrittweise Vorgehensweise, beginnend bei den physikalischen Grundlagen der Material Extrusion über isolierte Ansteuertests mittels Python bis hin zur Validierung an einem Arduino-basierten Referenzsystem (*Geeetech i3*) mit Klipper, konnten sämtliche Teilsysteme des F421 erfolgreich identifiziert und deren Funktionsweise aufgeschlüsselt werden. Es wurde festgestellt, dass eine Umrüstung auf die Open-Source-Software Klipper mit einem geeigneten Klipper-Board (*BigTreeTech Kraken v1.1*) möglich und vielversprechend ist. Dabei können fast alle der im System verbauten Komponenten direkt über das Board angesteuert und konfiguriert werden, was bereits einfache Drucke möglich machen würde. Zur Verbesserung der Druckqualität lassen sich anschließend noch zusätzliche u. a. auch externe Komponenten einbringen. Die dazu benötigte Hardware ist leicht zu beschaffen und kann, abgesehen von der Adapterplatine, bei vielen Händlern gekauft werden. Eine selbst entworfene Adapterplatine würde im letzten Schritt das Projekt abschließen und ein solides Gesamtkonzept bereitstellen. 
+Durch die schrittweise Vorgehensweise, beginnend bei den physikalischen Grundlagen der Material Extrusion über isolierte Ansteuertests mittels Python bis hin zur Validierung an einem Arduino-basierten Referenzsystem (*Geeetech i3*) mit Klipper, konnten sämtliche Teilsysteme des F421 erfolgreich identifiziert und deren Funktionsweise aufgeschlüsselt werden. Es wurde festgestellt, dass eine Umrüstung auf die Open-Source-Software Klipper mit einem geeigneten Klipper-Board (*BigTreeTech Kraken v1.1*) möglich und vielversprechend ist. Dabei können fast alle der im System verbauten Komponenten direkt über das Board angesteuert und konfiguriert werden, was bereits einfache Drucke möglich machen würde. Zur Verbesserung der Druckqualität lassen sich anschließend noch zusätzliche u. a. auch externe Komponenten einbringen. Die dazu benötigte Hardware ist leicht zu beschaffen und kann, abgesehen von der Adapterplatine, bei vielen Händlern gekauft werden. Eine selbst entworfene Adapterplatine würde im letzten Schritt, durch saubere Leitungsführung und Minimierung der Störeinflüsse, das Projekt abschließen und ein solides Gesamtkonzept bereitstellen. 
 
 ## Ausblick und nächste Schritte
 

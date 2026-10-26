@@ -27,7 +27,7 @@ Die DIN EN ISO/ASTM 52900 gliedert die additiven Fertigungsverfahren nach ihren 
 
 ## Material Extrusion
 
-Der zu analysierende Drucker basiert auf dem FFF bzw. FDM Verfahren, weswegen sich mit diesen Verfahren näher beschäftigt wurde. Hier spielen primär thermoplastische Kunststoffe eine Rolle. Die Auswahl des Materials bestimmt maßgeblich die thermischen und mechanischen Eigenschaften des Zielbauteils:
+Weil der zu analysierende Drucker auf dem FFF bzw. FDM Verfahren basiert, wurde sich mit diesen Verfahren näher beschäftigt. Hier spielen primär thermoplastische Kunststoffe eine Rolle. Die Auswahl des Materials bestimmt maßgeblich die thermischen und mechanischen Eigenschaften des Zielbauteils:
 
 - Standard-Kunststoffe: Unkompliziert zu verarbeiten (z. B. PLA, PETG). Geringe Temperaturbeständigkeit, vorrangig für funktionale Prototypen und einfache Gehäuse.
 - Technische Kunststoffe: Erhöhte Festigkeit und Temperaturbeständigkeit (z. B. ABS, ASA, Polyamid/Nylon, PC). Benötigen meist geschlossene, beheizte Bauräume zur Vermeidung von Verzug (*Warping*).

@@ -125,25 +125,25 @@ number-sections: true
 
 \newpage
 
-{{< include contents_final/einleitung.qmd >}}
+{{< include contents_final/1_einleitung.qmd >}}
 
-{{< include contents_final/planner.qmd >}}
-
-\newpage
-
-{{< include contents_final/basics_3dprinter.qmd >}}
+{{< include contents_final/2_planner.qmd >}}
 
 \newpage
 
-{{< include contents_final/first_steps.qmd >}}
+{{< include contents_final/3_basics_3dprinter.qmd >}}
 
 \newpage
 
-{{< include contents_final/F421.qmd >}}
+{{< include contents_final/4_first_steps.qmd >}}
 
 \newpage
 
-{{< include contents_final/conclusion.qmd >}}
+{{< include contents_final/5_F421.qmd >}}
+
+\newpage
+
+{{< include contents_final/6_conclusion.qmd >}}
 
 \newpage
 

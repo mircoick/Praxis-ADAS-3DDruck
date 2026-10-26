@@ -2,9 +2,9 @@
 
 Der industrielle 3D-Druck gewinnt in modernen Fertigungs- und Instandhaltungsprozessen zunehmend an Bedeutung, da er eine flexible Herstellung von Prototypen sowie Sonderlösungen ermöglicht. Bei der Airbus DS Airborne Solutions GmbH in Bremen, einem eigenständigen Tochterunternehmen der Airbus Defence and Space, dessen Wurzeln auf die Gründung von Focke-Wulf im Jahr 1924 zurückgehen, nimmt dieses Fertigungsverfahren eine zentrale Rolle als Support Prozess ein. Im Fachbereich Produktion und Instandhaltung (Production and Maintenance, P&M) wird der 3D-Druck eingesetzt, um spezielle Bauteile und Prototypen für zivile sowie militärische Anwendungen zeitnah zu realisieren.
 
-![ADAS Komplex [@Github]](pics/site.jpg){#fig-site width="75%"}
+![ADAS Komplex [@adas]](pics/adas.jpg){#fig-site width="75%"}
 
-Neben den im Privatgebrauch üblichen 3D-Druckern werden hier auch die industriellen Drucker verwendet. Diese sollen schneller, präziser sowie vielseitigere 3D-Drucke fertigen können als die häuslichen Geräte. Somit hatte sich die ADAS einen industriellen 3D-Drucker der Marke *3DGence*, eine Firma die sich auf diese industrie Drucker spezialisiert hat, beschafft um die bestimmten Anwendungen des Prototypenbaus zu gewährleisten. Das beschaffte Modell *Industry F421* wies allerdings kurz nach der Beschaffung erhebliche softwareseitige Probleme auf, die während des Druckbetriebs zu wiederholten Fehlermeldungen führten und einen verlässlichen Einsatz erschwerten. 
+Neben den im Privatgebrauch üblichen 3D-Druckern werden hier auch industriellen Drucker verwendet. Diese sollen schneller, präziser sowie vielseitigere 3D-Drucke fertigen können als häuslichen Geräte. Somit hatte sich die ADAS einen industriellen 3D-Drucker der Marke *3DGence*, eine Firma die sich auf diese industrie Drucker spezialisiert hat, beschafft um die bestimmten Anwendungen des Prototypenbaus zu gewährleisten. Das beschaffte Modell *Industry F421* wies allerdings kurz nach der Beschaffung erhebliche softwareseitige Probleme auf, die während des Druckbetriebs zu wiederholten Fehlermeldungen führten und einen verlässlichen Einsatz erschwerten. 
 
 ::: {#fig-3dgence layout-ncol=2}
 ![](pics/3dgence-industry-f421-seitlich2.png){#fig-ansicht1 width="75%"}

@@ -495,7 +495,7 @@ number-sections: true
 |-|-|
 |Breite|143|
 |Tiefen|7|
-|Höhe|234|
+|Höhe|235|
 |Platinen abstand von längerer Seite|9.2|
 |Platinen abstand von kürzerer Seite|0|
 |Platinen Höhe|140|

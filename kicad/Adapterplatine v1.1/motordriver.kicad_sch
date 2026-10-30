@@ -411,6 +411,16 @@
 	)
 	(wire
 		(pts
+			(xy 210.82 105.41) (xy 210.82 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0dfa09f3-a846-44f4-ba41-0322a2510dab")
+	)
+	(wire
+		(pts
 			(xy 190.5 105.41) (xy 190.5 113.03)
 		)
 		(stroke
@@ -581,6 +591,16 @@
 	)
 	(wire
 		(pts
+			(xy 215.9 105.41) (xy 215.9 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7e78be3e-5b60-4508-88ff-a8014474333a")
+	)
+	(wire
+		(pts
 			(xy 179.07 110.49) (xy 179.07 118.11)
 		)
 		(stroke
@@ -691,16 +711,6 @@
 	)
 	(wire
 		(pts
-			(xy 215.9 105.41) (xy 215.9 123.19)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c3fb952b-6fe6-426c-a72d-b7fbcdc46d30")
-	)
-	(wire
-		(pts
 			(xy 193.04 105.41) (xy 193.04 118.11)
 		)
 		(stroke
@@ -758,16 +768,6 @@
 			(type default)
 		)
 		(uuid "ed4df217-8b31-42de-994f-92672063a2c9")
-	)
-	(wire
-		(pts
-			(xy 210.82 105.41) (xy 210.82 123.19)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "edd54089-6a2c-4b40-bafc-d66d0ba168b2")
 	)
 	(wire
 		(pts
@@ -841,7 +841,7 @@
 	)
 	(hierarchical_label "X48-Servo-PIN10"
 		(shape input)
-		(at 215.9 123.19 270)
+		(at 210.82 123.19 270)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -863,7 +863,7 @@
 	)
 	(hierarchical_label "X48-Servo-PIN9"
 		(shape input)
-		(at 210.82 123.19 270)
+		(at 215.9 123.19 270)
 		(effects
 			(font
 				(size 1.27 1.27)

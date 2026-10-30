@@ -7354,7 +7354,7 @@
 				(justify left)
 			)
 		)
-		(pin "+3.3V" output
+		(pin "+3.3V" input
 			(at 97.79 30.48 180)
 			(uuid "8a4169ea-be94-4d8b-b440-a65f53dd0ca7")
 			(effects

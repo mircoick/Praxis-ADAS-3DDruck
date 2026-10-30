@@ -2,6 +2,7 @@ import logging
 import time
 from . import bus
 from . import i2c_bus_manager
+from collections import deque
 
 
 class STM32TempSensor:
@@ -14,6 +15,7 @@ class STM32TempSensor:
         self.reg_addr = reg_addr
 
         self.temp = 20.0
+        self.temp_samples = deque(maxlen=10)
 
         self.min_temp = 0.0
         self.max_temp = 200.0
@@ -82,10 +84,7 @@ class STM32TempSensor:
 
     def _sample_sensor_timer(self, eventtime):
 
-        # ----------------------------------------------------
-        # FILAMENT BENUTZT DEN BUS
-        # ----------------------------------------------------
-
+        # I2C-Bus wird anderweitig verwendet
         if i2c_bus_manager.is_busy():
 
             logging.debug(
@@ -95,16 +94,7 @@ class STM32TempSensor:
                 i2c_bus_manager.get_owner()
             )
 
-            # Temperatur NICHT lesen.
-            #
-            # Der zuletzt gültige Temperaturwert bleibt
-            # erhalten.
-
             return eventtime + 1.0
-
-        # ----------------------------------------------------
-        # NORMALER TEMPERATUR-POLL
-        # ----------------------------------------------------
 
         try:
 
@@ -113,37 +103,43 @@ class STM32TempSensor:
                 1
             )
 
-            if (
-                isinstance(raw, dict)
-                and 'response' in raw
-            ):
-
+            if isinstance(raw, dict) and 'response' in raw:
                 raw = raw['response']
 
-            if (
-                isinstance(
-                    raw,
-                    (bytes, bytearray)
-                )
-                and len(raw) > 0
-            ):
+            if isinstance(raw, (bytes, bytearray)) and len(raw) > 0:
 
-                self.temp = float(
-                    raw[0]
+                # Aktuelle Rohmessung
+                measured_temp = float(raw[0])
+
+                # Messung zum gleitenden Mittelwert hinzufügen
+                self.temp_samples.append(measured_temp)
+
+                # Mittelwert aller verfügbaren Messungen berechnen
+                self.temp = (
+                    sum(self.temp_samples)
+                    / len(self.temp_samples)
                 )
 
+                # Temperatur an Klipper weitergeben
                 if self.sample_cb:
-
                     self.sample_cb(
                         eventtime,
                         self.temp
                     )
 
+                logging.debug(
+                    "Temperatur %s: Rohwert=%.2f, "
+                    "Mittelwert=%.2f, Messungen=%d",
+                    self.name,
+                    measured_temp,
+                    self.temp,
+                    len(self.temp_samples)
+                )
+
         except Exception as e:
 
             logging.debug(
-                "Fehler beim Abrufen "
-                "der Temperatur "
+                "Fehler beim Abrufen der Temperatur "
                 "(Reg 0x%02X): %s",
                 self.reg_addr,
                 str(e)

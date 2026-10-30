@@ -1619,7 +1619,7 @@
 		(uuid "0a2875b7-aafc-4643-9acd-a683723507ea")
 	)
 	(hierarchical_label "+3.3V"
-		(shape output)
+		(shape input)
 		(at 205.74 83.82 270)
 		(effects
 			(font
@@ -1650,6 +1650,17 @@
 			(justify right)
 		)
 		(uuid "a57f6d6c-d76c-41fc-99c1-5c2fa4fe48e2")
+	)
+	(hierarchical_label "+3.3V"
+		(shape input)
+		(at 179.07 66.04 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a7a86906-f8b9-4505-aa78-59302ddfb9d9")
 	)
 	(hierarchical_label "X48-PT1000-1 PIN20"
 		(shape input)
@@ -2434,83 +2445,6 @@
 			(project "Adapterplatine"
 				(path "/99d5d967-6a35-454f-aac3-01cafa1d30b4/978a6864-b302-4b1a-93ac-77e155af244a"
 					(reference "#PWR035")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:VCC")
-		(at 179.07 66.04 270)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "65d5dec8-d791-4232-9d07-7caf16e03e4d")
-		(property "Reference" "#PWR032"
-			(at 175.26 66.04 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+5V"
-			(at 184.15 66.04 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 179.07 66.04 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 179.07 66.04 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 179.07 66.04 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "aebac516-567e-4bc7-b1fe-6e42c53dd290")
-		)
-		(instances
-			(project "Adapterplatine"
-				(path "/99d5d967-6a35-454f-aac3-01cafa1d30b4/978a6864-b302-4b1a-93ac-77e155af244a"
-					(reference "#PWR032")
 					(unit 1)
 				)
 			)
